@@ -1,0 +1,44 @@
+{{ partial "header.html" . }}
+
+<div id="docs">
+  <div class="docs-contents">
+    {{ $currentNode := . }}
+    {{ range .Site.Menus.doc }}
+      {{ if .HasChildren }}
+        <h3>{{ .Name }}</h3>
+        <ul>
+          {{ range .Children }}
+            <li {{if $currentNode.IsMenuCurrent "doc" . }} class="active"{{end}}>
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+          {{ end }}
+        </ul>
+        <hr/>
+      {{ end }}
+    {{ end }}
+
+
+    <!--{{ range .Site.Pages.GroupByParam "category"}}
+    <h3>{{  slicestr .Key 3 }}</h3>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    <hr/>
+    {{ end }}-->
+  </div>
+  <div class="doc-wrapper">
+    <div class="doc">
+      <h1>{{ .Title }}</h1>
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+{{ partial "footer.html" . }}

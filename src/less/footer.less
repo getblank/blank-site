@@ -1,0 +1,47 @@
+footer {
+  padding: 24px 0;
+  background-color: #212121;
+  background-image: url("/img/gray.png");
+  background-repeat: repeat;
+  color: @darkText;
+  hr {
+    border-top: 1px solid #ddd;
+  }
+  & > div {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  p.hugo {
+    color: #ddd;
+    font-size: 0.7rem;
+    a {
+      color: #ddd !important;
+    }
+  }
+  .social {
+    padding-top: 24px;
+    a {
+      margin: 0 7px;
+      color: @darkText;
+    }
+  }
+  ul.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 0 14px;
+      a {
+        color: #ddd;
+        text-align: center;
+        font-size: 0.8rem;
+        text-decoration: none;
+      }
+    }
+  }
+}

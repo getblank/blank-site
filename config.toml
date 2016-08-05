@@ -1,0 +1,25 @@
+baseurl = "http://getblank.net/"
+languageCode = "en-us"
+title = "BLANK cloud platform"
+
+[params]
+  description = "Облачная платформа для создания бэкенда с открытым исходным кодом"
+  author = "BLANK"
+  keywords = "BaaS, backend, cloud, iot, platform, бэкенд, облачный сервис, интернет вещей"
+  locale = "ru-RU"
+
+[taxonomies]
+tag = "tags"
+
+[[menu.doc]]
+    name = "Начало работы"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = -110
+    identifier = "start"
+    url = "/doc/"
+[[menu.doc]]
+    name = "Blank Schema"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -100
+    identifier = "schema"
+    url = "/doc/"

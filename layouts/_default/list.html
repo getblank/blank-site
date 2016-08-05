@@ -1,0 +1,32 @@
+{{ partial "header.html" . }}
+
+<div id="blog" class="main">
+  <div class="post-list">
+    {{ range .Data.Pages }}
+      {{ if eq .Type "post"}}
+        <article class="post post-preview">
+            <div class="summary">
+                <span class="post-date">{{ partial "post_date.html" . }}</span>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ partial "tags.html" . }}
+                <div class="content">
+                {{ .Summary }}
+                </div>
+            </div>
+            {{ if .Truncated }}
+                <a class="read-more-link" href="{{ .RelPermalink }}">Читать дальше →</a>
+            {{ end }}
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+  <!--<h1>pages</h1>
+  {{ range .Data.Pages }}
+    {{ if or (eq .Type "page") (eq .Type "about") }}
+      <h2><a href="{{ .Permalink }}">{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}</a></h2>
+    {{ end }}
+  {{ end }}-->
+
+{{ partial "footer.html" . }}

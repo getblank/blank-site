@@ -1,0 +1,103 @@
+{{ partial "header.html" . }}
+
+    <div id="notifications"></div>
+
+    <div id="top">
+        <div class="top-content">
+        <!--<h1><span style="color: #009688; display: none;">_</span><span>Blank</span></h1>-->
+        <h1>Создайте бэкенд. Быстро. Легко.</h1>
+        <h3>
+            Мощный инструмент прототипирования и публикации бэкенда для разработчиков
+        </h3>
+        </div>
+    </div>
+
+    <section id="main">
+        <div class="container">
+            <!--<h2>Быстрое создание уникальных приложений</h2>
+            <div class="summary">
+                <p>
+                    Blank &mdash; отличная заготовка, из которой легко получится готовое решение для автоматизации работы бизнеса. За несколько
+                    часов можно описать структуру данных компании и получить рабочее приложение. Тонко настроить процесс помогут сценарии
+                    на самом популярном скриптовом языке&nbsp;&mdash; JavaScript. На базе платформы уже созданы
+                    <span>cистемы учета клиентов (CRM)</span>, <span>приёма и обработки заказов</span>, <span>комплексной автоматизации (ERP)</span>,
+                    <span>колл-центры</span>.
+                </p>
+            </div>-->
+            <div class="cards-list">
+                <div class="item">
+                    <h3>Снижение затрат на разработку</h3>
+                    <p>У нас готов пользовательский интерфейс, мы решили множество рутинных проблем обработки данных. Осталось запрограммировать
+                        логику работы вашей компании.</p>
+                </div>
+                <div class="item">
+                    <h3>Развитие вместе с компанией</h3>
+                    <p>Blank максимально расширяем, и будет легко расти и меняться вместе с вами. Кроме того, наша команда каждый день делает Blank лучше
+                        и добавляет в него новые возможности</p>
+                </div>
+                <div class="item">
+                    <h3>Экономия времени</h3>
+                    <p>Мы поможем обеспечить кратчайшие сроки внедрения, предоставим поддержку и услуги по разработке</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bn-pattern kenzo-back">
+        <div class="kenzo">
+        </div>
+    </div>
+
+    <!--<section id="main" class="text-left">
+        <div>
+            <h2 class="header">Создан программистами для программистов</h2>
+            <p>Мы на собственном опыте знаем, какие проблемы возникают при разработке backend-а, и постарались решить их ещё на этапе проектирования Blank</p>
+        </div>
+    </section>-->
+
+    <div id="main-end"></div>
+
+    <section class="technologies">
+        <div class="container">
+            <h2 id="technology">Технологии</h2>
+            <img src="/img/technologies.svg" alt="technologies">
+            <div class="summary">
+                <p>
+                    <span>Blank</span> разработан на современных и широко известных языках программирования &mdash; <span>Go</span> и <span>JavaScript</span>.</br>
+                    Клиентская часть &mdash; <i class="tooltip" data-tooltip="Single Page Application &mdash; одностроначное веб-приложение">SPA</i>			на платформе <span>React JS</span>. Данные в приложении обновляются в режиме реального времени благодаря двунаправленному
+                    каналу связи с сервером по протоколу
+                    <span>WebSocket</span>.
+                    </br>
+                    При разработке на Blank не нужно изучать Go &mdash; все делается на JavaScript, для этого обработчики задач реализованы на <span>Node&nbsp;JS</span></br>
+                    Подробнее об API для разработчиков читайте в <a href="/doc/">документации</a>
+                </p>
+                <!--<p>Go был разработан компанией
+                    Google и официально представлен в 2009 году. Google и другие компании активно используют программы на Go в своей работе.
+                    JavaScript &mdash; самый распротраненный язык для написания сценариев, он используется почти каждым сайтом в сети Интернет</p>-->
+            </div>
+        </div>
+    </section>
+
+    <!--<section id="blog">
+        <div class="post-list">
+            <h2 class="header">Новое в блоге</h2>
+            {{ range first 3 .Data.Pages }}
+                {{ if eq .Type "post"}}
+                    <article class="post post-preview">
+                        <div class="summary">
+                            <span class="post-date">{{ partial "post_date.html" . }}</span>
+                            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                            {{ partial "tags.html" . }}
+                            <div class="content">
+                            {{ .Summary }}
+                            </div>
+                        </div>
+                        {{ if .Truncated }}
+                            <a class="read-more-link" href="{{ .RelPermalink }}">Читать дальше →</a>
+                        {{ end }}
+                    </article>
+                {{ end }}
+            {{ end }}
+        </div>
+    </section>-->
+{{ partial "footer.html" . }}

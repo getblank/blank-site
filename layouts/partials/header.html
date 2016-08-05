@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"> {{ partial "meta.html" . }}
+    {{ .Hugo.Generator }}
+
+    {{ if .Description }}
+        <meta name="description" content="{{ .Description }}">
+        {{else}}
+        <meta name="description" content="{{ .Site.Params.description }}">
+    {{ end }}
+
+    {{ if .Keywords }}
+        <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+        {{else}}
+        <meta name="keywords" content="{{ .Site.Params.keywords }}">
+    {{ end }}
+
+    <meta name="author" content="{{ .Site.Params.author }}">
+
+
+    <base href="{{ .Site.BaseURL }}">
+{{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+{{ else }}
+    {{ if .IsNode }}
+    <title>{{ index $.Site.Data.titles .Title }} &middot; {{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    {{ end }}
+{{ end }}
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" /> {{ partial "head_includes.html" . }}
+
+    {{ if eq $.IsHome true }}
+    <script src="https://securepay.tinkoff.ru/html/payForm/js/TinkoffWidget.js"></script>
+    {{ end }}
+</head>
+
+<body lang="ru">
+<!-- Yandex.Metrika counter -->
+<!--<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter38022265 = new Ya.Metrika({
+                    id:38022265,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/38022265" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
+<!-- /Yandex.Metrika counter -->
+{{ partial "nav.html" . }}

@@ -1,0 +1,63 @@
+.feedback {	
+	background-color: #37474F;
+	color: @darkText;
+	.container {
+		padding-bottom: 36px;
+	}
+	h3 {
+		//font-size: 36px;
+		margin-top: 48px;
+		color: @darkText;	
+		text-align: center;
+		font-weight: 300;
+	}
+	.callback {
+		padding: 24px 0;
+		text-align: center;
+		input {
+			width: 280px;
+		}
+		button {
+			margin-left: 14px;	
+		}
+	}	
+	address {
+		font-style: normal;
+	}
+	button {
+		background-color: #009688;
+		color: #fff;	
+		text-transform: none;	
+	}
+	
+	.feedback-form-modal {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		z-index: 3;
+		background-color: rgba(150,150,150,.7);
+		
+		h3 {
+			margin-top: 0;
+			margin-bottom: 36px;
+		}
+		
+		p {
+			font-weight: 200;
+		}
+		
+		&.show {
+			display: flex;
+		}
+		.feedback-form {
+			width: 400px;
+			padding: 24px;
+			background-color: #263238;						
+		}
+	}
+}

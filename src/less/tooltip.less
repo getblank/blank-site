@@ -1,0 +1,31 @@
+@import 'variables';
+
+i.tooltip {
+  position: relative;
+  display: inline-block;
+  padding: 0 7px;
+  background-color: #E0F2F1;
+  border-radius: 3px;
+  cursor: help;
+  &:after {
+    position: absolute;
+    display: block;
+    width: 280px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    content: attr(data-tooltip);    
+    opacity: 0; 
+    padding: 3px 7px;    
+    visibility: hidden;
+        
+    transition: all 0.4s ease-in-out;
+  }
+      
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}

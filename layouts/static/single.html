@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<div id="page">
+  <div class="post-wrapper">
+    <div class="post">
+      <div class="post-date">
+        <h2>{{ partial "post_date.html" . }}</h2>
+      </div>
+      <h1>{{ .Title }}</h1>
+      <div class="content">
+      {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "footer.html" . }}
