@@ -23,3 +23,9 @@ tag = "tags"
     weight = -100
     identifier = "schema"
     url = "/doc/"
+[[menu.doc]]
+    name = "Serverside JS API"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -90
+    identifier = "serverjs"
+    url = "/doc/"
