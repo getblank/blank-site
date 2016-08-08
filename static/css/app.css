@@ -1063,6 +1063,13 @@ p a.dark {
 p a:hover {
   text-decoration: underline;
 }
+p code {
+  display: inline-block;
+  padding: 0 4px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+}
 hr {
   height: 0;
   margin-top: 20px;
