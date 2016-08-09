@@ -276,12 +276,29 @@ title = "Store reference"
 
 ### Labels
 ~~~javascript
-"labels": [Label {}]
+"labels": [Label {
+    "icon": "className" //"fa fa-icon_name" или "material-icons text md-16 icon_name"
+    "text": "Handlebars template", //Data model: { $item: {}, $user: {} }
+    "color": "Handlebars template", //Data model: { $item: {}, $user: {} }
+    "hidden": "JavaScript expression", //Variables: $item, $user
+    "hideInForm": bool // Скрывает лэйбл в форме редактирования объекта
+    "showInList": int // Определяет, на какой строке показывать лэйбл в элементе списка. Если 0 – не отображать
+}]
 ~~~
 Массив аннотаций к объектам. Используется для добавления summary объектов в списке и на форме редактирования в
 сгенерированном веб-приложении.
 
-Подробнее читайте в разделе [Labels](/doc/labels/)
+Пример:
+```javascript
+"labels": [
+    {
+        "icon": "fa fa-power-off",
+        "color": "{{#if $item.disabled}}#ddd{{else}}#43A047{{/if}}",
+        "hideInForm": true,
+        "showInList": 1,
+    },
+]
+```
 
 ### NavGroup
 ~~~javascript

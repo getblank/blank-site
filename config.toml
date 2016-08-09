@@ -14,8 +14,14 @@ tag = "tags"
 [[menu.doc]]
     name = "Начало работы"
     pre = "<i class='fa fa-heart'></i>"
-    weight = -110
+    weight = -120
     identifier = "start"
+    url = "/doc/"
+[[menu.doc]]
+    name = "Blank CLI"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -110
+    identifier = "cli"
     url = "/doc/"
 [[menu.doc]]
     name = "Blank Schema"
