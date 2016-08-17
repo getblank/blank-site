@@ -35,3 +35,9 @@ tag = "tags"
     weight = -90
     identifier = "serverjs"
     url = "/doc/"
+[[menu.doc]]
+    name = "HTTP API"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -80
+    identifier = "httpapi"
+    url = "/doc/"
