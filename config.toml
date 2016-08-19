@@ -41,3 +41,9 @@ tag = "tags"
     weight = -80
     identifier = "httpapi"
     url = "/doc/"
+[[menu.doc]]
+    name = "Интеграция"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -70
+    identifier = "social"
+    url = "/doc/"
