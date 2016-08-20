@@ -1051,19 +1051,27 @@ h3 {
   font-size: 24px;
   font-weight: 400;
 }
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
 a {
   text-decoration: none;
 }
-p a {
+p a,
+li a {
   color: #00897B;
 }
-p a.dark {
+p a.dark,
+li a.dark {
   color: #4DB6AC;
 }
-p a:hover {
+p a:hover,
+li a:hover {
   text-decoration: underline;
 }
-p code {
+p code,
+li code {
   display: inline-block;
   padding: 0 4px;
   background: #f8f8f8;
