@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BLANK cloud platform</title>
-    <link>http://getblank.net/</link>
+    <link>https://getblank.net/</link>
     <description>Recent content on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Aug 2016 21:19:48 +0500</lastBuildDate>
-    <atom:link href="http://getblank.net/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://getblank.net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Facebook</title>
-      <link>http://getblank.net/doc/facebook/</link>
+      <link>https://getblank.net/doc/facebook/</link>
       <pubDate>Fri, 19 Aug 2016 21:19:48 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/facebook/</guid>
+      <guid>https://getblank.net/doc/facebook/</guid>
       <description>
 
 &lt;p&gt;Аутентификация пользователей &lt;strong&gt;Blank&lt;/strong&gt; может выполняться через популярные социальные сети.
@@ -24,20 +24,20 @@
 
 &lt;p&gt;Первым делом, следует создать на &lt;a href=&#34;https://developers.facebook.com/apps&#34;&gt;странице&lt;/a&gt; приложение, которое будет получать данные пользователя.
 Выбираем &lt;strong&gt;Website&lt;/strong&gt;:
-&lt;img src=&#34;http://getblank.net/img/facebook/step1.png&#34; alt=&#34;step1&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://getblank.net/img/facebook/step1.png&#34; alt=&#34;step1&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Указываем название нового приложения. Именно его увидят пользователи при попытке войти в &lt;strong&gt;Blank&lt;/strong&gt; через Facebook.
-&lt;img src=&#34;http://getblank.net/img/facebook/step2.png&#34; alt=&#34;step2&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://getblank.net/img/facebook/step2.png&#34; alt=&#34;step2&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Указываем контактный email и выбираем категорию, например, business.
-&lt;img src=&#34;http://getblank.net/img/facebook/step3.png&#34; alt=&#34;step3&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://getblank.net/img/facebook/step3.png&#34; alt=&#34;step3&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Самый важный шаг&amp;nbsp;&amp;mdash; указываем точный адрес работающего приложения на &lt;strong&gt;Blank&lt;/strong&gt;.
-&lt;img src=&#34;http://getblank.net/img/facebook/step4.png&#34; alt=&#34;step4&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://getblank.net/img/facebook/step4.png&#34; alt=&#34;step4&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Попав на дашборд созданного приложения, копируем &lt;strong&gt;App ID&lt;/strong&gt; и вставляем его параметром &lt;code&gt;facebookClientId&lt;/code&gt; в хранилище &lt;code&gt;_commonSettings&lt;/code&gt;,
 &lt;strong&gt;App Secret&lt;/strong&gt; указываем в хранилище &lt;code&gt;_serverSettings&lt;/code&gt; параметром &lt;code&gt;facebookClientSecret&lt;/code&gt;
-&lt;img src=&#34;http://getblank.net/img/facebook/step5.png&#34; alt=&#34;step5&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://getblank.net/img/facebook/step5.png&#34; alt=&#34;step5&#34; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;&amp;quot;_serverSettings&amp;quot;: {
     //
@@ -58,16 +58,16 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;После проведения всех настроек, остаётся только сделать доступным приложение всем пользователям
-&lt;img src=&#34;http://getblank.net/img/facebook/step6.png&#34; alt=&#34;step6&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://getblank.net/img/facebook/step6.png&#34; alt=&#34;step6&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Auth</title>
-      <link>http://getblank.net/doc/httpauth/</link>
+      <link>https://getblank.net/doc/httpauth/</link>
       <pubDate>Wed, 17 Aug 2016 14:54:48 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/httpauth/</guid>
+      <guid>https://getblank.net/doc/httpauth/</guid>
       <description>
 
 &lt;p&gt;Помимо полнофункционального WAMP API, &lt;strong&gt;Blank&lt;/strong&gt; имеет в своем арсенале несколько вспомогательных HTTP методов,
@@ -115,10 +115,10 @@
     
     <item>
       <title>REST</title>
-      <link>http://getblank.net/doc/httprest/</link>
+      <link>https://getblank.net/doc/httprest/</link>
       <pubDate>Wed, 17 Aug 2016 14:54:48 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/httprest/</guid>
+      <guid>https://getblank.net/doc/httprest/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Blank&lt;/strong&gt; может автоматически активировать HTTP REST API для хранилищ, у которых параметр &lt;code&gt;httpApi&lt;/code&gt; установлен в &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;При этом, так же автоматически будет сформирована документация, доступная по адресу:&lt;/p&gt;
@@ -130,37 +130,37 @@
     
     <item>
       <title>Сборка конфигурации</title>
-      <link>http://getblank.net/doc/build/</link>
+      <link>https://getblank.net/doc/build/</link>
       <pubDate>Tue, 09 Aug 2016 00:15:38 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/build/</guid>
+      <guid>https://getblank.net/doc/build/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CLI reference</title>
-      <link>http://getblank.net/doc/cli/</link>
+      <link>https://getblank.net/doc/cli/</link>
       <pubDate>Tue, 09 Aug 2016 00:15:34 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/cli/</guid>
+      <guid>https://getblank.net/doc/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>$request</title>
-      <link>http://getblank.net/doc/request/</link>
+      <link>https://getblank.net/doc/request/</link>
       <pubDate>Mon, 08 Aug 2016 17:01:50 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/request/</guid>
+      <guid>https://getblank.net/doc/request/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Props reference</title>
-      <link>http://getblank.net/doc/props_reference/</link>
+      <link>https://getblank.net/doc/props_reference/</link>
       <pubDate>Sat, 06 Aug 2016 22:41:33 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/props_reference/</guid>
+      <guid>https://getblank.net/doc/props_reference/</guid>
       <description>
 
 &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
@@ -207,7 +207,7 @@
 
 &lt;p&gt;Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.&lt;/p&gt;
 
-&lt;p&gt;В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;http://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;reflist&#34;&gt;refList&lt;/h4&gt;
 
@@ -221,7 +221,7 @@
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[&amp;quot;e5ba2446-81e1-4b2d-b901-ca9eabe9817e&amp;quot;, &amp;quot;533ddfc5-5d3f-41f7-8557-872d4bfd2735&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;http://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;virtual&#34;&gt;virtual&lt;/h4&gt;
 
@@ -238,10 +238,10 @@
     
     <item>
       <title>Lifecycle events</title>
-      <link>http://getblank.net/doc/lifecycle_events/</link>
+      <link>https://getblank.net/doc/lifecycle_events/</link>
       <pubDate>Sat, 06 Aug 2016 20:57:54 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/lifecycle_events/</guid>
+      <guid>https://getblank.net/doc/lifecycle_events/</guid>
       <description>
 
 &lt;h3 id=&#34;objectlifecycle&#34;&gt;ObjectLifeCycle&lt;/h3&gt;
@@ -286,7 +286,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Выполняется непосредственно перед сохранением объекта, но до проведения валидации. Не выполняется перед
-созданием объекта, для этого используйте обработчик &lt;a href=&#34;http://getblank.net/doc/lifecycle_events/#willcreate&#34;&gt;didCreate&lt;/a&gt;.
+созданием объекта, для этого используйте обработчик &lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#willcreate&#34;&gt;didCreate&lt;/a&gt;.
 Используйте этот обработчик как возможность модифицировать объект перед сохранением или провести
 дополнительную валидацию и прервать сохранение.&lt;/p&gt;
 
@@ -351,17 +351,17 @@
     
     <item>
       <title>HTTP hooks</title>
-      <link>http://getblank.net/doc/httphooks/</link>
+      <link>https://getblank.net/doc/httphooks/</link>
       <pubDate>Sat, 06 Aug 2016 20:10:23 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/httphooks/</guid>
+      <guid>https://getblank.net/doc/httphooks/</guid>
       <description>
 
 &lt;p&gt;HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации,
 они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно
 или использовать Actions с типом http.&lt;/p&gt;
 
-&lt;p&gt;Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: &lt;a href=&#34;http://getblank.net/doc/store_reference/#http-api&#34;&gt;httpApi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: &lt;a href=&#34;https://getblank.net/doc/store_reference/#http-api&#34;&gt;httpApi&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;структура&#34;&gt;Структура&lt;/h3&gt;
 
@@ -396,16 +396,16 @@ Response {
 &lt;p&gt;Значения параметров будут доступны через свойство &lt;code&gt;params&lt;/code&gt; объекта &lt;code&gt;$request&lt;/code&gt;, переданного аргументом
 в скрипт hook-а.&lt;/p&gt;
 
-&lt;p&gt;Подробнее об объекте &lt;code&gt;$request&lt;/code&gt; читайте в разделе &lt;a href=&#34;http://getblank.net/doc/request/&#34;&gt;Serverside JS API: $request&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Подробнее об объекте &lt;code&gt;$request&lt;/code&gt; читайте в разделе &lt;a href=&#34;https://getblank.net/doc/request/&#34;&gt;Serverside JS API: $request&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Filters</title>
-      <link>http://getblank.net/doc/filters/</link>
+      <link>https://getblank.net/doc/filters/</link>
       <pubDate>Sat, 06 Aug 2016 19:38:05 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/filters/</guid>
+      <guid>https://getblank.net/doc/filters/</guid>
       <description>
 
 &lt;p&gt;Фильтры в Blank предназначены для определения заранее заданных критериев поиска объектов в Store.
@@ -458,10 +458,10 @@ Response {
     
     <item>
       <title>$db</title>
-      <link>http://getblank.net/doc/db/</link>
+      <link>https://getblank.net/doc/db/</link>
       <pubDate>Sat, 06 Aug 2016 17:57:48 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/db/</guid>
+      <guid>https://getblank.net/doc/db/</guid>
       <description>
 
 &lt;p&gt;Модуль &lt;code&gt;$db&lt;/code&gt; предназначен для манипуляции данными в хранилищах. Доступен везде, кроме обработчиков событий жизненного цикла объектов в хранилище.&lt;/p&gt;
@@ -506,7 +506,7 @@ Response {
 
 &lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
 
@@ -568,7 +568,7 @@ Response {
 
 &lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
 
@@ -617,7 +617,7 @@ $db.forEach(store, itemCallback[, callback])
 &lt;h4 id=&#34;параметры-3&#34;&gt;Параметры&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;query&lt;/strong&gt;
-&lt;a href=&#34;http://getblank.net/doc/db/#query&#34;&gt;Запрос к хранилищу&lt;/a&gt;, аналогично методу &lt;a href=&#34;http://getblank.net/doc/db/#find&#34;&gt;$db.find()&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://getblank.net/doc/db/#query&#34;&gt;Запрос к хранилищу&lt;/a&gt;, аналогично методу &lt;a href=&#34;https://getblank.net/doc/db/#find&#34;&gt;$db.find()&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
 
@@ -625,7 +625,7 @@ $db.forEach(store, itemCallback[, callback])
 
 &lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;itemCallback&lt;/strong&gt;&lt;/p&gt;
 
@@ -666,7 +666,7 @@ $db.get(query, store[, options[, callback]])
 
 &lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
 
@@ -722,7 +722,7 @@ $db.get(query, store[, options[, callback]])
 
 &lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
 
@@ -919,7 +919,7 @@ $db.get(query, store[, options[, callback]])
 
 &lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
 
@@ -938,10 +938,10 @@ $db.get(query, store[, options[, callback]])
     
     <item>
       <title>Access control</title>
-      <link>http://getblank.net/doc/access/</link>
+      <link>https://getblank.net/doc/access/</link>
       <pubDate>Sat, 06 Aug 2016 16:49:03 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/access/</guid>
+      <guid>https://getblank.net/doc/access/</guid>
       <description>
 
 &lt;p&gt;Управление доступом в Blank построено на основе ролей с принением системы условий. Права
@@ -1016,10 +1016,10 @@ $db.get(query, store[, options[, callback]])
     
     <item>
       <title>Store reference</title>
-      <link>http://getblank.net/doc/store_reference/</link>
+      <link>https://getblank.net/doc/store_reference/</link>
       <pubDate>Sat, 06 Aug 2016 14:27:42 +0500</pubDate>
       
-      <guid>http://getblank.net/doc/store_reference/</guid>
+      <guid>https://getblank.net/doc/store_reference/</guid>
       <description>
 
 &lt;h3 id=&#34;access&#34;&gt;Access&lt;/h3&gt;
@@ -1047,7 +1047,7 @@ $db.get(query, store[, options[, callback]])
         ]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Подробнее о настройках доступа в Blank в разделе &lt;a href=&#34;http://getblank.net/doc/access/&#34;&gt;Access control&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Подробнее о настройках доступа в Blank в разделе &lt;a href=&#34;https://getblank.net/doc/access/&#34;&gt;Access control&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;actions&#34;&gt;Actions&lt;/h3&gt;
 
@@ -1132,7 +1132,7 @@ $db.get(query, store[, options[, callback]])
 &lt;h4 id=&#34;table&#34;&gt;table&lt;/h4&gt;
 
 &lt;p&gt;Табличный тип отображения. Подходит для отображения Store с историей каких-либо событий.
-При использовании не забудьте настроить &lt;a href=&#34;http://getblank.net/doc/store_reference/#tablecolumns&#34;&gt;TableColumns&lt;/a&gt;&lt;/p&gt;
+При использовании не забудьте настроить &lt;a href=&#34;https://getblank.net/doc/store_reference/#tablecolumns&#34;&gt;TableColumns&lt;/a&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;cards&#34;&gt;cards&lt;/h4&gt;
 
@@ -1142,7 +1142,7 @@ $db.get(query, store[, options[, callback]])
 
 &lt;p&gt;Если отображение не предполагает интерактивных элементов и требуется просто отобразить данные или статическую
 страницу, можно включить тип отображения html. При использовании не забудьте написать шаблон
-&lt;a href=&#34;http://getblank.net/doc/store_reference/#html&#34;&gt;Html&lt;/a&gt; для отрисовки страницы.&lt;/p&gt;
+&lt;a href=&#34;https://getblank.net/doc/store_reference/#html&#34;&gt;Html&lt;/a&gt; для отрисовки страницы.&lt;/p&gt;
 
 &lt;h4 id=&#34;dashboard&#34;&gt;dashboard&lt;/h4&gt;
 
@@ -1175,7 +1175,7 @@ $db.get(query, store[, options[, callback]])
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
-Подробнее читайте в разделе &lt;a href=&#34;http://getblank.net/doc/filters/&#34;&gt;Filters&lt;/a&gt;&lt;/p&gt;
+Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/filters/&#34;&gt;Filters&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;formgroupsorder&#34;&gt;FormGroupsOrder&lt;/h3&gt;
 
@@ -1265,7 +1265,7 @@ $db.get(query, store[, options[, callback]])
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Массив описаний методов Store, доступных через HTTP API.
-Подробнее читайте в разделе &lt;a href=&#34;http://getblank.net/doc/httphooks/&#34;&gt;HTTPHooks&lt;/a&gt;&lt;/p&gt;
+Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/httphooks/&#34;&gt;HTTPHooks&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;i18n&#34;&gt;I18n&lt;/h3&gt;
 
@@ -1417,7 +1417,7 @@ Store, но в навигации она должна называться по-
 
 &lt;p&gt;Обработчики событий жизненного цикла объектов в Store на JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;http://getblank.net/doc/lifecycle_events/#objectlifecycle&#34;&gt;ObjectLifeCycle&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#objectlifecycle&#34;&gt;ObjectLifeCycle&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;orderby&#34;&gt;OrderBy&lt;/h3&gt;
 
@@ -1460,7 +1460,7 @@ Store, но в навигации она должна называться по-
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;http://getblank.net/doc/props_reference/&#34;&gt;Props reference&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/props_reference/&#34;&gt;Props reference&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;states&#34;&gt;States&lt;/h3&gt;
 
@@ -1492,7 +1492,7 @@ Store, но в навигации она должна называться по-
 
 &lt;p&gt;Обработчики событий жизненного цикла объектов в Store на JavaScript.&lt;/p&gt;
 
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;http://getblank.net/doc/lifecycle_events/#storelifecycle&#34;&gt;StoreLifeCycle&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#storelifecycle&#34;&gt;StoreLifeCycle&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;tablecolumns&#34;&gt;TableColumns&lt;/h3&gt;
 
@@ -1508,7 +1508,7 @@ Store, но в навигации она должна называться по-
 
 &lt;p&gt;Задачи, требующие периодического запуска.&lt;/p&gt;
 
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;http://getblank.net/doc/tasks/&#34;&gt;Tasks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/tasks/&#34;&gt;Tasks&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
 
@@ -1546,10 +1546,10 @@ workspace-а.&lt;/p&gt;
     
     <item>
       <title>Github</title>
-      <link>http://getblank.net/install/</link>
+      <link>https://getblank.net/install/</link>
       <pubDate>Fri, 05 Aug 2016 17:15:57 +0500</pubDate>
       
-      <guid>http://getblank.net/install/</guid>
+      <guid>https://getblank.net/install/</guid>
       <description>
 
 &lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;
@@ -1564,10 +1564,10 @@ workspace-а.&lt;/p&gt;
     
     <item>
       <title>Цены</title>
-      <link>http://getblank.net/pricing/</link>
+      <link>https://getblank.net/pricing/</link>
       <pubDate>Fri, 05 Aug 2016 13:29:24 +0500</pubDate>
       
-      <guid>http://getblank.net/pricing/</guid>
+      <guid>https://getblank.net/pricing/</guid>
       <description></description>
     </item>
     

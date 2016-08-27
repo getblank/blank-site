@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorial on BLANK cloud platform</title>
-    <link>http://getblank.net/tags/tutorial/</link>
+    <link>https://getblank.net/tags/tutorial/</link>
     <description>Recent content in Tutorial on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 03 Aug 2016 23:58:25 +0500</lastBuildDate>
-    <atom:link href="http://getblank.net/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://getblank.net/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Интернет-магазин на Blank и Hugo</title>
-      <link>http://getblank.net/post/first/</link>
+      <link>https://getblank.net/post/first/</link>
       <pubDate>Wed, 03 Aug 2016 23:58:25 +0500</pubDate>
       
-      <guid>http://getblank.net/post/first/</guid>
+      <guid>https://getblank.net/post/first/</guid>
       <description>&lt;p&gt;Зачем строить интернет-магазин на генераторе статических сайтов и платформе для разработки backend-а, когда есть
 множество готовых решений?&lt;/p&gt;
 
