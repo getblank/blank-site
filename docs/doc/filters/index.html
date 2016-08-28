@@ -222,9 +222,9 @@
 }
 </code></pre>
 
-<p>Если используются несколько фильтров, их запросы объединяются через оператор $or:</p>
+<p>Если используются несколько фильтров, их запросы объединяются через оператор $and:</p>
 
-<pre><code class="language-javascript">&quot;query&quot;: { &quot;$or&quot;: [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
+<pre><code class="language-javascript">&quot;query&quot;: { &quot;$and&quot;: [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
 </code></pre>
 
 <h3 id="query-funсtion-value-mongoquery">query – funсtion ($value) {}:MongoQuery</h3>

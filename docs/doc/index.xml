@@ -428,9 +428,9 @@ Response {
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Если используются несколько фильтров, их запросы объединяются через оператор $or:&lt;/p&gt;
+&lt;p&gt;Если используются несколько фильтров, их запросы объединяются через оператор $and:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;query&amp;quot;: { &amp;quot;$or&amp;quot;: [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;query&amp;quot;: { &amp;quot;$and&amp;quot;: [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;query-funсtion-value-mongoquery&#34;&gt;query – funсtion ($value) {}:MongoQuery&lt;/h3&gt;
