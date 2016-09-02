@@ -26,9 +26,9 @@ title = "Filters"
 }
 ~~~
 
-Если используются несколько фильтров, их запросы объединяются через оператор $or:
+Если используются несколько фильтров, их запросы объединяются через оператор $and:
 ~~~javascript
-"query": { "$or": [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
+"query": { "$and": [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
 ~~~
 
 ### query – funсtion ($value) {}:MongoQuery
