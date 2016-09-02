@@ -371,6 +371,8 @@ $db.notify(receivers, store, message[, callback])
 {
 	message: "Заголовок сообщения",
 	details: "Текст сообщения",
+    level: "info", // info | error // currently only info supports (default)
+    type: "notification", // currently only notification supports (default)
 	relatedObjects: [
 		{
 			name: "Gray Wolf",
