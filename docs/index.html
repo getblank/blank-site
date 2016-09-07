@@ -40,14 +40,11 @@
     <div class="container">
         
         <ul class="nav collapse" id="nav">
+            
+            
             <li class="collapse">
-                <a href="/install/" class="nav-link index-link ">
-                    Установка
-                </a>
-            </li>
-            <li class="collapse">
-                <a href="/pricing/" class="nav-link index-link ">
-                    Цены
+                <a href="/doc/introduction/" class="nav-link index-link ">
+                    Документация
                 </a>
             </li>
             <li class="collapse">
@@ -55,16 +52,7 @@
                     Контакты
                 </a>
             </li>
-            <li class="collapse">
-                <a href="/doc/introduction/" class="nav-link index-link ">
-                    Документация
-                </a>
-            </li>
-            <li>
-                <a href="/post/" class="nav-link ">
-                    Блог
-                </a>
-            </li>
+            
         </ul>
         <div class="logo">
             <a href="index.html" class="nav-link">
@@ -87,24 +75,39 @@
     </div>
 
     <section id="main">
-        <div class="container">
-            
-            <div class="cards-list">
-                <div class="item">
-                    <h3>Снижение затрат на разработку</h3>
-                    <p>У нас готов пользовательский интерфейс, мы решили множество рутинных проблем обработки данных. Осталось запрограммировать
-                        логику работы вашей компании.</p>
+        <div class="main-feature-list">
+            <div class="item">
+                <div class="title">
+                    <h3>Автогенереция Web-UI</h3>
                 </div>
-                <div class="item">
-                    <h3>Развитие вместе с компанией</h3>
-                    <p>Blank максимально расширяем, и будет легко расти и меняться вместе с вами. Кроме того, наша команда каждый день делает Blank лучше
-                        и добавляет в него новые возможности</p>
-                </div>
-                <div class="item">
-                    <h3>Экономия времени</h3>
-                    <p>Мы поможем обеспечить кратчайшие сроки внедрения, предоставим поддержку и услуги по разработке</p>
+                <div class="extra">
+                    <p>Для управления данными автоматически создаётся веб-интерфейс – SPA на <a href="https://nodejs.org/">React.js</a>.
+                        Используйте его как бэк-офис вашего приложения, создав аккаунты для администраторов и менеджеров.
+                    </p>
                 </div>
             </div>
+            <div class="item">
+                <div class="title">
+                    <h3>Интеграция с npm</h3>
+                </div>
+                <div class="extra">
+                    <p>Любые <a href="https://www.npmjs.com/">npm</a> пакеты, включая пакеты с комбинированными модулями на C++,
+                        подключаются также, как если бы это было обычное приложение на <a href="https://nodejs.org/">Node.js</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title">
+                    <h3>Локальная разработка и тестирование</h3>
+                </div>
+                <div class="extra">
+                    <p>Вся микросервисная инфраструктура запускается на компьютере разработчика одной командой при помощи утилиты blank-cli.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; padding-bottom: 36px;">
+            <h3>Скоро – разработка бизнес-логики на <a href="https://golang.org/" target="_blank">Go</a></h3>
         </div>
     </section>
 
@@ -114,6 +117,62 @@
     </div>
 
     
+
+    <section class="example">
+        <div class="container wrapper">
+            <div class="code">
+                <pre>
+                    <code class="language-javascript hljs">
+module.exports = {
+  todoStore: {
+    display: &#34;single&#34;,
+    access: [
+      {
+        role: &#34;all&#34;,
+        permissions: &#34;vcrudx&#34;,
+        condition: {
+          _ownerId: { &#34;$expression&#34;: &#34;$user._id&#34; }
+        }
+      }
+    ],
+    label: &#34;{{$i18n.storeLabel}}&#34;,
+    props: {
+      todoList: {
+        type: &#34;objectList&#34;,
+        label: &#34;{{$i18n.todoListLabel}}&#34;,
+        props: {
+          task: {
+            type: &#34;string&#34;,
+            display: &#34;textInput&#34;,
+            label: &#34;{{$i18n.taskLabel}}&#34;,
+            formOrder: 0
+          },
+          done: {
+            type: &#34;bool&#34;,
+            display: &#34;checkbox&#34;,
+            label: &#34;{{$i18n.doneLabel}}&#34;,
+            formOrder: 10,
+            style: { width: 40 }
+          }
+        }
+      }
+    },
+    i18n: {
+      storeLabel: &#34;TODO&#34;,
+      todoListLabel: &#34;My TODO list&#34;,
+      taskLabel: &#34;Task&#34;,
+      doneLabel: &#34;Done?&#34;
+    }
+  }
+};
+                    </code>
+                </pre>
+            </div>
+            <div class="image">
+                <img src="img/todo.gif" alt="example-screenshot"/>
+            </div>
+        </div>
+    </section>
 
     <div id="main-end"></div>
 

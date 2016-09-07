@@ -6,14 +6,19 @@
             <span class="icon-bar"></span>
         </button>-->
         <ul class="nav collapse" id="nav">
-            <li class="collapse">
+            <!--<li class="collapse">
                 <a href="/install/" class="nav-link index-link {{ if $.IsPage }}{{if eq $.Params.nav "install" }}active{{ end }}{{ end }}">
                     Установка
                 </a>
-            </li>
-            <li class="collapse">
+            </li>-->
+            <!--<li class="collapse">
                 <a href="/pricing/" class="nav-link index-link {{ if $.IsPage }}{{if eq $.Params.nav "pricing" }}active{{ end }}{{ end }}">
                     Цены
+                </a>
+            </li>-->
+            <li class="collapse">
+                <a href="/doc/introduction/" class="nav-link index-link {{if $.IsPage}}{{if eq $.Section "doc"}}active{{ end }}{{ end }}">
+                    Документация
                 </a>
             </li>
             <li class="collapse">
@@ -21,16 +26,11 @@
                     Контакты
                 </a>
             </li>
-            <li class="collapse">
-                <a href="/doc/introduction/" class="nav-link index-link {{if $.IsPage}}{{if eq $.Section "doc"}}active{{ end }}{{ end }}">
-                    Документация
-                </a>
-            </li>
-            <li>
+            <!--<li>
                 <a href="/post/" class="nav-link {{ if $.IsNode }}{{if eq $.URL "/post/" }}active{{ end }}{{ end }}{{ if $.IsPage }}{{if eq $.Type "post" }}active{{ end }}{{ end }}">
                     Блог
                 </a>
-            </li>
+            </li>-->
         </ul>
         <div class="logo">
             <a href="index.html" class="nav-link">
