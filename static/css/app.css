@@ -654,6 +654,18 @@ textarea {
   margin-top: 14px;
   margin-bottom: 12px;
 }
+#docs .docs-contents h3 a {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.54);
+  color: #444;
+}
+#docs .docs-contents h3 a:hover {
+  color: #009688;
+  text-decoration: underline;
+}
+#docs .docs-contents h3 a.active a {
+  color: #009688;
+}
 #docs .docs-contents ul {
   list-style: none;
   margin: 0;
