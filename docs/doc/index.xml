@@ -847,6 +847,8 @@ $db.get(query, store[, options[, callback]])
 &lt;pre&gt;&lt;code&gt;{
 	message: &amp;quot;Заголовок сообщения&amp;quot;,
 	details: &amp;quot;Текст сообщения&amp;quot;,
+    level: &amp;quot;info&amp;quot;, // info | error // currently only info supports (default)
+    type: &amp;quot;notification&amp;quot;, // currently only notification supports (default)
 	relatedObjects: [
 		{
 			name: &amp;quot;Gray Wolf&amp;quot;,

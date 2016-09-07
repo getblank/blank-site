@@ -4,8 +4,13 @@
   <div class="docs-contents">
     {{ $currentNode := . }}
     {{ range .Site.Menus.doc }}
+    {{ if not (eq .URL "")}}
+    {{ .MenuName }}
+      <h3><a href="{{ .URL }}">{{ .Name }}</a></h3>
+    {{ else }}
+      <h3>{{ .Name }}</h3>
+    {{ end }}
       {{ if .HasChildren }}
-        <h3>{{ .Name }}</h3>
         <ul>
           {{ range .Children }}
             <li {{if $currentNode.IsMenuCurrent "doc" . }} class="active"{{end}}>

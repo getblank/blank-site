@@ -17,34 +17,28 @@ tag = "tags"
     pre = "<i class='fa fa-heart'></i>"
     weight = -120
     identifier = "start"
-    url = "/doc/"
 [[menu.doc]]
     name = "Blank CLI"
     pre = "<i class='fa fa-road'></i>"
     weight = -110
     identifier = "cli"
-    url = "/doc/"
 [[menu.doc]]
     name = "Blank Schema"
     pre = "<i class='fa fa-road'></i>"
     weight = -100
     identifier = "schema"
-    url = "/doc/"
 [[menu.doc]]
     name = "Serverside JS API"
     pre = "<i class='fa fa-road'></i>"
     weight = -90
     identifier = "serverjs"
-    url = "/doc/"
 [[menu.doc]]
     name = "HTTP API"
     pre = "<i class='fa fa-road'></i>"
     weight = -80
     identifier = "httpapi"
-    url = "/doc/"
 [[menu.doc]]
     name = "Интеграция"
     pre = "<i class='fa fa-road'></i>"
     weight = -70
     identifier = "social"
-    url = "/doc/"
