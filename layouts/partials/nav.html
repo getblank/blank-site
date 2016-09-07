@@ -1,41 +1,31 @@
 <div id="navbar" {{ if eq $.IsHome false }} class="no-expand blog" {{ end }} >
     <div class="container">
-        <!--<button type="button" class="navbar-toggle" id="nav-toggle">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>-->
+        <a href="#" data-menu="sidenav" class="nav-toggle menu">
+            <img src="/img/menu.svg" alt="menu"/>
+        </a>
+        <div class="logo">
+            <a href="index.html" class="nav-link"><img src="img/favicon.svg" alt="logo"/>BLANK</a>
+        </div>
         <ul class="nav collapse" id="nav">
-            <!--<li class="collapse">
-                <a href="/install/" class="nav-link index-link {{ if $.IsPage }}{{if eq $.Params.nav "install" }}active{{ end }}{{ end }}">
-                    Установка
-                </a>
-            </li>-->
-            <!--<li class="collapse">
-                <a href="/pricing/" class="nav-link index-link {{ if $.IsPage }}{{if eq $.Params.nav "pricing" }}active{{ end }}{{ end }}">
-                    Цены
-                </a>
-            </li>-->
-            <li class="collapse">
+            <li>
                 <a href="/doc/introduction/" class="nav-link index-link {{if $.IsPage}}{{if eq $.Section "doc"}}active{{ end }}{{ end }}">
                     Документация
                 </a>
             </li>
-            <li class="collapse">
+            <li>
                 <a href="#contacts" class="nav-link index-link" data-active-until="contacts-end" data-active-after="contacts-start">
                     Контакты
                 </a>
             </li>
-            <!--<li>
-                <a href="/post/" class="nav-link {{ if $.IsNode }}{{if eq $.URL "/post/" }}active{{ end }}{{ end }}{{ if $.IsPage }}{{if eq $.Type "post" }}active{{ end }}{{ end }}">
-                    Блог
+            <li>
+                <a href="https://github.com/getblank/" class="nav-link">
+                    GitHub
                 </a>
-            </li>-->
+            </li>
         </ul>
-        <div class="logo">
-            <a href="index.html" class="nav-link">
-                BLANK
-            </a>
-        </div>
+        <!--<a href="#" data-menu="search" data-focus="quick-search-input" class="nav-toggle search">
+            <img src="/img/search.svg" alt="search"/>
+        </a>
+        <div id="user-bar"></div>-->
     </div>
 </div>

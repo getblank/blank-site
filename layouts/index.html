@@ -16,6 +16,15 @@
         <div class="main-feature-list">
             <div class="item">
                 <div class="title">
+                    <h3>Декларативный подход</h3>
+                </div>
+                <div class="extra">
+                    <p>Мы разработали Blank Schema – стандарт для декларативного описания приложений, обрабатывающих данные.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title">
                     <h3>Автогенереция Web-UI</h3>
                 </div>
                 <div class="extra">
@@ -49,11 +58,6 @@
         </div>
     </section>
 
-    <div class="bn-pattern kenzo-back">
-        <div class="kenzo">
-        </div>
-    </div>
-
     <!--<section id="main" class="text-left">
         <div>
             <h2 class="header">Создан программистами для программистов</h2>
@@ -62,10 +66,11 @@
     </section>-->
 
     <section class="example">
-        <div class="container wrapper">
-            <div class="code">
-                <pre>
-                    <code class="language-javascript hljs">
+        <div class="container">
+            <h2>Приложение: TODO-лист</h2>
+            <div class="wrapper">
+                <div class="code">
+                    <pre><code class="language-javascript hljs">
 {{`module.exports = {
   todoStore: {
     display: "single",
@@ -108,8 +113,7 @@
     }
   }
 };`}}
-                    </code>
-                </pre>
+                </code></pre>
             </div>
             <div class="image">
                 <img src="img/todo.gif" alt="example-screenshot"/>
@@ -119,23 +123,38 @@
 
     <div id="main-end"></div>
 
+    <div class="bn-pattern kenzo-back">
+        <div class="kenzo">
+        </div>
+    </div>
+
     <section class="technologies">
         <div class="container">
             <h2 id="technology">Технологии</h2>
             <img src="/img/technologies.svg" alt="technologies">
             <div class="summary">
                 <p>
-                    <span>Blank</span> разработан на современных и широко известных языках программирования &mdash; <span>Go</span> и <span>JavaScript</span>.</br>
-                    Клиентская часть &mdash; <i class="tooltip" data-tooltip="Single Page Application &mdash; одностроначное веб-приложение">SPA</i>			на платформе <span>React JS</span>. Данные в приложении обновляются в режиме реального времени благодаря двунаправленному
-                    каналу связи с сервером по протоколу
+                    <span>Blank</span> разработан на современных и широко известных языках программирования &mdash; <span>Go</span> и
+                    <span>JavaScript</span>. Автогенерируемое веб-приложение &mdash; <b>SPA</b> на платформе <span>React JS</span>.
+                    Данные в приложении обновляются в режиме реального времени благодаря двунаправленному каналу связи с сервером по протоколу
                     <span>WebSocket</span>.
                     </br>
-                    При разработке на Blank не нужно изучать Go &mdash; все делается на JavaScript, для этого обработчики задач реализованы на <span>Node&nbsp;JS</span></br>
-                    Подробнее об API для разработчиков читайте в <a href="/doc/">документации</a>
+                    При разработке на Blank не нужно изучать Go &mdash; все делается на JavaScript, для этого обработчики задач
+                    реализованы на <span>Node&nbsp;JS</span>. Подробнее об API для разработчиков читайте в <a href="/doc/">документации</a>
                 </p>
-                <!--<p>Go был разработан компанией
+            </div>
+            <!--<p>Go был разработан компанией
                     Google и официально представлен в 2009 году. Google и другие компании активно используют программы на Go в своей работе.
                     JavaScript &mdash; самый распротраненный язык для написания сценариев, он используется почти каждым сайтом в сети Интернет</p>-->
+        </div>
+    </section>
+
+    <section class="subscribe-form">
+        <div class="container">
+            <h2>Запуск 01.01.2017</h2>
+            <p>Подпишись на новости и попробуй  Blank одним из первых</p>
+            <div id="subscribe-form">
+                <input type="text"><button class="btn btn-flat" type="button">Подписаться</button>
             </div>
         </div>
     </section>
