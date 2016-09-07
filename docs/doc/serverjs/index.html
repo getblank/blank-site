@@ -20,10 +20,10 @@
     <base href="https://getblank.net/">
 
     
-    <title>Facebook &middot; BLANK cloud platform</title>
+    <title>Serverside JS API &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.net/doc/facebook/">
+    <link rel="canonical" href="https://getblank.net/doc/serverjs/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
@@ -153,7 +153,7 @@
       
         <ul>
           
-            <li >
+            <li  class="active">
               <a href="/doc/serverjs/">Описание</a>
             </li>
           
@@ -193,7 +193,7 @@
       
         <ul>
           
-            <li  class="active">
+            <li >
               <a href="/doc/facebook/">Facebook</a>
             </li>
           
@@ -205,52 +205,49 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Facebook</h1>
+      <h1>Serverside JS API</h1>
       <div class="content">
         
 
-<p>Аутентификация пользователей <strong>Blank</strong> может выполняться через популярные социальные сети.
-В данном разделе описан порядок действий, необходимых для обеспечения интеграции <strong>Blank</strong> и <strong>Facebook</strong>.</p>
+<p>Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:</p>
 
-<h3 id="создание-приложения-в-facebook">Создание приложения в Facebook</h3>
+<ul>
+<li><a href="/doc/lifecycle_events/">Обработчики событий</a>, происходящих с объектами в Store;</li>
+<li>Загрузчики <a href="/doc/props_reference/#virtual">виртуальных полей</a>;</li>
+<li><a href="/doc/store_reference/#actions">Действия над объектами</a>, хранящимися в Store;</li>
+<li><a href="/doc/store_reference/#storeactions">Действия</a>, которые относятся ко всему Store;</li>
+<li><a href="/doc/lifecycle_events/#storelifecycle">Обработчики события</a>, жизненного цикла Store;</li>
+<li><a href="/doc/httphooks/">Обработчики HTTP запросов</a>;</li>
+<li><a href="/doc/tasks/">Задачи, требующие периодического запуска</a>.</li>
+</ul>
 
-<p>Первым делом, следует создать на <a href="https://developers.facebook.com/apps">странице</a> приложение, которое будет получать данные пользователя.
-Выбираем <strong>Website</strong>:
-<img src="/img/facebook/step1.png" alt="step1" /></p>
+<p>Во всех обработчиках доступна функция <code>require()</code>, позволяющая запускать встроенные в node.js и платформу JavaScript модули.
+Так же допускается запуск собственных <strong>CommonJS</strong> модулей, расположенных в директории <code>/lib</code> проекта.</p>
 
-<p>Указываем название нового приложения. Именно его увидят пользователи при попытке войти в <strong>Blank</strong> через Facebook.
-<img src="/img/facebook/step2.png" alt="step2" /></p>
+<h3 id="встроенные-модули">Встроенные модули:</h3>
 
-<p>Указываем контактный email и выбираем категорию, например, business.
-<img src="/img/facebook/step3.png" alt="step3" /></p>
+<ul>
+<li><a href="/doc/db/">$db</a>;</li>
+<li><a href="http://caolan.github.io/async/">async</a> <a href="/doc/serverjs/#embeddedmodules">*</a>;</li>
+<li>clickhouse;</li>
+<li>email;</li>
+<li><a href="https://github.com/bitinn/node-fetch">fetch</a> <a href="/doc/serverjs/#embeddedmodules">*</a>;</li>
+<li>files;</li>
+<li>fs;</li>
+<li><a href="http://handlebarsjs.com/">handlebars</a> <a href="/doc/serverjs/#embeddedmodules">*</a>;</li>
+<li>hash;</li>
+<li>i18n;</li>
+<li><a href="http://momentjs.com/">moment</a> <a href="/doc/serverjs/#embeddedmodules">*</a>;</li>
+<li>queue;</li>
+<li><a href="https://github.com/request/request">request</a> <a href="/doc/serverjs/#embeddedmodules">*</a>;</li>
+<li>serviceRegistry;</li>
+<li><a href="https://github.com/crcn/sift.js">sift</a> <a href="/doc/serverjs/#embeddedmodules">*</a>;</li>
+<li>utils/find;</li>
+<li>wamp;</li>
+</ul>
 
-<p>Самый важный шаг&nbsp;&mdash; указываем точный адрес работающего приложения на <strong>Blank</strong>.
-<img src="/img/facebook/step4.png" alt="step4" /></p>
-
-<p>Попав на дашборд созданного приложения, копируем <strong>App ID</strong> и вставляем его параметром <code>facebookClientId</code> в хранилище <code>_commonSettings</code>,
-<strong>App Secret</strong> указываем в хранилище <code>_serverSettings</code> параметром <code>facebookClientSecret</code>
-<img src="/img/facebook/step5.png" alt="step5" /></p>
-
-<pre><code class="language-JSON">&quot;_serverSettings&quot;: {
-    //
-    &quot;entries&quot;: {
-        //
-        &quot;facebookClientSecret&quot;: &quot;95edc3c722be8ec99d1739e8eaabdc4f&quot;
-    }
-}
-</code></pre>
-
-<pre><code class="language-JSON">&quot;_commonSettings&quot;: {
-    //
-    &quot;entries&quot;: {
-        //
-        &quot;facebookClientId&quot;: &quot;1063958526991595&quot;
-    }
-}
-</code></pre>
-
-<p>После проведения всех настроек, остаётся только сделать доступным приложение всем пользователям
-<img src="/img/facebook/step6.png" alt="step6" /></p>
+<p><a name="embeddedmodules"></a>
+*Сторонний модуль, входящий в поставку Blank.</p>
 
       </div>
     </div>

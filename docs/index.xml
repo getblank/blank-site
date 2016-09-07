@@ -6,8 +6,58 @@
     <description>Recent content on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Aug 2016 21:19:48 +0500</lastBuildDate>
+    <lastBuildDate>Wed, 07 Sep 2016 13:10:48 +0500</lastBuildDate>
     <atom:link href="https://getblank.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Serverside JS API</title>
+      <link>https://getblank.net/doc/serverjs/</link>
+      <pubDate>Wed, 07 Sep 2016 13:10:48 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/serverjs/</guid>
+      <description>
+
+&lt;p&gt;Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/lifecycle_events/&#34;&gt;Обработчики событий&lt;/a&gt;, происходящих с объектами в Store;&lt;/li&gt;
+&lt;li&gt;Загрузчики &lt;a href=&#34;https://getblank.net/doc/props_reference/#virtual&#34;&gt;виртуальных полей&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store_reference/#actions&#34;&gt;Действия над объектами&lt;/a&gt;, хранящимися в Store;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store_reference/#storeactions&#34;&gt;Действия&lt;/a&gt;, которые относятся ко всему Store;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#storelifecycle&#34;&gt;Обработчики события&lt;/a&gt;, жизненного цикла Store;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/httphooks/&#34;&gt;Обработчики HTTP запросов&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/tasks/&#34;&gt;Задачи, требующие периодического запуска&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Во всех обработчиках доступна функция &lt;code&gt;require()&lt;/code&gt;, позволяющая запускать встроенные в node.js и платформу JavaScript модули.
+Так же допускается запуск собственных &lt;strong&gt;CommonJS&lt;/strong&gt; модулей, расположенных в директории &lt;code&gt;/lib&lt;/code&gt; проекта.&lt;/p&gt;
+
+&lt;h3 id=&#34;встроенные-модули&#34;&gt;Встроенные модули:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/db/&#34;&gt;$db&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://caolan.github.io/async/&#34;&gt;async&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;clickhouse;&lt;/li&gt;
+&lt;li&gt;email;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bitinn/node-fetch&#34;&gt;fetch&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;files;&lt;/li&gt;
+&lt;li&gt;fs;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://handlebarsjs.com/&#34;&gt;handlebars&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;hash;&lt;/li&gt;
+&lt;li&gt;i18n;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://momentjs.com/&#34;&gt;moment&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;queue;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/request/request&#34;&gt;request&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;serviceRegistry;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/crcn/sift.js&#34;&gt;sift&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;utils/find;&lt;/li&gt;
+&lt;li&gt;wamp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a name=&#34;embeddedmodules&#34;&gt;&lt;/a&gt;
+*Сторонний модуль, входящий в поставку Blank.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Facebook</title>
@@ -1056,7 +1106,7 @@ $db.get(query, store[, options[, callback]])
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;actions&amp;quot;: [Action {}]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API.&lt;/p&gt;
+&lt;p&gt;Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API.&lt;/p&gt;
 
 &lt;p&gt;Пример action для лайка фотографии:&lt;/p&gt;
 
@@ -1481,7 +1531,7 @@ Store, но в навигации она должна называться по-
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;storeActions&amp;quot;: [Action {}]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API.&lt;/p&gt;
+&lt;p&gt;Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API и REST API.&lt;/p&gt;
 
 &lt;p&gt;При вызове из веб-приложения в аргументы скрипта передаются текущие значения фильтров.&lt;/p&gt;
 
@@ -1562,15 +1612,6 @@ workspace-а.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;releases.getblank.net&#34;&gt;64 bit&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Цены</title>
-      <link>https://getblank.net/pricing/</link>
-      <pubDate>Fri, 05 Aug 2016 13:29:24 +0500</pubDate>
-      
-      <guid>https://getblank.net/pricing/</guid>
-      <description></description>
     </item>
     
   </channel>
