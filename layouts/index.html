@@ -13,40 +13,50 @@
     </div>
 
     <section id="main">
-        <div class="container">
-            <!--<h2>Быстрое создание уникальных приложений</h2>
-            <div class="summary">
-                <p>
-                    Blank &mdash; отличная заготовка, из которой легко получится готовое решение для автоматизации работы бизнеса. За несколько
-                    часов можно описать структуру данных компании и получить рабочее приложение. Тонко настроить процесс помогут сценарии
-                    на самом популярном скриптовом языке&nbsp;&mdash; JavaScript. На базе платформы уже созданы
-                    <span>cистемы учета клиентов (CRM)</span>, <span>приёма и обработки заказов</span>, <span>комплексной автоматизации (ERP)</span>,
-                    <span>колл-центры</span>.
-                </p>
-            </div>-->
-            <div class="cards-list">
-                <div class="item">
-                    <h3>Снижение затрат на разработку</h3>
-                    <p>У нас готов пользовательский интерфейс, мы решили множество рутинных проблем обработки данных. Осталось запрограммировать
-                        логику работы вашей компании.</p>
+        <div class="main-feature-list">
+            <div class="item">
+                <div class="title">
+                    <h3>Декларативный подход</h3>
                 </div>
-                <div class="item">
-                    <h3>Развитие вместе с компанией</h3>
-                    <p>Blank максимально расширяем, и будет легко расти и меняться вместе с вами. Кроме того, наша команда каждый день делает Blank лучше
-                        и добавляет в него новые возможности</p>
+                <div class="extra">
+                    <p>Мы разработали <a href="doc/schema">Blank Schema</a> – стандарт для декларативного описания приложений, обрабатывающих данные.
+                    </p>
                 </div>
-                <div class="item">
-                    <h3>Экономия времени</h3>
-                    <p>Мы поможем обеспечить кратчайшие сроки внедрения, предоставим поддержку и услуги по разработке</p>
+            </div>
+            <div class="item">
+                <div class="title">
+                    <h3>Автогенереция Web-UI</h3>
+                </div>
+                <div class="extra">
+                    <p>Для управления данными автоматически создаётся веб-интерфейс – SPA на <a href="https://nodejs.org/">React.js</a>.
+                        Используйте его как бэк-офис вашего приложения, создав аккаунты для администраторов и менеджеров.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title">
+                    <h3>Интеграция с npm</h3>
+                </div>
+                <div class="extra">
+                    <p>Любые <a href="https://www.npmjs.com/">npm</a> пакеты, включая пакеты с комбинированными модулями на C++,
+                        подключаются также, как если бы это было обычное приложение на <a href="https://nodejs.org/">Node.js</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title">
+                    <h3>Локальная разработка и тестирование</h3>
+                </div>
+                <div class="extra">
+                    <p>Вся микросервисная инфраструктура запускается на компьютере разработчика одной командой при помощи утилиты blank-cli.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="bn-pattern kenzo-back">
-        <div class="kenzo">
+        <div class="container" style="text-align: center; padding-bottom: 36px;">
+            <h3>Скоро – разработка бизнес-логики на <a href="https://golang.org/" target="_blank">Go</a></h3>
         </div>
-    </div>
+    </section>
 
     <!--<section id="main" class="text-left">
         <div>
@@ -55,7 +65,68 @@
         </div>
     </section>-->
 
+    <section class="example">
+        <div class="container">
+            <h2>Приложение: TODO-лист</h2>
+            <div class="wrapper">
+                <div class="code">
+                    <pre><code class="language-javascript hljs">
+{{`module.exports = {
+  todoStore: {
+    display: "single",
+    access: [
+      {
+        role: "all",
+        permissions: "vcrudx",
+        condition: {
+          _ownerId: { "$expression": "$user._id" }
+        }
+      }
+    ],
+    label: "{{$i18n.storeLabel}}",
+    props: {
+      todoList: {
+        type: "objectList",
+        label: "{{$i18n.todoListLabel}}",
+        props: {
+          task: {
+            type: "string",
+            display: "textInput",
+            label: "{{$i18n.taskLabel}}",
+            formOrder: 0
+          },
+          done: {
+            type: "bool",
+            display: "checkbox",
+            label: "{{$i18n.doneLabel}}",
+            formOrder: 10,
+            style: { width: 40 }
+          }
+        }
+      }
+    },
+    i18n: {
+      storeLabel: "TODO",
+      todoListLabel: "My TODO list",
+      taskLabel: "Task",
+      doneLabel: "Done?"
+    }
+  }
+};`}}
+                </code></pre>
+            </div>
+            <div class="image">
+                <img src="img/todo.gif" alt="example-screenshot"/>
+            </div>
+        </div>
+    </section>
+
     <div id="main-end"></div>
+
+    <div class="bn-pattern kenzo-back">
+        <div class="kenzo">
+        </div>
+    </div>
 
     <section class="technologies">
         <div class="container">
@@ -63,18 +134,28 @@
             <img src="/img/technologies.svg" alt="technologies">
             <div class="summary">
                 <p>
-                    <span>Blank</span> разработан на современных и широко известных языках программирования &mdash; <span>Go</span> и <span>JavaScript</span>.</br>
-                    Клиентская часть &mdash; <i class="tooltip" data-tooltip="Single Page Application &mdash; одностроначное веб-приложение">SPA</i>			на платформе <span>React JS</span>. Данные в приложении обновляются в режиме реального времени благодаря двунаправленному
-                    каналу связи с сервером по протоколу
+                    <span>Blank</span> разработан на современных и широко известных языках программирования &mdash; <span>Go</span> и
+                    <span>JavaScript</span>. Автогенерируемое веб-приложение &mdash; <b>SPA</b> на платформе <span>React JS</span>.
+                    Данные в приложении обновляются в режиме реального времени благодаря двунаправленному каналу связи с сервером по протоколу
                     <span>WebSocket</span>.
                     </br>
-                    При разработке на Blank не нужно изучать Go &mdash; все делается на JavaScript, для этого обработчики задач реализованы на <span>Node&nbsp;JS</span></br>
-                    Подробнее об API для разработчиков читайте в <a href="/doc/">документации</a>
+                    При разработке на Blank не нужно изучать Go &mdash; все делается на JavaScript, для этого обработчики задач
+                    реализованы на <span>Node&nbsp;JS</span>. Подробнее об API для разработчиков читайте в <a href="/doc/">документации</a>
                 </p>
-                <!--<p>Go был разработан компанией
+            </div>
+            <!--<p>Go был разработан компанией
                     Google и официально представлен в 2009 году. Google и другие компании активно используют программы на Go в своей работе.
                     JavaScript &mdash; самый распротраненный язык для написания сценариев, он используется почти каждым сайтом в сети Интернет</p>-->
-            </div>
+        </div>
+    </section>
+
+    <section class="subscribe-form">
+        <div class="container">
+            <h2>Запуск 01.01.2017</h2>
+            <!--<p>Подпишись на новости и попробуй  Blank одним из первых</p>
+            <div id="subscribe-form">
+                <input type="text"><button class="btn btn-flat" type="button">Подписаться</button>
+            </div>-->
         </div>
     </section>
 
