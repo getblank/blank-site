@@ -162,7 +162,15 @@
             </li>
           
             <li >
+              <a href="/doc/actions/">Actions</a>
+            </li>
+          
+            <li >
               <a href="/doc/db/">$db</a>
+            </li>
+          
+            <li >
+              <a href="/doc/request/">$request</a>
             </li>
           
             <li >
@@ -235,19 +243,19 @@
 
 <p>Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: <a href="/doc/store_reference/#http-api">httpApi</a></p>
 
-<h3 id="структура">Структура</h3>
+<h3 id="structure">Структура</h3>
 
 <pre><code class="language-javascript">&quot;httpHooks&quot;: [HTTPHook {
     &quot;uri&quot;: &quot;string&quot;
-    &quot;method&quot;: &quot;GET&quot;, &quot;PUT&quot;, &quot;POST&quot;, &quot;PATCH&quot;, &quot;DELETE&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;,
+    &quot;method&quot;: &quot;GET&quot; | &quot;PUT&quot; | &quot;POST&quot; | &quot;PATCH&quot; | &quot;DELETE&quot; | &quot;HEAD&quot; | &quot;OPTIONS&quot;,
     &quot;script&quot;: function ($request):Response {}
 }]
 
 Response {
-    &quot;type&quot;: &quot;JSON&quot;, &quot;HTML&quot;, &quot;XML&quot;, &quot;file&quot;,
-    &quot;data&quot;: &quot;string&quot;,
+    &quot;type&quot;: &quot;JSON&quot; | &quot;HTML&quot; | &quot;XML&quot; | &quot;file&quot; | &quot;redirect&quot;,
+    &quot;data&quot;: &quot;string&quot;, // Строка, которая будет передана в Body ответа, либо адрес для редиректа для type:redirect
     &quot;rawData&quot;: any,
-    &quot;code&quot;: int, //HTTP status code
+    &quot;code&quot;: int, // HTTP status code. По-умолчанию, 200
     &quot;header&quot;: {},
     &quot;fileName&quot;: &quot;string&quot;, // Только для type:file
 }

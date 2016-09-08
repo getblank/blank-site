@@ -6,8 +6,61 @@
     <description>Recent content in Docs on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Sep 2016 15:11:25 +0500</lastBuildDate>
+    <lastBuildDate>Thu, 08 Sep 2016 17:16:00 +0500</lastBuildDate>
     <atom:link href="https://getblank.net/doc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Actions</title>
+      <link>https://getblank.net/doc/actions/</link>
+      <pubDate>Thu, 08 Sep 2016 17:16:00 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/actions/</guid>
+      <description>
+
+&lt;p&gt;Actions&amp;nbsp;&amp;mdash; скрипты на JavaScript, производящие некоторые действия над объектами, хранящимися в Store.
+Действия доступны через Websocket API и REST API. Формат описания Actions подробно рассмотрен в &lt;a href=&#34;https://getblank.net/doc/store_reference/#actions&#34;&gt;Store Reference&lt;/a&gt;.
+Выполнять Actions могут только авторизованные пользователи.&lt;/p&gt;
+
+&lt;p&gt;Скрипты имееют возможность выполнять запросы к базе данных с помощью модуля &lt;a href=&#34;https://getblank.net/doc/db/&#34;&gt;$db&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;доступные-объекты&#34;&gt;Доступные объекты&lt;/h3&gt;
+
+&lt;h4 id=&#34;item&#34;&gt;$item&lt;/h4&gt;
+
+&lt;p&gt;Объект над которым выполняется Action. Для &lt;a href=&#34;https://getblank.net/doc/store_reference/#storeactions&#34;&gt;StoreActions&lt;/a&gt; &lt;code&gt;$item&lt;/code&gt; не передаётся.&lt;/p&gt;
+
+&lt;h4 id=&#34;user&#34;&gt;$user&lt;/h4&gt;
+
+&lt;p&gt;Пользователь, выполняющий Action.&lt;/p&gt;
+
+&lt;h4 id=&#34;data&#34;&gt;$data&lt;/h4&gt;
+
+&lt;p&gt;Данные формы, заполненной пользователем, в случае, если определены &lt;code&gt;props&lt;/code&gt; для Action.&lt;/p&gt;
+
+&lt;h4 id=&#34;filter&#34;&gt;$filter&lt;/h4&gt;
+
+&lt;p&gt;Только для &lt;a href=&#34;https://getblank.net/doc/store_reference/#storeactions&#34;&gt;StoreActions&lt;/a&gt;. При вызове из веб-приложения содержит текущие значения фильтров.&lt;/p&gt;
+
+&lt;h4 id=&#34;request&#34;&gt;$request&lt;/h4&gt;
+
+&lt;p&gt;Данные HTTP запроса, в случае, если Action.type установлен в &lt;code&gt;http&lt;/code&gt;, либо если Action вызывается через &lt;a href=&#34;https://getblank.net/doc/httprest/&#34;&gt;REST API&lt;/a&gt;.
+Подробнее об объекте &lt;code&gt;$request&lt;/code&gt; читайте в разделе &lt;a href=&#34;https://getblank.net/doc/request/&#34;&gt;Serverside JS API: $request&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;возврат-результата&#34;&gt;Возврат результата&lt;/h3&gt;
+
+&lt;p&gt;В случае, если скрипт возвращает какие-либо данные, они будут переданы инициатору вызова Action.
+Если скрипт выполнился неудачно, следует &amp;laquo;бросить ошибку&amp;raquo;. Для передачи текста ошибки,
+используется объект &lt;code&gt;UserError&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;throw new Error(&amp;quot;some error&amp;quot;); // текст ошибки будет выведен в логе, но не передан инициатору.
+throw new UserError(&amp;quot;some error with text&amp;quot;); // текст ошибки будет выведен в логе, и передан инициатору.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Если скрипт выполняет асинхронные инструкции, следует вернуть &lt;code&gt;Promise&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Для HTTP Actions возвращаемый объект должен соответствовать структуре &lt;code&gt;Response&lt;/code&gt; описанной в  &lt;a href=&#34;https://getblank.net/doc/httphooks/#structure&#34;&gt;HTTP Hooks&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Конфигурация</title>
@@ -232,6 +285,66 @@
     },
 },
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>$request</title>
+      <link>https://getblank.net/doc/request/</link>
+      <pubDate>Thu, 08 Sep 2016 13:13:20 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/request/</guid>
+      <description>
+
+&lt;p&gt;Объект &lt;code&gt;$request&lt;/code&gt; передается обработчикам &lt;code&gt;HTTP Hooks&lt;/code&gt;, &lt;code&gt;Actions&lt;/code&gt; и &lt;code&gt;StoreActions&lt;/code&gt; с типом &lt;code&gt;http&lt;/code&gt;, либо доступным через &lt;a href=&#34;https://getblank.net/doc/httprest/&#34;&gt;REST API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;параметры&#34;&gt;Параметры&lt;/h3&gt;
+
+&lt;h4 id=&#34;body&#34;&gt;body&lt;/h4&gt;
+
+&lt;p&gt;Содержимое HTTP запроса.&lt;/p&gt;
+
+&lt;h4 id=&#34;form&#34;&gt;form&lt;/h4&gt;
+
+&lt;p&gt;Содержимое отправленной формы в виде JavaScript Object.&lt;/p&gt;
+
+&lt;h4 id=&#34;header&#34;&gt;header&lt;/h4&gt;
+
+&lt;p&gt;Содержимое HTTP заголовка в виде JavaScript Object.&lt;/p&gt;
+
+&lt;h4 id=&#34;ip&#34;&gt;ip&lt;/h4&gt;
+
+&lt;p&gt;IP адрес инициатора HTTP запроса.&lt;/p&gt;
+
+&lt;h4 id=&#34;params&#34;&gt;params&lt;/h4&gt;
+
+&lt;p&gt;Содержит данные параметров, определённых в свойстве &lt;code&gt;uri&lt;/code&gt; &lt;code&gt;HTTP Hooks&lt;/code&gt;. Пример записи &lt;code&gt;uri&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    uri: &amp;quot;user/:id&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Таким образом, идентификатор пользователя (параметр &lt;code&gt;:id&lt;/code&gt;) будет доступен через:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;$request.params[&amp;quot;id&amp;quot;];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;query&#34;&gt;query&lt;/h4&gt;
+
+&lt;p&gt;Содержит параметры запроса из URL в виде JavaScript Object.&lt;/p&gt;
+
+&lt;p&gt;Например, для запроса &lt;code&gt;http://some.domain/?foo=bar&amp;amp;bar=baz&lt;/code&gt;, &lt;code&gt;query&lt;/code&gt; будет содержать следующий объект:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    foo: [&amp;quot;bar&amp;quot;],
+    bar: [&amp;quot;baz&amp;quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;referer&#34;&gt;referer&lt;/h4&gt;
+
+&lt;p&gt;Содержит значение HTTP заголовка &lt;code&gt;Referer&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -935,170 +1048,6 @@ email.send(message[, callback])
     return $item.prop1 + $item.prop2;
 },
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Lifecycle events</title>
-      <link>https://getblank.net/doc/lifecycle_events/</link>
-      <pubDate>Sat, 06 Aug 2016 20:57:54 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/lifecycle_events/</guid>
-      <description>
-
-&lt;h3 id=&#34;objectlifecycle&#34;&gt;ObjectLifeCycle&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;objectLifeCycle&amp;quot;: {
-    &amp;quot;eventName&amp;quot;: function () {}
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Обработчики событий, происходящих с объектами в Store.&lt;/p&gt;
-
-&lt;h4 id=&#34;willcreate&#34;&gt;willCreate&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;willCreate&amp;quot;: function ($item, $user):Promise {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется непосредственно перед созданием нового объекта, но до проведения валидации.
-Используйте этот обработчик как возможность модифицировать объект перед созданием или провести
-дополнительную валидацию и прервать эту операцию.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$item&lt;/code&gt; является ссылкой на сохраняемый объект. Все изменения, сделанные в &lt;code&gt;$item&lt;/code&gt;, будут сохранены в БД.&lt;/p&gt;
-
-&lt;p&gt;Если обработчик возвращает Promise, платформа будет ожидать его resolve/reject.&lt;/p&gt;
-
-&lt;p&gt;Если обработчик выбрасывает исключение или происходит reject возвращенного Promise, создание объекта
-будет отменено.&lt;/p&gt;
-
-&lt;p&gt;Для отправки сообщения об ошибке исключение (или объект ошибки Promise)
-должно быть экземпляром класса UserError. В других случаях сервер вернет &amp;ldquo;500. Internal server error&amp;rdquo;.&lt;/p&gt;
-
-&lt;h4 id=&#34;didcreate&#34;&gt;didCreate&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;didCreate&amp;quot;: function ($item, $user) {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется сразу после создания объекта. Изменения в $item уже ни на что не повлияют. Можно использовать
-этот обработчик для добавления какой-либо бизнес-логики по синхронизации данных или вызова внешнего API.&lt;/p&gt;
-
-&lt;h4 id=&#34;willsave&#34;&gt;willSave&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;willSave&amp;quot;: function ($item, $prevItem, $user):Promise {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется непосредственно перед сохранением объекта, но до проведения валидации. Не выполняется перед
-созданием объекта, для этого используйте обработчик &lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#willcreate&#34;&gt;didCreate&lt;/a&gt;.
-Используйте этот обработчик как возможность модифицировать объект перед сохранением или провести
-дополнительную валидацию и прервать сохранение.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$item&lt;/code&gt; является ссылкой на сохраняемый объект. Все изменения, сделанные в &lt;code&gt;$item&lt;/code&gt;, будут сохранены в БД.&lt;/p&gt;
-
-&lt;p&gt;Если обработчик возвращает Promise, платформа будет ожидать его resolve/reject.&lt;/p&gt;
-
-&lt;p&gt;Если обработчик выбрасывает исключение или происходит reject возвращенного Promise, сохранение объекта
-будет отменено.&lt;/p&gt;
-
-&lt;p&gt;Для отправки сообщения об ошибке исключение (или объект ошибки Promise)
-должно быть экземпляром класса UserError. В других случаях сервер вернет &amp;ldquo;500. Internal server error&amp;rdquo;.&lt;/p&gt;
-
-&lt;h4 id=&#34;didsave&#34;&gt;didSave&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;didSave&amp;quot;: function ($item, $prevItem, $user) {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется сразу после сохранения объекта. Изменения в $item уже ни на что не повлияют. Можно использовать
-этот обработчик для добавления какой-либо бизнес-логики по синхронизации данных или вызова внешнего API.&lt;/p&gt;
-
-&lt;h4 id=&#34;willremove&#34;&gt;willRemove&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;willRemove&amp;quot;: function ($item, $user):Promise {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется непосредственно перед удалением объекта.&lt;/p&gt;
-
-&lt;p&gt;Если обработчик возвращает Promise, платформа будет ожидать его resolve/reject.&lt;/p&gt;
-
-&lt;p&gt;Если обработчик выбрасывает исключение или происходит reject возвращенного Promise, объект не будет удалён.&lt;/p&gt;
-
-&lt;p&gt;Для отправки сообщения об ошибке исключение (или объект ошибки Promise)
-должно быть экземпляром класса UserError. В других случаях сервер вернет &amp;ldquo;500. Internal server error&amp;rdquo;.&lt;/p&gt;
-
-&lt;h4 id=&#34;didremove&#34;&gt;didRemove&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;didRemove&amp;quot;: function ($item, $user) {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется сразу после удаления объекта.&lt;/p&gt;
-
-&lt;h3 id=&#34;storelifecycle&#34;&gt;StoreLifeCycle&lt;/h3&gt;
-
-&lt;h4 id=&#34;didstart&#34;&gt;didStart&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;didStart&amp;quot;: function () {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Выполняется при старте воркера. Можно использовать для подготовки данных или их проверки после рестарта.
-!Внимание! Обработчик выполняется на всех воркерах, для выполнения обработчика один раз следует использовать
-инструменты синхронизации:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;didStart&amp;quot;: function () {
-    sync.once(&amp;quot;myStoreDidStart&amp;quot;, () =&amp;gt; {
-        //Этот код выполнится один раз
-    });
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>HTTP hooks</title>
-      <link>https://getblank.net/doc/httphooks/</link>
-      <pubDate>Sat, 06 Aug 2016 20:10:23 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/httphooks/</guid>
-      <description>
-
-&lt;p&gt;HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации,
-они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно
-или использовать Actions с типом http.&lt;/p&gt;
-
-&lt;p&gt;Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: &lt;a href=&#34;https://getblank.net/doc/store_reference/#http-api&#34;&gt;httpApi&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;структура&#34;&gt;Структура&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;httpHooks&amp;quot;: [HTTPHook {
-    &amp;quot;uri&amp;quot;: &amp;quot;string&amp;quot;
-    &amp;quot;method&amp;quot;: &amp;quot;GET&amp;quot;, &amp;quot;PUT&amp;quot;, &amp;quot;POST&amp;quot;, &amp;quot;PATCH&amp;quot;, &amp;quot;DELETE&amp;quot;, &amp;quot;HEAD&amp;quot;, &amp;quot;OPTIONS&amp;quot;,
-    &amp;quot;script&amp;quot;: function ($request):Response {}
-}]
-
-Response {
-    &amp;quot;type&amp;quot;: &amp;quot;JSON&amp;quot;, &amp;quot;HTML&amp;quot;, &amp;quot;XML&amp;quot;, &amp;quot;file&amp;quot;,
-    &amp;quot;data&amp;quot;: &amp;quot;string&amp;quot;,
-    &amp;quot;rawData&amp;quot;: any,
-    &amp;quot;code&amp;quot;: int, //HTTP status code
-    &amp;quot;header&amp;quot;: {},
-    &amp;quot;fileName&amp;quot;: &amp;quot;string&amp;quot;, // Только для type:file
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;uri&#34;&gt;Uri&lt;/h3&gt;
-
-&lt;p&gt;Полный путь будет сформирован таким образом:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;http[s]://server-address/hooks/storeName/uri
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;В &lt;code&gt;uri&lt;/code&gt; можно использовать параметры, они начинаются с символа &lt;code&gt;:&lt;/code&gt;, например:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;uri&amp;quot;: &amp;quot;/like/:photoId&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Значения параметров будут доступны через свойство &lt;code&gt;params&lt;/code&gt; объекта &lt;code&gt;$request&lt;/code&gt;, переданного аргументом
-в скрипт hook-а.&lt;/p&gt;
-
-&lt;p&gt;Подробнее об объекте &lt;code&gt;$request&lt;/code&gt; читайте в разделе &lt;a href=&#34;https://getblank.net/doc/request/&#34;&gt;Serverside JS API: $request&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

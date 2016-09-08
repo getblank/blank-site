@@ -20,10 +20,10 @@
     <base href="https://getblank.net/">
 
     
-    <title>$request &middot; BLANK cloud platform</title>
+    <title>Actions &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.net/doc/request/">
+    <link rel="canonical" href="https://getblank.net/doc/actions/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
@@ -161,7 +161,7 @@
               <a href="/doc/serverjs/">Описание</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/doc/actions/">Actions</a>
             </li>
           
@@ -169,7 +169,7 @@
               <a href="/doc/db/">$db</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/doc/request/">$request</a>
             </li>
           
@@ -233,59 +233,52 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>$request</h1>
+      <h1>Actions</h1>
       <div class="content">
         
 
-<p>Объект <code>$request</code> передается обработчикам <code>HTTP Hooks</code>, <code>Actions</code> и <code>StoreActions</code> с типом <code>http</code>, либо доступным через <a href="/doc/httprest/">REST API</a>.</p>
+<p>Actions&nbsp;&mdash; скрипты на JavaScript, производящие некоторые действия над объектами, хранящимися в Store.
+Действия доступны через Websocket API и REST API. Формат описания Actions подробно рассмотрен в <a href="/doc/store_reference/#actions">Store Reference</a>.
+Выполнять Actions могут только авторизованные пользователи.</p>
 
-<h3 id="параметры">Параметры</h3>
+<p>Скрипты имееют возможность выполнять запросы к базе данных с помощью модуля <a href="/doc/db/">$db</a>.</p>
 
-<h4 id="body">body</h4>
+<h3 id="доступные-объекты">Доступные объекты</h3>
 
-<p>Содержимое HTTP запроса.</p>
+<h4 id="item">$item</h4>
 
-<h4 id="form">form</h4>
+<p>Объект над которым выполняется Action. Для <a href="/doc/store_reference/#storeactions">StoreActions</a> <code>$item</code> не передаётся.</p>
 
-<p>Содержимое отправленной формы в виде JavaScript Object.</p>
+<h4 id="user">$user</h4>
 
-<h4 id="header">header</h4>
+<p>Пользователь, выполняющий Action.</p>
 
-<p>Содержимое HTTP заголовка в виде JavaScript Object.</p>
+<h4 id="data">$data</h4>
 
-<h4 id="ip">ip</h4>
+<p>Данные формы, заполненной пользователем, в случае, если определены <code>props</code> для Action.</p>
 
-<p>IP адрес инициатора HTTP запроса.</p>
+<h4 id="filter">$filter</h4>
 
-<h4 id="params">params</h4>
+<p>Только для <a href="/doc/store_reference/#storeactions">StoreActions</a>. При вызове из веб-приложения содержит текущие значения фильтров.</p>
 
-<p>Содержит данные параметров, определённых в свойстве <code>uri</code> <code>HTTP Hooks</code>. Пример записи <code>uri</code>:</p>
+<h4 id="request">$request</h4>
 
-<pre><code class="language-JavaScript">{
-    uri: &quot;user/:id&quot;
-}
+<p>Данные HTTP запроса, в случае, если Action.type установлен в <code>http</code>, либо если Action вызывается через <a href="/doc/httprest/">REST API</a>.
+Подробнее об объекте <code>$request</code> читайте в разделе <a href="/doc/request/">Serverside JS API: $request</a></p>
+
+<h3 id="возврат-результата">Возврат результата</h3>
+
+<p>В случае, если скрипт возвращает какие-либо данные, они будут переданы инициатору вызова Action.
+Если скрипт выполнился неудачно, следует &laquo;бросить ошибку&raquo;. Для передачи текста ошибки,
+используется объект <code>UserError</code>.</p>
+
+<pre><code class="language-JavaScript">throw new Error(&quot;some error&quot;); // текст ошибки будет выведен в логе, но не передан инициатору.
+throw new UserError(&quot;some error with text&quot;); // текст ошибки будет выведен в логе, и передан инициатору.
 </code></pre>
 
-<p>Таким образом, идентификатор пользователя (параметр <code>:id</code>) будет доступен через:</p>
+<p>Если скрипт выполняет асинхронные инструкции, следует вернуть <code>Promise</code>.</p>
 
-<pre><code class="language-JavaScript">$request.params[&quot;id&quot;];
-</code></pre>
-
-<h4 id="query">query</h4>
-
-<p>Содержит параметры запроса из URL в виде JavaScript Object.</p>
-
-<p>Например, для запроса <code>http://some.domain/?foo=bar&amp;bar=baz</code>, <code>query</code> будет содержать следующий объект:</p>
-
-<pre><code class="language-JavaScript">{
-    foo: [&quot;bar&quot;],
-    bar: [&quot;baz&quot;]
-}
-</code></pre>
-
-<h4 id="referer">referer</h4>
-
-<p>Содержит значение HTTP заголовка <code>Referer</code></p>
+<p>Для HTTP Actions возвращаемый объект должен соответствовать структуре <code>Response</code> описанной в  <a href="/doc/httphooks/#structure">HTTP Hooks</a>.</p>
 
       </div>
     </div>
