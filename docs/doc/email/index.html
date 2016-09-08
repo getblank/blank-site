@@ -20,10 +20,10 @@
     <base href="https://getblank.net/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>Email &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.net/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.net/doc/email/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
@@ -169,7 +169,7 @@
               <a href="/doc/clickhouse/">Clickhouse</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/doc/email/">Email</a>
             </li>
           
@@ -199,7 +199,7 @@
       
         <ul>
           
-            <li  class="active">
+            <li >
               <a href="/doc/httpauth/">Auth</a>
             </li>
           
@@ -229,50 +229,52 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>Email</h1>
       <div class="content">
         
 
-<p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
+<p>Модуль <code>email</code> предназначен для работы с электронной почтой.</p>
 
-<h3 id="авторизация">Авторизация</h3>
+<h3 id="подключение">Подключение</h3>
 
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
+<pre><code class="language-JavaScript">let email = require(&quot;email&quot;);
+````
 
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
+### send()
+
+Метод `email.send()` отправляет электронные письма. Под капотом используется [Nodemailer](https://nodemailer.com/).
+Параметры подключения к SMTP серверу берутся из Store `emailSettings`.
+
+#### Синтаксис
+
+```JavaScript
+email.send(message[, callback])
 </code></pre>
 
-<p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>key</code>, содержащее apiKey для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
+<h4 id="параметры">Параметры</h4>
 
-<pre><code class="language-JSON">    {
-        &quot;key&quot;: &quot;05547313-0ceb-41ad-965c-dee3c8992c71&quot;,
-        &quot;user&quot;: {...}
-    }
+<p><strong>message</strong></p>
+
+<p>Отправляемое сообщение (JavaScript Object).</p>
+
+<p>Формат сообщения:</p>
+
+<pre><code class="language-JavaScript">{
+    from: &quot;\&quot;Fred Foo �\&quot; &lt;foo@blurdybloop.com&gt;&quot;, // адрес отправителя. В случае, если аргумент отсутствует, будет использоваться адрес из Store &quot;emailSettings&quot;
+    to: &quot;bar@blurdybloop.com, baz@blurdybloop.com&quot;, // адреса получателей
+    subject: &quot;Hello ✔&quot; // Тема письма
+    body: &quot;&quot;, // Текст письма
+    attachments: [] // Формат вложений описан здесь – https://github.com/nodemailer/nodemailer#attachments
+}
 </code></pre>
 
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
+<p><strong>callback</strong></p>
 
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+<p>Функция, которая будет выполнена по завершению отправки (опционально).</p>
 
-<h3 id="регистрация">Регистрация</h3>
+<h4 id="возвращаемые-значения">Возвращаемые значения</h4>
 
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre>
-
-<p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+<p><code>null</code> в случае переданной функции <code>callback</code> или <code>Promise</code>, если функция не передавалась.</p>
 
       </div>
     </div>

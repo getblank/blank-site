@@ -20,10 +20,10 @@
     <base href="https://getblank.net/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>FS &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.net/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.net/doc/fs/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
@@ -177,7 +177,7 @@
               <a href="/doc/files/">Files</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/doc/fs/">FS</a>
             </li>
           
@@ -199,7 +199,7 @@
       
         <ul>
           
-            <li  class="active">
+            <li >
               <a href="/doc/httpauth/">Auth</a>
             </li>
           
@@ -229,51 +229,9 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>FS</h1>
       <div class="content">
         
-
-<p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
-
-<h3 id="авторизация">Авторизация</h3>
-
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
-</code></pre>
-
-<p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>key</code>, содержащее apiKey для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
-
-<pre><code class="language-JSON">    {
-        &quot;key&quot;: &quot;05547313-0ceb-41ad-965c-dee3c8992c71&quot;,
-        &quot;user&quot;: {...}
-    }
-</code></pre>
-
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-
-<h3 id="регистрация">Регистрация</h3>
-
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre>
-
-<p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-
       </div>
     </div>
   </div>

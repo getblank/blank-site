@@ -237,19 +237,19 @@
     
     <item>
       <title>Queue</title>
-      <link>https://getblank.net/doc/js-queue/</link>
+      <link>https://getblank.net/doc/queue/</link>
       <pubDate>Thu, 08 Sep 2016 13:08:20 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-queue/</guid>
+      <guid>https://getblank.net/doc/queue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>I18n</title>
-      <link>https://getblank.net/doc/js-i18n/</link>
+      <link>https://getblank.net/doc/i18n/</link>
       <pubDate>Thu, 08 Sep 2016 13:07:50 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-i18n/</guid>
+      <guid>https://getblank.net/doc/i18n/</guid>
       <description>
 
 &lt;p&gt;Модуль &lt;code&gt;i18n&lt;/code&gt; используется для создания мультиязычных приложений.&lt;/p&gt;
@@ -291,19 +291,19 @@
     
     <item>
       <title>FS</title>
-      <link>https://getblank.net/doc/js-fs/</link>
+      <link>https://getblank.net/doc/fs/</link>
       <pubDate>Thu, 08 Sep 2016 13:07:30 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-fs/</guid>
+      <guid>https://getblank.net/doc/fs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Files</title>
-      <link>https://getblank.net/doc/js-files/</link>
+      <link>https://getblank.net/doc/files/</link>
       <pubDate>Thu, 08 Sep 2016 13:07:20 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-files/</guid>
+      <guid>https://getblank.net/doc/files/</guid>
       <description>
 
 &lt;p&gt;Модуль &lt;code&gt;files&lt;/code&gt; предназначен для работы со встроенным файловым хранилищем.&lt;/p&gt;
@@ -345,10 +345,10 @@
     
     <item>
       <title>Email</title>
-      <link>https://getblank.net/doc/js-email/</link>
+      <link>https://getblank.net/doc/email/</link>
       <pubDate>Thu, 08 Sep 2016 13:06:55 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-email/</guid>
+      <guid>https://getblank.net/doc/email/</guid>
       <description>
 
 &lt;p&gt;Модуль &lt;code&gt;email&lt;/code&gt; предназначен для работы с электронной почтой.&lt;/p&gt;
@@ -398,19 +398,19 @@ email.send(message[, callback])
     
     <item>
       <title>Clickhouse</title>
-      <link>https://getblank.net/doc/js-clickhouse/</link>
+      <link>https://getblank.net/doc/clickhouse/</link>
       <pubDate>Thu, 08 Sep 2016 13:06:50 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-clickhouse/</guid>
+      <guid>https://getblank.net/doc/clickhouse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Serverside JS API</title>
-      <link>https://getblank.net/doc/js-serverjs/</link>
+      <link>https://getblank.net/doc/serverjs/</link>
       <pubDate>Wed, 07 Sep 2016 13:10:48 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/js-serverjs/</guid>
+      <guid>https://getblank.net/doc/serverjs/</guid>
       <description>
 
 &lt;p&gt;Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:&lt;/p&gt;
@@ -439,19 +439,15 @@ email.send(message[, callback])
 &lt;li&gt;files;&lt;/li&gt;
 &lt;li&gt;fs;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://handlebarsjs.com/&#34;&gt;handlebars&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;hash;&lt;/li&gt;
 &lt;li&gt;i18n;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://momentjs.com/&#34;&gt;moment&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;queue;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/request/request&#34;&gt;request&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;serviceRegistry;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/crcn/sift.js&#34;&gt;sift&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;utils/find;&lt;/li&gt;
-&lt;li&gt;wamp;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a name=&#34;embeddedmodules&#34;&gt;&lt;/a&gt;
-*Сторонний модуль, входящий в поставку Blank.&lt;/p&gt;
+Модули, помеченные знаком &lt;code&gt;*&lt;/code&gt;, разработаны сторонними разработчиками, но входят в поставку Blank.&lt;/p&gt;
 </description>
     </item>
     
