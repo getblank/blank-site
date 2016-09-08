@@ -6,64 +6,372 @@ title = "Props reference"
     weight = 60
 +++
 
-### Type
-```javascript
-"type": "string|int|float|bool|date|file|ref|refList|virtual"
+В зависимости от типа, поле может обладать определённым набором свойств из списка:
+
+*   [accept](/doc/props_reference/#accept);
+*   [access](/doc/props_reference/#access);
+*   [actions](/doc/props_reference/#actions);
+*   [addLabel](/doc/props_reference/#addLabel);
+*   [configurable](/doc/props_reference/#configurable);
+*   [default](/doc/props_reference/#default);
+*   [disableCustomInput](/doc/props_reference/#disablecustominput);
+*   [disabled](/doc/props_reference/#disabled);
+*   [disableOrder](/doc/props_reference/#disableorder);
+*   [disableRefSync](/doc/props_reference/#disablerefsync);
+*   [display](/doc/props_reference/#display);
+*   [displayWidth](/doc/props_reference/#displaywidth);
+*   [extraQuery](/doc/props_reference/#extraquery);
+*   [foreignKey](/doc/props_reference/#foreignkey);
+*   [format](/doc/props_reference/#format);
+*   [formGroup](/doc/props_reference/#formgroup);
+*   [formOrder](/doc/props_reference/#formorder);
+*   [formTab](/doc/props_reference/#formtab);
+*   [hidden](/doc/props_reference/#hidden);
+*   [html](/doc/props_reference/#html);
+*   [htmlFile](/doc/props_reference/#htmlfile);
+*   [label](/doc/props_reference/#label);
+*   [labelClassName](/doc/props_reference/#labelclassname);
+*   [load](/doc/props_reference/#load);
+*   [loadComponent](/doc/props_reference/#loadcomponent);
+*   [mask](/doc/props_reference/#mask);
+*   [max](/doc/props_reference/#max);
+*   [maxLength](/doc/props_reference/#maxlength);
+*   [min](/doc/props_reference/#min);
+*   [minLength](/doc/props_reference/#minlength);
+*   [noSanitize](/doc/props_reference/#nosanitize);
+*   [oppositeProp](/doc/props_reference/#oppositeprop);
+*   [options](/doc/props_reference/#options);
+*   [pattern](/doc/props_reference/#pattern);
+*   [placeholder](/doc/props_reference/#placeholder);
+*   [populateIn](/doc/props_reference/#populateIn);
+*   [props](/doc/props_reference/#props);
+*   [readOnly](/doc/props_reference/#readonly);
+*   [required](/doc/props_reference/#required);
+*   [searchBy](/doc/props_reference/#searchby);
+*   [selectedTemplate](/doc/props_reference/#selectedtemplate);
+*   [sortable](/doc/props_reference/#sortable);
+*   [sortBy](/doc/props_reference/#sortby);
+*   [store](/doc/props_reference/#store);
+*   [style](/doc/props_reference/#style);
+*   [tableColumns](/doc/props_reference/#tablecolumns);
+*   [tableLink](/doc/props_reference/#tablelink);
+*   [tooltip](/doc/props_reference/#tooltip);
+*   [type](/doc/props_reference/#type);
+*   [utc](/doc/props_reference/#utc);
+*   [widgetId](/doc/props_reference/#widgetid);
+*   [widgets](/doc/props_reference/#widgets);
+*   [сlassName](/doc/props_reference/#сlassname).
+
+
+### accept
+Только для `type:file`. Позволяет задать маску принимаемых для загрузки файлов.
+В настоящее время не реализовано.
+
+### access
+Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству [access](/doc/store_reference/#access) Store.
+
+### actions
+Только для `type:action`. Массив объектов с описанием Actions, определённых в текущем Store.
+Используется для размещения кнопок запуска Actions на форме в интерфейсе клиента.
+Может переопределять некоторые свойства конкретных отображаемых Action.
+
+```JavaScript
+actions: [
+     // Здесь мы указываем, что нужно поместить кнопку вызова Action copy
+    { _id: "copy" },
+
+    // Здесь мы дополнительно переопределяем свойство label
+    { _id: "move", label: "Перенести" },
+]
 ```
-Тип данных свойства. Базовые типы – string, int, float, bool, date – соответствуют таковым в JavaScript.
+
+### addLabel
+Только для `type:objectList`. Строка текстом для кнопки добавления нового элемента в список.
+При рендеринге, строка обрабатывается через handlebars.
+
+### configurable
+Внутреннее свойство для Store по-умолчанию (bool). Определяет возможность переопределения свойств поля в пользовательской конфигурации.
+
+### default
+Определяет значение поля по-умолчению. Будет установлено при создании объекта, в случае, если значение не определено в создаваемом объекте.
+
+### disableCustomInput
+
+
+### disabled
+Строка, описывающая условие недоступности редактирования поля текущего элемента в пользовательском интерфейсе.
+В условии доступны объекты `$item` (текущий объект) и `$user` (пользователь, работающий с объектом).
+
+### disableOrder
+Флаг, определяющий запрет сортировки по полю при типе отображения Store `table` (bool).
+
+### disableRefSync
+Флаг, указывающий, что не требуется проводить обновление связи данного поля.
+Подробнее о механизме каскадного обновления связей читайте в разделе [References sync](/doc/ref_sync/)
+
+### display
+Тип отображения поля в пользовательском интерфейсе (string). Возможные варианты:
+
+*   `autocomplete`&nbsp;&mdash; только для `type:string`. Текстовое поле ввода с автодополнением.
+Варианты определяются в свойстве [options](/doc/props_reference/#options);
+
+*   `checkbox`&nbsp;&mdash; только для `type:bool`. Поле с флажком в виде галочки;
+
+*   `checkList`&nbsp;&mdash; поле выбора нескольких вариантов, определённых в свойстве [options](/doc/props_reference/#options). Отображается в виде списка флажков;
+
+*   `code`&nbsp;&mdash; отображение в виде нередактируемого текста с сохранением исходного форматирования и моноширинным шрифтом;
+
+*   `codeEditor`&nbsp;&mdash; только для `type:string`. Редактор кода;
+
+*   `colorPicker`&nbsp;&mdash; только для `type:string` поле выбора цвета из описанных в [options](/doc/props_reference/#options);
+
+*   `commentsEditor`&nbsp;&mdash; только для `type:comments`. Поле для ввода комментариев;
+
+*   `dataTable`&nbsp;&mdash; не реализовано;
+
+*   `datePicker`&nbsp;&mdash; только для `type:date`. Поле ввода даты;
+
+*   `dateTimePicker`&nbsp;&mdash; только для `type:date`. Поле ввода даты и времени (не реализовано);
+
+*   `filePicker`&nbsp;&mdash; только для `type:file`. Поле выбора и закачки файлов;
+
+*   `floatInput`&nbsp;&mdash; только для `type:int` и `type:float`. Текстовое поле ввода с возможность ввода только числовых вещественных значений;
+
+*   `headerInput`&nbsp;&mdash; ;
+
+*   `html`&nbsp;&mdash; отображение поля по переданному в свойстве [html](/doc/props_reference/#html) шаблону;
+
+*   `link`&nbsp;&mdash; отображение ссылки;
+
+*   `masked`&nbsp;&mdash; только для `type:string`. Определение маски ввода строки;
+
+*   `none`&nbsp;&mdash; запрет отображения поля в интерфейсе;
+
+*   `numberInput`&nbsp;&mdash;  только для `type:int` и `type:float`. Текстовое поле ввода с возможность ввода только числовых целочисленных значений;
+
+*   `password`&nbsp;&mdash; только для `type:password` и `type:string`. Поле ввода текста, при этом вводимые символы скрыты за звездочками;
+
+*   `react`&nbsp;&mdash; отображение поля с помощью кастомного компонента ReactJS, определённого в свойстве [loadComponent](/doc/props_reference/#loadcomponent);
+
+*   `searchBox`&nbsp;&mdash; только для `type:ref` и `type:refList`. Поле поиска и ввода объектов из Store,
+определённой в свойстве [store](/doc/props_reference/#store);
+
+*   `select`&nbsp;&mdash; поле выбора одного из нескольких вариантов, определённых в свойстве [options](/doc/props_reference/#options);
+
+*   `text`&nbsp;&mdash; отображение в виде нередактируемого текста;
+
+*   `textArea`&nbsp;&mdash;  только для `type:string`. Текстовое поле ввода с возможностью ввода нескольких строк текста;
+
+*   `textInput`&nbsp;&mdash;  только для `type:string`. Текстовое поле ввода;
+
+*   `timePicker`&nbsp;&mdash; только для `type:date`. Поле ввода времени (не реализовано).
+
+### displayWidth
+
+
+### extraQuery
+
+
+### foreignKey
+
+
+### format
+
+
+### formGroup
+
+
+### formOrder
+
+
+### formTab
+
+
+### hidden
+
+
+### html
+
+
+### htmlFile
+
+
+### label
+
+
+### labelClassName
+
+
+### load
+
+
+### loadComponent
+
+
+### mask
+
+
+### max
+
+
+### maxLength
+
+
+### min
+
+
+### minLength
+
+
+### noSanitize
+
+
+### oppositeProp
+
+
+### options
+
+
+### pattern
+
+
+### placeholder
+
+
+### populateIn
+
+
+### props
+
+
+### readOnly
+
+
+### required
+
+
+### searchBy
+
+
+### selectedTemplate
+
+
+### sortable
+
+
+### sortBy
+
+
+### store
+
+
+### style
+
+
+### tableColumns
+
+
+### tableLink
+
+
+### tooltip
+
+
+### Type
+
+```javascript
+type: "string|int|float|bool|date|file|ref|refList|virtual"
+```
+
+Тип данных свойства.
+
+#### bool
+Значения типа `true` или `false`.
 
 #### date
-При работе с этим типом через API данные преобразуются в строку в формате [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601),
-например – `"2016-08-11T06:36:47.134Z"`. Запись производится в таком же формате.
+Соответствует JavaScript Date. При сериализации в JSON преобразуются в строку в формате [ISO&nbsp;8601](https://en.wikipedia.org/wiki/ISO_8601),
+например – `"2016-08-11T06:36:47.134Z"`.
 
 #### file
 Файловое хранилище в Blank работает отдельно, в MongoDB сохраняются только идентификаторы файлов.
 
+#### float
+Вещественный тип.
+
+#### int
+Целочисленный тип.
+
 #### object
+
 ```javascript
-"type": "object",
-"props": {
+type: "object",
+props: {
     //Свойства вложенного объекта
 },
 ```
+
 Тип для создания вложенной структуры данных. Поддерживается только один уровень вложенности объектов.
 
 #### objectList
+
 ```javascript
-"type": "objectList",
-"props": {
+type: "objectList",
+props: {
     //Свойства вложенных объектов
 },
 ```
-Тип для создания вложенных массивов данных. Поддерживается только один уровень вложенности.
+
+Тип для создания массивов вложенных объектов данных. Поддерживается только один уровень вложенности.
 
 #### ref
+
 ```javascript
-"type": "ref",
-"store": "refStoreName",
+type: "ref",
+store: "refStoreName",
 ```
+
 Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.
 
 В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе [References sync](/doc/ref_sync/)
 
 #### refList
+
 ```javascript
-"type": "refList",
-"store": "refStoreName",
+type: "refList",
+store: "refStoreName",
 ```
+
 Массив ссылок на другие объекты, используется для создания связей 1-N, M-N. Значение записывается в виде
-массива идентификторов:
+массива строковых идентификаторов:
+
 ```javascript
 ["e5ba2446-81e1-4b2d-b901-ca9eabe9817e", "533ddfc5-5d3f-41f7-8557-872d4bfd2735"]
 ```
+
 В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе [References sync](/doc/ref_sync/)
 
+#### string
+Строка.
+
 #### virtual
-Виртуальные свойства, данные этих свойств являются вычислимыми и не сохраняются в БД. Для вычисления значения
-используется функция load:
+
+Виртуальные свойства, данные этих свойств являются вычисляемыми и не сохраняются в БД. Для вычисления значения
+используется функция load, получающая на вход текущий объект и пользователя, запрашивающего данные:
+
 ```javascript
-"type": "virtual",
-"load": function ($item, $user) {
+type: "virtual",
+load: function ($item, $user) {
     return $item.prop1 + $item.prop2;
 },
 ```
+
+### utc
+
+
+### widgetId
+
+
+### widgets
+
+
+### сlassName
