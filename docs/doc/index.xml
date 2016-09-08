@@ -144,7 +144,8 @@
 },
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;defaultLocale&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&#34;defaultLocale&#34;&gt;
+&lt;strong&gt;defaultLocale&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Локаль по-умолчанию (string).&lt;/p&gt;
 
@@ -264,27 +265,27 @@
 
 &lt;h4 id=&#34;синтаксис&#34;&gt;Синтаксис&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;i18n.get(storeName, _id[, callback]);
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;i18n.get(path[, locale[, params...]]);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;параметры&#34;&gt;Параметры&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;storeName&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;path&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Store в которой хранится файл.&lt;/p&gt;
+&lt;p&gt;Адрес фразы (string) в формате &lt;code&gt;storeName.param&lt;/code&gt;. Фразы в Store определяются в параметре &lt;a href=&#34;doc/store_reference/#i18n&#34;&gt;i18n&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;locale&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Идентификатор файла в Store.&lt;/p&gt;
+&lt;p&gt;Необходимая локаль (string, опционально). Если параметр опущен, будет использована &lt;a href=&#34;https://getblank.net/doc/settings/#defaultLocale&#34;&gt;системная локаль по-умолчанию&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;params&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Функция, которая будет выполнена по завершению отправки (опционально).&lt;/p&gt;
+&lt;p&gt;Параметры, которыми необходимо заменить плейсхолдеры &lt;code&gt;%s&lt;/code&gt; в искомой строке. Если параметры отсутствуют,
+замена плейсхолдеров производиться не будет.&lt;/p&gt;
 
 &lt;h4 id=&#34;возвращаемые-значения&#34;&gt;Возвращаемые значения&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-Результатом будет содержимое файла в формате &lt;a href=&#34;https://nodejs.org/api/buffer.html&#34;&gt;Node Buffer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Искомая строка с заменёнными плейсхолдерами, либо пустая строка, если по переданному адресу ничего не найдено.&lt;/p&gt;
 </description>
     </item>
     

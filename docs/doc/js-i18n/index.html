@@ -182,7 +182,7 @@
             </li>
           
             <li  class="active">
-              <a href="/doc/js-i18n/">I18n</a>
+              <a href="/doc/i18n/">I18n</a>
             </li>
           
             <li >
@@ -246,27 +246,27 @@
 
 <h4 id="синтаксис">Синтаксис</h4>
 
-<pre><code class="language-JavaScript">i18n.get(storeName, _id[, callback]);
+<pre><code class="language-JavaScript">i18n.get(path[, locale[, params...]]);
 </code></pre>
 
 <h4 id="параметры">Параметры</h4>
 
-<p><strong>storeName</strong></p>
+<p><strong>path</strong></p>
 
-<p>Store в которой хранится файл.</p>
+<p>Адрес фразы (string) в формате <code>storeName.param</code>. Фразы в Store определяются в параметре <a href="doc/store_reference/#i18n">i18n</a>.</p>
 
-<p><strong>_id</strong></p>
+<p><strong>locale</strong></p>
 
-<p>Идентификатор файла в Store.</p>
+<p>Необходимая локаль (string, опционально). Если параметр опущен, будет использована <a href="/doc/settings/#defaultLocale">системная локаль по-умолчанию</a>.</p>
 
-<p><strong>callback</strong></p>
+<p><strong>params</strong></p>
 
-<p>Функция, которая будет выполнена по завершению отправки (опционально).</p>
+<p>Параметры, которыми необходимо заменить плейсхолдеры <code>%s</code> в искомой строке. Если параметры отсутствуют,
+замена плейсхолдеров производиться не будет.</p>
 
 <h4 id="возвращаемые-значения">Возвращаемые значения</h4>
 
-<p><code>null</code> в случае переданной функции <code>callback</code> или <code>Promise</code>, если функция не передавалась.
-Результатом будет содержимое файла в формате <a href="https://nodejs.org/api/buffer.html">Node Buffer</a></p>
+<p>Искомая строка с заменёнными плейсхолдерами, либо пустая строка, если по переданному адресу ничего не найдено.</p>
 
       </div>
     </div>
