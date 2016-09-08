@@ -20,10 +20,10 @@
     <base href="https://getblank.net/">
 
     
-    <title>HTTP hooks &middot; BLANK cloud platform</title>
+    <title>Clickhouse &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.net/doc/httphooks/">
+    <link rel="canonical" href="https://getblank.net/doc/js-clickhouse/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
@@ -135,7 +135,7 @@
               <a href="/doc/filters/">Filters</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/doc/httphooks/">HTTP hooks</a>
             </li>
           
@@ -165,7 +165,7 @@
               <a href="/doc/js-db/">$db</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/doc/js-clickhouse/">Clickhouse</a>
             </li>
           
@@ -229,51 +229,9 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>HTTP hooks</h1>
+      <h1>Clickhouse</h1>
       <div class="content">
         
-
-<p>HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации,
-они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно
-или использовать Actions с типом http.</p>
-
-<p>Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: <a href="/doc/store_reference/#http-api">httpApi</a></p>
-
-<h3 id="структура">Структура</h3>
-
-<pre><code class="language-javascript">&quot;httpHooks&quot;: [HTTPHook {
-    &quot;uri&quot;: &quot;string&quot;
-    &quot;method&quot;: &quot;GET&quot;, &quot;PUT&quot;, &quot;POST&quot;, &quot;PATCH&quot;, &quot;DELETE&quot;, &quot;HEAD&quot;, &quot;OPTIONS&quot;,
-    &quot;script&quot;: function ($request):Response {}
-}]
-
-Response {
-    &quot;type&quot;: &quot;JSON&quot;, &quot;HTML&quot;, &quot;XML&quot;, &quot;file&quot;,
-    &quot;data&quot;: &quot;string&quot;,
-    &quot;rawData&quot;: any,
-    &quot;code&quot;: int, //HTTP status code
-    &quot;header&quot;: {},
-    &quot;fileName&quot;: &quot;string&quot;, // Только для type:file
-}
-</code></pre>
-
-<h3 id="uri">Uri</h3>
-
-<p>Полный путь будет сформирован таким образом:</p>
-
-<pre><code class="language-javascript">http[s]://server-address/hooks/storeName/uri
-</code></pre>
-
-<p>В <code>uri</code> можно использовать параметры, они начинаются с символа <code>:</code>, например:</p>
-
-<pre><code>&quot;uri&quot;: &quot;/like/:photoId&quot;
-</code></pre>
-
-<p>Значения параметров будут доступны через свойство <code>params</code> объекта <code>$request</code>, переданного аргументом
-в скрипт hook-а.</p>
-
-<p>Подробнее об объекте <code>$request</code> читайте в разделе <a href="/doc/request/">Serverside JS API: $request</a></p>
-
       </div>
     </div>
   </div>

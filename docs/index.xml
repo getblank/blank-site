@@ -6,15 +6,410 @@
     <description>Recent content on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Sep 2016 13:10:48 +0500</lastBuildDate>
+    <lastBuildDate>Thu, 08 Sep 2016 15:11:25 +0500</lastBuildDate>
     <atom:link href="https://getblank.net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Конфигурация</title>
+      <link>https://getblank.net/doc/settings/</link>
+      <pubDate>Thu, 08 Sep 2016 15:11:25 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/settings/</guid>
+      <description>
+
+&lt;p&gt;Настройка Blank производится в нескольких Store типа &lt;code&gt;map&lt;/code&gt;, описанных в формате &lt;a href=&#34;https://getblank.net/doc/schema/&#34;&gt;Blank Schema&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/settings/#server&#34;&gt;_serverSettings&lt;/a&gt;&amp;nbsp;&amp;mdash; параметры сервера;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/settings/#common&#34;&gt;_commonSettings&lt;/a&gt;&amp;nbsp;&amp;mdash; параметры, которые являются общими как для сервера, так и для клиентского приложения;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/settings/#_nav&#34;&gt;_nav&lt;/a&gt;&amp;nbsp;&amp;mdash; описание навигации клиентского приложения;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;server&#34;&gt;_serverSettings&lt;/h3&gt;
+
+&lt;p&gt;Используется для переопределения параметров работы серверных приложений.&lt;/p&gt;
+
+&lt;h4 id=&#34;конфигурация-по-умолчанию&#34;&gt;Конфигурация по-умолчанию&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;_serverSettings: {
+        type: &amp;quot;map&amp;quot;,
+        entries: {
+            registerTokenExpiration: &amp;quot;0:60&amp;quot;,
+            passwordResetTokenExpiration: &amp;quot;0:10&amp;quot;,
+            facebookClientSecret: undefined,
+        },
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;registerTokenExpiration&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Время, отведённое на активацию зарегистрированных пользователей. Задается в формате &lt;code&gt;HH:MM&lt;/code&gt;, где &lt;code&gt;HH&lt;/code&gt;&amp;nbsp;&amp;mdash; часы,
+а &lt;code&gt;MM&lt;/code&gt;&amp;nbsp;&amp;mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;passwordResetTokenExpiration&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Время жизни токена для сброса пароля. Задается в формате &lt;code&gt;HH:MM&lt;/code&gt;, где &lt;code&gt;HH&lt;/code&gt;&amp;nbsp;&amp;mdash; часы,
+а &lt;code&gt;MM&lt;/code&gt;&amp;nbsp;&amp;mdash; минуты. По истечении указанного времени, токен обнуляется.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;facebookClientSecret&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Секретный ключ для &lt;a href=&#34;https://getblank.net/doc/facebook/&#34;&gt;интеграции с Facebook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;common&#34;&gt;_commonSettings&lt;/h3&gt;
+
+&lt;p&gt;Используется для переопределения параметров, которые являются общими как для сервера, так и для клиентского приложения.&lt;/p&gt;
+
+&lt;h4 id=&#34;конфигурация-по-умолчанию-1&#34;&gt;Конфигурация по-умолчанию&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;_commonSettings: {
+        type: &amp;quot;map&amp;quot;,
+        entries: {
+            title: &amp;quot;Default title&amp;quot;,
+            titleHref: undefined,
+            titleIcon: undefined,
+            locales: [&amp;quot;en&amp;quot;, &amp;quot;ru&amp;quot;],
+            defaultLocale: &amp;quot;en&amp;quot;,
+            meta: [
+                { name: &amp;quot;description&amp;quot;, content: &amp;quot;Application description&amp;quot; },
+                { name: &amp;quot;author&amp;quot;, content: &amp;quot;Application author&amp;quot; },
+            ],
+            links: [
+                { rel: &amp;quot;canonical&amp;quot;, href: &amp;quot;http://mysite.com/example&amp;quot; },
+            ],
+            scripts: [],
+            lessVars: {},
+            facebookClientId: undefined,
+            signInProps: {
+                login: {
+                    type: &amp;quot;string&amp;quot;,
+                    display: &amp;quot;textInput&amp;quot;,
+                    label: &amp;quot;{{$i18n.$settings.common.email}}&amp;quot;,
+                    required: true,
+                    formOrder: 1,
+                },
+                password: {
+                    type: &amp;quot;string&amp;quot;,
+                    display: &amp;quot;password&amp;quot;,
+                    label: &amp;quot;{{$i18n.$settings.common.password}}&amp;quot;,
+                    required: true,
+                    formOrder: 2,
+                },
+            },
+            userActivation: false,
+            resetPasswordDisabled: false,
+            signUpDisabled: false,
+            resetPasswordProps: {
+                password: {
+                    type: &amp;quot;string&amp;quot;,
+                    display: &amp;quot;password&amp;quot;,
+                    label: &amp;quot;{{$i18n.$settings.resetPassword.newPassword}}&amp;quot;,
+                    required: true,
+                    formOrder: 2,
+                },
+            },
+            resetPasswordRequestProps: {
+                email: {
+                    type: &amp;quot;string&amp;quot;,
+                    display: &amp;quot;textInput&amp;quot;,
+                    label: &amp;quot;{{$i18n.$settings.common.email}}&amp;quot;,
+                    required: true,
+                    pattern: { expression: &amp;quot;^\\S+@\\S+\\.\\S+$&amp;quot;, message: &amp;quot;{{$i18n.$settings.signUp.invalidEmail}}&amp;quot; },
+                },
+            },
+            signUpProps: {
+                email: {
+                    type: &amp;quot;string&amp;quot;,
+                    display: &amp;quot;newUsernameInput&amp;quot;,
+                    pattern: { expression: &amp;quot;^\\S+@\\S+\\.\\S+$&amp;quot;, message: &amp;quot;{{$i18n.$settings.signUp.invalidEmail}}&amp;quot; },
+                    label: &amp;quot;{{$i18n.$settings.common.email}}&amp;quot;,
+                    required: true,
+                    formOrder: 1,
+                },
+                password: {
+                    type: &amp;quot;string&amp;quot;,
+                    display: &amp;quot;password&amp;quot;,
+                    label: &amp;quot;{{$i18n.$settings.common.password}}&amp;quot;,
+                    required: true,
+                    formOrder: 2,
+                },
+                eula: {
+                    type: &amp;quot;bool&amp;quot;,
+                    display: &amp;quot;checkbox&amp;quot;,
+                    label: &amp;quot;{{{$i18n.$settings.signUp.eulaCheck}}}&amp;quot;,
+                    required: true,
+                    formOrder: 4,
+                },
+            },
+        },
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;defaultLocale&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Локаль по-умолчанию (string).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;facebookClientId&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Идентификатор приложения для &lt;a href=&#34;https://getblank.net/doc/facebook/&#34;&gt;интеграции с Facebook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;lessVars&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопредяет CSS параметры клиентского приложения.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;links&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Определения дополнительные &lt;code&gt;link&lt;/code&gt; тэги в разделе &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; клиентского приложения.
+Например, можно туда поместить дополнительные css файлы, необходимые для работы приложения.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;locales&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределеяет набор локалей приложения (array of string).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;meta&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Определяет дополнительные &lt;code&gt;meta&lt;/code&gt; тэги в разделе &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; клиентского приложения.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;resetPasswordDisabled&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Запрет сброса пароля (bool). Если установлен в &lt;code&gt;true&lt;/code&gt;, то в клиентском приложении не будет показан диалог сброса пароля.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;resetPasswordProps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределяет набор и характеристики диалога сброса пароля.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;resetPasswordRequestProps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределяет набор и характеристики диалога запроса сброса пароля.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;scripts&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Определяет дополнительные &lt;code&gt;script&lt;/code&gt; тэги в разделе &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; клиентского приложения.
+Например, можно использовать для загрузки дополнительных JavaScript файлов, необходимых для работы приложения.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;signInProps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределяет набор и характеристики диалога входа в систему.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;signUpDisabled&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Запрет самостоятельной регистрации пользователей (bool). Если установлен в &lt;code&gt;true&lt;/code&gt;, то в клиентском приложении не будет показан диалог регистрации.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;signUpProps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределяет набор и характеристики диалога самостоятельной регистрации пользователей.
+Дополнительные поля будут переданы в создаваемый профиль пользователя.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределяет содержимое тэга &lt;code&gt;title&lt;/code&gt; и заголовок клиентского приложения.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;titleHref&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Переопределяет ссылку в заголовке клиентского приложения.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;titleIcon&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Определяет изображение в заголовке клиентского приложения (ссылка на файл, может быть относительной, например &amp;ldquo;favicon.png&amp;rdquo;).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;userActivation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Включает необходимость активации учетных записей пользователей. Если установлен в &lt;code&gt;true&lt;/code&gt;, только что зарегистрированному пользователю
+на адрес электронной почты будет отправлено письмо со ссылкой на страницу активации учетной записи.&lt;/p&gt;
+
+&lt;h3 id=&#34;_nav&#34;&gt;_nav&lt;/h3&gt;
+
+&lt;p&gt;Используется для определения структуры навигации клиентского приложения.&lt;/p&gt;
+
+&lt;h4 id=&#34;конфигурация-по-умолчанию-2&#34;&gt;Конфигурация по-умолчанию&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;_nav: {
+    type: &amp;quot;map&amp;quot;,
+    entries: {
+        config&amp;quot;: {
+            label: &amp;quot;Administration&amp;quot;,
+        },
+    },
+},
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Queue</title>
+      <link>https://getblank.net/doc/js-queue/</link>
+      <pubDate>Thu, 08 Sep 2016 13:08:20 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/js-queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I18n</title>
+      <link>https://getblank.net/doc/js-i18n/</link>
+      <pubDate>Thu, 08 Sep 2016 13:07:50 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/js-i18n/</guid>
+      <description>
+
+&lt;p&gt;Модуль &lt;code&gt;i18n&lt;/code&gt; используется для создания мультиязычных приложений.&lt;/p&gt;
+
+&lt;h3 id=&#34;use&#34;&gt;Подключение&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;let i18n = require(&amp;quot;i18n&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;get&#34;&gt;get()&lt;/h3&gt;
+
+&lt;p&gt;Метод &lt;code&gt;i18n.get()&lt;/code&gt; возвращает фразу для необходимой локали.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;i18n.get(storeName, _id[, callback]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;storeName&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Store в которой хранится файл.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Идентификатор файла в Store.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению отправки (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+Результатом будет содержимое файла в формате &lt;a href=&#34;https://nodejs.org/api/buffer.html&#34;&gt;Node Buffer&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FS</title>
+      <link>https://getblank.net/doc/js-fs/</link>
+      <pubDate>Thu, 08 Sep 2016 13:07:30 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/js-fs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Files</title>
+      <link>https://getblank.net/doc/js-files/</link>
+      <pubDate>Thu, 08 Sep 2016 13:07:20 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/js-files/</guid>
+      <description>
+
+&lt;p&gt;Модуль &lt;code&gt;files&lt;/code&gt; предназначен для работы со встроенным файловым хранилищем.&lt;/p&gt;
+
+&lt;h3 id=&#34;use&#34;&gt;Подключение&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;let files = require(&amp;quot;files&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;get&#34;&gt;get()&lt;/h3&gt;
+
+&lt;p&gt;Метод &lt;code&gt;files.get()&lt;/code&gt; возвращает файл из хранилища.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;files.get(storeName, _id[, callback]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;storeName&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Store в которой хранится файл.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Идентификатор файла в Store.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению отправки (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+Результатом будет содержимое файла в формате &lt;a href=&#34;https://nodejs.org/api/buffer.html&#34;&gt;Node Buffer&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Email</title>
+      <link>https://getblank.net/doc/js-email/</link>
+      <pubDate>Thu, 08 Sep 2016 13:06:55 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/js-email/</guid>
+      <description>
+
+&lt;p&gt;Модуль &lt;code&gt;email&lt;/code&gt; предназначен для работы с электронной почтой.&lt;/p&gt;
+
+&lt;h3 id=&#34;подключение&#34;&gt;Подключение&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;let email = require(&amp;quot;email&amp;quot;);
+````
+
+### send()
+
+Метод `email.send()` отправляет электронные письма. Под капотом используется [Nodemailer](https://nodemailer.com/).
+Параметры подключения к SMTP серверу берутся из Store `emailSettings`.
+
+#### Синтаксис
+
+```JavaScript
+email.send(message[, callback])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Отправляемое сообщение (JavaScript Object).&lt;/p&gt;
+
+&lt;p&gt;Формат сообщения:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    from: &amp;quot;\&amp;quot;Fred Foo �\&amp;quot; &amp;lt;foo@blurdybloop.com&amp;gt;&amp;quot;, // адрес отправителя. В случае, если аргумент отсутствует, будет использоваться адрес из Store &amp;quot;emailSettings&amp;quot;
+    to: &amp;quot;bar@blurdybloop.com, baz@blurdybloop.com&amp;quot;, // адреса получателей
+    subject: &amp;quot;Hello ✔&amp;quot; // Тема письма
+    body: &amp;quot;&amp;quot;, // Текст письма
+    attachments: [] // Формат вложений описан здесь – https://github.com/nodemailer/nodemailer#attachments
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению отправки (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Clickhouse</title>
+      <link>https://getblank.net/doc/js-clickhouse/</link>
+      <pubDate>Thu, 08 Sep 2016 13:06:50 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/js-clickhouse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Serverside JS API</title>
-      <link>https://getblank.net/doc/serverjs/</link>
+      <link>https://getblank.net/doc/js-serverjs/</link>
       <pubDate>Wed, 07 Sep 2016 13:10:48 +0500</pubDate>
       
-      <guid>https://getblank.net/doc/serverjs/</guid>
+      <guid>https://getblank.net/doc/js-serverjs/</guid>
       <description>
 
 &lt;p&gt;Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:&lt;/p&gt;
@@ -193,15 +588,6 @@
       <pubDate>Tue, 09 Aug 2016 00:15:34 +0500</pubDate>
       
       <guid>https://getblank.net/doc/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>$request</title>
-      <link>https://getblank.net/doc/request/</link>
-      <pubDate>Mon, 08 Aug 2016 17:01:50 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/request/</guid>
       <description></description>
     </item>
     
@@ -396,1221 +782,6 @@
     });
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>HTTP hooks</title>
-      <link>https://getblank.net/doc/httphooks/</link>
-      <pubDate>Sat, 06 Aug 2016 20:10:23 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/httphooks/</guid>
-      <description>
-
-&lt;p&gt;HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации,
-они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно
-или использовать Actions с типом http.&lt;/p&gt;
-
-&lt;p&gt;Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: &lt;a href=&#34;https://getblank.net/doc/store_reference/#http-api&#34;&gt;httpApi&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;структура&#34;&gt;Структура&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;httpHooks&amp;quot;: [HTTPHook {
-    &amp;quot;uri&amp;quot;: &amp;quot;string&amp;quot;
-    &amp;quot;method&amp;quot;: &amp;quot;GET&amp;quot;, &amp;quot;PUT&amp;quot;, &amp;quot;POST&amp;quot;, &amp;quot;PATCH&amp;quot;, &amp;quot;DELETE&amp;quot;, &amp;quot;HEAD&amp;quot;, &amp;quot;OPTIONS&amp;quot;,
-    &amp;quot;script&amp;quot;: function ($request):Response {}
-}]
-
-Response {
-    &amp;quot;type&amp;quot;: &amp;quot;JSON&amp;quot;, &amp;quot;HTML&amp;quot;, &amp;quot;XML&amp;quot;, &amp;quot;file&amp;quot;,
-    &amp;quot;data&amp;quot;: &amp;quot;string&amp;quot;,
-    &amp;quot;rawData&amp;quot;: any,
-    &amp;quot;code&amp;quot;: int, //HTTP status code
-    &amp;quot;header&amp;quot;: {},
-    &amp;quot;fileName&amp;quot;: &amp;quot;string&amp;quot;, // Только для type:file
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;uri&#34;&gt;Uri&lt;/h3&gt;
-
-&lt;p&gt;Полный путь будет сформирован таким образом:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;http[s]://server-address/hooks/storeName/uri
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;В &lt;code&gt;uri&lt;/code&gt; можно использовать параметры, они начинаются с символа &lt;code&gt;:&lt;/code&gt;, например:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;uri&amp;quot;: &amp;quot;/like/:photoId&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Значения параметров будут доступны через свойство &lt;code&gt;params&lt;/code&gt; объекта &lt;code&gt;$request&lt;/code&gt;, переданного аргументом
-в скрипт hook-а.&lt;/p&gt;
-
-&lt;p&gt;Подробнее об объекте &lt;code&gt;$request&lt;/code&gt; читайте в разделе &lt;a href=&#34;https://getblank.net/doc/request/&#34;&gt;Serverside JS API: $request&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Filters</title>
-      <link>https://getblank.net/doc/filters/</link>
-      <pubDate>Sat, 06 Aug 2016 19:38:05 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/filters/</guid>
-      <description>
-
-&lt;p&gt;Фильтры в Blank предназначены для определения заранее заданных критериев поиска объектов в Store.
-В основном фильтры используются в веб-приложении, поэтому кроме запроса к БД в фильтрах настраивается
-его внешний вид. Однако, при запросах Find через API также можно использовать названия фильтров и передавать
-их значения.&lt;/p&gt;
-
-&lt;p&gt;Пример для создания фильтра по владельцу объектов:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;ownerFilter&amp;quot;: {
-    //Вид фильтра в интерфейсе веб-приложения
-    &amp;quot;label&amp;quot;: &amp;quot;Владелец&amp;quot;,
-    &amp;quot;display&amp;quot;: &amp;quot;searchBox&amp;quot;,
-    &amp;quot;store&amp;quot;: &amp;quot;users&amp;quot;,
-    &amp;quot;searchBy&amp;quot;: [&amp;quot;name&amp;quot;],
-    &amp;quot;multi&amp;quot;: true,
-    &amp;quot;filterBy&amp;quot;: &amp;quot;_id&amp;quot;,
-    //Запрос к БД
-    &amp;quot;query&amp;quot;: { &amp;quot;_ownerId&amp;quot;: { &amp;quot;$in&amp;quot;: &amp;quot;$value&amp;quot; } },
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Если используются несколько фильтров, их запросы объединяются через оператор $and:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;query&amp;quot;: { &amp;quot;$and&amp;quot;: [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;query-funсtion-value-mongoquery&#34;&gt;query – funсtion ($value) {}:MongoQuery&lt;/h3&gt;
-
-&lt;p&gt;Вариант установки query через функцию&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;query&amp;quot;: ($value) =&amp;gt; {
-    if ($value) {
-        return { orderState: { $in: $value } };
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;query-mongoquery&#34;&gt;query – MongoQuery {}&lt;/h3&gt;
-
-&lt;p&gt;Вариант настройки непосредственно через MongoQuery, в котором в значении одного или нескольких
-условий указано &lt;code&gt;&amp;quot;$value&amp;quot;&lt;/code&gt;. Пример:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;query&amp;quot;: { &amp;quot;_ownerId&amp;quot;: { &amp;quot;$in&amp;quot;: &amp;quot;$value&amp;quot; } },
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Blank заменит все вхождения &lt;code&gt;&amp;quot;$value&amp;quot;&lt;/code&gt; на значения фильтра.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>$db</title>
-      <link>https://getblank.net/doc/db/</link>
-      <pubDate>Sat, 06 Aug 2016 17:57:48 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/db/</guid>
-      <description>
-
-&lt;p&gt;Модуль &lt;code&gt;$db&lt;/code&gt; предназначен для манипуляции данными в хранилищах. Доступен везде, кроме обработчиков событий жизненного цикла объектов в хранилище.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#34;params&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;параметры&#34;&gt;Параметры&lt;/h3&gt;
-
-&lt;p&gt;Большинство методов принимают дополнительные параметры аргументом &lt;code&gt;options&lt;/code&gt;, изменяющие стандартное поведение метода&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-Javascript&#34;&gt;{
-      user: Object – пользователь, от имени которого выполняется метод. Будет произведена проверка прав на выполняемый метод
-      userId: string – если не передан пользователь в параметре user, то будет произведён поиск пользователя в базе данных
-      noCheckPermissions: bool – флаг отключения проверки прав на выполняемый метод
-      noRunHooks: bool – флаг отключения запуска обработчиков жизненного цикла объекта
-      noValidate: bool – флаг отключения валидации сохраняемых данных
-      noEmitUpdate: bool – флаг отключения отправки уведомлений о производимых изменениях
-      noPopulate: bool – флаг отключения популяции ref полей в возвращаемых данных
-      noLoadVirtualProps: bool – флаг отключения загрузки виртуальных полей в возвращаемых данных
-      drop: bool – только для метода delete, производит полное удаление объекта из хранилища
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;db-delete&#34;&gt;$db.delete()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.delete()&lt;/code&gt; помечает объект как удалённый и переносит его из основного хранилища в хранилище удалённых объектов.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.delete(_id, store[, options[, callback]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-1&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор объекта (строка)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению процесса удаления (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#34;find&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;db-find&#34;&gt;$db.find()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.find()&lt;/code&gt; производит поиск объектов в хранилище в соответствии с запросом.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-1&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.find(query, store[, options[, callback]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-2&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;a name=&#34;query&#34;&gt;&lt;/a&gt;
-&lt;strong&gt;query&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Запрос к хранилищу (Javascript object).&lt;/p&gt;
-
-&lt;p&gt;Формат запроса:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-Javascript&#34;&gt;    {
-        &amp;quot;query&amp;quot;: {},
-        &amp;quot;skip&amp;quot;: 0,
-        &amp;quot;take&amp;quot;: 100,
-        &amp;quot;orderBy&amp;quot;: &amp;quot;createdAt&amp;quot;,
-        &amp;quot;currentId&amp;quot;: &amp;quot;56370687-a1c8-4e04-9eb1-a755ca0de570&amp;quot;,
-        &amp;quot;currentIndex&amp;quot;: &amp;quot;&amp;quot;,
-        &amp;quot;props&amp;quot;: [&amp;quot;_id&amp;quot;, &amp;quot;name&amp;quot;]
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Где&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;query&lt;/code&gt;&amp;nbsp;&amp;mdash; объект со значениями фильтра&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;skip&lt;/code&gt;&amp;nbsp;&amp;mdash; смещение (int)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;take&lt;/code&gt;&amp;nbsp;&amp;mdash; запрашиваемое количество объектов в выборке (int)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;orderBy&lt;/code&gt;&amp;nbsp;&amp;mdash; поле, по которому требуется провести сортировку (строка, опционально).
-Если первый символом стоит &lt;code&gt;-&lt;/code&gt;, то будет произведена обратная сортировка.
-Если параметр опущен, будет произведена сортировка по полю &lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;currentId&lt;/code&gt;&amp;nbsp;&amp;mdash; идентификатор текущего элемента (строка, опционально).
-Если указан, то будет возвращён индекс текущего элемента в выборке (int), либо, если под условия поиска он не попадает, &lt;code&gt;-1&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;props&lt;/code&gt;&amp;nbsp;&amp;mdash; массив с идентификаторами полей, которые необходимо получить в выборке.
-Если параметр отсутствует, будут возвращены все поля.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Возвращаемые значения&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-1&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результат будет следующим:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-Javascript&#34;&gt;    {
-        &amp;quot;items&amp;quot;: [],
-        &amp;quot;fullCount&amp;quot;: 100,
-        &amp;quot;currentItem&amp;quot;: {},
-        &amp;quot;stateCounts&amp;quot;: {
-            &amp;quot;new&amp;quot;: 10,
-            &amp;quot;progress&amp;quot;: 20
-        }
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Где&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;items&lt;/code&gt;&amp;nbsp;&amp;mdash; массив объектов&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fullCount&lt;/code&gt;&amp;nbsp;&amp;mdash; общее количество объектов, попадающих под запрос&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;currentIndex&lt;/code&gt;&amp;nbsp;&amp;mdash; индекс текущего элемента в выборке, или  &lt;code&gt;-1&lt;/code&gt;, если текущий элемент не попадает под условия выборки&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;currentItem&lt;/code&gt;&amp;nbsp;&amp;mdash; текущий элемент, если попадает под условия выборки&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;stateCounts&lt;/code&gt;&amp;nbsp;&amp;mdash; объектов со счетчиками состояний объектов в выборке&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;db-foreach&#34;&gt;$db.forEach()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.forEach()&lt;/code&gt; производит итерацию объектов хранилища по одному объекту в соответствии с запросом.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-2&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.forEach(query, store, options, itemCallback[, callback])
-$db.forEach(query, store, itemCallback[, callback])
-$db.forEach(store, options, itemCallback[, callback])
-$db.forEach(store, itemCallback[, callback])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-3&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;query&lt;/strong&gt;
-&lt;a href=&#34;https://getblank.net/doc/db/#query&#34;&gt;Запрос к хранилищу&lt;/a&gt;, аналогично методу &lt;a href=&#34;https://getblank.net/doc/db/#find&#34;&gt;$db.find()&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;itemCallback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена для каждого найденного объекта. Получает на вход объект единственным аргументом.
-В случае, если функция вернёт &lt;code&gt;Promise&lt;/code&gt;, &lt;code&gt;$db.forEach()&lt;/code&gt; будет ожидать его выполнения перед следующей итерацией.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-2&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-get&#34;&gt;$db.get()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.get()&lt;/code&gt; производит поиск одного объекта в указанном хранилище.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-3&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.get(_id, store[, options[, callback]])
-$db.get(query, store[, options[, callback]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-4&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор объекта (строка)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;query&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Запрос в формате MongoDB (Javascript Object)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-3&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет искомый объект.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-getuser&#34;&gt;$db.getUser()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.getUser()&lt;/code&gt; производит поиск пользователя по переданному &lt;code&gt;_id&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-4&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.getUser(_id[, callback])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-5&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор пользователя (строка)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-4&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет искомый пользователь.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-insert&#34;&gt;$db.insert()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.insert()&lt;/code&gt; производит вставку нового объект в указанном хранилище. При этом для объекта будет сгенерирован новый &lt;code&gt;_id&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-5&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.insert(item, store[, options[, callback]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-6&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;item&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Новый объект (Javascript Object)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-5&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет новый объект в том виде, в каком был сохранён в базу данных.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-loadvirtualprops&#34;&gt;$db.loadVirtualProps()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.loadVirtualProps()&lt;/code&gt; производит загрузку виртуальных полей в переданный объект.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-6&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.loadVirtualProps(item, store)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-7&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;item&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Объект для загрузки виртуальных полей (Javascript Object)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-6&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;Объект с загруженными виртуальными полями&lt;/p&gt;
-
-&lt;h3 id=&#34;db-newid&#34;&gt;$db.newId()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.newId()&lt;/code&gt; генерирует новый &lt;strong&gt;UUID v4&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-7&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.newId()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-7&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;Новый &lt;strong&gt;UUID v4&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;db-nextsequence&#34;&gt;$db.nextSequence()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.nextSequence()&lt;/code&gt; возвращает следующее автоинкрементное значение для хранилища.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-8&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.nextSequence(store[, callback])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-8&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-8&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет значение в формате &lt;code&gt;int&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-nextsequencestring&#34;&gt;$db.nextSequenceString()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.nextSequenceString()&lt;/code&gt; возвращает следующее автоинкрементное значение для хранилища.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-9&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.nextSequenceString(store[, digits[, callback]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-9&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;digits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Количество разрядов в возвращаемой строке (число, опционально). По умолчанию будет сгенерировано 6 разрядов.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-9&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет значение в формате &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-notify&#34;&gt;$db.notify()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.notify()&lt;/code&gt; отправляет указанным пользователям сообщение в &lt;strong&gt;центр уведомлений&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-10&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.notify(receivers, store, message[, callback])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-10&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;receivers&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификаторы получателей (массив строк).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;message&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Сообщение (строка или объект). Объект имеет следующую структуру:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-	message: &amp;quot;Заголовок сообщения&amp;quot;,
-	details: &amp;quot;Текст сообщения&amp;quot;,
-    level: &amp;quot;info&amp;quot;, // info | error // currently only info supports (default)
-    type: &amp;quot;notification&amp;quot;, // currently only notification supports (default)
-	relatedObjects: [
-		{
-			name: &amp;quot;Gray Wolf&amp;quot;,
-			_id: &amp;quot;9bb8147f-7bd2-402f-a62d-e67af9ddd246&amp;quot;,
-			mode: &amp;quot;link&amp;quot;,
-			store: &amp;quot;feedback&amp;quot;
-		}
-	]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Где &lt;code&gt;relatedObjects&lt;/code&gt; - массив объектов, которые будут приложены к уведомлению ссылками.
-В случае, если сообщение передано строкой, строка будет помещена в свойство &lt;code&gt;message&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-10&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-populateall&#34;&gt;$db.populateAll()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.populateAll()&lt;/code&gt; производит популяцию полей с типом &lt;code&gt;ref&lt;/code&gt; в переданном объекте.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-11&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.populateAll(item, store[, callback])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-11&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;item&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Объект для выполнения популяции полей (Javascript Object)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-11&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет объект с популированными полями.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-set&#34;&gt;$db.set()&lt;/h3&gt;
-
-&lt;p&gt;Метод &lt;code&gt;$db.set()&lt;/code&gt; производит сохранение переданного объекта в указанное храниоище.&lt;/p&gt;
-
-&lt;h4 id=&#34;синтаксис-12&#34;&gt;Синтаксис&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;$db.set(item, store[, options[, callback]])
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;параметры-12&#34;&gt;Параметры&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;item&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Объект сохранения (Javascript Object). В случае, если объект с указанным &lt;code&gt;_id&lt;/code&gt; уже имеется в базе,
-перечисленные в объекте поля будут наложены на существующий объект. Для удаления полей, следует в значении указывать &lt;code&gt;null&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Идентификатор хранилища (строка).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://getblank.net/doc/db/#params&#34;&gt;Дополнительные параметры&lt;/a&gt; (Javascript Object, опционально).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Функция, которая будет выполнена по завершению метода (опционально).&lt;/p&gt;
-
-&lt;h4 id=&#34;возвращаемые-значения-12&#34;&gt;Возвращаемые значения&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
-В случае успешного выполнения метода, результатом будет объект в том виде, в каком был сохранён в базу данных.&lt;/p&gt;
-
-&lt;h3 id=&#34;db-waitforconnection&#34;&gt;$db.waitForConnection()&lt;/h3&gt;
-
-&lt;p&gt;// To be continue&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Access control</title>
-      <link>https://getblank.net/doc/access/</link>
-      <pubDate>Sat, 06 Aug 2016 16:49:03 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/access/</guid>
-      <description>
-
-&lt;p&gt;Управление доступом в Blank построено на основе ролей с принением системы условий. Права
-можно назначить на Store, на отдельные свойства (prop) и действия (action) в Store.&lt;/p&gt;
-
-&lt;p&gt;При установке прав доступа задается массив правил типа AccessRule:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[AccessRule {
-    &amp;quot;role&amp;quot;: &amp;quot;roleName&amp;quot;,
-    &amp;quot;permissions&amp;quot;: &amp;quot;Permissions string&amp;quot;,
-    &amp;quot;condition&amp;quot;: MongoQuery {}
-}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;значение-по-умолчанию&#34;&gt;Значение по-умолчанию&lt;/h3&gt;
-
-&lt;p&gt;Если права не указаны, по-умолчанию у всех будет полный доступ, как если бы было задано такое правило:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;access&amp;quot;: [&amp;quot;role&amp;quot;: &amp;quot;all&amp;quot;, &amp;quot;permissions&amp;quot;: &amp;quot;crud&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Если параметр задан, доступ получат только те роли, которые указаны в параметре, в соответствии с их разрешениями.&lt;/p&gt;
-
-&lt;h3 id=&#34;permissions&#34;&gt;Permissions&lt;/h3&gt;
-
-&lt;p&gt;Набор разрешений, зависит от объекта прав доступа:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Store:  &lt;strong&gt;crud&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Prop:   &lt;strong&gt;ru&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Action: &lt;strong&gt;rx&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Если требуется указать запрет на какое-либо действие, перед символом разрешения добавляется знак &amp;ldquo;-&amp;rdquo;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;access&amp;quot;: [&amp;quot;role&amp;quot;: &amp;quot;manager&amp;quot;, &amp;quot;permissions&amp;quot;: &amp;quot;cr -d&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Запреты имеют приоритет над разрешениями.&lt;/p&gt;
-
-&lt;h3 id=&#34;conditions&#34;&gt;Conditions&lt;/h3&gt;
-
-&lt;p&gt;Используется только при установке прав доступа на Store. Требуется, если разрешения зависят от самого объекта или
-свойств пользователя, отличных от роли.&lt;/p&gt;
-
-&lt;p&gt;Condition задаётся в виде MongoQuery с дополнительным оператором $expression, который будет обработан до передачи
-запроса в БД, например:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;condition&amp;quot;: {
-    &amp;quot;_ownerId&amp;quot;: {
-        &amp;quot;$expression&amp;quot;: &amp;quot;$user._id&amp;quot;,
-    },
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Такой condition сделает разрешения валидными только для объектов, владельцем которых является пользователь.
-Допустим, пользователь с &lt;strong&gt;_id:&amp;ldquo;1&amp;rdquo;&lt;/strong&gt; делает запрос Find. Он получит доступ только к тем объектам, которые удовлетворяют
-условию:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;_ownerId&amp;quot;: &amp;quot;1&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;$expression&lt;/strong&gt; - выражение на JavaScript, в котором доступна переменная $user.&lt;/p&gt;
-
-&lt;h3 id=&#34;роль-root&#34;&gt;Роль root&lt;/h3&gt;
-
-&lt;p&gt;Роль root зарезервирована и в неё входит только один пользователь – сам root.&lt;/p&gt;
-
-&lt;p&gt;В отличие от других ролей, если разрешения для root не указаны явно, у root будет полный доступ.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Store reference</title>
-      <link>https://getblank.net/doc/store_reference/</link>
-      <pubDate>Sat, 06 Aug 2016 14:27:42 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/store_reference/</guid>
-      <description>
-
-&lt;h3 id=&#34;access&#34;&gt;Access&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;access&amp;quot;: [AccessRule {}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Устанавливает права доступа на объекты Store. Доступный набор разрешений: &lt;strong&gt;crud&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Для того, чтобы пользователь получил доступ к описанию Store и она отобразилась в интерфейсе сгенерированного
-веб-приложения, необходимо разрешение на чтение – &lt;strong&gt;r&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Если параметр не определён, доступ есть у всех пользователей, как если бы было указано:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;access&amp;quot;: [&amp;quot;role&amp;quot;: &amp;quot;all&amp;quot;, &amp;quot;permissions&amp;quot;: &amp;quot;crud&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Если параметр указан, доступ есть только у тех групп пользователей, которым выданы разрешения.&lt;/p&gt;
-
-&lt;p&gt;Пример:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;access&amp;quot;: [
-            { &amp;quot;role&amp;quot;: &amp;quot;devops&amp;quot;, &amp;quot;permissions&amp;quot;: &amp;quot;cru&amp;quot; },
-            { &amp;quot;role&amp;quot;: &amp;quot;supervisor&amp;quot;, &amp;quot;permissions&amp;quot;: &amp;quot;r&amp;quot; },
-        ]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Подробнее о настройках доступа в Blank в разделе &lt;a href=&#34;https://getblank.net/doc/access/&#34;&gt;Access control&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;actions&#34;&gt;Actions&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;actions&amp;quot;: [Action {}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API.&lt;/p&gt;
-
-&lt;p&gt;Пример action для лайка фотографии:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;actions&amp;quot;: [
-    {
-        &amp;quot;_id&amp;quot;: &amp;quot;like&amp;quot;,
-        &amp;quot;icon&amp;quot;: &amp;quot;fa fa-heart&amp;quot;,
-        &amp;quot;disabled&amp;quot;: &amp;quot;($item.likes || []).indexOf($user._id) &amp;gt;= 0&amp;quot;,
-        &amp;quot;script&amp;quot;: function ($db, $item, $user) {
-            let likes = $item.likes || [];
-            likes.push($user._id);
-            return $db.set({ &amp;quot;_id&amp;quot;: $item._id, &amp;quot;likes&amp;quot;: likes }, &amp;quot;photos&amp;quot;);
-        },
-    },
-],
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;basestore&#34;&gt;BaseStore&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;baseStore&amp;quot;: &amp;quot;storeName&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Базовый Store. Если указан этот параметр, текущий Store будет работать с конфигурацией и объектами данных базового.
-Это требуется, если нужно отобразить одни и те же данные для одного пользователя в разных видах и разделах навигации
-в веб-приложении. Например, используется для того, чтобы у администратора был и свой профиль, и одновременно возможность
-просматривать список профилей других пользователей.&lt;/p&gt;
-
-&lt;p&gt;Все настройки Store с указанным baseStore переопредлеяют настройки базового Store, но не влияют на него.&lt;/p&gt;
-
-&lt;h3 id=&#34;config&#34;&gt;Config&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;config&amp;quot;: WorkspaceStoreDesc {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Переопредление конфигурации приложения для Store с типом workspace.&lt;/p&gt;
-
-&lt;h3 id=&#34;display&#34;&gt;Display&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;display&amp;quot;: &amp;quot;list&amp;quot;, &amp;quot;single&amp;quot;, &amp;quot;table&amp;quot;, &amp;quot;cards&amp;quot;, &amp;quot;dashboard&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Тип отображения Store в интерфейсе веб-приложения.&lt;/p&gt;
-
-&lt;p&gt;Если вы не используете автогенерируемое приложение, обратите внимание на &lt;strong&gt;single&lt;/strong&gt;, при использовании этого типа
-отображения будут изменения в работе через API.&lt;/p&gt;
-
-&lt;h4 id=&#34;list&#34;&gt;list&lt;/h4&gt;
-
-&lt;p&gt;Список с панелью просмотра выбранного элемента, так называемый master-detail view. Подходит в большинстве случаев.
-Список в веб-приложении виртуализирован, так что прекрасно работает со сколь угодно большими коллекциями.&lt;/p&gt;
-
-&lt;h4 id=&#34;single&#34;&gt;single&lt;/h4&gt;
-
-&lt;p&gt;Позволяет сделать аналог &lt;strong&gt;&amp;ldquo;type&amp;rdquo;: &amp;ldquo;single&amp;rdquo;&lt;/strong&gt;, но с отдельными данными для каждого пользователя. Например, требуется
-дать пользователю возможность настройки получения уведомлений – тут прекрасно подойдёт данный тип отображения Store.&lt;/p&gt;
-
-&lt;p&gt;Обратите внимание! При использовании этого типа отображения в работе с API следует передавать название Store в качестве
-идентификатора объекта, и нужно указать соответствующие права пользователей, для которых установлен данный тип
-отображения, например:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;access&amp;quot;: [
-    { &amp;quot;role&amp;quot;: &amp;quot;operator&amp;quot;, &amp;quot;permissions&amp;quot;: &amp;quot;r&amp;quot;, &amp;quot;condition&amp;quot;: { &amp;quot;_ownerId&amp;quot;: { &amp;quot;$expression&amp;quot;: &amp;quot;$user._id&amp;quot; } } },
-],
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Если не указать права, разрешающие пользователям доступ только к одному объекту, при получении и сохранении данных сервер
-будет работать со случайным объектом, что приведёт к ошибкам.
-Если все настроить правильно, то при сохранении данных через API не придется сначала искать идентификатор объекта,
-принадлежащего этому пользователю – сервер Blank сделает это самостоятельно.&lt;/p&gt;
-
-&lt;p&gt;При использовании (Workspaces)[/doc/workspaces] можно настроить Store так, чтобы часть пользователей работала с ним как single,
-а, например, администраторы - как с обычным списком. Это даст возможность администраторам просматривать и редактировать
-данные других пользователей.&lt;/p&gt;
-
-&lt;h4 id=&#34;table&#34;&gt;table&lt;/h4&gt;
-
-&lt;p&gt;Табличный тип отображения. Подходит для отображения Store с историей каких-либо событий.
-При использовании не забудьте настроить &lt;a href=&#34;https://getblank.net/doc/store_reference/#tablecolumns&#34;&gt;TableColumns&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;cards&#34;&gt;cards&lt;/h4&gt;
-
-&lt;p&gt;Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.&lt;/p&gt;
-
-&lt;h4 id=&#34;html&#34;&gt;html&lt;/h4&gt;
-
-&lt;p&gt;Если отображение не предполагает интерактивных элементов и требуется просто отобразить данные или статическую
-страницу, можно включить тип отображения html. При использовании не забудьте написать шаблон
-&lt;a href=&#34;https://getblank.net/doc/store_reference/#html&#34;&gt;Html&lt;/a&gt; для отрисовки страницы.&lt;/p&gt;
-
-&lt;h4 id=&#34;dashboard&#34;&gt;dashboard&lt;/h4&gt;
-
-&lt;p&gt;Описание отсутствует. Тип отображения еще дорабатывается, напишите нам, если хотите принять участие в тестировании.&lt;/p&gt;
-
-&lt;h3 id=&#34;entries-type-map&#34;&gt;Entries [type:map]&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;entries&amp;quot;: {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Данные для Store с типом &lt;strong&gt;map&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Пример использования:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;_commonSettings&amp;quot;: {
-    &amp;quot;type&amp;quot;: &amp;quot;map&amp;quot;,
-    &amp;quot;entries&amp;quot;: {
-        &amp;quot;title&amp;quot;: &amp;quot;My App&amp;quot;,
-        &amp;quot;locales&amp;quot;: [&amp;quot;ru&amp;quot;],
-        &amp;quot;defaultLocale&amp;quot;: &amp;quot;ru&amp;quot;,
-        &amp;quot;signInLogo&amp;quot;: &amp;quot;/logo.svg&amp;quot;,
-        ...
-    },
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;filters&#34;&gt;Filters&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;filters&amp;quot;: [Filter {}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
-Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/filters/&#34;&gt;Filters&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;formgroupsorder&#34;&gt;FormGroupsOrder&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;formGroupsOrder&amp;quot;: [&amp;quot;formGroupName&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Массив, указывающий порядок расположения групп на форме редактирования объекта. Названия групп должны совпадать с указанными
-группами в настройках props, например:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;formGroupsOrder&amp;quot;: [&amp;quot;{{$i18n.group2Label}}&amp;quot;, &amp;quot;Group 1&amp;quot;],
-    &amp;quot;props&amp;quot;: {
-        &amp;quot;prop1&amp;quot; {
-            ...
-            &amp;quot;formGroup&amp;quot;: &amp;quot;Group 1&amp;quot;,
-            ...
-        },
-        &amp;quot;prop2&amp;quot; {
-            ...
-            &amp;quot;formGroup&amp;quot;: &amp;quot;{{$i18n.group2Label}}&amp;quot;,
-            ...
-        },
-    },
-    &amp;quot;i18n&amp;quot;: {
-        &amp;quot;group2Label&amp;quot;: &amp;quot;Group 2&amp;quot;,
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;formtabs&#34;&gt;FormTabs&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;formTabs&amp;quot;: [&amp;quot;tabId&amp;quot; | {&amp;quot;_id&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;label&amp;quot;: &amp;quot;Handlebars template&amp;quot;, &amp;quot;hidden&amp;quot;: &amp;quot;JavaScript expression&amp;quot;}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Определяет порядок и отображение табов в карточках объектов в веб-приложении.&lt;/p&gt;
-
-&lt;h3 id=&#34;headerproperty&#34;&gt;HeaderProperty&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;headerProperty&amp;quot;: &amp;quot;propName&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Определяет свойство для использования в заголовке карточек объектов Store в веб-приложении.&lt;/p&gt;
-
-&lt;p&gt;Значение по-умолчанию: &lt;strong&gt;name&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Пример:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;headerProperty&amp;quot;: &amp;quot;orderNumber&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;headertemplate&#34;&gt;HeaderTemplate&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;headerTemplate&amp;quot;: &amp;quot;Handlebars template&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Определяет текст заголовка карточек объектов Store в веб-приложении.&lt;/p&gt;
-
-&lt;p&gt;Если параметр указан, значение headerProperty игнорируется и заголовок становится не редактируемым.&lt;/p&gt;
-
-&lt;p&gt;Пример:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;headerTemplate&amp;quot;: &amp;quot;{{$item.lastName}} {{$item.name}}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;html-display-html&#34;&gt;HTML [display:html]&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;html&amp;quot;: &amp;quot;Handlebars-enabled template&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Шаблон на &lt;a href=&#34;http://handlebarsjs.com/&#34;&gt;Handlebars&lt;/a&gt; со следующей моделью данных:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-    &amp;quot;$items&amp;quot;: [] // Массив объектов Store
-    &amp;quot;$user&amp;quot;: {} // Объект пользователя, просматривающего Store
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;http-api&#34;&gt;HTTP API&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;httpApi&amp;quot;: bool
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Флаг формирования HTTP REST API для сторы.
-Значение по-умолчанию: false.&lt;/p&gt;
-
-&lt;h3 id=&#34;httphooks&#34;&gt;HTTPHooks&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;httpHooks&amp;quot;: [HTTPHook {}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Массив описаний методов Store, доступных через HTTP API.
-Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/httphooks/&#34;&gt;HTTPHooks&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;i18n&#34;&gt;I18n&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;i18n&amp;quot;: {}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Объект, содержащий специфичные для данной Store локализации.&lt;/p&gt;
-
-&lt;p&gt;Если локализации записаны прямо в корень объекта i18n, они будут относится к локали, установленное по-умолчанию
-для приложения. Для записи в други локали нужно создать вложенные объекты, ключами для которых будут названия локалей:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;i18n&amp;quot;: {
-    &amp;quot;storeLabel&amp;quot;: &amp;quot;Название Store&amp;quot;,
-    &amp;quot;en&amp;quot;: {
-        &amp;quot;storeLabel&amp;quot;: &amp;quot;Store name&amp;quot;,
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Обратится к записям в i18n можно через объект &lt;strong&gt;$i18n&lt;/strong&gt; в шаблонах, или через модуль &lt;strong&gt;i18n&lt;/strong&gt;
-в скриптах на JavaScript.&lt;/p&gt;
-
-&lt;h4 id=&#34;работа-с-i18n-из-шаблонов&#34;&gt;Работа с i18n из шаблонов&lt;/h4&gt;
-
-&lt;p&gt;При доступе к i18n из шаблонов текущей Store, все локализации будут доступны напрямую:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;label&amp;quot;: &amp;quot;{{$i18n.storeLabel}}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Для доступа к локализациям из других Store используется объект $stores:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;label&amp;quot;: &amp;quot;{{$i18n.$stores.otherStoreName.storeLabel}}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Для доступа к общим локализациям из &lt;strong&gt;_commonSettings&lt;/strong&gt; используется объект $settings:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;label&amp;quot;: &amp;quot;{{$i18n.$settings.phraseName}}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Все обращения будут работать с текущей установленной локалью пользователя или локалью по-умолчанию.&lt;/p&gt;
-
-&lt;h3 id=&#34;indexes&#34;&gt;Indexes&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;&amp;quot;indexes&amp;quot;: []
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Описание индексов хранилища.
-Содержит массив аргументов для команды &lt;code&gt;createIndex&lt;/code&gt; в MongoDB. Каждый элемент может быть либо строковым названием индексируемого поля:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;&amp;quot;indexes&amp;quot;: [
-    &amp;quot;lastName&amp;quot;
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;либо описание индекса в виде объекта:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;&amp;quot;indexes&amp;quot;: [
-    {&amp;quot;name&amp;quot;: 1}
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;либо массивом из двух объектов, где первый объект&amp;nbsp;&amp;mdash; это описание индекса, а второй&amp;nbsp;&amp;mdash; дополнительные параметры:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;&amp;quot;indexes&amp;quot;: [
-    [{&amp;quot;login&amp;quot;: 1}, {&amp;quot;unique&amp;quot;: true}]
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Конечно, можно сочетать все варианты описания индекса:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;&amp;quot;indexes&amp;quot;: [
-    &amp;quot;lastName&amp;quot;,
-    {&amp;quot;name&amp;quot;: 1},
-    [{&amp;quot;login&amp;quot;: 1}, {&amp;quot;unique&amp;quot;: true}]
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;При старте приложения, каждый элемент будет передан в команду &lt;code&gt;createIndex&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Подробнее об индексах в MongoDB можно почитать здесь: &lt;a href=&#34;https://docs.mongodb.com/manual/indexes/&#34;&gt;Indexes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;label&#34;&gt;Label&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;label&amp;quot;: &amp;quot;Handlebars template&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Название Store, будет использоваться в навигации сгенерированного веб-приложения.&lt;/p&gt;
-
-&lt;p&gt;Пример:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;label&amp;quot;: &amp;quot;{{$i18n.storeLabel}}&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;labels&#34;&gt;Labels&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;labels&amp;quot;: [Label {
-    &amp;quot;icon&amp;quot;: &amp;quot;className&amp;quot; //&amp;quot;fa fa-icon_name&amp;quot; или &amp;quot;material-icons text md-16 icon_name&amp;quot;
-    &amp;quot;text&amp;quot;: &amp;quot;Handlebars template&amp;quot;, //Data model: { $item: {}, $user: {} }
-    &amp;quot;color&amp;quot;: &amp;quot;Handlebars template&amp;quot;, //Data model: { $item: {}, $user: {} }
-    &amp;quot;hidden&amp;quot;: &amp;quot;JavaScript expression&amp;quot;, //Variables: $item, $user
-    &amp;quot;hideInForm&amp;quot;: bool // Скрывает лэйбл в форме редактирования объекта
-    &amp;quot;showInList&amp;quot;: int // Определяет, на какой строке показывать лэйбл в элементе списка. Если 0 – не отображать
-}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Массив аннотаций к объектам. Используется для добавления summary объектов в списке и на форме редактирования в
-сгенерированном веб-приложении.&lt;/p&gt;
-
-&lt;p&gt;Пример:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;labels&amp;quot;: [
-    {
-        &amp;quot;icon&amp;quot;: &amp;quot;fa fa-power-off&amp;quot;,
-        &amp;quot;color&amp;quot;: &amp;quot;{{#if $item.disabled}}#ddd{{else}}#43A047{{/if}}&amp;quot;,
-        &amp;quot;hideInForm&amp;quot;: true,
-        &amp;quot;showInList&amp;quot;: 1,
-    },
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;navgroup&#34;&gt;NavGroup&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;navGroup&amp;quot;: &amp;quot;string&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Определяет расположения в навигации веб-приложения. Если группа не задана, ссылка на эти объекты будет выведена в первом уровне навигации&lt;/p&gt;
-
-&lt;h3 id=&#34;navorder&#34;&gt;NavOrder&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;navOrder&amp;quot;: int,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Порядок размещения в навигации веб-приложения&lt;/p&gt;
-
-&lt;h3 id=&#34;navlabel&#34;&gt;NavLabel&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;navLabel&amp;quot;: &amp;quot;Handlebars template&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Название Store в навигации веб-приложения. Требуется, если нужно оставить опеределенный label в заголовке открытой в приложении
-Store, но в навигации она должна называться по-другому.&lt;/p&gt;
-
-&lt;h3 id=&#34;objectlifecycle&#34;&gt;ObjectLifeCycle&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;objectLifeCycle&amp;quot;: {
-    &amp;quot;eventName&amp;quot;: function () {}
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Обработчики событий жизненного цикла объектов в Store на JavaScript.&lt;/p&gt;
-
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#objectlifecycle&#34;&gt;ObjectLifeCycle&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;orderby&#34;&gt;OrderBy&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;orderBy&amp;quot;: &amp;quot;propName&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Поле для сортировки данных по-умолчанию при запросах Find.
-Для сортировки в обратном порядке добавьте &amp;lsquo;-&amp;rsquo; перед названием поля:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;orderBy&amp;quot;: &amp;quot;-propName&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;props&#34;&gt;Props&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;props&amp;quot;: {
-    &amp;quot;propName&amp;quot;: PropDesc {},
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Структура данных для Store. Props – наиболее сложная и важная часть описания Store.&lt;/p&gt;
-
-&lt;p&gt;Простой пример объекта props:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;props&amp;quot;: {
-    &amp;quot;name&amp;quot;: {
-        &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;,
-        &amp;quot;display&amp;quot;: &amp;quot;textInput&amp;quot;,
-        &amp;quot;label&amp;quot;: &amp;quot;ФИО&amp;quot;,
-        &amp;quot;formOrder&amp;quot;: 0,
-        &amp;quot;required&amp;quot;: true,
-    },
-    &amp;quot;phone&amp;quot;: {
-        &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;,
-        &amp;quot;display&amp;quot;: &amp;quot;masked&amp;quot;,
-        &amp;quot;label&amp;quot;: &amp;quot;Телефон&amp;quot;,
-        &amp;quot;mask&amp;quot;: &amp;quot;+7 (|||) |||-||-||&amp;quot;,
-        &amp;quot;formOrder&amp;quot;: 10,
-        &amp;quot;required&amp;quot;: &amp;quot;$item.name&amp;quot;,
-    },
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/props_reference/&#34;&gt;Props reference&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;states&#34;&gt;States&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;states&amp;quot;: {
-        &amp;quot;stateName&amp;quot;: StateDesc {&amp;quot;label&amp;quot;: &amp;quot;Handlebars template&amp;quot;, &amp;quot;navOrder&amp;quot;: int}
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Параметр для тех Store, объекты которых могут находится в детерминированном наборе состояний, переходя от одного
-состояния к другому. Подходит для различных процессов: документооборота, заказов, кампаний.
-Если параметр задан, у объектов появится специальное свойство &lt;strong&gt;_state&lt;/strong&gt; и в веб-приложении будет отрисована
-дополнительная навигация по состояниям объектов.&lt;/p&gt;
-
-&lt;h3 id=&#34;storeactions&#34;&gt;StoreActions&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;storeActions&amp;quot;: [Action {}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API и REST API.&lt;/p&gt;
-
-&lt;p&gt;При вызове из веб-приложения в аргументы скрипта передаются текущие значения фильтров.&lt;/p&gt;
-
-&lt;h3 id=&#34;storelifecycle&#34;&gt;StoreLifeCycle&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;storeLifeCycle&amp;quot;: {
-    &amp;quot;eventName&amp;quot;: function
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Обработчики событий жизненного цикла объектов в Store на JavaScript.&lt;/p&gt;
-
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/lifecycle_events/#storelifecycle&#34;&gt;StoreLifeCycle&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;tablecolumns&#34;&gt;TableColumns&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;tableColumns&amp;quot;: [&amp;quot;propName&amp;quot; | ColumnDesc { &amp;quot;prop&amp;quot;: &amp;quot;propName&amp;quot;, &amp;quot;display&amp;quot;: &amp;quot;propDisplayType&amp;quot;}]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Определяет набор, порядок и тип отображения столбцов таблицы для display:html.&lt;/p&gt;
-
-&lt;h3 id=&#34;tasks&#34;&gt;Tasks&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;tasks&amp;quot;: [Task {&amp;quot;schedule&amp;quot;: &amp;quot;CRON-formatted string&amp;quot;, &amp;quot;script&amp;quot;: function }]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Задачи, требующие периодического запуска.&lt;/p&gt;
-
-&lt;p&gt;Подробнее читайте в разделе &lt;a href=&#34;https://getblank.net/doc/tasks/&#34;&gt;Tasks&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;    &amp;quot;type&amp;quot;: &amp;quot;direcory&amp;quot;, &amp;quot;single&amp;quot;, &amp;quot;map&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;directory&#34;&gt;directory&lt;/h4&gt;
-
-&lt;p&gt;Тип Store по-умолчанию. Предназначен для хранения коллекции данных.&lt;/p&gt;
-
-&lt;h4 id=&#34;single-1&#34;&gt;single&lt;/h4&gt;
-
-&lt;p&gt;В отличие от Directory, хранит единственный документ. Используется для хранения каких-либо настроек приложения.&lt;/p&gt;
-
-&lt;h4 id=&#34;map&#34;&gt;map&lt;/h4&gt;
-
-&lt;p&gt;Используется только для системных Store, в которых хранятся настройки самого приложения на Blank. Создавать новые
-Store с таким типом не имеет смысла, но при разработке, возможно, потребуется изменять настройки существующих Store с таким
-типом, таких как:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;_commonSettings&lt;/li&gt;
-&lt;li&gt;_nav&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Store с типом map не хранят данные в БД, вся информация записывается в поле &lt;strong&gt;entries&lt;/strong&gt; описания Store.&lt;/p&gt;
-
-&lt;h4 id=&#34;workspace&#34;&gt;workspace&lt;/h4&gt;
-
-&lt;p&gt;Тип для частичного переопределения конфигурации. Если у пользователя указано свойство &lt;strong&gt;workspace&lt;/strong&gt; с соответствующим
-значением, для него будет сформирована специальная конфигурация, объеденённая из базовой и конфигурации из свойства &lt;strong&gt;config&lt;/strong&gt;
-workspace-а.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://getblank.net/install/</link>
-      <pubDate>Fri, 05 Aug 2016 17:15:57 +0500</pubDate>
-      
-      <guid>https://getblank.net/install/</guid>
-      <description>
-
-&lt;h3 id=&#34;linux&#34;&gt;Linux&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;releases.getblank.net&#34;&gt;64 bit&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;darwin&#34;&gt;Darwin&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;releases.getblank.net&#34;&gt;64 bit&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
