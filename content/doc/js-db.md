@@ -4,7 +4,7 @@ title = "$db"
 url = "/doc/db/"
 [menu.doc]
     parent = "serverjs"
-    weight = 0
+    weight = 20
     url = "/doc/db/"
 +++
 

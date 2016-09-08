@@ -12,19 +12,19 @@ HTTPHooks используются для формирования произв�
 
 Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: [httpApi](/doc/store_reference/#http-api)
 
-### Структура
+### Структура {#structure}
 ~~~javascript
 "httpHooks": [HTTPHook {
     "uri": "string"
-    "method": "GET", "PUT", "POST", "PATCH", "DELETE", "HEAD", "OPTIONS",
+    "method": "GET" | "PUT" | "POST" | "PATCH" | "DELETE" | "HEAD" | "OPTIONS",
     "script": function ($request):Response {}
 }]
 
 Response {
-    "type": "JSON", "HTML", "XML", "file",
-    "data": "string",
+    "type": "JSON" | "HTML" | "XML" | "file" | "redirect",
+    "data": "string", // Строка, которая будет передана в Body ответа, либо адрес для редиректа для type:redirect
     "rawData": any,
-    "code": int, //HTTP status code
+    "code": int, // HTTP status code. По-умолчанию, 200
     "header": {},
     "fileName": "string", // Только для type:file
 }
