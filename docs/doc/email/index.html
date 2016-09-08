@@ -242,17 +242,16 @@
 <h3 id="подключение">Подключение</h3>
 
 <pre><code class="language-JavaScript">let email = require(&quot;email&quot;);
-````
+</code></pre>
 
-### send()
+<h3 id="send">send()</h3>
 
-Метод `email.send()` отправляет электронные письма. Под капотом используется [Nodemailer](https://nodemailer.com/).
-Параметры подключения к SMTP серверу берутся из Store `emailSettings`.
+<p>Метод <code>email.send()</code> отправляет электронные письма. Под капотом используется <a href="https://nodemailer.com/">Nodemailer</a>.
+Параметры подключения к SMTP серверу берутся из Store <code>emailSettings</code>.</p>
 
-#### Синтаксис
+<h4 id="синтаксис">Синтаксис</h4>
 
-```JavaScript
-email.send(message[, callback])
+<pre><code class="language-JavaScript">email.send(message[, callback])
 </code></pre>
 
 <h4 id="параметры">Параметры</h4>

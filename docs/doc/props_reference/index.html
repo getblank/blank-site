@@ -237,26 +237,348 @@
       <div class="content">
         
 
-<h3 id="type">Type</h3>
+<p>В зависимости от типа, поле может обладать определённым набором свойств из списка:</p>
 
-<pre><code class="language-javascript">&quot;type&quot;: &quot;string|int|float|bool|date|file|ref|refList|virtual&quot;
+<ul>
+<li><a href="/doc/props_reference/#accept">accept</a>;</li>
+<li><a href="/doc/props_reference/#access">access</a>;</li>
+<li><a href="/doc/props_reference/#actions">actions</a>;</li>
+<li><a href="/doc/props_reference/#addLabel">addLabel</a>;</li>
+<li><a href="/doc/props_reference/#configurable">configurable</a>;</li>
+<li><a href="/doc/props_reference/#default">default</a>;</li>
+<li><a href="/doc/props_reference/#disablecustominput">disableCustomInput</a>;</li>
+<li><a href="/doc/props_reference/#disabled">disabled</a>;</li>
+<li><a href="/doc/props_reference/#disableorder">disableOrder</a>;</li>
+<li><a href="/doc/props_reference/#disablerefsync">disableRefSync</a>;</li>
+<li><a href="/doc/props_reference/#display">display</a>;</li>
+<li><a href="/doc/props_reference/#displaywidth">displayWidth</a>;</li>
+<li><a href="/doc/props_reference/#extraquery">extraQuery</a>;</li>
+<li><a href="/doc/props_reference/#foreignkey">foreignKey</a>;</li>
+<li><a href="/doc/props_reference/#format">format</a>;</li>
+<li><a href="/doc/props_reference/#formgroup">formGroup</a>;</li>
+<li><a href="/doc/props_reference/#formorder">formOrder</a>;</li>
+<li><a href="/doc/props_reference/#formtab">formTab</a>;</li>
+<li><a href="/doc/props_reference/#hidden">hidden</a>;</li>
+<li><a href="/doc/props_reference/#html">html</a>;</li>
+<li><a href="/doc/props_reference/#label">label</a>;</li>
+<li><a href="/doc/props_reference/#labelclassname">labelClassName</a>;</li>
+<li><a href="/doc/props_reference/#load">load</a>;</li>
+<li><a href="/doc/props_reference/#loadcomponent">loadComponent</a>;</li>
+<li><a href="/doc/props_reference/#mask">mask</a>;</li>
+<li><a href="/doc/props_reference/#max">max</a>;</li>
+<li><a href="/doc/props_reference/#maxlength">maxLength</a>;</li>
+<li><a href="/doc/props_reference/#min">min</a>;</li>
+<li><a href="/doc/props_reference/#minlength">minLength</a>;</li>
+<li><a href="/doc/props_reference/#nosanitize">noSanitize</a>;</li>
+<li><a href="/doc/props_reference/#oppositeprop">oppositeProp</a>;</li>
+<li><a href="/doc/props_reference/#options">options</a>;</li>
+<li><a href="/doc/props_reference/#pattern">pattern</a>;</li>
+<li><a href="/doc/props_reference/#placeholder">placeholder</a>;</li>
+<li><a href="/doc/props_reference/#populateIn">populateIn</a>;</li>
+<li><a href="/doc/props_reference/#props">props</a>;</li>
+<li><a href="/doc/props_reference/#required">required</a>;</li>
+<li><a href="/doc/props_reference/#searchby">searchBy</a>;</li>
+<li><a href="/doc/props_reference/#selectedtemplate">selectedTemplate</a>;</li>
+<li><a href="/doc/props_reference/#sortable">sortable</a>;</li>
+<li><a href="/doc/props_reference/#sortby">sortBy</a>;</li>
+<li><a href="/doc/props_reference/#store">store</a>;</li>
+<li><a href="/doc/props_reference/#style">style</a>;</li>
+<li><a href="/doc/props_reference/#tablecolumns">tableColumns</a>;</li>
+<li><a href="/doc/props_reference/#tablelink">tableLink</a>;</li>
+<li><a href="/doc/props_reference/#tooltip">tooltip</a>;</li>
+<li><a href="/doc/props_reference/#type">type</a>;</li>
+<li><a href="/doc/props_reference/#utc">utc</a>;</li>
+<li><a href="/doc/props_reference/#widgetid">widgetId</a>;</li>
+<li><a href="/doc/props_reference/#widgets">widgets</a>;</li>
+<li><a href="/doc/props_reference/#сlassname">сlassName</a>.</li>
+</ul>
+
+<h3 id="accept">accept</h3>
+
+<p>Только для <code>type:file</code>. Позволяет задать маску принимаемых для загрузки файлов.
+В настоящее время не реализовано.</p>
+
+<h3 id="access">access</h3>
+
+<p>Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству <a href="/doc/store_reference/#access">access</a> Store.</p>
+
+<h3 id="actions">actions</h3>
+
+<p>Только для <code>type:action</code>. Массив объектов с описанием Actions, определённых в текущем Store.
+Используется для размещения кнопок запуска Actions на форме в интерфейсе клиента.
+Может переопределять некоторые свойства конкретных отображаемых Action.</p>
+
+<pre><code class="language-JavaScript">actions: [
+     // Здесь мы указываем, что нужно поместить кнопку вызова Action copy
+    { _id: &quot;copy&quot; },
+
+    // Здесь мы дополнительно переопределяем свойство label
+    { _id: &quot;move&quot;, label: &quot;Перенести&quot; },
+]
 </code></pre>
 
-<p>Тип данных свойства. Базовые типы – string, int, float, bool, date – соответствуют таковым в JavaScript.</p>
+<h3 id="addlabel">addLabel</h3>
+
+<p>Только для <code>type:objectList</code>. Строка текстом для кнопки добавления нового элемента в список.
+При рендеринге, строка обрабатывается через handlebars.</p>
+
+<h3 id="configurable">configurable</h3>
+
+<p>Внутреннее свойство для Store по-умолчанию (bool). Определяет возможность переопределения свойств поля в пользовательской конфигурации.</p>
+
+<h3 id="default">default</h3>
+
+<p>Определяет значение поля по-умолчению. Будет установлено при создании объекта, в случае, если значение не определено в создаваемом объекте.</p>
+
+<h3 id="disablecustominput">disableCustomInput</h3>
+
+<h3 id="disabled">disabled</h3>
+
+<p>Строка, описывающая условие недоступности редактирования поля текущего элемента в пользовательском интерфейсе.
+В условии доступны объекты <code>$item</code> (текущий объект) и <code>$user</code> (пользователь, работающий с объектом).</p>
+
+<h3 id="disableorder">disableOrder</h3>
+
+<p>Флаг, определяющий запрет сортировки по полю при типе отображения Store <code>table</code> (bool).</p>
+
+<h3 id="disablerefsync">disableRefSync</h3>
+
+<p>Флаг, указывающий, что не требуется проводить обновление связи данного поля.
+Подробнее о механизме каскадного обновления связей читайте в разделе <a href="/doc/ref_sync/">References sync</a></p>
+
+<h3 id="display">display</h3>
+
+<p>Тип отображения поля в пользовательском интерфейсе (string). Возможные варианты:</p>
+
+<ul>
+<li><p><code>autocomplete</code>&nbsp;&mdash; только для <code>type:string</code>. Текстовое поле ввода с автодополнением.
+Варианты определяются в свойстве <a href="/doc/props_reference/#options">options</a>;</p></li>
+
+<li><p><code>checkbox</code>&nbsp;&mdash; только для <code>type:bool</code>. Поле с флажком в виде галочки;</p></li>
+
+<li><p><code>checkList</code>&nbsp;&mdash; поле выбора нескольких вариантов, определённых в свойстве <a href="/doc/props_reference/#options">options</a>. Отображается в виде списка флажков;</p></li>
+
+<li><p><code>code</code>&nbsp;&mdash; отображение в виде нередактируемого текста с сохранением исходного форматирования и моноширинным шрифтом;</p></li>
+
+<li><p><code>codeEditor</code>&nbsp;&mdash; только для <code>type:string</code>. Редактор кода;</p></li>
+
+<li><p><code>colorPicker</code>&nbsp;&mdash; только для <code>type:string</code> поле выбора цвета из описанных в <a href="/doc/props_reference/#options">options</a>;</p></li>
+
+<li><p><code>commentsEditor</code>&nbsp;&mdash; только для <code>type:comments</code>. Поле для ввода комментариев;</p></li>
+
+<li><p><code>dataTable</code>&nbsp;&mdash; не реализовано;</p></li>
+
+<li><p><code>datePicker</code>&nbsp;&mdash; только для <code>type:date</code>. Поле ввода даты;</p></li>
+
+<li><p><code>dateTimePicker</code>&nbsp;&mdash; только для <code>type:date</code>. Поле ввода даты и времени (не реализовано);</p></li>
+
+<li><p><code>filePicker</code>&nbsp;&mdash; только для <code>type:file</code>. Поле выбора и закачки файлов;</p></li>
+
+<li><p><code>floatInput</code>&nbsp;&mdash; только для <code>type:int</code> и <code>type:float</code>. Текстовое поле ввода с возможность ввода только числовых вещественных значений;</p></li>
+
+<li><p><code>headerInput</code>&nbsp;&mdash; ;</p></li>
+
+<li><p><code>html</code>&nbsp;&mdash; отображение поля по переданному в свойстве <a href="/doc/props_reference/#html">html</a> шаблону;</p></li>
+
+<li><p><code>link</code>&nbsp;&mdash; отображение ссылки;</p></li>
+
+<li><p><code>masked</code>&nbsp;&mdash; только для <code>type:string</code>. Вввод данных по маске, определённой в свойстве <a href="/doc/props_reference/#mask">mask</a> ;</p></li>
+
+<li><p><code>none</code>&nbsp;&mdash; запрет отображения поля в интерфейсе;</p></li>
+
+<li><p><code>numberInput</code>&nbsp;&mdash;  только для <code>type:int</code> и <code>type:float</code>. Текстовое поле ввода с возможность ввода только числовых целочисленных значений;</p></li>
+
+<li><p><code>password</code>&nbsp;&mdash; только для <code>type:password</code> и <code>type:string</code>. Поле ввода текста, при этом вводимые символы скрыты за звездочками;</p></li>
+
+<li><p><code>react</code>&nbsp;&mdash; отображение поля с помощью кастомного компонента ReactJS, определённого в свойстве <a href="/doc/props_reference/#loadcomponent">loadComponent</a>;</p></li>
+
+<li><p><code>searchBox</code>&nbsp;&mdash; только для <code>type:ref</code> и <code>type:refList</code>. Поле поиска и ввода объектов из Store,
+определённой в свойстве <a href="/doc/props_reference/#store">store</a>;</p></li>
+
+<li><p><code>select</code>&nbsp;&mdash; поле выбора одного из нескольких вариантов, определённых в свойстве <a href="/doc/props_reference/#options">options</a>;</p></li>
+
+<li><p><code>text</code>&nbsp;&mdash; отображение в виде нередактируемого текста;</p></li>
+
+<li><p><code>textArea</code>&nbsp;&mdash;  только для <code>type:string</code>. Текстовое поле ввода с возможностью ввода нескольких строк текста;</p></li>
+
+<li><p><code>textInput</code>&nbsp;&mdash;  только для <code>type:string</code>. Текстовое поле ввода;</p></li>
+
+<li><p><code>timePicker</code>&nbsp;&mdash; только для <code>type:date</code>. Поле ввода времени (не реализовано).</p></li>
+</ul>
+
+<h3 id="displaywidth">displayWidth</h3>
+
+<h3 id="extraquery">extraQuery</h3>
+
+<h3 id="foreignkey">foreignKey</h3>
+
+<p>Только для <code>type:virtualRefList</code>. Определяет поле с <code>type:ref</code> в Store из свойства <a href="/doc/props_reference/#store">store</a>, содержащее ссылку на текущее Store
+по которому будет делаться выборка данных для отображения.</p>
+
+<h3 id="format">format</h3>
+
+<p>Только для <code>type:date</code>. Формат отображения даты в пользовательском интерфейсе в соответствии с синтаксисом <a href="http://momentjs.com/">Moment.js</a> (строка).</p>
+
+<h3 id="formgroup">formGroup</h3>
+
+<p>Идентификатор группы для отображения поля в пользовательском интерфейсе (строка). Группы определяются в <a href="/doc/store_reference/#formgroupsorder">Store.formGroupsOrder</a>.</p>
+
+<h3 id="formorder">formOrder</h3>
+
+<p>Число, определяющее место отображения поля на форме в пользовательском интерфейсе (int). Может быть отрицательным.</p>
+
+<h3 id="formtab">formTab</h3>
+
+<p>Идентификатор табы для отображения поля в пользовательском интерфейсе (строка). Табы определяются в <a href="/doc/store_reference/#formtabs">Store.formTabs</a>.</p>
+
+<h3 id="hidden">hidden</h3>
+
+<p>Условие, при выполнении которого поле будет скрыто с формы в пользовательском интерфейсе (строка).
+В условии доступны объекты <code>$item</code> (текущий объект) и <code>$user</code> (пользователь, работающий с объектом).</p>
+
+<h3 id="html">html</h3>
+
+<p>Только для <code>display:html</code>. Шаблон для отображения поля в пользовательском интерфейсе (строка). При рендеринге, обрабатывается через handlebars.</p>
+
+<h3 id="label">label</h3>
+
+<p>Заголовок поля на форме в пользовательском интерфейсе. При рендеринге, обрабатывается через handlebars.</p>
+
+<h3 id="labelclassname">labelClassName</h3>
+
+<p>Определяет дополнительный CSS класс для заголовка поля в пользовательском интерфейсе.</p>
+
+<h3 id="load">load</h3>
+
+<p>Только для <code>type:virtual</code> и <code>type:virtual/client</code>. Функция загрузки виртуального поля.
+В функции доступны объекты <code>$item</code> (текущий объект) и <code>$user</code> (пользователь, работающий с объектом).</p>
+
+<h3 id="loadcomponent">loadComponent</h3>
+
+<p>Только для <code>display:react</code>. Код компонента React.JS для отображения поля в пользовательском интерфейсе.</p>
+
+<h3 id="mask">mask</h3>
+
+<p>Только для <code>type:string</code> и <code>display:masked</code>. Определение маски ввода строки (строка или объект).</p>
+
+<h3 id="max">max</h3>
+
+<p>Только для  <code>type:int</code> и <code>type:float</code>. Минимальное значение поля (число).</p>
+
+<h3 id="maxlength">maxLength</h3>
+
+<p>Только для <code>type:string</code>. Минимальная длина строки (число).</p>
+
+<h3 id="min">min</h3>
+
+<p>Только для  <code>type:int</code> и <code>type:float</code>. Максимальное значение поля (число).</p>
+
+<h3 id="minlength">minLength</h3>
+
+<p>Только для <code>type:string</code>. Максимальная длина строки (число).</p>
+
+<h3 id="nosanitize">noSanitize</h3>
+
+<p>Флаг указывающий на то, что html в пропе является безопасным (bool).</p>
+
+<h3 id="oppositeprop">oppositeProp</h3>
+
+<p>Только для <code>type:ref</code>. Название поля в Store, определённой свойством <a href="/doc/props_reference/#store">store</a> (строка).
+Требуется для работы механизма каскадного обновления связей.
+Подробнее о механизме каскадного обновления связей читайте в разделе <a href="/doc/ref_sync/">References sync</a></p>
+
+<h3 id="options">options</h3>
+
+<p>Только для <code>display:select</code>, <code>display:checkList</code>, <code>display:autocomplete</code> и <code>display:colorPicker</code>.
+Определяет возможные варианты значений поля (массив значений или объектов). Для опредления в пользовательском интерфейсе
+отображения названий значений отличных от самих значений, следует передавать массив объектов следующего вида:</p>
+
+<pre><code class="language-JavaScript">{
+    value: 1, // значение соответствующего типа
+    label: &quot;Номер один&quot;, // название значения, отображаемое в пользовательском интерфейсе
+}
+</code></pre>
+
+<h3 id="pattern">pattern</h3>
+
+<p>Регулярное выражение для проверки вводимого значения (строка или объект). Имеется возможность переопределения
+текста ошибки ввода значения поля в пользовательском интерфейсе. Для этого следует использовать объект вида:</p>
+
+<pre><code class="language-JavaScript">{
+    expression: &quot;^\d+$&quot;, // регулярное выражение в виде строки.
+    message: &quot;Нужно ввести хотя бы одну цифру&quot;, // Текст ошибки для отображения в пользовательском интерфейсе.
+}
+</code></pre>
+
+<h3 id="placeholder">placeholder</h3>
+
+<p>Для полей ввода данных в пользовательском интерфейсе. Определяет текстовую подсказку, отображаемую в поле ввода
+при отсутствии значения.</p>
+
+<h3 id="populatein">populateIn</h3>
+
+<p>Только для <code>type:ref</code>. Обозначает поле, в которое будет передан соответствующий объект из Store
+определённом в свойстве <a href="/doc/props_reference/#store">store</a>.</p>
+
+<h3 id="props">props</h3>
+
+<p>Только для <code>type:object</code> и <code>type:objectList</code>. Определяет свойства вложенных объектов.</p>
+
+<h3 id="required">required</h3>
+
+<p>Флаг обязательного поля (bool). Если <code>true</code>, то при сохранении объекта с неустановленным значением поля будет возвращена ошибка.
+В пользовательском интерфейсе при этом будет заблокирована кнопка <strong>Сохранить</strong>.</p>
+
+<h3 id="searchby">searchBy</h3>
+
+<h3 id="selectedtemplate">selectedTemplate</h3>
+
+<h3 id="sortable">sortable</h3>
+
+<h3 id="sortby">sortBy</h3>
+
+<h3 id="store">store</h3>
+
+<h3 id="style">style</h3>
+
+<h3 id="tablecolumns">tableColumns</h3>
+
+<h3 id="tablelink">tableLink</h3>
+
+<h3 id="tooltip">tooltip</h3>
+
+<h3 id="type">Type</h3>
+
+<pre><code class="language-javascript">type: &quot;string|int|float|bool|date|file|ref|refList|virtual&quot;
+</code></pre>
+
+<p>Тип данных свойства.</p>
+
+<h4 id="bool">bool</h4>
+
+<p>Значения типа <code>true</code> или <code>false</code>.</p>
 
 <h4 id="date">date</h4>
 
-<p>При работе с этим типом через API данные преобразуются в строку в формате <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>,
-например – <code>&quot;2016-08-11T06:36:47.134Z&quot;</code>. Запись производится в таком же формате.</p>
+<p>Соответствует JavaScript Date. При сериализации в JSON преобразуются в строку в формате <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO&nbsp;8601</a>,
+например – <code>&quot;2016-08-11T06:36:47.134Z&quot;</code>.</p>
 
 <h4 id="file">file</h4>
 
 <p>Файловое хранилище в Blank работает отдельно, в MongoDB сохраняются только идентификаторы файлов.</p>
 
+<h4 id="float">float</h4>
+
+<p>Вещественный тип.</p>
+
+<h4 id="int">int</h4>
+
+<p>Целочисленный тип.</p>
+
 <h4 id="object">object</h4>
 
-<pre><code class="language-javascript">&quot;type&quot;: &quot;object&quot;,
-&quot;props&quot;: {
+<pre><code class="language-javascript">type: &quot;object&quot;,
+props: {
     //Свойства вложенного объекта
 },
 </code></pre>
@@ -265,18 +587,18 @@
 
 <h4 id="objectlist">objectList</h4>
 
-<pre><code class="language-javascript">&quot;type&quot;: &quot;objectList&quot;,
-&quot;props&quot;: {
+<pre><code class="language-javascript">type: &quot;objectList&quot;,
+props: {
     //Свойства вложенных объектов
 },
 </code></pre>
 
-<p>Тип для создания вложенных массивов данных. Поддерживается только один уровень вложенности.</p>
+<p>Тип для создания массивов вложенных объектов данных. Поддерживается только один уровень вложенности.</p>
 
 <h4 id="ref">ref</h4>
 
-<pre><code class="language-javascript">&quot;type&quot;: &quot;ref&quot;,
-&quot;store&quot;: &quot;refStoreName&quot;,
+<pre><code class="language-javascript">type: &quot;ref&quot;,
+store: &quot;refStoreName&quot;,
 </code></pre>
 
 <p>Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.</p>
@@ -285,28 +607,40 @@
 
 <h4 id="reflist">refList</h4>
 
-<pre><code class="language-javascript">&quot;type&quot;: &quot;refList&quot;,
-&quot;store&quot;: &quot;refStoreName&quot;,
+<pre><code class="language-javascript">type: &quot;refList&quot;,
+store: &quot;refStoreName&quot;,
 </code></pre>
 
 <p>Массив ссылок на другие объекты, используется для создания связей 1-N, M-N. Значение записывается в виде
-массива идентификторов:</p>
+массива строковых идентификаторов:</p>
 
 <pre><code class="language-javascript">[&quot;e5ba2446-81e1-4b2d-b901-ca9eabe9817e&quot;, &quot;533ddfc5-5d3f-41f7-8557-872d4bfd2735&quot;]
 </code></pre>
 
 <p>В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе <a href="/doc/ref_sync/">References sync</a></p>
 
+<h4 id="string">string</h4>
+
+<p>Строка.</p>
+
 <h4 id="virtual">virtual</h4>
 
-<p>Виртуальные свойства, данные этих свойств являются вычислимыми и не сохраняются в БД. Для вычисления значения
-используется функция load:</p>
+<p>Виртуальные свойства, данные этих свойств являются вычисляемыми и не сохраняются в БД. Для вычисления значения
+используется функция load, получающая на вход текущий объект и пользователя, запрашивающего данные:</p>
 
-<pre><code class="language-javascript">&quot;type&quot;: &quot;virtual&quot;,
-&quot;load&quot;: function ($item, $user) {
+<pre><code class="language-javascript">type: &quot;virtual&quot;,
+load: function ($item, $user) {
     return $item.prop1 + $item.prop2;
 },
 </code></pre>
+
+<h3 id="utc">utc</h3>
+
+<h3 id="widgetid">widgetId</h3>
+
+<h3 id="widgets">widgets</h3>
+
+<h3 id="сlassname">сlassName</h3>
 
       </div>
     </div>
