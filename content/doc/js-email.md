@@ -11,7 +11,7 @@ title = "Email"
 ### Подключение
 
 ```JavaScript
-let email = require("email")
+let email = require("email");
 ````
 
 ### send()
