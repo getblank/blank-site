@@ -1,9 +1,11 @@
 +++
 date = "2016-09-08T13:06:55+05:00"
 title = "Email"
+url = "/doc/email/"
 [menu.doc]
     parent = "serverjs"
     weight = 140
+    url = "/doc/email/"
 +++
 
 Модуль `email` предназначен для работы с электронной почтой.

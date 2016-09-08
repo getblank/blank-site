@@ -2,11 +2,13 @@
 date = "2016-09-07T13:10:48+05:00"
 title = "Serverside JS API"
 menuTitle = "Описание"
+url = "/doc/serverjs/"
 [menu.doc]
     parent = "serverjs"
     identifier = "serverjs-description"
     weight = -10
     name = "Описание"
+    url = "/doc/serverjs/"
 +++
 
 Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:
