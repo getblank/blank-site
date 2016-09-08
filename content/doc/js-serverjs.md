@@ -26,18 +26,16 @@ url = "/doc/serverjs/"
 
 ### Встроенные модули:
 
-*   [$db](/doc/db/);
-*   [async](http://caolan.github.io/async/) [*](/doc/serverjs/#embeddedmodules);
-*   email;
-*   [fetch](https://github.com/bitinn/node-fetch) [*](/doc/serverjs/#embeddedmodules);
-*   files;
-*   fs;
-*   [handlebars](http://handlebarsjs.com/) [*](/doc/serverjs/#embeddedmodules);
-*   i18n;
-*   [moment](http://momentjs.com/) [*](/doc/serverjs/#embeddedmodules);
-*   queue;
-*   [request](https://github.com/request/request) [*](/doc/serverjs/#embeddedmodules);
-*   [sift](https://github.com/crcn/sift.js) [*](/doc/serverjs/#embeddedmodules);
+*   [$db](/doc/db/)&nbsp;&mdash; работа с базой данных;
+*   [email](/doc/email/)&nbsp;&mdash; работа с электронной почтой;
+*   [fetch](https://github.com/bitinn/node-fetch) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash; работа с http запросами;
+*   [files](/doc/files/)&nbsp;&mdash; работа со встроенным файловым хранилищем;
+*   [fs](/doc/fs/)&nbsp;&mdash; работа с файловой системой;
+*   [handlebars](http://handlebarsjs.com/) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash; шаблонизатор;
+*   [i18n](/doc/i18n/)&nbsp;&mdash; интернационализация;
+*   [moment](http://momentjs.com/) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash; работа с датами;
+*   [queue](/doc/queue/)&nbsp;&mdash; работа с очередями и списками;
+*   [sift](https://github.com/crcn/sift.js) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash; запросы к данным в формате [MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/);
 
 <a name="embeddedmodules"></a>
 Модули, помеченные знаком `*`, разработаны сторонними разработчиками, но входят в поставку Blank.
