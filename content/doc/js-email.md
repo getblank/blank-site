@@ -14,7 +14,7 @@ url = "/doc/email/"
 
 ```JavaScript
 let email = require("email");
-````
+```
 
 ### send()
 
