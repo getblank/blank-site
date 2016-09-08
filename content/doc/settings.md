@@ -133,6 +133,7 @@ _commonSettings: {
 },
 ```
 
+<a name="defaultLocale">
 **defaultLocale**
 
 Локаль по-умолчанию (string).
