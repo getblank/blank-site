@@ -34,15 +34,11 @@ url = "/doc/serverjs/"
 *   files;
 *   fs;
 *   [handlebars](http://handlebarsjs.com/) [*](/doc/serverjs/#embeddedmodules);
-*   hash;
 *   i18n;
 *   [moment](http://momentjs.com/) [*](/doc/serverjs/#embeddedmodules);
 *   queue;
 *   [request](https://github.com/request/request) [*](/doc/serverjs/#embeddedmodules);
-*   serviceRegistry;
 *   [sift](https://github.com/crcn/sift.js) [*](/doc/serverjs/#embeddedmodules);
-*   utils/find;
-*   wamp;
 
 <a name="embeddedmodules"></a>
-*Сторонний модуль, входящий в поставку Blank.
+Модули, помеченные знаком `*`, разработаны сторонними разработчиками, но входят в поставку Blank.
