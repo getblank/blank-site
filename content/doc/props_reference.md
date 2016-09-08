@@ -28,7 +28,6 @@ title = "Props reference"
 *   [formTab](/doc/props_reference/#formtab);
 *   [hidden](/doc/props_reference/#hidden);
 *   [html](/doc/props_reference/#html);
-*   [htmlFile](/doc/props_reference/#htmlfile);
 *   [label](/doc/props_reference/#label);
 *   [labelClassName](/doc/props_reference/#labelclassname);
 *   [load](/doc/props_reference/#load);
@@ -143,7 +142,7 @@ actions: [
 
 *   `link`&nbsp;&mdash; отображение ссылки;
 
-*   `masked`&nbsp;&mdash; только для `type:string`. Определение маски ввода строки;
+*   `masked`&nbsp;&mdash; только для `type:string`. Вввод данных по маске, определённой в свойстве [mask](/doc/props_reference/#mask) ;
 
 *   `none`&nbsp;&mdash; запрет отображения поля в интерфейсе;
 
@@ -173,55 +172,55 @@ actions: [
 
 
 ### foreignKey
-
+Только для `type:virtualRefList`. Определяет поле с `type:ref` в Store из свойства [store](/doc/props_reference/#store), содержащее ссылку на текущее Store
+по которому будет делаться выборка данных для отображения.
 
 ### format
-
+Только для `type:date`. Формат отображения даты в пользовательском интерфейсе в соответствии с синтаксисом [Moment.js](http://momentjs.com/) (строка).
 
 ### formGroup
-
+Идентификатор группы для отображения поля в пользовательском интерфейсе (строка). Группы определяются в [Store.formGroupsOrder](/doc/store_reference/#formgroupsorder).
 
 ### formOrder
-
+Число, определяющее место отображения поля на форме в пользовательском интерфейсе (int). Может быть отрицательным.
 
 ### formTab
-
+Идентификатор табы для отображения поля в пользовательском интерфейсе (строка). Табы определяются в [Store.formTabs](/doc/store_reference/#formtabs).
 
 ### hidden
-
+Условие, при выполнении которого поле будет скрыто с формы в пользовательском интерфейсе (строка).
+В условии доступны объекты `$item` (текущий объект) и `$user` (пользователь, работающий с объектом).
 
 ### html
-
-
-### htmlFile
-
+Только для `display:html`. Шаблон для отображения поля в пользовательском интерфейсе (строка). При рендеринге, обрабатывается через handlebars.
 
 ### label
-
+Заголовок поля на форме в пользовательском интерфейсе. При рендеринге, обрабатывается через handlebars.
 
 ### labelClassName
-
+Определяет дополнительный CSS класс для заголовка поля в пользовательском интерфейсе.
 
 ### load
-
+Только для `type:virtual` и `type:virtual/client`. Функция загрузки виртуального поля.
+В функции доступны объекты `$item` (текущий объект) и `$user` (пользователь, работающий с объектом).
 
 ### loadComponent
-
+Только для `display:react`. Код компонента React.JS для отображения поля в пользовательском интерфейсе.
 
 ### mask
-
+Только для `type:string` и `display:masked`. Определение маски ввода строки (строка или объект).
 
 ### max
-
+Только для  `type:int` и `type:float`. Минимальное значение поля (число).
 
 ### maxLength
-
+Только для `type:string`. Минимальная длина строки (число).
 
 ### min
-
+Только для  `type:int` и `type:float`. Максимальное значение поля (число).
 
 ### minLength
-
+Только для `type:string`. Максимальная длина строки (число).
 
 ### noSanitize
 
