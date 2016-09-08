@@ -241,7 +241,273 @@
       <pubDate>Thu, 08 Sep 2016 13:08:20 +0500</pubDate>
       
       <guid>https://getblank.net/doc/queue/</guid>
-      <description></description>
+      <description>
+
+&lt;p&gt;Модуль &lt;code&gt;queue&lt;/code&gt; предназначен для работы с сервером очередей Blank, представляющим сервис,
+двусвязных списков и очередей. В данный момент доступен только сервис двусвязных списков.&lt;/p&gt;
+
+&lt;h3 id=&#34;подключение&#34;&gt;Подключение&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;let List = require(&amp;quot;queue&amp;quot;).List;
+let list = new List(&amp;quot;listName&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;back&#34;&gt;back()&lt;/h3&gt;
+
+&lt;p&gt;Переводит курсор в конец списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.back(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет элемент списка.&lt;/p&gt;
+
+&lt;h3 id=&#34;drop&#34;&gt;drop()&lt;/h3&gt;
+
+&lt;p&gt;Удаляет список на сервере.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-1&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.drop(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-1&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-1&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
+
+&lt;h3 id=&#34;front&#34;&gt;front()&lt;/h3&gt;
+
+&lt;p&gt;Переводит курсор в начало списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-2&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.front(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-2&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-2&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет элемент списка.&lt;/p&gt;
+
+&lt;h3 id=&#34;getbyid&#34;&gt;getById()&lt;/h3&gt;
+
+&lt;p&gt;Возвращает элемент списка с указанным идентификатором. Идентификатором элемента является свойство &lt;code&gt;_id&lt;/code&gt;, в случае,
+если элемент представляет собой JavaScript Object. Не передвигает курсор.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-3&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.getById(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-3&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-3&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет элемент списка.&lt;/p&gt;
+
+&lt;h3 id=&#34;gotoposition&#34;&gt;gotoPosition()&lt;/h3&gt;
+
+&lt;p&gt;Переводит курсор на указанную позицию в списке.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-4&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.gotoPosition(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-4&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению перевод (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-4&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет элемент списка.&lt;/p&gt;
+
+&lt;h3 id=&#34;length&#34;&gt;length()&lt;/h3&gt;
+
+&lt;p&gt;Возвращает количество элементов списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-5&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.length(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-5&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-5&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
+
+&lt;h3 id=&#34;next&#34;&gt;next()&lt;/h3&gt;
+
+&lt;p&gt;Переводит курсор на следующий элемент списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-6&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.next(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-6&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-6&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет элемент списка.&lt;/p&gt;
+
+&lt;h3 id=&#34;position&#34;&gt;position()&lt;/h3&gt;
+
+&lt;p&gt;Возвращает позицию текущего элемента списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-7&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.position(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-7&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-7&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
+
+&lt;h3 id=&#34;prev&#34;&gt;prev()&lt;/h3&gt;
+
+&lt;p&gt;Переводит курсор на предыдущий элемент списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-8&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.prev(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-8&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-8&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет элемент списка.&lt;/p&gt;
+
+&lt;h3 id=&#34;pushback&#34;&gt;pushBack()&lt;/h3&gt;
+
+&lt;p&gt;Добавляет элемент в конец списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-9&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.pushBack(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-9&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-9&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет позиция добавленного в список элемента.&lt;/p&gt;
+
+&lt;h3 id=&#34;pushfront&#34;&gt;pushFront()&lt;/h3&gt;
+
+&lt;p&gt;Добавляет элемент в начало списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-10&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.pushFront(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-10&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-10&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.
+При успешном выполнении, результатом будет позиция добавленного в список элемента.&lt;/p&gt;
+
+&lt;h3 id=&#34;remove&#34;&gt;remove()&lt;/h3&gt;
+
+&lt;p&gt;Удаляет текущий элемент из списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-11&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.remove(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-11&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-11&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
+
+&lt;h3 id=&#34;update&#34;&gt;update()&lt;/h3&gt;
+
+&lt;p&gt;Изменяет текущий элемент из списка.&lt;/p&gt;
+
+&lt;h4 id=&#34;синтаксис-12&#34;&gt;Синтаксис&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;queue.update(callback)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;параметры-12&#34;&gt;Параметры&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;callback&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Функция, которая будет выполнена по завершению (опционально).&lt;/p&gt;
+
+&lt;h4 id=&#34;возвращаемые-значения-12&#34;&gt;Возвращаемые значения&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;null&lt;/code&gt; в случае переданной функции &lt;code&gt;callback&lt;/code&gt; или &lt;code&gt;Promise&lt;/code&gt;, если функция не передавалась.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -252,7 +518,7 @@
       <guid>https://getblank.net/doc/i18n/</guid>
       <description>
 
-&lt;p&gt;Модуль &lt;code&gt;i18n&lt;/code&gt; используется для создания мультиязычных приложений.&lt;/p&gt;
+&lt;p&gt;Модуль &lt;code&gt;i18n&lt;/code&gt; применяется при создании мультиязычных приложений.&lt;/p&gt;
 
 &lt;h3 id=&#34;use&#34;&gt;Подключение&lt;/h3&gt;
 
@@ -295,7 +561,22 @@
       <pubDate>Thu, 08 Sep 2016 13:07:30 +0500</pubDate>
       
       <guid>https://getblank.net/doc/fs/</guid>
-      <description></description>
+      <description>
+
+&lt;p&gt;Модуль &lt;code&gt;fs&lt;/code&gt;&amp;nbsp;&amp;amp;mdash модуль &lt;a href=&#34;https://nodejs.org/api/fs.html&#34;&gt;Node FS&lt;/a&gt; с одним дополнительным методом.&lt;/p&gt;
+
+&lt;h3 id=&#34;подключение&#34;&gt;Подключение&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;let fs = require(&amp;quot;fs&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;дополнительные-методы&#34;&gt;Дополнительные методы&lt;/h3&gt;
+
+&lt;h4 id=&#34;readlib&#34;&gt;readLib()&lt;/h4&gt;
+
+&lt;p&gt;Метод &lt;code&gt;fs.readLib()&lt;/code&gt; предназначен для чтения дополнительных пользовательских файлов, расположенных в директории &lt;code&gt;/lib/&lt;/code&gt; проекта.
+Синтаксис и механизм работы аналогичен &lt;a href=&#34;https://nodejs.org/api/fs.html#fs_fs_readfile_file_options_callback&#34;&gt;fs.readFile()&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -397,15 +678,6 @@ email.send(message[, callback])
     </item>
     
     <item>
-      <title>Clickhouse</title>
-      <link>https://getblank.net/doc/clickhouse/</link>
-      <pubDate>Thu, 08 Sep 2016 13:06:50 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/clickhouse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Serverside JS API</title>
       <link>https://getblank.net/doc/serverjs/</link>
       <pubDate>Wed, 07 Sep 2016 13:10:48 +0500</pubDate>
@@ -431,19 +703,16 @@ email.send(message[, callback])
 &lt;h3 id=&#34;встроенные-модули&#34;&gt;Встроенные модули:&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/db/&#34;&gt;$db&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://caolan.github.io/async/&#34;&gt;async&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;clickhouse;&lt;/li&gt;
-&lt;li&gt;email;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/bitinn/node-fetch&#34;&gt;fetch&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;files;&lt;/li&gt;
-&lt;li&gt;fs;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://handlebarsjs.com/&#34;&gt;handlebars&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;i18n;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://momentjs.com/&#34;&gt;moment&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;queue;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/request/request&#34;&gt;request&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/crcn/sift.js&#34;&gt;sift&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/db/&#34;&gt;$db&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с базой данных;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/email/&#34;&gt;email&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с электронной почтой;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bitinn/node-fetch&#34;&gt;fetch&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с http запросами;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/files/&#34;&gt;files&lt;/a&gt;&amp;nbsp;&amp;mdash; работа со встроенным файловым хранилищем;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/fs/&#34;&gt;fs&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с файловой системой;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://handlebarsjs.com/&#34;&gt;handlebars&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash; шаблонизатор;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/i18n/&#34;&gt;i18n&lt;/a&gt;&amp;nbsp;&amp;mdash; интернационализация;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://momentjs.com/&#34;&gt;moment&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с датами;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/queue/&#34;&gt;queue&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с очередями и списками;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/crcn/sift.js&#34;&gt;sift&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash; запросы к данным в формате &lt;a href=&#34;https://docs.mongodb.com/manual/tutorial/query-documents/&#34;&gt;MongoDB Query&lt;/a&gt;;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a name=&#34;embeddedmodules&#34;&gt;&lt;/a&gt;
@@ -779,6 +1048,57 @@ email.send(message[, callback])
     });
 }
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HTTP hooks</title>
+      <link>https://getblank.net/doc/httphooks/</link>
+      <pubDate>Sat, 06 Aug 2016 20:10:23 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/httphooks/</guid>
+      <description>
+
+&lt;p&gt;HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации,
+они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно
+или использовать Actions с типом http.&lt;/p&gt;
+
+&lt;p&gt;Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: &lt;a href=&#34;https://getblank.net/doc/store_reference/#http-api&#34;&gt;httpApi&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;структура&#34;&gt;Структура&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;quot;httpHooks&amp;quot;: [HTTPHook {
+    &amp;quot;uri&amp;quot;: &amp;quot;string&amp;quot;
+    &amp;quot;method&amp;quot;: &amp;quot;GET&amp;quot;, &amp;quot;PUT&amp;quot;, &amp;quot;POST&amp;quot;, &amp;quot;PATCH&amp;quot;, &amp;quot;DELETE&amp;quot;, &amp;quot;HEAD&amp;quot;, &amp;quot;OPTIONS&amp;quot;,
+    &amp;quot;script&amp;quot;: function ($request):Response {}
+}]
+
+Response {
+    &amp;quot;type&amp;quot;: &amp;quot;JSON&amp;quot;, &amp;quot;HTML&amp;quot;, &amp;quot;XML&amp;quot;, &amp;quot;file&amp;quot;,
+    &amp;quot;data&amp;quot;: &amp;quot;string&amp;quot;,
+    &amp;quot;rawData&amp;quot;: any,
+    &amp;quot;code&amp;quot;: int, //HTTP status code
+    &amp;quot;header&amp;quot;: {},
+    &amp;quot;fileName&amp;quot;: &amp;quot;string&amp;quot;, // Только для type:file
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;uri&#34;&gt;Uri&lt;/h3&gt;
+
+&lt;p&gt;Полный путь будет сформирован таким образом:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;http[s]://server-address/hooks/storeName/uri
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;В &lt;code&gt;uri&lt;/code&gt; можно использовать параметры, они начинаются с символа &lt;code&gt;:&lt;/code&gt;, например:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;uri&amp;quot;: &amp;quot;/like/:photoId&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Значения параметров будут доступны через свойство &lt;code&gt;params&lt;/code&gt; объекта &lt;code&gt;$request&lt;/code&gt;, переданного аргументом
+в скрипт hook-а.&lt;/p&gt;
+
+&lt;p&gt;Подробнее об объекте &lt;code&gt;$request&lt;/code&gt; читайте в разделе &lt;a href=&#34;https://getblank.net/doc/request/&#34;&gt;Serverside JS API: $request&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
