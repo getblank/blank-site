@@ -28,7 +28,6 @@ url = "/doc/serverjs/"
 
 *   [$db](/doc/db/);
 *   [async](http://caolan.github.io/async/) [*](/doc/serverjs/#embeddedmodules);
-*   clickhouse;
 *   email;
 *   [fetch](https://github.com/bitinn/node-fetch) [*](/doc/serverjs/#embeddedmodules);
 *   files;
