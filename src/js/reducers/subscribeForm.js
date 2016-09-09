@@ -1,7 +1,9 @@
 const EMPTY_EMAIL_ERROR = "Укажите email";
 const emptyData = {
-    email: "",
-    emailError: EMPTY_EMAIL_ERROR,
+    // email: "",
+    // emailError: EMPTY_EMAIL_ERROR,
+    email: "mail@mail.mail",
+    emailError: "",
     accepted: true,
 };
 const emptyState = {

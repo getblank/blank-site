@@ -37,7 +37,12 @@ export const handleSubmit = () => {
         if (state.subscribeForm.data.emailError) {
             return;
         }
-        return fetch(`${BLANK_URI}/hooks/landings/`)
+        var formData = new FormData();
+        formData.append("email", state.subscribeForm.data.email);
+        return fetch(`${BLANK_URI}/hooks/land/`, {
+            method: "POST",
+            body: formData,
+        })
             .then(response => response.json())
             .then(json => dispatch(subscribeResponse(json)))
             .catch(e => dispatch(subscribeError(e)));
