@@ -5,11 +5,14 @@ module.exports = {
         "label": "{{$i18n.storeLabel}}",
         "labels": [],
         "props": {
-            "stringProperty": {
+            "chckbx": {
                 "type": "string",
-                "display": "textInput",
-                "label": "String property"
-            }
+                "display": "password",
+                "min": 10,
+                "max": 100,
+                "label": "password",
+                "formOrder": 0,
+            },
         },
         "actions": [],
         "objectLifeCycle": require("./_itemHooks.js"),
@@ -18,7 +21,7 @@ module.exports = {
         "httpHooks": [],
         "tasks": [],
         "i18n": {
-            "storeLabel": "Demo store"
-        }
-    }
+            "storeLabel": "Demo store",
+        },
+    },
 };
