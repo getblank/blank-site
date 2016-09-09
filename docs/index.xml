@@ -162,9 +162,13 @@
 
 &lt;p&gt;Поле с флажком в виде галочки. Не имеет собственных свойств.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/checkbox.gif&#34; alt=&#34;checkbox&#34; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;checklist&#34;&gt;checkList&lt;/h2&gt;
 
 &lt;p&gt;Поле в виде списка флажков с возможностью выбора нескольких значений.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/checklist.gif&#34; alt=&#34;checklist&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;свойства-2&#34;&gt;Свойства&lt;/h3&gt;
 
@@ -183,13 +187,19 @@
 
 &lt;p&gt;Отображение моноширинным шрифтом в виде нередактируемого текста с сохранением исходного форматирования.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/code.png&#34; alt=&#34;code&#34; width=&#34;600&#34;&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;codeeditor&#34;&gt;codeEditor&lt;/h2&gt;
 
 &lt;p&gt;Отображение редактора кода. Не имеет собственных свойств.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/codeEditor.gif&#34; alt=&#34;codeEditor&#34; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;colorpicker&#34;&gt;colorPicker&lt;/h2&gt;
 
 &lt;p&gt;Поле для выбора цвета из определённого набора.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/colorPicker.gif&#34; alt=&#34;colorPicker&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;свойства-3&#34;&gt;Свойства&lt;/h3&gt;
 
@@ -213,6 +223,8 @@
 
 &lt;p&gt;Поле для выбора даты. Отображается в виде текстового поле с маской даты и с выпадающим календарём.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/datePicker.gif&#34; alt=&#34;datePicker&#34; /&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;свойства-4&#34;&gt;Свойства&lt;/h3&gt;
 
 &lt;h4 id=&#34;date-format&#34;&gt;format&lt;/h4&gt;
@@ -222,6 +234,8 @@
 &lt;h2 id=&#34;daterange&#34;&gt;dateRange&lt;/h2&gt;
 
 &lt;p&gt;Поле для выбора диапазона дат. Отображается в виде текстового поле с маской даты и с выпадающим большим календарём.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/dateRange.gif&#34; alt=&#34;dateRange&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;свойства-5&#34;&gt;Свойства&lt;/h3&gt;
 
@@ -261,6 +275,8 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Текстовое поле ввода данных по маске, определённой в свойстве &lt;a href=&#34;https://getblank.net/doc/props-displaying/#masked-mask&#34;&gt;mask&lt;/a&gt;.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/masked.gif&#34; alt=&#34;masked&#34; /&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;свойства-8&#34;&gt;Свойства&lt;/h3&gt;
 
 &lt;h4 id=&#34;masked-mask&#34;&gt;mask&lt;/h4&gt;
@@ -276,7 +292,7 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
     value: &amp;quot;| (|||) |||-||-||&amp;quot;, // значение маски. Например здесь ввод телефона в виде 7 (1234) 567-89-00
-    message: &amp;quot;Номер один&amp;quot;, // сообщение, которое будет выведено при несоответствии данных маске
+    message: &amp;quot;Неправильно набран номер&amp;quot;, // сообщение, которое будет выведено при несоответствии данных маске
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -288,6 +304,8 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Поле ввода числовых значений. В зависимости от значения свойства &lt;code&gt;type&lt;/code&gt; поля, допускается ввод только целочисленных &lt;code&gt;int&lt;/code&gt;,
 либо значений с плавающей запятой &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://getblank.net/img/display/numberInput.gif&#34; alt=&#34;numberInput&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;objectlist&#34;&gt;objectList&lt;/h2&gt;
 
