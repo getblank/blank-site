@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"> 
+    <meta name="generator" content="Hugo 0.17-DEV" />
+
+    
+        <meta name="description" content="Облачная платформа для создания бэкенда с открытым исходным кодом">
+    
+
+    
+        <meta name="keywords" content="BaaS, backend, cloud, iot, platform, бэкенд, облачный сервис, интернет вещей">
+    
+
+    <meta name="author" content="BLANK">
+
+
+    <base href="https://getblank.net/">
+
+    
+    <title>Props modeling &middot; BLANK cloud platform</title>
+    
+
+    <link rel="canonical" href="https://getblank.net/doc/props-modeling/">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+<link href="css/app.css" media="all" rel="stylesheet"/>
+<link href="/css/hl-github.css" rel="stylesheet">
+</head>
+
+<body lang="ru">
+
+
+
+<div id="navbar"  class="no-expand blog"  >
+    <div class="container">
+        <a href="#" data-menu="sidenav" class="nav-toggle menu">
+            <img src="/img/menu.svg" alt="menu"/>
+        </a>
+        <div class="logo">
+            <a href="index.html" class="nav-link">BLANK</a>
+        </div>
+        <ul class="nav collapse" id="nav">
+            <li>
+                <a href="/doc/introduction/" class="nav-link index-link active">
+                    Документация
+                </a>
+            </li>
+            <li>
+                <a href="#contacts" class="nav-link index-link" data-active-until="contacts-end" data-active-after="contacts-start">
+                    Контакты
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/getblank/" class="nav-link">
+                    GitHub
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+
+<div id="docs">
+  <div class="docs-contents">
+    
+    
+    
+      <h3>Начало работы</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/doc/introduction/">Вступление</a>
+            </li>
+          
+            <li >
+              <a href="/doc/quickstart/">Быстрый старт</a>
+            </li>
+          
+            <li >
+              <a href="/doc/settings/">Конфигурация</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank CLI</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/doc/cli/">CLI reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/build/">Сборка конфигурации</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank Schema</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/doc/schema/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="/doc/stores/">Stores</a>
+            </li>
+          
+            <li >
+              <a href="/doc/store_reference/">Store reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/access/">Access control</a>
+            </li>
+          
+            <li >
+              <a href="/doc/filters/">Filters</a>
+            </li>
+          
+            <li >
+              <a href="/doc/httphooks/">HTTP hooks</a>
+            </li>
+          
+            <li >
+              <a href="/doc/lifecycle_events/">Lifecycle events</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li  class="active">
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Serverside JS API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/doc/serverjs/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="/doc/actions/">Actions</a>
+            </li>
+          
+            <li >
+              <a href="/doc/db/">$db</a>
+            </li>
+          
+            <li >
+              <a href="/doc/request/">$request</a>
+            </li>
+          
+            <li >
+              <a href="/doc/email/">Email</a>
+            </li>
+          
+            <li >
+              <a href="/doc/files/">Files</a>
+            </li>
+          
+            <li >
+              <a href="/doc/fs/">FS</a>
+            </li>
+          
+            <li >
+              <a href="/doc/i18n/">I18n</a>
+            </li>
+          
+            <li >
+              <a href="/doc/queue/">Queue</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>HTTP API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/doc/httpauth/">Auth</a>
+            </li>
+          
+            <li >
+              <a href="/doc/httprest/">REST</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Интеграция</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/doc/facebook/">Facebook</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+
+  </div>
+  <div class="doc-wrapper">
+    <div class="doc">
+      <h1>Props modeling</h1>
+      <div class="content">
+        
+
+<p>В зависимости от типа поля, его может характеризовать определённый набор свойств. Кроме того, существует набор свойств,
+применимый к каждому типу полей.</p>
+
+<h2 id="типы-полей">Типы полей</h2>
+
+<ul>
+<li><a href="/doc/props-modeling/#action">action</a>;</li>
+<li><a href="/doc/props-modeling/#bool">bool</a>;</li>
+<li><a href="/doc/props-modeling/#date">date</a>;</li>
+<li><a href="/doc/props-modeling/#file">file</a>;</li>
+<li><a href="/doc/props-modeling/#float">float</a>;</li>
+<li><a href="/doc/props-modeling/#int">int</a>;</li>
+<li><a href="/doc/props-modeling/#object">object</a>;</li>
+<li><a href="/doc/props-modeling/#objectlist">objectList</a>;</li>
+<li><a href="/doc/props-modeling/#ref">ref</a>;</li>
+<li><a href="/doc/props-modeling/#reflist">refList</a>;</li>
+<li><a href="/doc/props-modeling/#string">string</a>;</li>
+<li><a href="/doc/props-modeling/#virtual">virtual</a>;</li>
+<li><a href="/doc/props-modeling/#virtualreflist">virtualRefList</a>.</li>
+</ul>
+
+<p>Ниже перечислены общие свойства, а так же собственные свойства для каждого типа.</p>
+
+<h2 id="общие-свойства">Общие свойства</h2>
+
+<h3 id="access">access</h3>
+
+<p>Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству <a href="/doc/store_reference/#access">access</a> Store.</p>
+
+<h3 id="configurable">configurable</h3>
+
+<p>Внутреннее свойство для Store по-умолчанию (bool). Определяет возможность переопределения свойств поля в пользовательской конфигурации.
+Не используется при разработке приложений.</p>
+
+<h3 id="default">default</h3>
+
+<p>Определяет значение поля по-умолчению. Будет установлено при создании объекта, в случае, если значение не определено в создаваемом объекте.</p>
+
+<h3 id="required">required</h3>
+
+<p>Флаг обязательного поля (bool). Если <code>true</code>, то при сохранении объекта с неустановленным значением поля будет возвращена ошибка.
+В пользовательском интерфейсе при этом будет заблокирована кнопка <strong>Сохранить</strong>.</p>
+
+<h2 id="action">action</h2>
+
+<p>Поле данного типа не сохраняется в БД, используется только пользовательском интерфейсе. Подробнее в разделе
+<a href="/doc/props-displaying/#action">Props displaying</a>.</p>
+
+<h2 id="bool">bool</h2>
+
+<p>Булевый тип, может принимать значения <code>true</code> или <code>false</code>. Не имеет собственных свойств.</p>
+
+<h2 id="date">date</h2>
+
+<h3 id="свойства">Свойства</h3>
+
+<h4 id="utc">utc</h4>
+
+<p>Флаг определяющий хранение даты во временной зоне UTC+0 (bool).</p>
+
+<h2 id="file">file</h2>
+
+<p>Поле, применяющееся для хранения файлов. В СУБД при этом хранится только мета-описание файлов, сами файлы располагаются в файловом хранилище,
+являющимся отдельным сервисом Blank.</p>
+
+<h3 id="свойства-1">Свойства</h3>
+
+<h4 id="accept">accept</h4>
+
+<p>Позволяет задать маску принимаемых для загрузки файлов (строка).
+В настоящее время не реализовано.</p>
+
+<h4 id="store">store</h4>
+
+<p>Название Store с типом <code>file</code> для хранения мета-информации о файлах (строка).</p>
+
+<h2 id="float">float</h2>
+
+<p>Вещественный тип, или тип с плавающей запятой.</p>
+
+<h3 id="свойства-2">Свойства</h3>
+
+<h4 id="max">max</h4>
+
+<p>Максимальное допустимое значение поля.</p>
+
+<h4 id="min">min</h4>
+
+<p>Минимальное допустимое значение поля.</p>
+
+<h2 id="int">int</h2>
+
+<p>Целочисленный тип.
+Набор собственных свойств аналогичен <a href="/doc/props-modeling/#float">type:float</a>.</p>
+
+<h2 id="object">object</h2>
+
+<p>Вложенная структура данных. Поддерживается только один уровень вложенности объектов.</p>
+
+<h3 id="свойства-3">Свойства</h3>
+
+<h4 id="props">props</h4>
+
+<p>Описание полей вложенной структуры данных.</p>
+
+<pre><code class="language-javascript">type: &quot;object&quot;,
+props: {
+    // Поля вложенного объекта
+},
+</code></pre>
+
+<h2 id="objectlist">objectList</h2>
+
+<p>Массив вложенных структур данных. Поддерживается только один уровень вложенности объектов.</p>
+
+<h3 id="свойства-4">Свойства</h3>
+
+<h4 id="maxlength">maxLength</h4>
+
+<p>Максимальное допустимое количество вложенных структур.</p>
+
+<h4 id="maxlength-1">maxLength</h4>
+
+<p>Минимальное допустимое количество вложенных структур.</p>
+
+<h4 id="props-1">props</h4>
+
+<p>Описание полей вложенных структур данных.</p>
+
+<pre><code class="language-javascript">type: &quot;objectList&quot;,
+props: {
+    // Поля вложенных объектов
+},
+</code></pre>
+
+<h2 id="ref">ref</h2>
+
+<p>Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.
+Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе <a href="/doc/ref_sync/">References sync</a>.</p>
+
+<h3 id="свойства-5">Свойства</h3>
+
+<h4 id="disablerefsync">disableRefSync</h4>
+
+<p>Флаг, указывающий, что не требуется проводить обновление связи данного поля (bool).
+Подробнее о механизме каскадного обновления связей читайте в разделе <a href="/doc/ref_sync/">References sync</a></p>
+
+<h4 id="oppositeprop">oppositeProp</h4>
+
+<p>Название поля в Store, определённой свойством <a href="/doc/props-modeling/#store">store</a> (строка).
+Требуется для работы механизма каскадного обновления связей.</p>
+
+<h4 id="populatein">populateIn</h4>
+
+<p>Поле, в которое будет загружен соответствующий объект из Store
+определённом в свойстве <a href="/doc/props-modeling/#store">store</a>.</p>
+
+<h4 id="ref-store">store</h4>
+
+<p>Название Store объекта, на который указывает ссылка (строка).</p>
+
+<h2 id="reflist">refList</h2>
+
+<p>Массив ссылок на другие объекты, используется для создания связей 1-N, M-N. Значение записывается в виде
+массива строковых идентификаторов.
+Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе <a href="/doc/ref_sync/">References sync</a>.</p>
+
+<p>Набор собственных свойств аналогичен <a href="/doc/props-modeling/#ref">type:ref</a>.</p>
+
+<h2 id="string">string</h2>
+
+<p>Строковый тип.</p>
+
+<h3 id="свойства-6">Свойства</h3>
+
+<h4 id="mask">mask</h4>
+
+<p>Маска для значения (строка или объект).</p>
+
+<h4 id="maxlength-2">maxLength</h4>
+
+<p>Максимальная допустимая длина строки (int).
+Так же применяется для <code>type:objectList</code> и обозначает максимальное допустимое количество вложенных структур данных.</p>
+
+<h4 id="minlength">minLength</h4>
+
+<p>Минимальная допустимая длина строки (int).
+Так же применяется для <code>type:objectList</code> и обозначает минимальное допустимое количество вложенных структур данных.</p>
+
+<h4 id="pattern">pattern</h4>
+
+<p>Регулярное выражение для проверки вводимого значения (строка или объект).</p>
+
+<h2 id="virtual">virtual</h2>
+
+<p>Виртуальное поле, вычисляемое при получении данных. Значения данных полей не сохраняются в БД.</p>
+
+<h3 id="свойства-7">Свойства</h3>
+
+<h4 id="load">load</h4>
+
+<p>Функция-загрузчик виртуального поля (строка).
+В функции доступны объекты <code>$item</code> (текущий объект) и <code>$user</code> (пользователь, работающий с объектом).</p>
+
+<pre><code class="language-javascript">type: &quot;virtual&quot;,
+load: function ($item, $user) {
+    return $item.prop1 + $item.prop2;
+},
+</code></pre>
+
+<h2 id="virtualreflist">virtualRefList</h2>
+
+<p>Используется только в пользовательском интерфейсе. Значения данных полей не сохраняются в БД.
+Подробнее в <a href="/doc/props-displaying/#virtualreflist">Props displaying</a>.</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<footer id="contacts">
+  <div id="contacts-start"></div>
+  <div>
+    
+    <div class="social">
+      <a href="https://github.com/getblank/">GitHub</a>
+    </div>
+    <hr>
+    <p>2016 &copy; Blank</p>
+    <p>Телефон: +7 (922) 070 4022</p>
+    <p>E-mail: info@getblank.net</p>
+    <p style="font-size: .8rem">Россия &middot; Тюмень</p>
+    <p class="hugo">Site powered by <a href="http://gohugo.io">Hugo</a></p>
+  </div>
+  <div id="contacts-end"></div>
+</footer>
+<div id="lightbox" class="hidden">
+  <div class="back"></div>
+  <div class="close"></div>
+  <div class="image">
+    <img src="" alt="" />
+  </div>
+</div>
+<script type="text/javascript" src="app.bundle.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -6,8 +6,631 @@
     <description>Recent content on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Sep 2016 17:16:00 +0500</lastBuildDate>
+    <lastBuildDate>Fri, 09 Sep 2016 13:07:00 +0500</lastBuildDate>
     <atom:link href="https://getblank.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Props displaying</title>
+      <link>https://getblank.net/doc/props-displaying/</link>
+      <pubDate>Fri, 09 Sep 2016 13:07:00 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/props-displaying/</guid>
+      <description>
+
+&lt;p&gt;Данный раздел описывает конфигурацию работы встроенного веб приложения Blank.&lt;/p&gt;
+
+&lt;p&gt;В зависимости от типа отображения поля, его вид может характеризовать определённый набор свойств.
+Кроме того, существует набор свойств, применимый к каждому типу отображения.
+Далее приведены общие свойства, а так же свойства, характерные для каждого типа отображения,
+т.е. свойства  &lt;code&gt;display&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;типы-отображения-полей&#34;&gt;Типы отображения полей&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#action&#34;&gt;action&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#autocomplete&#34;&gt;autocomplete&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#checkbox&#34;&gt;checkbox&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#checklist&#34;&gt;checkList&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#code&#34;&gt;code&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#codeeditor&#34;&gt;codeEditor&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#colorpicker&#34;&gt;colorPicker&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#datepicker&#34;&gt;datePicker&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#daterange&#34;&gt;dateRange&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#filepicker&#34;&gt;filePicker&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#html&#34;&gt;html&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#masked&#34;&gt;masked&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#none&#34;&gt;none&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#numberinput&#34;&gt;numberInput&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#objectlist&#34;&gt;objectList&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#password&#34;&gt;password&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#react&#34;&gt;react&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#searchbox&#34;&gt;searchBox&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#select&#34;&gt;select&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#text&#34;&gt;text&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#textarea&#34;&gt;textArea&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#textinput&#34;&gt;textInput&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-displaying/#virtualreflist&#34;&gt;virtualRefList&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;общие-свойства&#34;&gt;Общие свойства&lt;/h2&gt;
+
+&lt;h3 id=&#34;сlassname&#34;&gt;сlassName&lt;/h3&gt;
+
+&lt;p&gt;Дополнительный CSS класс для отображения поля.&lt;/p&gt;
+
+&lt;h3 id=&#34;disabled&#34;&gt;disabled&lt;/h3&gt;
+
+&lt;p&gt;Условие недоступности редактирования поля текущего элемента в пользовательском интерфейсе (строка).
+В условии доступны объекты &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;h3 id=&#34;disableorder&#34;&gt;disableOrder&lt;/h3&gt;
+
+&lt;p&gt;Флаг, определяющий запрет сортировки по полю при типе отображения Store &lt;code&gt;table&lt;/code&gt; (bool).&lt;/p&gt;
+
+&lt;h3 id=&#34;formgroup&#34;&gt;formGroup&lt;/h3&gt;
+
+&lt;p&gt;Идентификатор группы для отображения поля (строка).
+Группы определяются в Store свойстве &lt;a href=&#34;https://getblank.net/doc/store_reference/#formgroup&#34;&gt;formGroups&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;formorder&#34;&gt;formOrder&lt;/h3&gt;
+
+&lt;p&gt;Число, определяющее место отображения поля на форме (int). Может быть отрицательным.
+Чем больше значение данного свойства, тем дальше будет распологаться поле на форме.&lt;/p&gt;
+
+&lt;h3 id=&#34;formtab&#34;&gt;formTab&lt;/h3&gt;
+
+&lt;p&gt;Идентификатор табы для отображения поля (строка).
+Табы определяются в Store свойстве &lt;a href=&#34;https://getblank.net/doc/store_reference/#formtabs&#34;&gt;formTabs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;hidden&#34;&gt;hidden&lt;/h3&gt;
+
+&lt;p&gt;Условие, при выполнении которого поле будет скрыто с формы (строка).
+В условии доступны объекты &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;h3 id=&#34;label&#34;&gt;label&lt;/h3&gt;
+
+&lt;p&gt;Заголовок поля на форме. При рендеринге, обрабатывается через handlebars.
+В шаблоне можно использовать хелпер &lt;code&gt;$i18n&lt;/code&gt;, &lt;code&gt;$item&lt;/code&gt;, &lt;code&gt;$user&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;labelclassname&#34;&gt;labelClassName&lt;/h3&gt;
+
+&lt;p&gt;Определяет дополнительный CSS класс для заголовка поля.&lt;/p&gt;
+
+&lt;h3 id=&#34;sortable&#34;&gt;sortable&lt;/h3&gt;
+
+&lt;p&gt;Флаг определяющий возможность сортировки по полю при типе отображения Store &lt;code&gt;table&lt;/code&gt; (bool).&lt;/p&gt;
+
+&lt;h3 id=&#34;sortby&#34;&gt;sortBy&lt;/h3&gt;
+
+&lt;p&gt;Поле, по которому будет производиться сортировка вместо текущего поля при типе отображения Store &lt;code&gt;table&lt;/code&gt; (строка).&lt;/p&gt;
+
+&lt;h3 id=&#34;style&#34;&gt;style&lt;/h3&gt;
+
+&lt;p&gt;Дополнительные CSS стили для отображения поля (JavaScript Object).&lt;/p&gt;
+
+&lt;h3 id=&#34;tooltip&#34;&gt;tooltip&lt;/h3&gt;
+
+&lt;p&gt;Подсказка по заполнению поля (строка). Отображается в виде иконки вопросительного знака рядом с заголовком поля.
+При наведении, показывается текст подсказки.
+При рендеринге, обрабатывается через handlebars. В шаблоне можно использовать хелпер &lt;code&gt;$i18n&lt;/code&gt;, &lt;code&gt;$item&lt;/code&gt;, &lt;code&gt;$user&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;action&#34;&gt;action&lt;/h2&gt;
+
+&lt;p&gt;Автоматически устанавливаемый тип отображения для полей типа &lt;code&gt;action&lt;/code&gt;.
+Не требует указания.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;actions&#34;&gt;actions&lt;/h4&gt;
+
+&lt;p&gt;Массив объектов с описанием Actions, определённых в текущем Store.
+Используется для размещения кнопок запуска Actions на форме в интерфейсе клиента.
+Может переопределять некоторые свойства конкретных отображаемых Action.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;actions: [
+     // Здесь мы указываем, что нужно поместить кнопку вызова Action copy
+    { _id: &amp;quot;copy&amp;quot; },
+
+    // Здесь мы дополнительно переопределяем свойство label
+    { _id: &amp;quot;move&amp;quot;, label: &amp;quot;Перенести&amp;quot; },
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;autocomplete&#34;&gt;autocomplete&lt;/h2&gt;
+
+&lt;p&gt;Текстовое поле ввода с автодополнением из свойства .&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-1&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;disablecustominput&#34;&gt;disableCustomInput&lt;/h4&gt;
+
+&lt;p&gt;Запрет ввода значений не определённых свойством &lt;a href=&#34;https://getblank.net/doc/props-displaying/#autocomplete-options&#34;&gt;options&lt;/a&gt; (bool).
+Если установлено в &lt;code&gt;true&lt;/code&gt;, то можно будет вводить только определённые значения.&lt;/p&gt;
+
+&lt;h4 id=&#34;autocomplete-options&#34;&gt;options&lt;/h4&gt;
+
+&lt;p&gt;Определяет возможные варианты значений поля (массив значений или объектов). Для определения в пользовательском интерфейсе
+отображения названий значений отличных от самих значений, следует передавать массив объектов следующего вида:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    value: 1, // значение соответствующего типа
+    label: &amp;quot;Номер один&amp;quot;, // название значения, отображаемое в пользовательском интерфейсе
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;checkbox&#34;&gt;checkbox&lt;/h2&gt;
+
+&lt;p&gt;Поле с флажком в виде галочки. Не имеет собственных свойств.&lt;/p&gt;
+
+&lt;h2 id=&#34;checklist&#34;&gt;checkList&lt;/h2&gt;
+
+&lt;p&gt;Поле в виде списка флажков с возможностью выбора нескольких значений.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-2&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;checklist-options&#34;&gt;options&lt;/h4&gt;
+
+&lt;p&gt;Определяет возможные варианты значений поля (массив значений или объектов). Для определения в пользовательском интерфейсе
+отображения названий значений отличных от самих значений, следует передавать массив объектов следующего вида:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    value: 1, // значение соответствующего типа
+    label: &amp;quot;Номер один&amp;quot;, // название значения, отображаемое в пользовательском интерфейсе
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;code&#34;&gt;code&lt;/h2&gt;
+
+&lt;p&gt;Отображение моноширинным шрифтом в виде нередактируемого текста с сохранением исходного форматирования.&lt;/p&gt;
+
+&lt;h2 id=&#34;codeeditor&#34;&gt;codeEditor&lt;/h2&gt;
+
+&lt;p&gt;Отображение редактора кода. Не имеет собственных свойств.&lt;/p&gt;
+
+&lt;h2 id=&#34;colorpicker&#34;&gt;colorPicker&lt;/h2&gt;
+
+&lt;p&gt;Поле для выбора цвета из определённого набора.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-3&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;disablecustominput-1&#34;&gt;disableCustomInput&lt;/h4&gt;
+
+&lt;p&gt;Запрет ввода значений не определённых свойством &lt;a href=&#34;https://getblank.net/doc/props-displaying/#colorpicker-options&#34;&gt;options&lt;/a&gt; (bool).
+Если установлено в &lt;code&gt;true&lt;/code&gt;, то можно будет только выбрать из определённых значений цвета.&lt;/p&gt;
+
+&lt;h4 id=&#34;colorpicker-options&#34;&gt;options&lt;/h4&gt;
+
+&lt;p&gt;Определяет возможные варианты значений поля (массив значений или объектов). Для определения в пользовательском интерфейсе
+отображения названий значений отличных от самих значений, следует передавать массив объектов следующего вида:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    value: 1, // значение соответствующего типа
+    label: &amp;quot;Номер один&amp;quot;, // название значения, отображаемое в пользовательском интерфейсе
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;datepicker&#34;&gt;datePicker&lt;/h2&gt;
+
+&lt;p&gt;Поле для выбора даты. Отображается в виде текстового поле с маской даты и с выпадающим календарём.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-4&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;date-format&#34;&gt;format&lt;/h4&gt;
+
+&lt;p&gt;Формат отображения даты в соответствии с синтаксисом &lt;a href=&#34;http://momentjs.com/&#34;&gt;Moment.js&lt;/a&gt; (строка).&lt;/p&gt;
+
+&lt;h2 id=&#34;daterange&#34;&gt;dateRange&lt;/h2&gt;
+
+&lt;p&gt;Поле для выбора диапазона дат. Отображается в виде текстового поле с маской даты и с выпадающим большим календарём.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-5&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;format&#34;&gt;format&lt;/h4&gt;
+
+&lt;p&gt;Формат отображения даты в соответствии с синтаксисом &lt;a href=&#34;http://momentjs.com/&#34;&gt;Moment.js&lt;/a&gt; (строка).&lt;/p&gt;
+
+&lt;h2 id=&#34;filepicker&#34;&gt;filePicker&lt;/h2&gt;
+
+&lt;p&gt;Поля выбора файла для последующей отправки на сервер.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-6&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;accept&#34;&gt;accept&lt;/h4&gt;
+
+&lt;p&gt;Определяет типы файлов допустимых для загрузки (строка). Формат соответствует атрибуту &lt;a href=&#34;http://www.w3schools.com/tags/att_input_accept.asp&#34;&gt;accept&lt;/a&gt;
+HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;html&#34;&gt;html&lt;/h2&gt;
+
+&lt;p&gt;Отображение значения поля по определённому в свойстве &lt;a href=&#34;https://getblank.net/doc/props-displaying/#html-html&#34;&gt;html&lt;/a&gt; шаблону.
+Шаблон обрабатывается через handlebars.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-7&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;html-html&#34;&gt;html&lt;/h4&gt;
+
+&lt;p&gt;Шаблон для отображения (строка).
+В шаблоне доступны: хелпер &lt;code&gt;$i18n&lt;/code&gt;, &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;h3 id=&#34;nosanitize&#34;&gt;noSanitize&lt;/h3&gt;
+
+&lt;p&gt;Флаг определящий безопасное содержимое сгенерированного представления (bool).
+Если установлен в &lt;code&gt;true&lt;/code&gt;, то не будет производиться его очистка от небезопасных элементов.&lt;/p&gt;
+
+&lt;h2 id=&#34;masked&#34;&gt;masked&lt;/h2&gt;
+
+&lt;p&gt;Текстовое поле ввода данных по маске, определённой в свойстве &lt;a href=&#34;https://getblank.net/doc/props-displaying/#masked-mask&#34;&gt;mask&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-8&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;masked-mask&#34;&gt;mask&lt;/h4&gt;
+
+&lt;p&gt;Определение маски ввода строки (строка или объект). Для определения собственного сообщения о несовпадении вводимой строки
+с определённой маской, следует описать свойство в виде объекта.&lt;/p&gt;
+
+&lt;p&gt;Для определения доступных символов для маски следует использовать следующие обозначения:
+*   &lt;code&gt;|&lt;/code&gt;&amp;nbsp;&amp;mdash;  любая цифра;
+*   &lt;code&gt;§&lt;/code&gt;&amp;nbsp;&amp;mdash;  любая буква;
+*   &lt;code&gt;~&lt;/code&gt;&amp;nbsp;&amp;mdash;  любой символ;
+*   &lt;code&gt;_&lt;/code&gt;&amp;nbsp;&amp;mdash; пустой символ.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    value: &amp;quot;| (|||) |||-||-||&amp;quot;, // значение маски. Например здесь ввод телефона в виде 7 (1234) 567-89-00
+    message: &amp;quot;Номер один&amp;quot;, // сообщение, которое будет выведено при несоответствии данных маске
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;none&#34;&gt;none&lt;/h2&gt;
+
+&lt;p&gt;Поле не будет отображено на форме.&lt;/p&gt;
+
+&lt;h2 id=&#34;numberinput&#34;&gt;numberInput&lt;/h2&gt;
+
+&lt;p&gt;Поле ввода числовых значений. В зависимости от значения свойства &lt;code&gt;type&lt;/code&gt; поля, допускается ввод только целочисленных &lt;code&gt;int&lt;/code&gt;,
+либо значений с плавающей запятой &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;objectlist&#34;&gt;objectList&lt;/h2&gt;
+
+&lt;p&gt;Автоматически устанавливаемый тип отображения для полей типа &lt;code&gt;objectList&lt;/code&gt;.
+Не требует указания.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-9&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;addlabel&#34;&gt;addLabel&lt;/h4&gt;
+
+&lt;p&gt;Текстом для кнопки добавления нового элемента в список (строка).
+При рендеринге, строка обрабатывается через handlebars.
+В шаблоне доступны: хелпер &lt;code&gt;$i18n&lt;/code&gt;, &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;h2 id=&#34;password&#34;&gt;password&lt;/h2&gt;
+
+&lt;p&gt;Поле ввода текста, при этом вводимые символы скрыты за звездочками.&lt;/p&gt;
+
+&lt;h2 id=&#34;react&#34;&gt;react&lt;/h2&gt;
+
+&lt;p&gt;Отображение поля с помощью кастомного компонента ReactJS, определённого в свойстве &lt;a href=&#34;https://getblank.net/doc/props-displaying/#react-loadComponent&#34;&gt;loadComponent&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-10&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;loadcomponent&#34;&gt;loadComponent&lt;/h4&gt;
+
+&lt;p&gt;Код компонента React.JS для отображения поля (строка).&lt;/p&gt;
+
+&lt;h2 id=&#34;searchbox&#34;&gt;searchBox&lt;/h2&gt;
+
+&lt;p&gt;Поле поиска и ввода объектов из Store,
+определённой в свойстве &lt;a href=&#34;https://getblank.net/doc/props-modeling/#ref-store&#34;&gt;store&lt;/a&gt;;&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-11&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;extraquery&#34;&gt;extraQuery&lt;/h4&gt;
+
+&lt;p&gt;Дополнительный запрос в формате &lt;a href=&#34;https://docs.mongodb.com/manual/tutorial/query-documents/&#34;&gt;MongoDB Query&lt;/a&gt;, который будет
+добавлен через логическое &lt;em&gt;И&lt;/em&gt; при поиске объектов в Store, определённом в свойстве &lt;a href=&#34;https://getblank.net/doc/props-modeling/#ref-store&#34;&gt;store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;searchby&#34;&gt;searchBy&lt;/h4&gt;
+
+&lt;p&gt;Поле или поля по которым следует производить поиск объектов (строка или массив строк).&lt;/p&gt;
+
+&lt;h4 id=&#34;selectedtemplate&#34;&gt;selectedTemplate&lt;/h4&gt;
+
+&lt;p&gt;Handlebars шаблон для отображения выбранных элементов.&lt;/p&gt;
+
+&lt;h2 id=&#34;select&#34;&gt;select&lt;/h2&gt;
+
+&lt;p&gt;Поле выбора одного из нескольких вариантов, определённых в свойстве &lt;a href=&#34;https://getblank.net/doc/props-displaying/#select-options&#34;&gt;options&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-12&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;select-options&#34;&gt;options&lt;/h4&gt;
+
+&lt;p&gt;Определяет возможные варианты значений поля (массив значений или объектов). Для определения в пользовательском интерфейсе
+отображения названий значений отличных от самих значений, следует передавать массив объектов следующего вида:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    value: 1, // значение соответствующего типа
+    label: &amp;quot;Номер один&amp;quot;, // название значения, отображаемое в пользовательском интерфейсе
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;text&#34;&gt;text&lt;/h2&gt;
+
+&lt;p&gt;Отображение поля в виде текста.
+Не имеет собственных свойств.&lt;/p&gt;
+
+&lt;h2 id=&#34;textarea&#34;&gt;textArea&lt;/h2&gt;
+
+&lt;p&gt;Текстовое поле ввода с возможностью ввода нескольких строк текста.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-13&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;placeholder&#34;&gt;placeholder&lt;/h4&gt;
+
+&lt;p&gt;Текстовая подсказка, отображаемаю в поле ввода при отсутствии значения.
+При рендеринге, строка обрабатывается через handlebars.
+В шаблоне доступны: хелпер &lt;code&gt;$i18n&lt;/code&gt;, &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;h2 id=&#34;textinput&#34;&gt;textInput&lt;/h2&gt;
+
+&lt;p&gt;Текстовое поле ввода.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-14&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;pattern&#34;&gt;pattern&lt;/h4&gt;
+
+&lt;p&gt;Регулярное выражение для проверки вводимого значения (строка или объект). Имеется возможность переопределения
+текста ошибки ввода значения поля. Для этого следует использовать объект вида:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
+    expression: &amp;quot;^\d+$&amp;quot;, // регулярное выражение в виде строки.
+    message: &amp;quot;Нужно ввести хотя бы одну цифру&amp;quot;, // Текст ошибки для отображения в пользовательском интерфейсе.
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;placeholder-1&#34;&gt;placeholder&lt;/h4&gt;
+
+&lt;p&gt;Текстовая подсказка, отображаемаю в поле ввода при отсутствии значения.
+При рендеринге, строка обрабатывается через handlebars.
+В шаблоне доступны: хелпер &lt;code&gt;$i18n&lt;/code&gt;, &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;h2 id=&#34;virtualreflist&#34;&gt;virtualRefList&lt;/h2&gt;
+
+&lt;p&gt;Автоматически устанавливаемый тип отображения для полей типа &lt;code&gt;virtualRefList&lt;/code&gt;.
+Не требует указания.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-15&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;foreignkey&#34;&gt;foreignKey&lt;/h4&gt;
+
+&lt;p&gt;Определяет поле с &lt;code&gt;type:ref&lt;/code&gt; в Store из свойства &lt;a href=&#34;https://getblank.net/doc/props-modeling/#store&#34;&gt;store&lt;/a&gt;, содержащее ссылку на текущее Store
+по которому будет делаться выборка данных для отображения.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Props modeling</title>
+      <link>https://getblank.net/doc/props-modeling/</link>
+      <pubDate>Fri, 09 Sep 2016 12:52:00 +0500</pubDate>
+      
+      <guid>https://getblank.net/doc/props-modeling/</guid>
+      <description>
+
+&lt;p&gt;В зависимости от типа поля, его может характеризовать определённый набор свойств. Кроме того, существует набор свойств,
+применимый к каждому типу полей.&lt;/p&gt;
+
+&lt;h2 id=&#34;типы-полей&#34;&gt;Типы полей&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#action&#34;&gt;action&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#bool&#34;&gt;bool&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#date&#34;&gt;date&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#file&#34;&gt;file&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#float&#34;&gt;float&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#int&#34;&gt;int&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#object&#34;&gt;object&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#objectlist&#34;&gt;objectList&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#ref&#34;&gt;ref&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#reflist&#34;&gt;refList&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#string&#34;&gt;string&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#virtual&#34;&gt;virtual&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#virtualreflist&#34;&gt;virtualRefList&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ниже перечислены общие свойства, а так же собственные свойства для каждого типа.&lt;/p&gt;
+
+&lt;h2 id=&#34;общие-свойства&#34;&gt;Общие свойства&lt;/h2&gt;
+
+&lt;h3 id=&#34;access&#34;&gt;access&lt;/h3&gt;
+
+&lt;p&gt;Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству &lt;a href=&#34;https://getblank.net/doc/store_reference/#access&#34;&gt;access&lt;/a&gt; Store.&lt;/p&gt;
+
+&lt;h3 id=&#34;configurable&#34;&gt;configurable&lt;/h3&gt;
+
+&lt;p&gt;Внутреннее свойство для Store по-умолчанию (bool). Определяет возможность переопределения свойств поля в пользовательской конфигурации.
+Не используется при разработке приложений.&lt;/p&gt;
+
+&lt;h3 id=&#34;default&#34;&gt;default&lt;/h3&gt;
+
+&lt;p&gt;Определяет значение поля по-умолчению. Будет установлено при создании объекта, в случае, если значение не определено в создаваемом объекте.&lt;/p&gt;
+
+&lt;h3 id=&#34;required&#34;&gt;required&lt;/h3&gt;
+
+&lt;p&gt;Флаг обязательного поля (bool). Если &lt;code&gt;true&lt;/code&gt;, то при сохранении объекта с неустановленным значением поля будет возвращена ошибка.
+В пользовательском интерфейсе при этом будет заблокирована кнопка &lt;strong&gt;Сохранить&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;action&#34;&gt;action&lt;/h2&gt;
+
+&lt;p&gt;Поле данного типа не сохраняется в БД, используется только пользовательском интерфейсе. Подробнее в разделе
+&lt;a href=&#34;https://getblank.net/doc/props-displaying/#action&#34;&gt;Props displaying&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;bool&#34;&gt;bool&lt;/h2&gt;
+
+&lt;p&gt;Булевый тип, может принимать значения &lt;code&gt;true&lt;/code&gt; или &lt;code&gt;false&lt;/code&gt;. Не имеет собственных свойств.&lt;/p&gt;
+
+&lt;h2 id=&#34;date&#34;&gt;date&lt;/h2&gt;
+
+&lt;h3 id=&#34;свойства&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;utc&#34;&gt;utc&lt;/h4&gt;
+
+&lt;p&gt;Флаг определяющий хранение даты во временной зоне UTC+0 (bool).&lt;/p&gt;
+
+&lt;h2 id=&#34;file&#34;&gt;file&lt;/h2&gt;
+
+&lt;p&gt;Поле, применяющееся для хранения файлов. В СУБД при этом хранится только мета-описание файлов, сами файлы располагаются в файловом хранилище,
+являющимся отдельным сервисом Blank.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-1&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;accept&#34;&gt;accept&lt;/h4&gt;
+
+&lt;p&gt;Позволяет задать маску принимаемых для загрузки файлов (строка).
+В настоящее время не реализовано.&lt;/p&gt;
+
+&lt;h4 id=&#34;store&#34;&gt;store&lt;/h4&gt;
+
+&lt;p&gt;Название Store с типом &lt;code&gt;file&lt;/code&gt; для хранения мета-информации о файлах (строка).&lt;/p&gt;
+
+&lt;h2 id=&#34;float&#34;&gt;float&lt;/h2&gt;
+
+&lt;p&gt;Вещественный тип, или тип с плавающей запятой.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-2&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;max&#34;&gt;max&lt;/h4&gt;
+
+&lt;p&gt;Максимальное допустимое значение поля.&lt;/p&gt;
+
+&lt;h4 id=&#34;min&#34;&gt;min&lt;/h4&gt;
+
+&lt;p&gt;Минимальное допустимое значение поля.&lt;/p&gt;
+
+&lt;h2 id=&#34;int&#34;&gt;int&lt;/h2&gt;
+
+&lt;p&gt;Целочисленный тип.
+Набор собственных свойств аналогичен &lt;a href=&#34;https://getblank.net/doc/props-modeling/#float&#34;&gt;type:float&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;object&#34;&gt;object&lt;/h2&gt;
+
+&lt;p&gt;Вложенная структура данных. Поддерживается только один уровень вложенности объектов.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-3&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;props&#34;&gt;props&lt;/h4&gt;
+
+&lt;p&gt;Описание полей вложенной структуры данных.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;object&amp;quot;,
+props: {
+    // Поля вложенного объекта
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;objectlist&#34;&gt;objectList&lt;/h2&gt;
+
+&lt;p&gt;Массив вложенных структур данных. Поддерживается только один уровень вложенности объектов.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-4&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;maxlength&#34;&gt;maxLength&lt;/h4&gt;
+
+&lt;p&gt;Максимальное допустимое количество вложенных структур.&lt;/p&gt;
+
+&lt;h4 id=&#34;maxlength-1&#34;&gt;maxLength&lt;/h4&gt;
+
+&lt;p&gt;Минимальное допустимое количество вложенных структур.&lt;/p&gt;
+
+&lt;h4 id=&#34;props-1&#34;&gt;props&lt;/h4&gt;
+
+&lt;p&gt;Описание полей вложенных структур данных.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;objectList&amp;quot;,
+props: {
+    // Поля вложенных объектов
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ref&#34;&gt;ref&lt;/h2&gt;
+
+&lt;p&gt;Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.
+Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-5&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;disablerefsync&#34;&gt;disableRefSync&lt;/h4&gt;
+
+&lt;p&gt;Флаг, указывающий, что не требуется проводить обновление связи данного поля (bool).
+Подробнее о механизме каскадного обновления связей читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;oppositeprop&#34;&gt;oppositeProp&lt;/h4&gt;
+
+&lt;p&gt;Название поля в Store, определённой свойством &lt;a href=&#34;https://getblank.net/doc/props-modeling/#store&#34;&gt;store&lt;/a&gt; (строка).
+Требуется для работы механизма каскадного обновления связей.&lt;/p&gt;
+
+&lt;h4 id=&#34;populatein&#34;&gt;populateIn&lt;/h4&gt;
+
+&lt;p&gt;Поле, в которое будет загружен соответствующий объект из Store
+определённом в свойстве &lt;a href=&#34;https://getblank.net/doc/props-modeling/#store&#34;&gt;store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;ref-store&#34;&gt;store&lt;/h4&gt;
+
+&lt;p&gt;Название Store объекта, на который указывает ссылка (строка).&lt;/p&gt;
+
+&lt;h2 id=&#34;reflist&#34;&gt;refList&lt;/h2&gt;
+
+&lt;p&gt;Массив ссылок на другие объекты, используется для создания связей 1-N, M-N. Значение записывается в виде
+массива строковых идентификаторов.
+Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Набор собственных свойств аналогичен &lt;a href=&#34;https://getblank.net/doc/props-modeling/#ref&#34;&gt;type:ref&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;string&#34;&gt;string&lt;/h2&gt;
+
+&lt;p&gt;Строковый тип.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-6&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;mask&#34;&gt;mask&lt;/h4&gt;
+
+&lt;p&gt;Маска для значения (строка или объект).&lt;/p&gt;
+
+&lt;h4 id=&#34;maxlength-2&#34;&gt;maxLength&lt;/h4&gt;
+
+&lt;p&gt;Максимальная допустимая длина строки (int).
+Так же применяется для &lt;code&gt;type:objectList&lt;/code&gt; и обозначает максимальное допустимое количество вложенных структур данных.&lt;/p&gt;
+
+&lt;h4 id=&#34;minlength&#34;&gt;minLength&lt;/h4&gt;
+
+&lt;p&gt;Минимальная допустимая длина строки (int).
+Так же применяется для &lt;code&gt;type:objectList&lt;/code&gt; и обозначает минимальное допустимое количество вложенных структур данных.&lt;/p&gt;
+
+&lt;h4 id=&#34;pattern&#34;&gt;pattern&lt;/h4&gt;
+
+&lt;p&gt;Регулярное выражение для проверки вводимого значения (строка или объект).&lt;/p&gt;
+
+&lt;h2 id=&#34;virtual&#34;&gt;virtual&lt;/h2&gt;
+
+&lt;p&gt;Виртуальное поле, вычисляемое при получении данных. Значения данных полей не сохраняются в БД.&lt;/p&gt;
+
+&lt;h3 id=&#34;свойства-7&#34;&gt;Свойства&lt;/h3&gt;
+
+&lt;h4 id=&#34;load&#34;&gt;load&lt;/h4&gt;
+
+&lt;p&gt;Функция-загрузчик виртуального поля (строка).
+В функции доступны объекты &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;virtual&amp;quot;,
+load: function ($item, $user) {
+    return $item.prop1 + $item.prop2;
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;virtualreflist&#34;&gt;virtualRefList&lt;/h2&gt;
+
+&lt;p&gt;Используется только в пользовательском интерфейсе. Значения данных полей не сохраняются в БД.
+Подробнее в &lt;a href=&#34;https://getblank.net/doc/props-displaying/#virtualreflist&#34;&gt;Props displaying&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Actions</title>
@@ -824,7 +1447,8 @@ let list = new List(&amp;quot;listName&amp;quot;);
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/i18n/&#34;&gt;i18n&lt;/a&gt;&amp;nbsp;&amp;mdash; интернационализация;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://momentjs.com/&#34;&gt;moment&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с датами;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/queue/&#34;&gt;queue&lt;/a&gt;&amp;nbsp;&amp;mdash; работа с очередями и списками;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/crcn/sift.js&#34;&gt;sift&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash; запросы к данным в формате &lt;a href=&#34;https://docs.mongodb.com/manual/tutorial/query-documents/&#34;&gt;MongoDB Query&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/crcn/sift.js&#34;&gt;sift&lt;/a&gt; &lt;a href=&#34;https://getblank.net/doc/serverjs/#embeddedmodules&#34;&gt;*&lt;/a&gt;&amp;nbsp;&amp;mdash;
+запросы к данным в формате &lt;a href=&#34;https://docs.mongodb.com/manual/tutorial/query-documents/&#34;&gt;MongoDB Query&lt;/a&gt;;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;a name=&#34;embeddedmodules&#34;&gt;&lt;/a&gt;
@@ -958,430 +1582,6 @@ let list = new List(&amp;quot;listName&amp;quot;);
       
       <guid>https://getblank.net/doc/build/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>CLI reference</title>
-      <link>https://getblank.net/doc/cli/</link>
-      <pubDate>Tue, 09 Aug 2016 00:15:34 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Props reference</title>
-      <link>https://getblank.net/doc/props_reference/</link>
-      <pubDate>Sat, 06 Aug 2016 22:41:33 +0500</pubDate>
-      
-      <guid>https://getblank.net/doc/props_reference/</guid>
-      <description>
-
-&lt;p&gt;В зависимости от типа, поле может обладать определённым набором свойств из списка:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#accept&#34;&gt;accept&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#access&#34;&gt;access&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#actions&#34;&gt;actions&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#addLabel&#34;&gt;addLabel&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#configurable&#34;&gt;configurable&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#default&#34;&gt;default&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#disablecustominput&#34;&gt;disableCustomInput&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#disabled&#34;&gt;disabled&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#disableorder&#34;&gt;disableOrder&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#disablerefsync&#34;&gt;disableRefSync&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#display&#34;&gt;display&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#displaywidth&#34;&gt;displayWidth&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#extraquery&#34;&gt;extraQuery&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#foreignkey&#34;&gt;foreignKey&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#format&#34;&gt;format&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#formgroup&#34;&gt;formGroup&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#formorder&#34;&gt;formOrder&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#formtab&#34;&gt;formTab&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#hidden&#34;&gt;hidden&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#html&#34;&gt;html&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#label&#34;&gt;label&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#labelclassname&#34;&gt;labelClassName&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#load&#34;&gt;load&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#loadcomponent&#34;&gt;loadComponent&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#mask&#34;&gt;mask&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#max&#34;&gt;max&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#maxlength&#34;&gt;maxLength&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#min&#34;&gt;min&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#minlength&#34;&gt;minLength&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#nosanitize&#34;&gt;noSanitize&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#oppositeprop&#34;&gt;oppositeProp&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#options&#34;&gt;options&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#pattern&#34;&gt;pattern&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#placeholder&#34;&gt;placeholder&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#populateIn&#34;&gt;populateIn&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#props&#34;&gt;props&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#required&#34;&gt;required&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#searchby&#34;&gt;searchBy&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#selectedtemplate&#34;&gt;selectedTemplate&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#sortable&#34;&gt;sortable&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#sortby&#34;&gt;sortBy&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#store&#34;&gt;store&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#style&#34;&gt;style&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#tablecolumns&#34;&gt;tableColumns&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#tablelink&#34;&gt;tableLink&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#tooltip&#34;&gt;tooltip&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#type&#34;&gt;type&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#utc&#34;&gt;utc&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#widgetid&#34;&gt;widgetId&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#widgets&#34;&gt;widgets&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props_reference/#сlassname&#34;&gt;сlassName&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;accept&#34;&gt;accept&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:file&lt;/code&gt;. Позволяет задать маску принимаемых для загрузки файлов.
-В настоящее время не реализовано.&lt;/p&gt;
-
-&lt;h3 id=&#34;access&#34;&gt;access&lt;/h3&gt;
-
-&lt;p&gt;Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству &lt;a href=&#34;https://getblank.net/doc/store_reference/#access&#34;&gt;access&lt;/a&gt; Store.&lt;/p&gt;
-
-&lt;h3 id=&#34;actions&#34;&gt;actions&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:action&lt;/code&gt;. Массив объектов с описанием Actions, определённых в текущем Store.
-Используется для размещения кнопок запуска Actions на форме в интерфейсе клиента.
-Может переопределять некоторые свойства конкретных отображаемых Action.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;actions: [
-     // Здесь мы указываем, что нужно поместить кнопку вызова Action copy
-    { _id: &amp;quot;copy&amp;quot; },
-
-    // Здесь мы дополнительно переопределяем свойство label
-    { _id: &amp;quot;move&amp;quot;, label: &amp;quot;Перенести&amp;quot; },
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;addlabel&#34;&gt;addLabel&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:objectList&lt;/code&gt;. Строка текстом для кнопки добавления нового элемента в список.
-При рендеринге, строка обрабатывается через handlebars.&lt;/p&gt;
-
-&lt;h3 id=&#34;configurable&#34;&gt;configurable&lt;/h3&gt;
-
-&lt;p&gt;Внутреннее свойство для Store по-умолчанию (bool). Определяет возможность переопределения свойств поля в пользовательской конфигурации.&lt;/p&gt;
-
-&lt;h3 id=&#34;default&#34;&gt;default&lt;/h3&gt;
-
-&lt;p&gt;Определяет значение поля по-умолчению. Будет установлено при создании объекта, в случае, если значение не определено в создаваемом объекте.&lt;/p&gt;
-
-&lt;h3 id=&#34;disablecustominput&#34;&gt;disableCustomInput&lt;/h3&gt;
-
-&lt;h3 id=&#34;disabled&#34;&gt;disabled&lt;/h3&gt;
-
-&lt;p&gt;Строка, описывающая условие недоступности редактирования поля текущего элемента в пользовательском интерфейсе.
-В условии доступны объекты &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
-
-&lt;h3 id=&#34;disableorder&#34;&gt;disableOrder&lt;/h3&gt;
-
-&lt;p&gt;Флаг, определяющий запрет сортировки по полю при типе отображения Store &lt;code&gt;table&lt;/code&gt; (bool).&lt;/p&gt;
-
-&lt;h3 id=&#34;disablerefsync&#34;&gt;disableRefSync&lt;/h3&gt;
-
-&lt;p&gt;Флаг, указывающий, что не требуется проводить обновление связи данного поля.
-Подробнее о механизме каскадного обновления связей читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;display&#34;&gt;display&lt;/h3&gt;
-
-&lt;p&gt;Тип отображения поля в пользовательском интерфейсе (string). Возможные варианты:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;autocomplete&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:string&lt;/code&gt;. Текстовое поле ввода с автодополнением.
-Варианты определяются в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#options&#34;&gt;options&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;checkbox&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:bool&lt;/code&gt;. Поле с флажком в виде галочки;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;checkList&lt;/code&gt;&amp;nbsp;&amp;mdash; поле выбора нескольких вариантов, определённых в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#options&#34;&gt;options&lt;/a&gt;. Отображается в виде списка флажков;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;code&lt;/code&gt;&amp;nbsp;&amp;mdash; отображение в виде нередактируемого текста с сохранением исходного форматирования и моноширинным шрифтом;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;codeEditor&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:string&lt;/code&gt;. Редактор кода;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;colorPicker&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:string&lt;/code&gt; поле выбора цвета из описанных в &lt;a href=&#34;https://getblank.net/doc/props_reference/#options&#34;&gt;options&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;commentsEditor&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:comments&lt;/code&gt;. Поле для ввода комментариев;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;dataTable&lt;/code&gt;&amp;nbsp;&amp;mdash; не реализовано;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;datePicker&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:date&lt;/code&gt;. Поле ввода даты;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;dateTimePicker&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:date&lt;/code&gt;. Поле ввода даты и времени (не реализовано);&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;filePicker&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:file&lt;/code&gt;. Поле выбора и закачки файлов;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;floatInput&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:int&lt;/code&gt; и &lt;code&gt;type:float&lt;/code&gt;. Текстовое поле ввода с возможность ввода только числовых вещественных значений;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;headerInput&lt;/code&gt;&amp;nbsp;&amp;mdash; ;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;html&lt;/code&gt;&amp;nbsp;&amp;mdash; отображение поля по переданному в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#html&#34;&gt;html&lt;/a&gt; шаблону;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;link&lt;/code&gt;&amp;nbsp;&amp;mdash; отображение ссылки;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;masked&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:string&lt;/code&gt;. Вввод данных по маске, определённой в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#mask&#34;&gt;mask&lt;/a&gt; ;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;none&lt;/code&gt;&amp;nbsp;&amp;mdash; запрет отображения поля в интерфейсе;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;numberInput&lt;/code&gt;&amp;nbsp;&amp;mdash;  только для &lt;code&gt;type:int&lt;/code&gt; и &lt;code&gt;type:float&lt;/code&gt;. Текстовое поле ввода с возможность ввода только числовых целочисленных значений;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;password&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:password&lt;/code&gt; и &lt;code&gt;type:string&lt;/code&gt;. Поле ввода текста, при этом вводимые символы скрыты за звездочками;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;react&lt;/code&gt;&amp;nbsp;&amp;mdash; отображение поля с помощью кастомного компонента ReactJS, определённого в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#loadcomponent&#34;&gt;loadComponent&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;searchBox&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:ref&lt;/code&gt; и &lt;code&gt;type:refList&lt;/code&gt;. Поле поиска и ввода объектов из Store,
-определённой в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#store&#34;&gt;store&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;select&lt;/code&gt;&amp;nbsp;&amp;mdash; поле выбора одного из нескольких вариантов, определённых в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#options&#34;&gt;options&lt;/a&gt;;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;text&lt;/code&gt;&amp;nbsp;&amp;mdash; отображение в виде нередактируемого текста;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;textArea&lt;/code&gt;&amp;nbsp;&amp;mdash;  только для &lt;code&gt;type:string&lt;/code&gt;. Текстовое поле ввода с возможностью ввода нескольких строк текста;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;textInput&lt;/code&gt;&amp;nbsp;&amp;mdash;  только для &lt;code&gt;type:string&lt;/code&gt;. Текстовое поле ввода;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;timePicker&lt;/code&gt;&amp;nbsp;&amp;mdash; только для &lt;code&gt;type:date&lt;/code&gt;. Поле ввода времени (не реализовано).&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;displaywidth&#34;&gt;displayWidth&lt;/h3&gt;
-
-&lt;h3 id=&#34;extraquery&#34;&gt;extraQuery&lt;/h3&gt;
-
-&lt;h3 id=&#34;foreignkey&#34;&gt;foreignKey&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:virtualRefList&lt;/code&gt;. Определяет поле с &lt;code&gt;type:ref&lt;/code&gt; в Store из свойства &lt;a href=&#34;https://getblank.net/doc/props_reference/#store&#34;&gt;store&lt;/a&gt;, содержащее ссылку на текущее Store
-по которому будет делаться выборка данных для отображения.&lt;/p&gt;
-
-&lt;h3 id=&#34;format&#34;&gt;format&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:date&lt;/code&gt;. Формат отображения даты в пользовательском интерфейсе в соответствии с синтаксисом &lt;a href=&#34;http://momentjs.com/&#34;&gt;Moment.js&lt;/a&gt; (строка).&lt;/p&gt;
-
-&lt;h3 id=&#34;formgroup&#34;&gt;formGroup&lt;/h3&gt;
-
-&lt;p&gt;Идентификатор группы для отображения поля в пользовательском интерфейсе (строка). Группы определяются в &lt;a href=&#34;https://getblank.net/doc/store_reference/#formgroupsorder&#34;&gt;Store.formGroupsOrder&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;formorder&#34;&gt;formOrder&lt;/h3&gt;
-
-&lt;p&gt;Число, определяющее место отображения поля на форме в пользовательском интерфейсе (int). Может быть отрицательным.&lt;/p&gt;
-
-&lt;h3 id=&#34;formtab&#34;&gt;formTab&lt;/h3&gt;
-
-&lt;p&gt;Идентификатор табы для отображения поля в пользовательском интерфейсе (строка). Табы определяются в &lt;a href=&#34;https://getblank.net/doc/store_reference/#formtabs&#34;&gt;Store.formTabs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;hidden&#34;&gt;hidden&lt;/h3&gt;
-
-&lt;p&gt;Условие, при выполнении которого поле будет скрыто с формы в пользовательском интерфейсе (строка).
-В условии доступны объекты &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
-
-&lt;h3 id=&#34;html&#34;&gt;html&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;display:html&lt;/code&gt;. Шаблон для отображения поля в пользовательском интерфейсе (строка). При рендеринге, обрабатывается через handlebars.&lt;/p&gt;
-
-&lt;h3 id=&#34;label&#34;&gt;label&lt;/h3&gt;
-
-&lt;p&gt;Заголовок поля на форме в пользовательском интерфейсе. При рендеринге, обрабатывается через handlebars.&lt;/p&gt;
-
-&lt;h3 id=&#34;labelclassname&#34;&gt;labelClassName&lt;/h3&gt;
-
-&lt;p&gt;Определяет дополнительный CSS класс для заголовка поля в пользовательском интерфейсе.&lt;/p&gt;
-
-&lt;h3 id=&#34;load&#34;&gt;load&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:virtual&lt;/code&gt; и &lt;code&gt;type:virtual/client&lt;/code&gt;. Функция загрузки виртуального поля.
-В функции доступны объекты &lt;code&gt;$item&lt;/code&gt; (текущий объект) и &lt;code&gt;$user&lt;/code&gt; (пользователь, работающий с объектом).&lt;/p&gt;
-
-&lt;h3 id=&#34;loadcomponent&#34;&gt;loadComponent&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;display:react&lt;/code&gt;. Код компонента React.JS для отображения поля в пользовательском интерфейсе.&lt;/p&gt;
-
-&lt;h3 id=&#34;mask&#34;&gt;mask&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:string&lt;/code&gt; и &lt;code&gt;display:masked&lt;/code&gt;. Определение маски ввода строки (строка или объект).&lt;/p&gt;
-
-&lt;h3 id=&#34;max&#34;&gt;max&lt;/h3&gt;
-
-&lt;p&gt;Только для  &lt;code&gt;type:int&lt;/code&gt; и &lt;code&gt;type:float&lt;/code&gt;. Минимальное значение поля (число).&lt;/p&gt;
-
-&lt;h3 id=&#34;maxlength&#34;&gt;maxLength&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:string&lt;/code&gt;. Минимальная длина строки (число).&lt;/p&gt;
-
-&lt;h3 id=&#34;min&#34;&gt;min&lt;/h3&gt;
-
-&lt;p&gt;Только для  &lt;code&gt;type:int&lt;/code&gt; и &lt;code&gt;type:float&lt;/code&gt;. Максимальное значение поля (число).&lt;/p&gt;
-
-&lt;h3 id=&#34;minlength&#34;&gt;minLength&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:string&lt;/code&gt;. Максимальная длина строки (число).&lt;/p&gt;
-
-&lt;h3 id=&#34;nosanitize&#34;&gt;noSanitize&lt;/h3&gt;
-
-&lt;p&gt;Флаг указывающий на то, что html в пропе является безопасным (bool).&lt;/p&gt;
-
-&lt;h3 id=&#34;oppositeprop&#34;&gt;oppositeProp&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:ref&lt;/code&gt;. Название поля в Store, определённой свойством &lt;a href=&#34;https://getblank.net/doc/props_reference/#store&#34;&gt;store&lt;/a&gt; (строка).
-Требуется для работы механизма каскадного обновления связей.
-Подробнее о механизме каскадного обновления связей читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;options&#34;&gt;options&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;display:select&lt;/code&gt;, &lt;code&gt;display:checkList&lt;/code&gt;, &lt;code&gt;display:autocomplete&lt;/code&gt; и &lt;code&gt;display:colorPicker&lt;/code&gt;.
-Определяет возможные варианты значений поля (массив значений или объектов). Для опредления в пользовательском интерфейсе
-отображения названий значений отличных от самих значений, следует передавать массив объектов следующего вида:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
-    value: 1, // значение соответствующего типа
-    label: &amp;quot;Номер один&amp;quot;, // название значения, отображаемое в пользовательском интерфейсе
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;pattern&#34;&gt;pattern&lt;/h3&gt;
-
-&lt;p&gt;Регулярное выражение для проверки вводимого значения (строка или объект). Имеется возможность переопределения
-текста ошибки ввода значения поля в пользовательском интерфейсе. Для этого следует использовать объект вида:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;{
-    expression: &amp;quot;^\d+$&amp;quot;, // регулярное выражение в виде строки.
-    message: &amp;quot;Нужно ввести хотя бы одну цифру&amp;quot;, // Текст ошибки для отображения в пользовательском интерфейсе.
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;placeholder&#34;&gt;placeholder&lt;/h3&gt;
-
-&lt;p&gt;Для полей ввода данных в пользовательском интерфейсе. Определяет текстовую подсказку, отображаемую в поле ввода
-при отсутствии значения.&lt;/p&gt;
-
-&lt;h3 id=&#34;populatein&#34;&gt;populateIn&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:ref&lt;/code&gt;. Обозначает поле, в которое будет передан соответствующий объект из Store
-определённом в свойстве &lt;a href=&#34;https://getblank.net/doc/props_reference/#store&#34;&gt;store&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;props&#34;&gt;props&lt;/h3&gt;
-
-&lt;p&gt;Только для &lt;code&gt;type:object&lt;/code&gt; и &lt;code&gt;type:objectList&lt;/code&gt;. Определяет свойства вложенных объектов.&lt;/p&gt;
-
-&lt;h3 id=&#34;required&#34;&gt;required&lt;/h3&gt;
-
-&lt;p&gt;Флаг обязательного поля (bool). Если &lt;code&gt;true&lt;/code&gt;, то при сохранении объекта с неустановленным значением поля будет возвращена ошибка.
-В пользовательском интерфейсе при этом будет заблокирована кнопка &lt;strong&gt;Сохранить&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;searchby&#34;&gt;searchBy&lt;/h3&gt;
-
-&lt;h3 id=&#34;selectedtemplate&#34;&gt;selectedTemplate&lt;/h3&gt;
-
-&lt;h3 id=&#34;sortable&#34;&gt;sortable&lt;/h3&gt;
-
-&lt;h3 id=&#34;sortby&#34;&gt;sortBy&lt;/h3&gt;
-
-&lt;h3 id=&#34;store&#34;&gt;store&lt;/h3&gt;
-
-&lt;h3 id=&#34;style&#34;&gt;style&lt;/h3&gt;
-
-&lt;h3 id=&#34;tablecolumns&#34;&gt;tableColumns&lt;/h3&gt;
-
-&lt;h3 id=&#34;tablelink&#34;&gt;tableLink&lt;/h3&gt;
-
-&lt;h3 id=&#34;tooltip&#34;&gt;tooltip&lt;/h3&gt;
-
-&lt;h3 id=&#34;type&#34;&gt;Type&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;string|int|float|bool|date|file|ref|refList|virtual&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Тип данных свойства.&lt;/p&gt;
-
-&lt;h4 id=&#34;bool&#34;&gt;bool&lt;/h4&gt;
-
-&lt;p&gt;Значения типа &lt;code&gt;true&lt;/code&gt; или &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;date&#34;&gt;date&lt;/h4&gt;
-
-&lt;p&gt;Соответствует JavaScript Date. При сериализации в JSON преобразуются в строку в формате &lt;a href=&#34;https://en.wikipedia.org/wiki/ISO_8601&#34;&gt;ISO&amp;nbsp;8601&lt;/a&gt;,
-например – &lt;code&gt;&amp;quot;2016-08-11T06:36:47.134Z&amp;quot;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;file&#34;&gt;file&lt;/h4&gt;
-
-&lt;p&gt;Файловое хранилище в Blank работает отдельно, в MongoDB сохраняются только идентификаторы файлов.&lt;/p&gt;
-
-&lt;h4 id=&#34;float&#34;&gt;float&lt;/h4&gt;
-
-&lt;p&gt;Вещественный тип.&lt;/p&gt;
-
-&lt;h4 id=&#34;int&#34;&gt;int&lt;/h4&gt;
-
-&lt;p&gt;Целочисленный тип.&lt;/p&gt;
-
-&lt;h4 id=&#34;object&#34;&gt;object&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;object&amp;quot;,
-props: {
-    //Свойства вложенного объекта
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Тип для создания вложенной структуры данных. Поддерживается только один уровень вложенности объектов.&lt;/p&gt;
-
-&lt;h4 id=&#34;objectlist&#34;&gt;objectList&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;objectList&amp;quot;,
-props: {
-    //Свойства вложенных объектов
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Тип для создания массивов вложенных объектов данных. Поддерживается только один уровень вложенности.&lt;/p&gt;
-
-&lt;h4 id=&#34;ref&#34;&gt;ref&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;ref&amp;quot;,
-store: &amp;quot;refStoreName&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.&lt;/p&gt;
-
-&lt;p&gt;В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;reflist&#34;&gt;refList&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;refList&amp;quot;,
-store: &amp;quot;refStoreName&amp;quot;,
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Массив ссылок на другие объекты, используется для создания связей 1-N, M-N. Значение записывается в виде
-массива строковых идентификаторов:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[&amp;quot;e5ba2446-81e1-4b2d-b901-ca9eabe9817e&amp;quot;, &amp;quot;533ddfc5-5d3f-41f7-8557-872d4bfd2735&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;В Blank работает каскадное обновление связей, подробнее об этом механизме читайте в разделе &lt;a href=&#34;https://getblank.net/doc/ref_sync/&#34;&gt;References sync&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;string&#34;&gt;string&lt;/h4&gt;
-
-&lt;p&gt;Строка.&lt;/p&gt;
-
-&lt;h4 id=&#34;virtual&#34;&gt;virtual&lt;/h4&gt;
-
-&lt;p&gt;Виртуальные свойства, данные этих свойств являются вычисляемыми и не сохраняются в БД. Для вычисления значения
-используется функция load, получающая на вход текущий объект и пользователя, запрашивающего данные:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;type: &amp;quot;virtual&amp;quot;,
-load: function ($item, $user) {
-    return $item.prop1 + $item.prop2;
-},
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;utc&#34;&gt;utc&lt;/h3&gt;
-
-&lt;h3 id=&#34;widgetid&#34;&gt;widgetId&lt;/h3&gt;
-
-&lt;h3 id=&#34;widgets&#34;&gt;widgets&lt;/h3&gt;
-
-&lt;h3 id=&#34;сlassname&#34;&gt;сlassName&lt;/h3&gt;
-</description>
     </item>
     
   </channel>

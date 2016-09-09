@@ -28,8 +28,6 @@
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
 <link href="/css/hl-github.css" rel="stylesheet">
-
-    
 </head>
 
 <body lang="ru">
@@ -145,6 +143,14 @@
           
             <li >
               <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
             </li>
           
         </ul>
@@ -392,15 +398,15 @@
 <p>Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
 Подробнее читайте в разделе <a href="/doc/filters/">Filters</a></p>
 
-<h3 id="formgroupsorder">FormGroupsOrder</h3>
+<h3 id="formgroups">FormGroups</h3>
 
-<pre><code class="language-javascript">    &quot;formGroupsOrder&quot;: [&quot;formGroupName&quot;]
+<pre><code class="language-javascript">    &quot;formGroups&quot;: [&quot;formGroupName&quot;]
 </code></pre>
 
 <p>Массив, указывающий порядок расположения групп на форме редактирования объекта. Названия групп должны совпадать с указанными
 группами в настройках props, например:</p>
 
-<pre><code class="language-javascript">    &quot;formGroupsOrder&quot;: [&quot;{{$i18n.group2Label}}&quot;, &quot;Group 1&quot;],
+<pre><code class="language-javascript">    &quot;formGroups&quot;: [&quot;{{$i18n.group2Label}}&quot;, &quot;Group 1&quot;],
     &quot;props&quot;: {
         &quot;prop1&quot; {
             ...
@@ -789,7 +795,7 @@ workspace-а.</p>
     <img src="" alt="" />
   </div>
 </div>
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="app.bundle.js"></script>
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
