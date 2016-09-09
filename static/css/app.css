@@ -722,6 +722,9 @@ textarea {
 #docs .doc-wrapper .doc h1 {
   margin-top: 14px;
 }
+#docs .doc-wrapper .doc h2 {
+  font-size: 40px;
+}
 #docs .doc-wrapper .doc .content {
   line-height: 160%;
 }
