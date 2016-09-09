@@ -725,6 +725,13 @@ textarea {
 #docs .doc-wrapper .doc .content {
   line-height: 160%;
 }
+#docs .doc-wrapper .doc .content h2,
+#docs .doc-wrapper .doc .content h3,
+#docs .doc-wrapper .doc .content h4,
+#docs .doc-wrapper .doc .content h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
 footer {
   padding: 24px 0;
   background-color: #212121;
@@ -1076,8 +1083,6 @@ h5,
 h6 {
   font-weight: 300;
   color: #444;
-  padding-top: 50px;
-  margin-top: -50px;
 }
 h1 {
   font-size: 56px;
