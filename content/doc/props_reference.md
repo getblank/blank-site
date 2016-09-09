@@ -8,57 +8,57 @@ title = "Props reference"
 
 В зависимости от типа, поле может обладать определённым набором свойств из списка:
 
-*   [accept](/doc/props_reference/#accept);
-*   [access](/doc/props_reference/#access);
-*   [actions](/doc/props_reference/#actions);
-*   [addLabel](/doc/props_reference/#addLabel);
-*   [configurable](/doc/props_reference/#configurable);
-*   [default](/doc/props_reference/#default);
-*   [disableCustomInput](/doc/props_reference/#disablecustominput);
-*   [disabled](/doc/props_reference/#disabled);
-*   [disableOrder](/doc/props_reference/#disableorder);
-*   [disableRefSync](/doc/props_reference/#disablerefsync);
-*   [display](/doc/props_reference/#display);
-*   [displayWidth](/doc/props_reference/#displaywidth);
-*   [extraQuery](/doc/props_reference/#extraquery);
-*   [foreignKey](/doc/props_reference/#foreignkey);
-*   [format](/doc/props_reference/#format);
-*   [formGroup](/doc/props_reference/#formgroup);
-*   [formOrder](/doc/props_reference/#formorder);
-*   [formTab](/doc/props_reference/#formtab);
-*   [hidden](/doc/props_reference/#hidden);
-*   [html](/doc/props_reference/#html);
-*   [label](/doc/props_reference/#label);
-*   [labelClassName](/doc/props_reference/#labelclassname);
-*   [load](/doc/props_reference/#load);
-*   [loadComponent](/doc/props_reference/#loadcomponent);
-*   [mask](/doc/props_reference/#mask);
-*   [max](/doc/props_reference/#max);
-*   [maxLength](/doc/props_reference/#maxlength);
-*   [min](/doc/props_reference/#min);
-*   [minLength](/doc/props_reference/#minlength);
-*   [noSanitize](/doc/props_reference/#nosanitize);
-*   [oppositeProp](/doc/props_reference/#oppositeprop);
-*   [options](/doc/props_reference/#options);
-*   [pattern](/doc/props_reference/#pattern);
-*   [placeholder](/doc/props_reference/#placeholder);
-*   [populateIn](/doc/props_reference/#populateIn);
-*   [props](/doc/props_reference/#props);
-*   [required](/doc/props_reference/#required);
-*   [searchBy](/doc/props_reference/#searchby);
-*   [selectedTemplate](/doc/props_reference/#selectedtemplate);
-*   [sortable](/doc/props_reference/#sortable);
-*   [sortBy](/doc/props_reference/#sortby);
-*   [store](/doc/props_reference/#store);
-*   [style](/doc/props_reference/#style);
+*   [accept](/doc/props-displaying/#accept);
+*   [access](/doc/props-modeling/#access);
+*   [actions](/doc/props-displaying/#actions);
+*   [addLabel](/doc/props-displaying/#addlabel);
+*   [configurable](/doc/props-modeling/#configurable);
+*   [default](/doc/props-modeling/#default);
+*   [disableCustomInput](/doc/props-displaying/#disablecustominput);
+*   [disabled](/doc/props-modeling/#disabled);
+*   [disableOrder](/doc/props-displaying/#disableorder);
+*   [disableRefSync](/doc/props-modeling/#disablerefsync);
+*   [display](/doc/props-displaying);
+*   [displayWidth](/doc/props-displaying/#displaywidth);
+*   [extraQuery](/doc/props-displaying/#extraquery);
+*   [foreignKey](/doc/props-modeling/#foreignkey);
+*   [format](/doc/props-displaying/#date-format);
+*   [formGroup](/doc/props-displaying/#formgroup);
+*   [formOrder](/doc/props-displaying/#formorder);
+*   [formTab](/doc/props-displaying/#formtab);
+*   [hidden](/doc/props-displaying/#hidden);
+*   [html](/doc/props-displaying/#html-html);
+*   [label](/doc/props-displaying/#label);
+*   [labelClassName](/doc/props-displaying/#labelclassname);
+*   [load](/doc/props-modeling/#load);
+*   [loadComponent](/doc/props-displaying/#loadcomponent);
+*   [mask](/doc/props-displaying/#masked-mask);
+*   [max](/doc/props-modeling/#max);
+*   [maxLength](/doc/props-modeling/#maxlength);
+*   [min](/doc/props-modeling/#min);
+*   [minLength](/doc/props-modeling/#minlength);
+*   [noSanitize](/doc/props-displaying/#nosanitize);
+*   [oppositeProp](/doc/props-modeling/#oppositeprop);
+*   [options](/doc/props-displaying/#autocomplete-options);
+*   [pattern](/doc/props-displaying/#pattern);
+*   [placeholder](/doc/props-displaying/#placeholder);
+*   [populateIn](/doc/props-modeling/#populateIn);
+*   [props](/doc/props-modeling/#props);
+*   [required](/doc/props-modeling/#required);
+*   [searchBy](/doc/props-displaying/#searchby);
+*   [selectedTemplate](/doc/props-displaying/#selectedtemplate);
+*   [sortable](/doc/props-displaying/#sortable);
+*   [sortBy](/doc/props-displaying/#sortby);
+*   [store](/doc/props-modeling/#store);
+*   [style](/doc/props-displaying/#style);
 *   [tableColumns](/doc/props_reference/#tablecolumns);
 *   [tableLink](/doc/props_reference/#tablelink);
-*   [tooltip](/doc/props_reference/#tooltip);
+*   [tooltip](/doc/props-displaying/#tooltip);
 *   [type](/doc/props_reference/#type);
-*   [utc](/doc/props_reference/#utc);
+*   [utc](/doc/props-modeling/#utc);
 *   [widgetId](/doc/props_reference/#widgetid);
 *   [widgets](/doc/props_reference/#widgets);
-*   [сlassName](/doc/props_reference/#сlassname).
+*   [сlassName](/doc/props-displaying/#сlassname).
 
 
 ### accept
@@ -93,8 +93,6 @@ actions: [
 ### default
 Определяет значение поля по-умолчению. Будет установлено при создании объекта, в случае, если значение не определено в создаваемом объекте.
 
-### disableCustomInput
-
 
 ### disabled
 Строка, описывающая условие недоступности редактирования поля текущего элемента в пользовательском интерфейсе.
@@ -103,9 +101,6 @@ actions: [
 ### disableOrder
 Флаг, определяющий запрет сортировки по полю при типе отображения Store `table` (bool).
 
-### disableRefSync
-Флаг, указывающий, что не требуется проводить обновление связи данного поля.
-Подробнее о механизме каскадного обновления связей читайте в разделе [References sync](/doc/ref_sync/)
 
 ### display
 Тип отображения поля в пользовательском интерфейсе (string). Возможные варианты:
