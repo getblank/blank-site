@@ -35,7 +35,8 @@ url = "/doc/serverjs/"
 *   [i18n](/doc/i18n/)&nbsp;&mdash; интернационализация;
 *   [moment](http://momentjs.com/) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash; работа с датами;
 *   [queue](/doc/queue/)&nbsp;&mdash; работа с очередями и списками;
-*   [sift](https://github.com/crcn/sift.js) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash; запросы к данным в формате [MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/);
+*   [sift](https://github.com/crcn/sift.js) [*](/doc/serverjs/#embeddedmodules)&nbsp;&mdash;
+запросы к данным в формате [MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/);
 
 <a name="embeddedmodules"></a>
 Модули, помеченные знаком `*`, разработаны сторонними разработчиками, но входят в поставку Blank.

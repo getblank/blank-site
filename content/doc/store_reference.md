@@ -145,14 +145,14 @@ title = "Store reference"
 Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
 Подробнее читайте в разделе [Filters](/doc/filters/)
 
-### FormGroupsOrder
+### FormGroups
 ~~~javascript
-    "formGroupsOrder": ["formGroupName"]
+    "formGroups": ["formGroupName"]
 ~~~
 Массив, указывающий порядок расположения групп на форме редактирования объекта. Названия групп должны совпадать с указанными
 группами в настройках props, например:
 ~~~javascript
-    "formGroupsOrder": ["{{$i18n.group2Label}}", "Group 1"],
+    "formGroups": ["{{$i18n.group2Label}}", "Group 1"],
     "props": {
         "prop1" {
             ...
