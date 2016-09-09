@@ -735,6 +735,9 @@ textarea {
   padding-top: 50px;
   margin-top: -50px;
 }
+#docs .doc-wrapper .doc .content h2 {
+  padding-top: 60px;
+}
 footer {
   padding: 24px 0;
   background-color: #212121;
