@@ -59,6 +59,7 @@
         "callback-return": "error"
     },
     "globals": {
-        "fetch": true
+        "fetch": true,
+        "$db": true
     }
 }

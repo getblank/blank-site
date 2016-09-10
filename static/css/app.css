@@ -1081,6 +1081,11 @@ body {
 body {
   padding-top: 50px;
 }
+span[type=button],
+a[type=button] {
+  appearance: none;
+  -webkit-appearance: none;
+}
 h1,
 h2,
 h3,
@@ -1269,97 +1274,6 @@ section .container .summary p span {
   font-weight: 300;
   line-height: 1.6;
 }
-button,
-input[type="button"] {
-  height: 36px;
-  min-width: 88px;
-  padding: 0 8px;
-  background: none;
-  border: none;
-  border-radius: 1px;
-  color: rgba(0, 0, 0, 0.87);
-  text-decoration: none !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  outline: none !important;
-}
-button:disabled,
-input[type="button"]:disabled {
-  color: rgba(0, 0, 0, 0.26);
-  background-color: rgba(0, 0, 0, 0.12);
-  box-shadow: none !important;
-}
-.btn-flat {
-  margin: 0 8px;
-  box-shadow: none;
-  min-width: 64px;
-  color: rgba(0, 0, 0, 0.87);
-}
-.btn-flat:hover {
-  background-color: rgba(153, 153, 153, 0.2);
-}
-.btn-flat:disabled {
-  background-color: transparent !important;
-  color: rgba(0, 0, 0, 0.26) !important;
-}
-.btn-flat.first {
-  margin-left: -8px;
-}
-.btn-flat.last {
-  margin-right: -8px;
-}
-form input[type="text"],
-form textarea {
-  width: 100%;
-  margin-bottom: 14px;
-  padding: 10px 0 8px 0;
-  color: #ffffff;
-  background: transparent none;
-  border: none;
-  outline: none !important;
-  box-shadow: none;
-  border-bottom: 1px solid #e1e1e1;
-  font-weight: 300;
-  border-radius: 0;
-}
-form input[type="text"]:focus,
-form textarea:focus {
-  border-bottom: 1px solid #009688;
-  box-shadow: 0 1px 0 0 #009688;
-}
-form input[type="text"].dirty:invalid,
-form textarea.dirty:invalid {
-  border-color: #E74C3C;
-  box-shadow: 0 1px 0 0 #E74C3C;
-}
-form input[type="text"]:disabled,
-form textarea:disabled {
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
-}
-form input[type="text"] ~ span.error,
-form textarea ~ span.error {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 12px;
-  opacity: 0;
-}
-form input[type="text"].dirty ~ span.error,
-form textarea.dirty ~ span.error,
-form input[type="text"]:focus ~ span.error,
-form textarea:focus ~ span.error {
-  opacity: 1;
-}
-form input[type="text"]:invalid ~ span.error,
-form textarea:invalid ~ span.error {
-  color: #E74C3C;
-}
-form textarea {
-  resize: none;
-}
 #page {
   margin: 0 7.14286%;
   padding: 36px 0 72px 0;
@@ -1400,8 +1314,13 @@ form textarea {
 .main-feature-list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1280px;
+  justify-content: center;
   margin: 0 auto;
+}
+@media screen and (max-width: 1280px) {
+  .main-feature-list {
+    max-width: 640px;
+  }
 }
 .main-feature-list .item {
   width: 272px;
