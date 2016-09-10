@@ -126,6 +126,22 @@
             </li>
           
             <li >
+              <a href="/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li >
               <a href="/doc/access/">Access control</a>
             </li>
           
@@ -139,18 +155,6 @@
           
             <li >
               <a href="/doc/lifecycle_events/">Lifecycle events</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props_reference/">Props reference</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-modeling/">Props modeling</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-displaying/">Props displaying</a>
             </li>
           
         </ul>
@@ -249,7 +253,7 @@
 
 <p>Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: <a href="/doc/store_reference/#http-api">httpApi</a></p>
 
-<h3 id="structure">Структура</h3>
+<h2 id="structure">Структура</h2>
 
 <pre><code class="language-javascript">&quot;httpHooks&quot;: [HTTPHook {
     &quot;uri&quot;: &quot;string&quot;
@@ -267,7 +271,20 @@ Response {
 }
 </code></pre>
 
-<h3 id="uri">Uri</h3>
+<h2 id="свойства">Свойства</h2>
+
+<h3 id="method">method</h3>
+
+<p>Соответствует HTTP методу, с которым будет доступен hook (строка). Допустимые варианты:
+*   <code>GET</code>;
+*   <code>PUT</code>;
+*   <code>POST</code>;
+*   <code>PATCH</code>;
+*   <code>DELETE</code>;
+*   <code>HEAD</code>;
+*   <code>OPTIONS</code>.</p>
+
+<h3 id="uri">uri</h3>
 
 <p>Полный путь будет сформирован таким образом:</p>
 

@@ -20,10 +20,10 @@
     <base href="https://getblank.net/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>Store displaying &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.net/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.net/doc/store-displaying/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href="" rel="alternate" type="application/rss+xml" title="BLANK cloud platform" /> <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="css/app.css" media="all" rel="stylesheet"/>
@@ -125,7 +125,7 @@
               <a href="/doc/store_reference/">Store reference</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/doc/store-displaying/">Store displaying</a>
             </li>
           
@@ -213,7 +213,7 @@
       
         <ul>
           
-            <li  class="active">
+            <li >
               <a href="/doc/httpauth/">Auth</a>
             </li>
           
@@ -243,50 +243,64 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>Store displaying</h1>
       <div class="content">
         
 
-<p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
+<p>Данный раздел описывает конфигурацию работы встроенного веб приложения Blank в части настройки отображения Store.</p>
 
-<h3 id="авторизация">Авторизация</h3>
+<h2 id="типы-отображения-store">Типы отображения Store</h2>
 
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
+<ul>
+<li><a href="/doc/store-displaying/#cards">cards</a>;</li>
+<li><a href="/doc/store-displaying/#html">html</a>;</li>
+<li><a href="/doc/store-displaying/#list">list</a>;</li>
+<li><a href="/doc/store-displaying/#single">single</a>;</li>
+<li><a href="/doc/store-displaying/#table">table</a>.</li>
+</ul>
 
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
+<h2 id="cards">cards</h2>
+
+<p>Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.</p>
+
+<h2 id="html">html</h2>
+
+<p>Если отображение не предполагает интерактивных элементов и требуется просто отобразить данные или статическую
+страницу, можно включить тип отображения html. При использовании не забудьте описать шаблон
+<a href="/doc/store_reference/#html">html</a> для отрисовки страницы.</p>
+
+<h2 id="list">list</h2>
+
+<p>Отображение по-умолчанию. Список с панелью просмотра выбранного элемента, так называемый master-detail view. Подходит в большинстве случаев.
+Список в веб-приложении виртуализирован, так что прекрасно работает со сколь угодно большими коллекциями.</p>
+
+<h2 id="single">single</h2>
+
+<p>Позволяет сделать аналог <strong>&ldquo;type&rdquo;: &ldquo;single&rdquo;</strong>, но с отдельными данными для каждого пользователя. Например, требуется
+дать пользователю возможность настройки получения уведомлений – тут прекрасно подойдёт данный тип отображения Store.</p>
+
+<p>Обратите внимание! При использовании этого типа отображения в работе с API следует передавать название Store в качестве
+идентификатора объекта, и нужно указать соответствующие права пользователей, для которых установлен данный тип
+отображения, например:</p>
+
+<pre><code class="language-javascript">&quot;access&quot;: [
+    { &quot;role&quot;: &quot;operator&quot;, &quot;permissions&quot;: &quot;r&quot;, &quot;condition&quot;: { &quot;_ownerId&quot;: { &quot;$expression&quot;: &quot;$user._id&quot; } } },
+],
 </code></pre>
 
-<p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>key</code>, содержащее apiKey для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
+<p>Если не указать права, разрешающие пользователям доступ только к одному объекту, при получении и сохранении данных сервер
+будет работать со случайным объектом, что приведёт к ошибкам.
+Если все настроить правильно, то при сохранении данных через API не придется сначала искать идентификатор объекта,
+принадлежащего этому пользователю – сервер Blank сделает это самостоятельно.</p>
 
-<pre><code class="language-JSON">    {
-        &quot;key&quot;: &quot;05547313-0ceb-41ad-965c-dee3c8992c71&quot;,
-        &quot;user&quot;: {...}
-    }
-</code></pre>
+<p>При использовании (Workspaces)[/doc/workspaces] можно настроить Store так, чтобы часть пользователей работала с ним как single,
+а, например, администраторы - как с обычным списком. Это даст возможность администраторам просматривать и редактировать
+данные других пользователей.</p>
 
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
+<h2 id="table">table</h2>
 
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-
-<h3 id="регистрация">Регистрация</h3>
-
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre>
-
-<p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+<p>Табличный тип отображения. Подходит для отображения Store с историей каких-либо событий.
+При использовании не забудьте настроить <a href="/doc/store_reference/#tablecolumns">TableColumns</a></p>
 
       </div>
     </div>
