@@ -3,7 +3,7 @@ date = "2016-09-09T13:07:00+05:00"
 title = "Props displaying"
 [menu.doc]
     parent = "schema"
-    weight = 120
+    weight = 35
 +++
 
 Данный раздел описывает конфигурацию работы встроенного веб приложения Blank.

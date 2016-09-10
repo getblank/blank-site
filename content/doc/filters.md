@@ -31,8 +31,12 @@ title = "Filters"
 "query": { "$and": [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
 ~~~
 
-### query – funсtion ($value) {}:MongoQuery
-Вариант установки query через функцию
+## query
+
+### funсtion ($value) {}:MongoQuery
+Функция, принимающая на вход значение фильтра в виде переменной `$value` и возвращающая запрос в формате
+[MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/).
+
 ~~~javascript
 "query": ($value) => {
     if ($value) {
@@ -40,9 +44,10 @@ title = "Filters"
     }
 }
 ~~~
-### query – MongoQuery {}
-Вариант настройки непосредственно через MongoQuery, в котором в значении одного или нескольких
-условий указано `"$value"`. Пример:
+### MongoQuery {}
+Вариант настройки непосредственно через [MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/),
+в котором в значении одного или нескольких условий указано `"$value"`.
+Пример:
 ```javascript
 "query": { "_ownerId": { "$in": "$value" } },
 ```
