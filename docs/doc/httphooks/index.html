@@ -255,11 +255,13 @@
 
 <h2 id="structure">Структура</h2>
 
-<pre><code class="language-javascript">&quot;httpHooks&quot;: [HTTPHook {
+<pre><code class="language-javascript">httpHooks: HTTPHook[]
+
+HTTPHook {
     &quot;uri&quot;: &quot;string&quot;
     &quot;method&quot;: &quot;GET&quot; | &quot;PUT&quot; | &quot;POST&quot; | &quot;PATCH&quot; | &quot;DELETE&quot; | &quot;HEAD&quot; | &quot;OPTIONS&quot;,
-    &quot;script&quot;: function ($request):Response {}
-}]
+    &quot;script&quot;: function ($request):Response
+}
 
 Response {
     &quot;type&quot;: &quot;JSON&quot; | &quot;HTML&quot; | &quot;XML&quot; | &quot;file&quot; | &quot;redirect&quot;,
@@ -275,7 +277,7 @@ Response {
 
 <h3 id="method">method</h3>
 
-<p>Соответствует HTTP методу, с которым будет доступен hook (строка). Допустимые варианты:
+<p>HTTP методу, с которым будет доступен hook (строка). Допустимые варианты:
 *   <code>GET</code>;
 *   <code>PUT</code>;
 *   <code>POST</code>;
@@ -283,6 +285,11 @@ Response {
 *   <code>DELETE</code>;
 *   <code>HEAD</code>;
 *   <code>OPTIONS</code>.</p>
+
+<h3 id="script">script</h3>
+
+<p>Непосредственно JavaScript код. На вход получает переменную <a href="/doc/request/">$request</a>.
+Должен вернуть объект типа <a href="/doc/httphooks/#response">Response</a>.</p>
 
 <h3 id="uri">uri</h3>
 
@@ -299,7 +306,66 @@ Response {
 <p>Значения параметров будут доступны через свойство <code>params</code> объекта <code>$request</code>, переданного аргументом
 в скрипт hook-а.</p>
 
-<p>Подробнее об объекте <code>$request</code> читайте в разделе <a href="/doc/request/">Serverside JS API: $request</a></p>
+<p>Подробнее об объекте <code>$request</code> читайте в разделе <a href="/doc/request/">Serverside JS API: $request</a>.</p>
+
+<h2 id="response">Response</h2>
+
+<p>Объект описывающий формат возврата данных из хука.</p>
+
+<h2 id="свойства-1">Свойства</h2>
+
+<h3 id="code">code</h3>
+
+<p>HTTP status code (int). По-умолчанию, 200.</p>
+
+<h3 id="data">data</h3>
+
+<p>Тело ответа (строка). Будет передана в Body HTTP ответа сервера. В случае необходимости произвести перенаправление к другому ресурсу,
+в <code>data</code> следует положить URL ресурса.</p>
+
+<h3 id="filename">fileName</h3>
+
+<p>Имя возвращаемого файла (строка). Указывается при <code>type:file</code>.</p>
+
+<h3 id="header">header</h3>
+
+<p>HTTP заголовки ответа (JavaScript object).</p>
+
+<h3 id="id">_id</h3>
+
+<p>Идентификатор файла (строка). Используется при <a href="/doc/httphooks/#type">type:file</a>.</p>
+
+<h3 id="rawdata">rawData</h3>
+
+<p>&laquo;Сырые&raquo; (не сериализованные данные) виде (например, объект или массив).</p>
+
+<h3 id="store">store</h3>
+
+<p>Хранилище файла (строка). Используется при <a href="/doc/httphooks/#type">type:file</a>.</p>
+
+<h3 id="type">type</h3>
+
+<p>Тип HTTP ответа (строка). Допустимые варианты:</p>
+
+<ul>
+<li><p><code>JSON</code>&nbsp;&mdash; возврат данных в виде JSON. Устанавливается соответствующий HTTP заголовок <code>Content-Type: application/json</code>.
+Данные следует передавать либо в сериализованном виде в свойстве <a href="/doc/httphooks/#data">data</a> (рекомендованный способ),
+либо в &laquo;сыром&raquo; виде (например, объект или массив) в свойстве <a href="/doc/httphooks/#rawdata">rawData</a>.
+В последнем случае, данные будут сериализованы автоматически.</p></li>
+
+<li><p><code>HTML</code>&nbsp;&mdash; возврат данных в виде HTML. Устанавливается соответствующий HTTP заголовок <code>Content-Type: text/html</code>.
+Данные следует передавать в свойстве <a href="/doc/httphooks/#data">data</a>.</p></li>
+
+<li><p><code>XML</code>&nbsp;&mdash; возврат данных в виде HTML. Устанавливается соответствующий HTTP заголовок <code>Content-Type: text/xml</code>.
+Данные следует передавать в сериализованном виде в свойстве <a href="/doc/httphooks/#data">data</a>.</p></li>
+
+<li><p><code>file</code>&nbsp;&mdash; возврат файлов. HTTP заголовок <code>Content-Type</code> устанавливается автоматически в зависимости от типа файла, определяемого по имени.
+Данные следует передавать закодированным в base64 буфером (<a href="https://nodejs.org/api/buffer.html">Node Buffer</a>) в свойстве <a href="/doc/httphooks/#data">data</a>.
+При необходимости возврата файла из файлового хранилища, следует передать название Store в свойстве <a href="/doc/httphooks/#store">store</a>
+и идентификатор файла в свойстве <a href="/doc/httphooks/#id">_id</a>.</p></li>
+
+<li><p><code>redirect</code>&nbsp;&mdash; перенаправление на другой ресурс. URL ресурса следует передавать в свойстве <a href="/doc/httphooks/#data">data</a>.</p></li>
+</ul>
 
       </div>
     </div>
