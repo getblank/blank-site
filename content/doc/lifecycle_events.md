@@ -6,7 +6,7 @@ title = "Lifecycle events"
     weight = 60
 +++
 
-### ObjectLifeCycle
+## ObjectLifeCycle
 ~~~javascript
 "objectLifeCycle": {
     "eventName": function () {}
@@ -14,7 +14,7 @@ title = "Lifecycle events"
 ~~~
 Обработчики событий, происходящих с объектами в Store.
 
-#### willCreate
+### willCreate
 ~~~javascript
 "willCreate": function ($item, $user):Promise {}
 ~~~
@@ -32,14 +32,14 @@ title = "Lifecycle events"
 Для отправки сообщения об ошибке исключение (или объект ошибки Promise)
 должно быть экземпляром класса UserError. В других случаях сервер вернет "500. Internal server error".
 
-#### didCreate
+### didCreate
 ~~~javascript
 "didCreate": function ($item, $user) {}
 ~~~
 Выполняется сразу после создания объекта. Изменения в $item уже ни на что не повлияют. Можно использовать
 этот обработчик для добавления какой-либо бизнес-логики по синхронизации данных или вызова внешнего API.
 
-#### willSave
+### willSave
 ~~~javascript
 "willSave": function ($item, $prevItem, $user):Promise {}
 ~~~
@@ -58,14 +58,14 @@ title = "Lifecycle events"
 Для отправки сообщения об ошибке исключение (или объект ошибки Promise)
 должно быть экземпляром класса UserError. В других случаях сервер вернет "500. Internal server error".
 
-#### didSave
+### didSave
 ~~~javascript
 "didSave": function ($item, $prevItem, $user) {}
 ~~~
 Выполняется сразу после сохранения объекта. Изменения в $item уже ни на что не повлияют. Можно использовать
 этот обработчик для добавления какой-либо бизнес-логики по синхронизации данных или вызова внешнего API.
 
-#### willRemove
+### willRemove
 ~~~javascript
 "willRemove": function ($item, $user):Promise {}
 ~~~
@@ -78,14 +78,14 @@ title = "Lifecycle events"
 Для отправки сообщения об ошибке исключение (или объект ошибки Promise)
 должно быть экземпляром класса UserError. В других случаях сервер вернет "500. Internal server error".
 
-#### didRemove
+### didRemove
 ~~~javascript
 "didRemove": function ($item, $user) {}
 ~~~
 Выполняется сразу после удаления объекта.
 
-### StoreLifeCycle
-#### didStart
+## StoreLifeCycle
+### didStart
 ~~~javascript
 "didStart": function () {}
 ~~~
