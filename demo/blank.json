@@ -1,0 +1,21 @@
+{
+    "lib": {
+        "path": [
+            "./lib"
+        ]
+    },
+    "assets": {
+        "path": [
+            "./assets"
+        ]
+    },
+    "tests": {
+        "path": [
+            "./tests"
+        ],
+        "mochaOptions": {}
+    },
+    "conf": {
+        "watch": []
+    }
+}

@@ -126,6 +126,22 @@
             </li>
           
             <li >
+              <a href="/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li >
               <a href="/doc/access/">Access control</a>
             </li>
           
@@ -139,18 +155,6 @@
           
             <li >
               <a href="/doc/lifecycle_events/">Lifecycle events</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props_reference/">Props reference</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-modeling/">Props modeling</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-displaying/">Props displaying</a>
             </li>
           
         </ul>
@@ -268,9 +272,12 @@
 <pre><code class="language-javascript">&quot;query&quot;: { &quot;$and&quot;: [ Filter1Query, Filter2Query, ..., FilterNQuery ] },
 </code></pre>
 
-<h3 id="query-funсtion-value-mongoquery">query – funсtion ($value) {}:MongoQuery</h3>
+<h2 id="query">query</h2>
 
-<p>Вариант установки query через функцию</p>
+<h3 id="funсtion-value-mongoquery">funсtion ($value) {}:MongoQuery</h3>
+
+<p>Функция, принимающая на вход значение фильтра в виде переменной <code>$value</code> и возвращающая запрос в формате
+<a href="https://docs.mongodb.com/manual/tutorial/query-documents/">MongoDB Query</a>.</p>
 
 <pre><code class="language-javascript">&quot;query&quot;: ($value) =&gt; {
     if ($value) {
@@ -279,10 +286,11 @@
 }
 </code></pre>
 
-<h3 id="query-mongoquery">query – MongoQuery {}</h3>
+<h3 id="mongoquery">MongoQuery {}</h3>
 
-<p>Вариант настройки непосредственно через MongoQuery, в котором в значении одного или нескольких
-условий указано <code>&quot;$value&quot;</code>. Пример:</p>
+<p>Вариант настройки непосредственно через <a href="https://docs.mongodb.com/manual/tutorial/query-documents/">MongoDB Query</a>,
+в котором в значении одного или нескольких условий указано <code>&quot;$value&quot;</code>.
+Пример:</p>
 
 <pre><code class="language-javascript">&quot;query&quot;: { &quot;_ownerId&quot;: { &quot;$in&quot;: &quot;$value&quot; } },
 </code></pre>

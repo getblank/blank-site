@@ -125,6 +125,22 @@
               <a href="/doc/store_reference/">Store reference</a>
             </li>
           
+            <li >
+              <a href="/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
+            </li>
+          
             <li  class="active">
               <a href="/doc/access/">Access control</a>
             </li>
@@ -139,18 +155,6 @@
           
             <li >
               <a href="/doc/lifecycle_events/">Lifecycle events</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props_reference/">Props reference</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-modeling/">Props modeling</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-displaying/">Props displaying</a>
             </li>
           
         </ul>
@@ -255,7 +259,7 @@
 }]
 </code></pre>
 
-<h3 id="значение-по-умолчанию">Значение по-умолчанию</h3>
+<h2 id="значение-по-умолчанию">Значение по-умолчанию</h2>
 
 <p>Если права не указаны, по-умолчанию у всех будет полный доступ, как если бы было задано такое правило:</p>
 
@@ -264,7 +268,7 @@
 
 <p>Если параметр задан, доступ получат только те роли, которые указаны в параметре, в соответствии с их разрешениями.</p>
 
-<h3 id="permissions">Permissions</h3>
+<h2 id="permissions">Permissions</h2>
 
 <p>Набор разрешений, зависит от объекта прав доступа:</p>
 
@@ -281,7 +285,7 @@
 
 <p>Запреты имеют приоритет над разрешениями.</p>
 
-<h3 id="conditions">Conditions</h3>
+<h2 id="conditions">Conditions</h2>
 
 <p>Используется только при установке прав доступа на Store. Требуется, если разрешения зависят от самого объекта или
 свойств пользователя, отличных от роли.</p>
@@ -305,7 +309,7 @@
 
 <p><strong>$expression</strong> - выражение на JavaScript, в котором доступна переменная $user.</p>
 
-<h3 id="роль-root">Роль root</h3>
+<h2 id="роль-root">Роль root</h2>
 
 <p>Роль root зарезервирована и в неё входит только один пользователь – сам root.</p>
 

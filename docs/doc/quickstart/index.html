@@ -126,6 +126,22 @@
             </li>
           
             <li >
+              <a href="/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li >
               <a href="/doc/access/">Access control</a>
             </li>
           
@@ -139,18 +155,6 @@
           
             <li >
               <a href="/doc/lifecycle_events/">Lifecycle events</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props_reference/">Props reference</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-modeling/">Props modeling</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-displaying/">Props displaying</a>
             </li>
           
         </ul>
@@ -241,7 +245,74 @@
     <div class="doc">
       <h1>Быстрый старт</h1>
       <div class="content">
-        <p>Hello my dear friends</p>
+        
+
+<p>Blank подразумевает локальную разработку, в отличие от подобных сервисов, где всё управление производится через web интерфейс.
+В данной статье рассказывается создать собственное приложение.</p>
+
+<h2 id="начальные-условия">Начальные условия</h2>
+
+<p>В первую очередь следует установить необходимый инструментарий для разработки.</p>
+
+<p>Основным инструментом Blank является <strong>npm</strong> пакет <a href="https://www.npmjs.com/package/blank-cli">blank-cli</a>.
+Так же вся бизнес-логика, на данный момент, описывается на JavaScript, поэтому первым делом следует установить
+на машину разработчика <a href="https://nodejs.org">Node.js</a>. Инструкции по установке можно найти <a href="https://nodejs.org/en/download/">здесь</a>.</p>
+
+<p>В качестве основной СУБД используется <a href="https://www.mongodb.com/">MongoDB</a>. Дистрибутивы
+можно получить <a href="https://www.mongodb.com/download-center">здесь</a>.</p>
+
+<p>Мы работаем над тем, чтобы минимизировать системные требования.</p>
+
+<h2 id="установка-blank">Установка Blank</h2>
+
+<p>Установка производится через <a href="https://www.npmjs.com/">npm</a>.</p>
+
+<pre><code>npm install blank-cli
+</code></pre>
+
+<p>После установки в командной строке будет доступна утилита <code>blank</code>.</p>
+
+<h2 id="создание-начальной-конфигурации">Создание начальной конфигурации</h2>
+
+<p>В командной строке выполняем команду:</p>
+
+<pre><code>blank init newApp
+</code></pre>
+
+<p>где <code>newApp</code>&nbsp;&mdash; это название нового приложения.</p>
+
+<p>При этом будет создана новая директория, соответствующая названию приложения, в данном случае <code>newApp</code>,
+в которой будет расположена минимальная необходимая для старта конфигурация. Будет присутствовать описание
+<code>demoStore</code>, которое можно использовать для своих нужд&nbsp;&mdash; переименовать во что-то
+более осмысленное, заполнить нужными <a href="/doc/props-modeling/">полями</a>, включить <a href="/doc/httprest/">HTTP REST API</a>,
+настроить <a href="/doc/props-displaying/">внешний вид</a> и т.д. Более подробно об этом в разделе <a href="/doc/schema/">Blank Schema</a>.</p>
+
+<h2 id="запуск-приложения">Запуск приложения</h2>
+
+<p>Для запуска готовой конфигурации, следует перейти в директорию проекта, выполнив команду:</p>
+
+<pre><code>cd newApp
+</code></pre>
+
+<p>где <code>newApp</code>&nbsp;&mdash; это название нового приложения.</p>
+
+<p>После чего, приложение можно запустить:</p>
+
+<pre><code>blank server
+</code></pre>
+
+<p>Утилита сама произведёт запуск всех сервисов Blank, после чего работающее приложение будет доступно в браузере по адресу:</p>
+
+<pre><code>http://localhost:8080
+</code></pre>
+
+<p>При первом старте будет создан главный администратор с именем <code>root</code> и паролем <code>toor</code>. Можете войти в систему.</p>
+
+<p>При любом изменении файлов проекта, Blank автоматически обновит конфигурацию во всех сервисах и даже обновит страничку в браузере.</p>
+
+<p>Следуюшим шагом следует настроить <a href="/doc/settings/">конфигурацию</a> и изучить философию <a href="/doc/schema/">Blank Schema</a>.</p>
+
+<p>Подробнее об утилите <code>blank</code> читайте в разделе <a href="/doc/cli/">CLI Reference</a>.</p>
 
       </div>
     </div>

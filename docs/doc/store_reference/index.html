@@ -126,6 +126,22 @@
             </li>
           
             <li >
+              <a href="/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li >
               <a href="/doc/access/">Access control</a>
             </li>
           
@@ -139,18 +155,6 @@
           
             <li >
               <a href="/doc/lifecycle_events/">Lifecycle events</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props_reference/">Props reference</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-modeling/">Props modeling</a>
-            </li>
-          
-            <li >
-              <a href="/doc/props-displaying/">Props displaying</a>
             </li>
           
         </ul>
@@ -243,7 +247,7 @@
       <div class="content">
         
 
-<h3 id="access">Access</h3>
+<h2 id="access">Access</h2>
 
 <pre><code class="language-javascript">&quot;access&quot;: [AccessRule {}]
 </code></pre>
@@ -270,7 +274,7 @@
 
 <p>Подробнее о настройках доступа в Blank в разделе <a href="/doc/access/">Access control</a></p>
 
-<h3 id="actions">Actions</h3>
+<h2 id="actions">Actions</h2>
 
 <pre><code class="language-javascript">&quot;actions&quot;: [Action {}]
 </code></pre>
@@ -293,7 +297,7 @@
 ],
 </code></pre>
 
-<h3 id="basestore">BaseStore</h3>
+<h2 id="basestore">BaseStore</h2>
 
 <pre><code class="language-javascript">&quot;baseStore&quot;: &quot;storeName&quot;
 </code></pre>
@@ -305,14 +309,14 @@
 
 <p>Все настройки Store с указанным baseStore переопредлеяют настройки базового Store, но не влияют на него.</p>
 
-<h3 id="config">Config</h3>
+<h2 id="config">Config</h2>
 
 <pre><code class="language-javascript">&quot;config&quot;: WorkspaceStoreDesc {}
 </code></pre>
 
 <p>Переопредление конфигурации приложения для Store с типом workspace.</p>
 
-<h3 id="display">Display</h3>
+<h2 id="display">Display</h2>
 
 <pre><code class="language-javascript">&quot;display&quot;: &quot;list&quot;, &quot;single&quot;, &quot;table&quot;, &quot;cards&quot;, &quot;dashboard&quot;
 </code></pre>
@@ -322,54 +326,11 @@
 <p>Если вы не используете автогенерируемое приложение, обратите внимание на <strong>single</strong>, при использовании этого типа
 отображения будут изменения в работе через API.</p>
 
-<h4 id="list">list</h4>
-
-<p>Список с панелью просмотра выбранного элемента, так называемый master-detail view. Подходит в большинстве случаев.
-Список в веб-приложении виртуализирован, так что прекрасно работает со сколь угодно большими коллекциями.</p>
-
-<h4 id="single">single</h4>
-
-<p>Позволяет сделать аналог <strong>&ldquo;type&rdquo;: &ldquo;single&rdquo;</strong>, но с отдельными данными для каждого пользователя. Например, требуется
-дать пользователю возможность настройки получения уведомлений – тут прекрасно подойдёт данный тип отображения Store.</p>
-
-<p>Обратите внимание! При использовании этого типа отображения в работе с API следует передавать название Store в качестве
-идентификатора объекта, и нужно указать соответствующие права пользователей, для которых установлен данный тип
-отображения, например:</p>
-
-<pre><code class="language-javascript">&quot;access&quot;: [
-    { &quot;role&quot;: &quot;operator&quot;, &quot;permissions&quot;: &quot;r&quot;, &quot;condition&quot;: { &quot;_ownerId&quot;: { &quot;$expression&quot;: &quot;$user._id&quot; } } },
-],
-</code></pre>
-
-<p>Если не указать права, разрешающие пользователям доступ только к одному объекту, при получении и сохранении данных сервер
-будет работать со случайным объектом, что приведёт к ошибкам.
-Если все настроить правильно, то при сохранении данных через API не придется сначала искать идентификатор объекта,
-принадлежащего этому пользователю – сервер Blank сделает это самостоятельно.</p>
-
-<p>При использовании (Workspaces)[/doc/workspaces] можно настроить Store так, чтобы часть пользователей работала с ним как single,
-а, например, администраторы - как с обычным списком. Это даст возможность администраторам просматривать и редактировать
-данные других пользователей.</p>
-
-<h4 id="table">table</h4>
-
-<p>Табличный тип отображения. Подходит для отображения Store с историей каких-либо событий.
-При использовании не забудьте настроить <a href="/doc/store_reference/#tablecolumns">TableColumns</a></p>
-
-<h4 id="cards">cards</h4>
-
-<p>Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.</p>
-
-<h4 id="html">html</h4>
-
-<p>Если отображение не предполагает интерактивных элементов и требуется просто отобразить данные или статическую
-страницу, можно включить тип отображения html. При использовании не забудьте написать шаблон
-<a href="/doc/store_reference/#html">Html</a> для отрисовки страницы.</p>
-
-<h4 id="dashboard">dashboard</h4>
+<h3 id="dashboard">dashboard</h3>
 
 <p>Описание отсутствует. Тип отображения еще дорабатывается, напишите нам, если хотите принять участие в тестировании.</p>
 
-<h3 id="entries-type-map">Entries [type:map]</h3>
+<h2 id="entries-type-map">Entries [type:map]</h2>
 
 <pre><code class="language-javascript">    &quot;entries&quot;: {}
 </code></pre>
@@ -390,7 +351,7 @@
 }
 </code></pre>
 
-<h3 id="filters">Filters</h3>
+<h2 id="filters">Filters</h2>
 
 <pre><code class="language-javascript">    &quot;filters&quot;: [Filter {}]
 </code></pre>
@@ -398,7 +359,7 @@
 <p>Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
 Подробнее читайте в разделе <a href="/doc/filters/">Filters</a></p>
 
-<h3 id="formgroups">FormGroups</h3>
+<h2 id="formgroups">FormGroups</h2>
 
 <pre><code class="language-javascript">    &quot;formGroups&quot;: [&quot;formGroupName&quot;]
 </code></pre>
@@ -424,14 +385,14 @@
     }
 </code></pre>
 
-<h3 id="formtabs">FormTabs</h3>
+<h2 id="formtabs">FormTabs</h2>
 
 <pre><code class="language-javascript">    &quot;formTabs&quot;: [&quot;tabId&quot; | {&quot;_id&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Handlebars template&quot;, &quot;hidden&quot;: &quot;JavaScript expression&quot;}]
 </code></pre>
 
 <p>Определяет порядок и отображение табов в карточках объектов в веб-приложении.</p>
 
-<h3 id="headerproperty">HeaderProperty</h3>
+<h2 id="headerproperty">HeaderProperty</h2>
 
 <pre><code class="language-javascript">&quot;headerProperty&quot;: &quot;propName&quot;
 </code></pre>
@@ -445,7 +406,7 @@
 <pre><code class="language-javascript">&quot;headerProperty&quot;: &quot;orderNumber&quot;,
 </code></pre>
 
-<h3 id="headertemplate">HeaderTemplate</h3>
+<h2 id="headertemplate">HeaderTemplate</h2>
 
 <pre><code class="language-javascript">&quot;headerTemplate&quot;: &quot;Handlebars template&quot;
 </code></pre>
@@ -459,7 +420,7 @@
 <pre><code class="language-javascript">&quot;headerTemplate&quot;: &quot;{{$item.lastName}} {{$item.name}}&quot;
 </code></pre>
 
-<h3 id="html-display-html">HTML [display:html]</h3>
+<h2 id="html">HTML [display:html]</h2>
 
 <pre><code class="language-javascript">&quot;html&quot;: &quot;Handlebars-enabled template&quot;
 </code></pre>
@@ -472,7 +433,7 @@
 }
 </code></pre>
 
-<h3 id="http-api">HTTP API</h3>
+<h2 id="http-api">HTTP API</h2>
 
 <pre><code class="language-javascript">&quot;httpApi&quot;: bool
 </code></pre>
@@ -480,7 +441,7 @@
 <p>Флаг формирования HTTP REST API для сторы.
 Значение по-умолчанию: false.</p>
 
-<h3 id="httphooks">HTTPHooks</h3>
+<h2 id="httphooks">HTTPHooks</h2>
 
 <pre><code class="language-javascript">&quot;httpHooks&quot;: [HTTPHook {}]
 </code></pre>
@@ -488,7 +449,7 @@
 <p>Массив описаний методов Store, доступных через HTTP API.
 Подробнее читайте в разделе <a href="/doc/httphooks/">HTTPHooks</a></p>
 
-<h3 id="i18n">I18n</h3>
+<h2 id="i18n">I18n</h2>
 
 <pre><code class="language-javascript">&quot;i18n&quot;: {}
 </code></pre>
@@ -512,7 +473,7 @@
 <p>Обратиться к записям в i18n можно через объект <strong>$i18n</strong> в шаблонах, или через модуль <strong>i18n</strong>
 в скриптах на JavaScript.</p>
 
-<h4 id="работа-с-i18n-из-шаблонов">Работа с i18n из шаблонов</h4>
+<h3 id="работа-с-i18n-из-шаблонов">Работа с i18n из шаблонов</h3>
 
 <p>При доступе к i18n из шаблонов текущей Store, все локализации будут доступны напрямую:</p>
 
@@ -531,7 +492,7 @@
 
 <p>Все обращения будут работать с текущей установленной локалью пользователя или локалью по-умолчанию.</p>
 
-<h3 id="indexes">Indexes</h3>
+<h2 id="indexes">Indexes</h2>
 
 <pre><code class="language-JSON">&quot;indexes&quot;: []
 </code></pre>
@@ -571,7 +532,7 @@
 
 <p>Подробнее об индексах в MongoDB можно почитать здесь: <a href="https://docs.mongodb.com/manual/indexes/">Indexes</a>.</p>
 
-<h3 id="label">Label</h3>
+<h2 id="label">Label</h2>
 
 <pre><code class="language-javascript">&quot;label&quot;: &quot;Handlebars template&quot;
 </code></pre>
@@ -583,7 +544,7 @@
 <pre><code class="language-javascript">&quot;label&quot;: &quot;{{$i18n.storeLabel}}&quot;
 </code></pre>
 
-<h3 id="labels">Labels</h3>
+<h2 id="labels">Labels</h2>
 
 <pre><code class="language-javascript">&quot;labels&quot;: [Label {
     &quot;icon&quot;: &quot;className&quot; //&quot;fa fa-icon_name&quot; или &quot;material-icons text md-16 icon_name&quot;
@@ -610,21 +571,21 @@
 ]
 </code></pre>
 
-<h3 id="navgroup">NavGroup</h3>
+<h2 id="navgroup">NavGroup</h2>
 
 <pre><code class="language-javascript">&quot;navGroup&quot;: &quot;string&quot;,
 </code></pre>
 
 <p>Определяет расположения в навигации веб-приложения. Если группа не задана, ссылка на эти объекты будет выведена в первом уровне навигации</p>
 
-<h3 id="navorder">NavOrder</h3>
+<h2 id="navorder">NavOrder</h2>
 
 <pre><code class="language-javascript">&quot;navOrder&quot;: int,
 </code></pre>
 
 <p>Порядок размещения в навигации веб-приложения</p>
 
-<h3 id="navlabel">NavLabel</h3>
+<h2 id="navlabel">NavLabel</h2>
 
 <pre><code class="language-javascript">&quot;navLabel&quot;: &quot;Handlebars template&quot;,
 </code></pre>
@@ -632,7 +593,7 @@
 <p>Название Store в навигации веб-приложения. Требуется, если нужно оставить опеределенный label в заголовке открытой в приложении
 Store, но в навигации она должна называться по-другому.</p>
 
-<h3 id="objectlifecycle">ObjectLifeCycle</h3>
+<h2 id="objectlifecycle">ObjectLifeCycle</h2>
 
 <pre><code class="language-javascript">&quot;objectLifeCycle&quot;: {
     &quot;eventName&quot;: function () {}
@@ -643,7 +604,7 @@ Store, но в навигации она должна называться по-
 
 <p>Подробнее читайте в разделе <a href="/doc/lifecycle_events/#objectlifecycle">ObjectLifeCycle</a></p>
 
-<h3 id="orderby">OrderBy</h3>
+<h2 id="orderby">OrderBy</h2>
 
 <pre><code class="language-javascript">&quot;orderBy&quot;: &quot;propName&quot;,
 </code></pre>
@@ -654,7 +615,7 @@ Store, но в навигации она должна называться по-
 <pre><code class="language-javascript">&quot;orderBy&quot;: &quot;-propName&quot;,
 </code></pre>
 
-<h3 id="props">Props</h3>
+<h2 id="props">Props</h2>
 
 <pre><code class="language-javascript">&quot;props&quot;: {
     &quot;propName&quot;: PropDesc {},
@@ -686,7 +647,7 @@ Store, но в навигации она должна называться по-
 
 <p>Подробнее читайте в разделе <a href="/doc/props_reference/">Props reference</a></p>
 
-<h3 id="states">States</h3>
+<h2 id="states">States</h2>
 
 <pre><code class="language-javascript">    &quot;states&quot;: {
         &quot;stateName&quot;: StateDesc {&quot;label&quot;: &quot;Handlebars template&quot;, &quot;navOrder&quot;: int}
@@ -698,7 +659,7 @@ Store, но в навигации она должна называться по-
 Если параметр задан, у объектов появится специальное свойство <strong>_state</strong> и в веб-приложении будет отрисована
 дополнительная навигация по состояниям объектов.</p>
 
-<h3 id="storeactions">StoreActions</h3>
+<h2 id="storeactions">StoreActions</h2>
 
 <pre><code class="language-javascript">    &quot;storeActions&quot;: [Action {}]
 </code></pre>
@@ -707,7 +668,7 @@ Store, но в навигации она должна называться по-
 
 <p>При вызове из веб-приложения в аргументы скрипта передаются текущие значения фильтров.</p>
 
-<h3 id="storelifecycle">StoreLifeCycle</h3>
+<h2 id="storelifecycle">StoreLifeCycle</h2>
 
 <pre><code class="language-javascript">&quot;storeLifeCycle&quot;: {
     &quot;eventName&quot;: function
@@ -718,14 +679,14 @@ Store, но в навигации она должна называться по-
 
 <p>Подробнее читайте в разделе <a href="/doc/lifecycle_events/#storelifecycle">StoreLifeCycle</a></p>
 
-<h3 id="tablecolumns">TableColumns</h3>
+<h2 id="tablecolumns">TableColumns</h2>
 
 <pre><code class="language-javascript">&quot;tableColumns&quot;: [&quot;propName&quot; | ColumnDesc { &quot;prop&quot;: &quot;propName&quot;, &quot;display&quot;: &quot;propDisplayType&quot;}]
 </code></pre>
 
 <p>Определяет набор, порядок и тип отображения столбцов таблицы для display:html.</p>
 
-<h3 id="tasks">Tasks</h3>
+<h2 id="tasks">Tasks</h2>
 
 <pre><code class="language-javascript">&quot;tasks&quot;: [Task {&quot;schedule&quot;: &quot;CRON-formatted string&quot;, &quot;script&quot;: function }]
 </code></pre>
@@ -734,20 +695,20 @@ Store, но в навигации она должна называться по-
 
 <p>Подробнее читайте в разделе <a href="/doc/tasks/">Tasks</a></p>
 
-<h3 id="type">Type</h3>
+<h2 id="type">Type</h2>
 
 <pre><code class="language-javascript">    &quot;type&quot;: &quot;direcory&quot;, &quot;single&quot;, &quot;map&quot;
 </code></pre>
 
-<h4 id="directory">directory</h4>
+<h3 id="directory">directory</h3>
 
 <p>Тип Store по-умолчанию. Предназначен для хранения коллекции данных.</p>
 
-<h4 id="single-1">single</h4>
+<h3 id="single">single</h3>
 
 <p>В отличие от Directory, хранит единственный документ. Используется для хранения каких-либо настроек приложения.</p>
 
-<h4 id="map">map</h4>
+<h3 id="map">map</h3>
 
 <p>Используется только для системных Store, в которых хранятся настройки самого приложения на Blank. Создавать новые
 Store с таким типом не имеет смысла, но при разработке, возможно, потребуется изменять настройки существующих Store с таким
@@ -760,7 +721,7 @@ Store с таким типом не имеет смысла, но при раз�
 
 <p>Store с типом map не хранят данные в БД, вся информация записывается в поле <strong>entries</strong> описания Store.</p>
 
-<h4 id="workspace">workspace</h4>
+<h3 id="workspace">workspace</h3>
 
 <p>Тип для частичного переопределения конфигурации. Если у пользователя указано свойство <strong>workspace</strong> с соответствующим
 значением, для него будет сформирована специальная конфигурация, объеденённая из базовой и конфигурации из свойства <strong>config</strong>
