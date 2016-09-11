@@ -252,18 +252,20 @@
 
 <p>При установке прав доступа задается массив правил типа AccessRule:</p>
 
-<pre><code class="language-javascript">[AccessRule {
-    &quot;role&quot;: &quot;roleName&quot;,
-    &quot;permissions&quot;: &quot;Permissions string&quot;,
-    &quot;condition&quot;: MongoQuery {}
-}]
+<pre><code class="language-javascript">access: AccessRule[]
+
+AccessRule {
+    role: &quot;roleName&quot;,
+    permissions: &quot;Permissions string&quot;,
+    condition: MongoQuery {}
+}
 </code></pre>
 
 <h2 id="значение-по-умолчанию">Значение по-умолчанию</h2>
 
 <p>Если права не указаны, по-умолчанию у всех будет полный доступ, как если бы было задано такое правило:</p>
 
-<pre><code class="language-javascript">    &quot;access&quot;: [&quot;role&quot;: &quot;all&quot;, &quot;permissions&quot;: &quot;crud&quot;]
+<pre><code class="language-javascript">    access: [{ role: &quot;all&quot;, permissions: &quot;crud&quot; }]
 </code></pre>
 
 <p>Если параметр задан, доступ получат только те роли, которые указаны в параметре, в соответствии с их разрешениями.</p>
@@ -280,7 +282,7 @@
 
 <p>Если требуется указать запрет на какое-либо действие, перед символом разрешения добавляется знак &ldquo;-&rdquo;:</p>
 
-<pre><code class="language-javascript">    &quot;access&quot;: [&quot;role&quot;: &quot;manager&quot;, &quot;permissions&quot;: &quot;cr -d&quot;]
+<pre><code class="language-javascript">    access: [{ role: &quot;manager&quot;, permissions: &quot;cr -d&quot; }]
 </code></pre>
 
 <p>Запреты имеют приоритет над разрешениями.</p>
@@ -293,9 +295,9 @@
 <p>Condition задаётся в виде MongoQuery с дополнительным оператором $expression, который будет обработан до передачи
 запроса в БД, например:</p>
 
-<pre><code class="language-javascript">&quot;condition&quot;: {
-    &quot;_ownerId&quot;: {
-        &quot;$expression&quot;: &quot;$user._id&quot;,
+<pre><code class="language-javascript">condition: {
+    _ownerId: {
+        $expression: &quot;$user._id&quot;,
     },
 },
 </code></pre>
@@ -304,10 +306,10 @@
 Допустим, пользователь с <strong>_id:&ldquo;1&rdquo;</strong> делает запрос Find. Он получит доступ только к тем объектам, которые удовлетворяют
 условию:</p>
 
-<pre><code class="language-javascript">&quot;_ownerId&quot;: &quot;1&quot;,
+<pre><code class="language-javascript">{ _ownerId: &quot;1&quot; }
 </code></pre>
 
-<p><strong>$expression</strong> - выражение на JavaScript, в котором доступна переменная $user.</p>
+<p><strong>$expression</strong>&nbsp;&mdash;  выражение на JavaScript, в котором доступна переменная <code>$user</code>.</p>
 
 <h2 id="роль-root">Роль root</h2>
 
