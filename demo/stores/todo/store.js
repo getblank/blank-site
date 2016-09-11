@@ -16,6 +16,7 @@ module.exports = {
             todoList: {
                 type: "objectList",
                 label: " ",
+                addLabel: "Добавить задачу",
                 props: {
                     task: {
                         type: "string",
