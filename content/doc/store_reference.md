@@ -5,7 +5,40 @@ title = "Store reference"
     parent = "schema"
     weight = 30
 +++
-## Access
+
+В зависимости от типа, Store может обладать определённым набором свойств из списка:
+
+*   [access](/doc/store_reference/#access);
+*   [actions](/doc/store_reference/#actions);
+*   [baseStore](/doc/store_reference/#basestore);
+*   [config](/doc/store_reference/#config);
+*   [display](/doc/store_reference/#display);
+*   [filters](/doc/store_reference/#filters);
+*   [formGroups](/doc/store_reference/#formgroups);
+*   [formTabs](/doc/store_reference/#formtabs);
+*   [headerProperty](/doc/store_reference/#headerproperty);
+*   [headerTemplate](/doc/store_reference/#headertemplate);
+*   [html](/doc/store_reference/#html);
+*   [httpApi](/doc/store_reference/#httpapi);
+*   [httpHooks](/doc/store_reference/#httphooks);
+*   [i18n](/doc/store_reference/#i18n);
+*   [indexes](/doc/store_reference/#indexes);
+*   [label](/doc/store_reference/#label);
+*   [labels](/doc/store_reference/#labels);
+*   [navGroup](/doc/store_reference/#navgroup);
+*   [navLabel](/doc/store_reference/#navlabel);
+*   [objectLifeCycle](/doc/store_reference/#objectlifecycle);
+*   [orderBy](/doc/store_reference/#orderby);
+*   [props](/doc/store_reference/#props);
+*   [states](/doc/store_reference/#states);
+*   [storeActions](/doc/store_reference/#storeactions);
+*   [storeLifeCycle](/doc/store_reference/#storelifecycle);
+*   [tableColumns](/doc/store_reference/#tablecolumns);
+*   [tasks](/doc/store_reference/#tasks);
+*   [type](/doc/store_reference/#type).
+
+
+## access
 ~~~javascript
 "access": [AccessRule {}]
 ~~~
@@ -30,7 +63,7 @@ title = "Store reference"
 
 Подробнее о настройках доступа в Blank в разделе [Access control](/doc/access/)
 
-## Actions
+## actions
 ~~~javascript
 "actions": [Action {}]
 ~~~
@@ -52,7 +85,7 @@ title = "Store reference"
 ],
 ~~~
 
-## BaseStore
+## baseStore
 ~~~javascript
 "baseStore": "storeName"
 ~~~
@@ -63,13 +96,13 @@ title = "Store reference"
 
 Все настройки Store с указанным baseStore переопредлеяют настройки базового Store, но не влияют на него.
 
-## Config
+## config
 ~~~javascript
 "config": WorkspaceStoreDesc {}
 ~~~
 Переопредление конфигурации приложения для Store с типом workspace.
 
-## Display
+## display
 ~~~javascript
 "display": "list", "single", "table", "cards", "dashboard"
 ~~~
@@ -83,7 +116,7 @@ title = "Store reference"
 ### dashboard
 Описание отсутствует. Тип отображения еще дорабатывается, напишите нам, если хотите принять участие в тестировании.
 
-## Entries [type:map]
+## entries [type:map]
 ~~~javascript
     "entries": {}
 ~~~
@@ -103,14 +136,14 @@ title = "Store reference"
 }
 ~~~
 
-## Filters
+## filters
 ~~~javascript
     "filters": [Filter {}]
 ~~~
 Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
 Подробнее читайте в разделе [Filters](/doc/filters/)
 
-## FormGroups
+## formGroups
 ~~~javascript
     "formGroups": ["formGroupName"]
 ~~~
@@ -135,13 +168,13 @@ title = "Store reference"
     }
 ~~~
 
-## FormTabs
+## formTabs
 ~~~javascript
     "formTabs": ["tabId" | {"_id": "string", "label": "Handlebars template", "hidden": "JavaScript expression"}]
 ~~~
 Определяет порядок и отображение табов в карточках объектов в веб-приложении.
 
-## HeaderProperty
+## headerProperty
 ~~~javascript
 "headerProperty": "propName"
 ~~~
@@ -154,7 +187,7 @@ title = "Store reference"
 "headerProperty": "orderNumber",
 ~~~
 
-## HeaderTemplate
+## headerTemplate
 ~~~javascript
 "headerTemplate": "Handlebars template"
 ~~~
@@ -167,11 +200,11 @@ title = "Store reference"
 "headerTemplate": "{{$item.lastName}} {{$item.name}}"
 ~~~
 
-## HTML [display:html] {#html}
+## html {#html}
 ~~~javascript
 "html": "Handlebars-enabled template"
 ~~~
-Шаблон на [Handlebars](http://handlebarsjs.com/) со следующей моделью данных:
+Шаблон на [Handlebars](http://handlebarsjs.com/) для `type:html` со следующей моделью данных:
 ~~~javascript
 {
     "$items": [] // Массив объектов Store
@@ -179,21 +212,21 @@ title = "Store reference"
 }
 ~~~
 
-## HTTP API
+## httpApi
 ~~~javascript
 "httpApi": bool
 ~~~
 Флаг формирования HTTP REST API для сторы.
 Значение по-умолчанию: false.
 
-## HTTPHooks
+## httpHooks
 ~~~javascript
 "httpHooks": [HTTPHook {}]
 ~~~
 Массив описаний методов Store, доступных через HTTP API.
 Подробнее читайте в разделе [HTTPHooks](/doc/httphooks/)
 
-## I18n {#i18n}
+## i18n {#i18n}
 ~~~javascript
 "i18n": {}
 ~~~
@@ -231,7 +264,7 @@ title = "Store reference"
 ~~~
 Все обращения будут работать с текущей установленной локалью пользователя или локалью по-умолчанию.
 
-## Indexes
+## indexes
 ~~~JSON
 "indexes": []
 ~~~
@@ -270,18 +303,18 @@ title = "Store reference"
 
 Подробнее об индексах в MongoDB можно почитать здесь: [Indexes](https://docs.mongodb.com/manual/indexes/).
 
-## Label
+## label
 ~~~javascript
 "label": "Handlebars template"
 ~~~
-Название Store, будет использоваться в навигации сгенерированного веб-приложения.
+Название Store, которое будет использоваться в навигации сгенерированного веб-приложения.
 
 Пример:
 ~~~javascript
 "label": "{{$i18n.storeLabel}}"
 ~~~
 
-## Labels
+## labels
 ~~~javascript
 "labels": [Label {
     "icon": "className" //"fa fa-icon_name" или "material-icons text md-16 icon_name"
@@ -307,26 +340,26 @@ title = "Store reference"
 ]
 ```
 
-## NavGroup
+## navGroup
 ~~~javascript
 "navGroup": "string",
 ~~~
 Определяет расположения в навигации веб-приложения. Если группа не задана, ссылка на эти объекты будет выведена в первом уровне навигации
 
-## NavOrder
+## navOrder
 ~~~javascript
 "navOrder": int,
 ~~~
 Порядок размещения в навигации веб-приложения
 
-## NavLabel
+## navLabel
 ~~~javascript
 "navLabel": "Handlebars template",
 ~~~
 Название Store в навигации веб-приложения. Требуется, если нужно оставить опеределенный label в заголовке открытой в приложении
 Store, но в навигации она должна называться по-другому.
 
-## ObjectLifeCycle
+## objectLifeCycle
 ~~~javascript
 "objectLifeCycle": {
     "eventName": function () {}
@@ -336,7 +369,7 @@ Store, но в навигации она должна называться по-
 
 Подробнее читайте в разделе [ObjectLifeCycle](/doc/lifecycle_events/#objectlifecycle)
 
-## OrderBy
+## orderBy
 ~~~javascript
 "orderBy": "propName",
 ~~~
@@ -346,7 +379,7 @@ Store, но в навигации она должна называться по-
 "orderBy": "-propName",
 ~~~
 
-## Props
+## props
 ~~~javascript
 "props": {
     "propName": PropDesc {},
@@ -377,7 +410,7 @@ Store, но в навигации она должна называться по-
 
 Подробнее читайте в разделе [Props reference](/doc/props_reference/)
 
-## States
+## states
 ~~~javascript
     "states": {
         "stateName": StateDesc {"label": "Handlebars template", "navOrder": int}
@@ -388,7 +421,7 @@ Store, но в навигации она должна называться по-
 Если параметр задан, у объектов появится специальное свойство **_state** и в веб-приложении будет отрисована
 дополнительная навигация по состояниям объектов.
 
-## StoreActions
+## storeActions
 ~~~javascript
     "storeActions": [Action {}]
 ~~~
@@ -396,7 +429,7 @@ Store, но в навигации она должна называться по-
 
 При вызове из веб-приложения в аргументы скрипта передаются текущие значения фильтров.
 
-## StoreLifeCycle
+## storeLifeCycle
 ~~~javascript
 "storeLifeCycle": {
     "eventName": function
@@ -406,13 +439,13 @@ Store, но в навигации она должна называться по-
 
 Подробнее читайте в разделе [StoreLifeCycle](/doc/lifecycle_events/#storelifecycle)
 
-## TableColumns
+## tableColumns
 ~~~javascript
 "tableColumns": ["propName" | ColumnDesc { "prop": "propName", "display": "propDisplayType"}]
 ~~~
 Определяет набор, порядок и тип отображения столбцов таблицы для display:html.
 
-## Tasks
+## tasks
 ~~~javascript
 "tasks": [Task {"schedule": "CRON-formatted string", "script": function }]
 ~~~
@@ -420,7 +453,7 @@ Store, но в навигации она должна называться по-
 
 Подробнее читайте в разделе [Tasks](/doc/tasks/)
 
-## Type
+## type
 ~~~javascript
     "type": "direcory", "single", "map"
 ~~~
