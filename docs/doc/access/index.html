@@ -275,25 +275,36 @@ AccessRule {
 <p>Набор разрешений, зависит от объекта прав доступа:</p>
 
 <ul>
-<li>Store:  <strong>crud</strong></li>
-<li>Prop:   <strong>ru</strong></li>
-<li>Action: <strong>rx</strong></li>
+<li>Store:  <code>vcrudx</code></li>
+<li>Prop:   <code>ru</code></li>
+<li>Action: <code>x</code></li>
 </ul>
 
-<p>Если требуется указать запрет на какое-либо действие, перед символом разрешения добавляется знак &ldquo;-&rdquo;:</p>
+<p>где:</p>
+
+<ul>
+<li><code>v</code>&nbsp;&mdash; отображение Store в пользовательском интерфейсе;</li>
+<li><code>c</code>&nbsp;&mdash; создание объектов в Store;</li>
+<li><code>r</code>&nbsp;&mdash; чтение объектов из Store;</li>
+<li><code>u</code>&nbsp;&mdash; изменение объектов в Store;</li>
+<li><code>d</code>&nbsp;&mdash; удаление объектов из Store;</li>
+<li><code>x</code>&nbsp;&mdash; запуск Actions в Store;</li>
+</ul>
+
+<p>Если требуется указать запрет на какое-либо действие, перед символом разрешения добавляется знак <code>-</code>:</p>
 
 <pre><code class="language-javascript">    access: [{ role: &quot;manager&quot;, permissions: &quot;cr -d&quot; }]
 </code></pre>
 
-<p>Запреты имеют приоритет над разрешениями.</p>
+<p>Запреты имеют приоритет над разрешениями. В данном примере установлен запрет на удаление объектов из Store.</p>
 
 <h2 id="conditions">Conditions</h2>
 
 <p>Используется только при установке прав доступа на Store. Требуется, если разрешения зависят от самого объекта или
 свойств пользователя, отличных от роли.</p>
 
-<p>Condition задаётся в виде MongoQuery с дополнительным оператором $expression, который будет обработан до передачи
-запроса в БД, например:</p>
+<p>Condition задаётся в формате <a href="https://docs.mongodb.com/manual/tutorial/query-documents/">MongoDB Query</a>
+с дополнительным оператором <code>$expression</code>, который будет обработан до передачи запроса в БД, например:</p>
 
 <pre><code class="language-javascript">condition: {
     _ownerId: {
@@ -303,7 +314,7 @@ AccessRule {
 </code></pre>
 
 <p>Такой condition сделает разрешения валидными только для объектов, владельцем которых является пользователь.
-Допустим, пользователь с <strong>_id:&ldquo;1&rdquo;</strong> делает запрос Find. Он получит доступ только к тем объектам, которые удовлетворяют
+Допустим, пользователь с <strong>_id: &ldquo;1&rdquo;</strong> делает запрос Find. Он получит доступ только к тем объектам, которые удовлетворяют
 условию:</p>
 
 <pre><code class="language-javascript">{ _ownerId: &quot;1&quot; }
