@@ -254,6 +254,7 @@
 <li><a href="/doc/store_reference/#actions">actions</a>;</li>
 <li><a href="/doc/store_reference/#basestore">baseStore</a>;</li>
 <li><a href="/doc/store_reference/#config">config</a>;</li>
+<li><a href="/doc/store_reference/#disableautoselect">disableAutoSelect</a>;</li>
 <li><a href="/doc/store_reference/#display">display</a>;</li>
 <li><a href="/doc/store_reference/#filters">filters</a>;</li>
 <li><a href="/doc/store_reference/#formgroups">formGroups</a>;</li>
@@ -282,7 +283,7 @@
 
 <h2 id="access">access</h2>
 
-<pre><code class="language-javascript">&quot;access&quot;: [AccessRule {}]
+<pre><code class="language-javascript">&quot;access&quot;: AccessRule[]
 </code></pre>
 
 <p>Устанавливает права доступа на объекты Store. Доступный набор разрешений: <strong>crud</strong>.</p>
@@ -309,7 +310,7 @@
 
 <h2 id="actions">actions</h2>
 
-<pre><code class="language-javascript">&quot;actions&quot;: [Action {}]
+<pre><code class="language-javascript">&quot;actions&quot;: Action[]
 </code></pre>
 
 <p>Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API.</p>
@@ -349,12 +350,16 @@
 
 <p>Переопредление конфигурации приложения для Store с типом workspace.</p>
 
+<h2 id="disableautoselect">disableAutoSelect</h2>
+
+<p>Отключение автоматического выбора первого объекта в списке в интерфейсе веб-приложения (bool). Только для <code>display:list</code>.</p>
+
 <h2 id="display">display</h2>
 
 <pre><code class="language-javascript">&quot;display&quot;: &quot;list&quot;, &quot;single&quot;, &quot;table&quot;, &quot;cards&quot;, &quot;dashboard&quot;
 </code></pre>
 
-<p>Тип отображения Store в интерфейсе веб-приложения.</p>
+<p>Тип отображения Store в интерфейсе веб-приложения. По-умолчанию равен <code>list</code>.</p>
 
 <p>Если вы не используете автогенерируемое приложение, обратите внимание на <strong>single</strong>, при использовании этого типа
 отображения будут изменения в работе через API.</p>
@@ -386,7 +391,7 @@
 
 <h2 id="filters">filters</h2>
 
-<pre><code class="language-javascript">    &quot;filters&quot;: [Filter {}]
+<pre><code class="language-javascript">    &quot;filters&quot;: Filter[]
 </code></pre>
 
 <p>Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
@@ -476,7 +481,7 @@
 
 <h2 id="httphooks">httpHooks</h2>
 
-<pre><code class="language-javascript">&quot;httpHooks&quot;: [HTTPHook {}]
+<pre><code class="language-javascript">&quot;httpHooks&quot;: HTTPHook[]
 </code></pre>
 
 <p>Массив описаний методов Store, доступных через HTTP API.
@@ -694,7 +699,7 @@ Store, но в навигации она должна называться по-
 
 <h2 id="storeactions">storeActions</h2>
 
-<pre><code class="language-javascript">    &quot;storeActions&quot;: [Action {}]
+<pre><code class="language-javascript">    &quot;storeActions&quot;: Action[]
 </code></pre>
 
 <p>Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API и REST API.</p>

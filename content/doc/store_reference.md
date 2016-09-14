@@ -12,6 +12,7 @@ title = "Store reference"
 *   [actions](/doc/store_reference/#actions);
 *   [baseStore](/doc/store_reference/#basestore);
 *   [config](/doc/store_reference/#config);
+*   [disableAutoSelect](/doc/store_reference/#disableautoselect);
 *   [display](/doc/store_reference/#display);
 *   [filters](/doc/store_reference/#filters);
 *   [formGroups](/doc/store_reference/#formgroups);
@@ -40,7 +41,7 @@ title = "Store reference"
 
 ## access
 ~~~javascript
-"access": [AccessRule {}]
+"access": AccessRule[]
 ~~~
 Устанавливает права доступа на объекты Store. Доступный набор разрешений: **crud**.
 
@@ -65,7 +66,7 @@ title = "Store reference"
 
 ## actions
 ~~~javascript
-"actions": [Action {}]
+"actions": Action[]
 ~~~
 Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API.
 
@@ -102,11 +103,14 @@ title = "Store reference"
 ~~~
 Переопредление конфигурации приложения для Store с типом workspace.
 
+## disableAutoSelect
+Отключение автоматического выбора первого объекта в списке в интерфейсе веб-приложения (bool). Только для `display:list`.
+
 ## display
 ~~~javascript
 "display": "list", "single", "table", "cards", "dashboard"
 ~~~
-Тип отображения Store в интерфейсе веб-приложения.
+Тип отображения Store в интерфейсе веб-приложения. По-умолчанию равен `list`.
 
 Если вы не используете автогенерируемое приложение, обратите внимание на **single**, при использовании этого типа
 отображения будут изменения в работе через API.
@@ -138,7 +142,7 @@ title = "Store reference"
 
 ## filters
 ~~~javascript
-    "filters": [Filter {}]
+    "filters": Filter[]
 ~~~
 Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
 Подробнее читайте в разделе [Filters](/doc/filters/)
@@ -221,7 +225,7 @@ title = "Store reference"
 
 ## httpHooks
 ~~~javascript
-"httpHooks": [HTTPHook {}]
+"httpHooks": HTTPHook[]
 ~~~
 Массив описаний методов Store, доступных через HTTP API.
 Подробнее читайте в разделе [HTTPHooks](/doc/httphooks/)
@@ -423,7 +427,7 @@ Store, но в навигации она должна называться по-
 
 ## storeActions
 ~~~javascript
-    "storeActions": [Action {}]
+    "storeActions": Action[]
 ~~~
 Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API и REST API.
 
