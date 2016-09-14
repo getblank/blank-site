@@ -11,6 +11,7 @@ title = "Props modeling"
 
 ## Типы полей
 *   [action](/doc/props-modeling/#action);
+*   [any](/doc/props-modeling/#any);
 *   [bool](/doc/props-modeling/#bool);
 *   [date](/doc/props-modeling/#date);
 *   [file](/doc/props-modeling/#file);
@@ -45,6 +46,9 @@ title = "Props modeling"
 ## action
 Поле данного типа не сохраняется в БД, используется только пользовательском интерфейсе. Подробнее в разделе
 [Props displaying](/doc/props-displaying/#action).
+
+## any
+Поле может принимать любой тип данных.
 
 ## bool
 Булевый тип, может принимать значения `true` или `false`. Не имеет собственных свойств.

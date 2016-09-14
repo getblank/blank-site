@@ -505,6 +505,7 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#action&#34;&gt;action&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#any&#34;&gt;any&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#bool&#34;&gt;bool&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#date&#34;&gt;date&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/props-modeling/#file&#34;&gt;file&lt;/a&gt;;&lt;/li&gt;
@@ -545,6 +546,10 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Поле данного типа не сохраняется в БД, используется только пользовательском интерфейсе. Подробнее в разделе
 &lt;a href=&#34;https://getblank.net/doc/props-displaying/#action&#34;&gt;Props displaying&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;any&#34;&gt;any&lt;/h2&gt;
+
+&lt;p&gt;Поле может принимать любой тип данных.&lt;/p&gt;
 
 &lt;h2 id=&#34;bool&#34;&gt;bool&lt;/h2&gt;
 
