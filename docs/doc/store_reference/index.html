@@ -283,7 +283,7 @@
 
 <h2 id="access">access</h2>
 
-<pre><code class="language-javascript">&quot;access&quot;: AccessRule[]
+<pre><code class="language-javascript">    access: AccessRule[]
 </code></pre>
 
 <p>Устанавливает права доступа на объекты Store. Доступный набор разрешений: <strong>crud</strong>.</p>
@@ -293,16 +293,16 @@
 
 <p>Если параметр не определён, доступ есть у всех пользователей, как если бы было указано:</p>
 
-<pre><code class="language-javascript">    &quot;access&quot;: [&quot;role&quot;: &quot;all&quot;, &quot;permissions&quot;: &quot;crud&quot;]
+<pre><code class="language-javascript">    access: [{ role: &quot;all&quot;, permissions: &quot;crud&quot; }]
 </code></pre>
 
 <p>Если параметр указан, доступ есть только у тех групп пользователей, которым выданы разрешения.</p>
 
 <p>Пример:</p>
 
-<pre><code class="language-javascript">    &quot;access&quot;: [
-            { &quot;role&quot;: &quot;devops&quot;, &quot;permissions&quot;: &quot;cru&quot; },
-            { &quot;role&quot;: &quot;supervisor&quot;, &quot;permissions&quot;: &quot;r&quot; },
+<pre><code class="language-javascript">    access&quot; [
+            { role: &quot;devops&quot;, permissions: &quot;cru&quot; },
+            { role: &quot;supervisor&quot;, permissions: &quot;r&quot; },
         ]
 </code></pre>
 
@@ -310,30 +310,30 @@
 
 <h2 id="actions">actions</h2>
 
-<pre><code class="language-javascript">&quot;actions&quot;: Action[]
+<pre><code class="language-javascript">    actions: Action[]
 </code></pre>
 
 <p>Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API.</p>
 
 <p>Пример action для лайка фотографии:</p>
 
-<pre><code class="language-javascript">&quot;actions&quot;: [
-    {
-        &quot;_id&quot;: &quot;like&quot;,
-        &quot;icon&quot;: &quot;fa fa-heart&quot;,
-        &quot;disabled&quot;: &quot;($item.likes || []).indexOf($user._id) &gt;= 0&quot;,
-        &quot;script&quot;: function ($db, $item, $user) {
-            let likes = $item.likes || [];
-            likes.push($user._id);
-            return $db.set({ &quot;_id&quot;: $item._id, &quot;likes&quot;: likes }, &quot;photos&quot;);
+<pre><code class="language-javascript">    actions: [
+        {
+            _id: &quot;like&quot;,
+            icon: &quot;fa fa-heart&quot;,
+            disabled: &quot;($item.likes || []).indexOf($user._id) &gt;= 0&quot;,
+            script: function ($db, $item, $user) {
+                let likes = $item.likes || [];
+                likes.push($user._id);
+                return $db.set({ _id: $item._id, likes: likes }, &quot;photos&quot;);
+            },
         },
-    },
-],
+    ],
 </code></pre>
 
 <h2 id="basestore">baseStore</h2>
 
-<pre><code class="language-javascript">&quot;baseStore&quot;: &quot;storeName&quot;
+<pre><code class="language-javascript">    baseStore: &quot;storeName&quot;
 </code></pre>
 
 <p>Базовый Store. Если указан этот параметр, текущий Store будет работать с конфигурацией и объектами данных базового.
@@ -345,7 +345,7 @@
 
 <h2 id="config">config</h2>
 
-<pre><code class="language-javascript">&quot;config&quot;: WorkspaceStoreDesc {}
+<pre><code class="language-javascript">    config: WorkspaceStoreDesc {}
 </code></pre>
 
 <p>Переопредление конфигурации приложения для Store с типом workspace.</p>
@@ -356,7 +356,7 @@
 
 <h2 id="display">display</h2>
 
-<pre><code class="language-javascript">&quot;display&quot;: &quot;list&quot;, &quot;single&quot;, &quot;table&quot;, &quot;cards&quot;, &quot;dashboard&quot;
+<pre><code class="language-javascript">    display: &quot;list&quot; | &quot;single&quot; | &quot;table&quot; | &quot;cards&quot; | &quot;dashboard&quot;
 </code></pre>
 
 <p>Тип отображения Store в интерфейсе веб-приложения. По-умолчанию равен <code>list</code>.</p>
@@ -370,28 +370,28 @@
 
 <h2 id="entries-type-map">entries [type:map]</h2>
 
-<pre><code class="language-javascript">    &quot;entries&quot;: {}
+<pre><code class="language-javascript">    entries: {}
 </code></pre>
 
 <p>Данные для Store с типом <strong>map</strong>.</p>
 
 <p>Пример использования:</p>
 
-<pre><code class="language-javascript">&quot;_commonSettings&quot;: {
-    &quot;type&quot;: &quot;map&quot;,
-    &quot;entries&quot;: {
-        &quot;title&quot;: &quot;My App&quot;,
-        &quot;locales&quot;: [&quot;ru&quot;],
-        &quot;defaultLocale&quot;: &quot;ru&quot;,
-        &quot;signInLogo&quot;: &quot;/logo.svg&quot;,
-        ...
-    },
+<pre><code class="language-javascript">    _commonSettings: {
+        type: &quot;map&quot;,
+        entries: {
+            title: &quot;My App&quot;,
+            locales: [&quot;ru&quot;],
+            defaultLocale: &quot;ru&quot;,
+            signInLogo: &quot;/logo.svg&quot;,
+            ...
+        },
 }
 </code></pre>
 
 <h2 id="filters">filters</h2>
 
-<pre><code class="language-javascript">    &quot;filters&quot;: Filter[]
+<pre><code class="language-javascript">    filters: Filter[]
 </code></pre>
 
 <p>Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
@@ -399,40 +399,40 @@
 
 <h2 id="formgroups">formGroups</h2>
 
-<pre><code class="language-javascript">    &quot;formGroups&quot;: [&quot;formGroupName&quot;]
+<pre><code class="language-javascript">    formGroups: [&quot;formGroupName&quot;]
 </code></pre>
 
 <p>Массив, указывающий порядок расположения групп на форме редактирования объекта. Названия групп должны совпадать с указанными
 группами в настройках props, например:</p>
 
-<pre><code class="language-javascript">    &quot;formGroups&quot;: [&quot;{{$i18n.group2Label}}&quot;, &quot;Group 1&quot;],
-    &quot;props&quot;: {
-        &quot;prop1&quot; {
+<pre><code class="language-javascript">    formGroups: [&quot;{{$i18n.group2Label}}&quot;, &quot;Group 1&quot;],
+    props: {
+        prop1&quot; {
             ...
-            &quot;formGroup&quot;: &quot;Group 1&quot;,
+            formGroup: &quot;Group 1&quot;,
             ...
         },
-        &quot;prop2&quot; {
+        prop2&quot; {
             ...
-            &quot;formGroup&quot;: &quot;{{$i18n.group2Label}}&quot;,
+            formGroup: &quot;{{$i18n.group2Label}}&quot;,
             ...
         },
     },
-    &quot;i18n&quot;: {
-        &quot;group2Label&quot;: &quot;Group 2&quot;,
+    i18n: {
+        group2Label: &quot;Group 2&quot;,
     }
 </code></pre>
 
 <h2 id="formtabs">formTabs</h2>
 
-<pre><code class="language-javascript">    &quot;formTabs&quot;: [&quot;tabId&quot; | {&quot;_id&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Handlebars template&quot;, &quot;hidden&quot;: &quot;JavaScript expression&quot;}]
+<pre><code class="language-javascript">    formTabs: [&quot;tabId&quot; | { _id: &quot;string&quot;, label: &quot;Handlebars template&quot;, hidden: &quot;JavaScript expression&quot; }]
 </code></pre>
 
 <p>Определяет порядок и отображение табов в карточках объектов в веб-приложении.</p>
 
 <h2 id="headerproperty">headerProperty</h2>
 
-<pre><code class="language-javascript">&quot;headerProperty&quot;: &quot;propName&quot;
+<pre><code class="language-javascript">    headerProperty: &quot;propName&quot;
 </code></pre>
 
 <p>Определяет свойство для использования в заголовке карточек объектов Store в веб-приложении.</p>
@@ -441,12 +441,12 @@
 
 <p>Пример:</p>
 
-<pre><code class="language-javascript">&quot;headerProperty&quot;: &quot;orderNumber&quot;,
+<pre><code class="language-javascript">    headerProperty: &quot;orderNumber&quot;,
 </code></pre>
 
 <h2 id="headertemplate">headerTemplate</h2>
 
-<pre><code class="language-javascript">&quot;headerTemplate&quot;: &quot;Handlebars template&quot;
+<pre><code class="language-javascript">    headerTemplate: &quot;Handlebars template&quot;
 </code></pre>
 
 <p>Определяет текст заголовка карточек объектов Store в веб-приложении.</p>
@@ -455,25 +455,25 @@
 
 <p>Пример:</p>
 
-<pre><code class="language-javascript">&quot;headerTemplate&quot;: &quot;{{$item.lastName}} {{$item.name}}&quot;
+<pre><code class="language-javascript">    headerTemplate: &quot;{{$item.lastName}} {{$item.name}}&quot;
 </code></pre>
 
 <h2 id="html">html</h2>
 
-<pre><code class="language-javascript">&quot;html&quot;: &quot;Handlebars-enabled template&quot;
+<pre><code class="language-javascript">    html: &quot;Handlebars-enabled template&quot;
 </code></pre>
 
 <p>Шаблон на <a href="http://handlebarsjs.com/">Handlebars</a> для <code>type:html</code> со следующей моделью данных:</p>
 
-<pre><code class="language-javascript">{
-    &quot;$items&quot;: [] // Массив объектов Store
-    &quot;$user&quot;: {} // Объект пользователя, просматривающего Store
-}
+<pre><code class="language-javascript">    {
+        $items: [] // Массив объектов Store
+        $user: {} // Объект пользователя, просматривающего Store
+    }
 </code></pre>
 
 <h2 id="httpapi">httpApi</h2>
 
-<pre><code class="language-javascript">&quot;httpApi&quot;: bool
+<pre><code class="language-javascript">    httpApi: bool
 </code></pre>
 
 <p>Флаг формирования HTTP REST API для сторы.
@@ -481,7 +481,7 @@
 
 <h2 id="httphooks">httpHooks</h2>
 
-<pre><code class="language-javascript">&quot;httpHooks&quot;: HTTPHook[]
+<pre><code class="language-javascript">    httpHooks: HTTPHook[]
 </code></pre>
 
 <p>Массив описаний методов Store, доступных через HTTP API.
@@ -489,7 +489,7 @@
 
 <h2 id="i18n">i18n</h2>
 
-<pre><code class="language-javascript">&quot;i18n&quot;: {}
+<pre><code class="language-javascript">    i18n: {}
 </code></pre>
 
 <p>Объект, содержащий специфичные для данной Store локализации.</p>
@@ -497,12 +497,12 @@
 <p>Если локализации записаны прямо в корень объекта i18n, они будут относится к локали, установленное по-умолчанию
 для приложения. Для записи в другие локали, необходимо создать вложенные объекты, ключами для которых будут названия локалей:</p>
 
-<pre><code class="language-javascript">&quot;i18n&quot;: {
-    &quot;storeLabel&quot;: &quot;Название Store&quot;,
-    &quot;en&quot;: {
-        &quot;storeLabel&quot;: &quot;Store name&quot;,
+<pre><code class="language-javascript">    i18n: {
+        storeLabel&quot;: &quot;Название Store&quot;,
+        en&quot;: {
+            storeLabel: &quot;Store name&quot;,
+        }
     }
-}
 </code></pre>
 
 <p>В значениях допускается указание плейсхолдеров <code>%s</code>, которые будут заменены переданными аргументами
@@ -515,55 +515,55 @@
 
 <p>При доступе к i18n из шаблонов текущей Store, все локализации будут доступны напрямую:</p>
 
-<pre><code class="language-javascript">&quot;label&quot;: &quot;{{$i18n.storeLabel}}&quot;
+<pre><code class="language-javascript">    label: &quot;{{$i18n.storeLabel}}&quot;
 </code></pre>
 
 <p>Для доступа к локализациям из других Store используется объект $stores:</p>
 
-<pre><code class="language-javascript">&quot;label&quot;: &quot;{{$i18n.$stores.otherStoreName.storeLabel}}&quot;
+<pre><code class="language-javascript">    label: &quot;{{$i18n.$stores.otherStoreName.storeLabel}}&quot;
 </code></pre>
 
 <p>Для доступа к общим локализациям из <strong>_commonSettings</strong> используется объект $settings:</p>
 
-<pre><code class="language-javascript">&quot;label&quot;: &quot;{{$i18n.$settings.phraseName}}&quot;
+<pre><code class="language-javascript">    label: &quot;{{$i18n.$settings.phraseName}}&quot;
 </code></pre>
 
 <p>Все обращения будут работать с текущей установленной локалью пользователя или локалью по-умолчанию.</p>
 
 <h2 id="indexes">indexes</h2>
 
-<pre><code class="language-JSON">&quot;indexes&quot;: []
+<pre><code class="language-JSON">    indexes: []
 </code></pre>
 
 <p>Описание индексов хранилища.
 Содержит массив аргументов для команды <code>createIndex</code> в MongoDB. Каждый элемент может быть либо строковым названием индексируемого поля:</p>
 
-<pre><code class="language-JSON">&quot;indexes&quot;: [
-    &quot;lastName&quot;
-]
+<pre><code class="language-JSON">    indexes: [
+        &quot;lastName&quot;
+    ]
 </code></pre>
 
 <p>либо описание индекса в виде объекта:</p>
 
-<pre><code class="language-JSON">&quot;indexes&quot;: [
-    {&quot;name&quot;: 1}
-]
+<pre><code class="language-JSON">    indexes: [
+        { &quot;name&quot;: 1 }
+    ]
 </code></pre>
 
 <p>либо массивом из двух объектов, где первый объект&nbsp;&mdash; это описание индекса, а второй&nbsp;&mdash; дополнительные параметры:</p>
 
-<pre><code class="language-JSON">&quot;indexes&quot;: [
-    [{&quot;login&quot;: 1}, {&quot;unique&quot;: true}]
-]
+<pre><code class="language-JSON">    indexes: [
+        [{ login: 1 }, { unique: true }]
+    ]
 </code></pre>
 
 <p>Конечно, можно сочетать все варианты описания индекса:</p>
 
-<pre><code class="language-JSON">&quot;indexes&quot;: [
-    &quot;lastName&quot;,
-    {&quot;name&quot;: 1},
-    [{&quot;login&quot;: 1}, {&quot;unique&quot;: true}]
-]
+<pre><code class="language-JSON">    indexes: [
+        &quot;lastName&quot;,
+        { name: 1 },
+        [{ login: 1 }, { unique: true }]
+    ]
 </code></pre>
 
 <p>При старте приложения, каждый элемент будет передан в команду <code>createIndex</code>.</p>
@@ -572,26 +572,28 @@
 
 <h2 id="label">label</h2>
 
-<pre><code class="language-javascript">&quot;label&quot;: &quot;Handlebars template&quot;
+<pre><code class="language-javascript">    label: &quot;Handlebars template&quot;
 </code></pre>
 
 <p>Название Store, которое будет использоваться в навигации сгенерированного веб-приложения.</p>
 
 <p>Пример:</p>
 
-<pre><code class="language-javascript">&quot;label&quot;: &quot;{{$i18n.storeLabel}}&quot;
+<pre><code class="language-javascript">    label: &quot;{{$i18n.storeLabel}}&quot;
 </code></pre>
 
 <h2 id="labels">labels</h2>
 
-<pre><code class="language-javascript">&quot;labels&quot;: [Label {
-    &quot;icon&quot;: &quot;className&quot; //&quot;fa fa-icon_name&quot; или &quot;material-icons text md-16 icon_name&quot;
-    &quot;text&quot;: &quot;Handlebars template&quot;, //Data model: { $item: {}, $user: {} }
-    &quot;color&quot;: &quot;Handlebars template&quot;, //Data model: { $item: {}, $user: {} }
-    &quot;hidden&quot;: &quot;JavaScript expression&quot;, //Variables: $item, $user
-    &quot;hideInForm&quot;: bool // Скрывает лэйбл в форме редактирования объекта
-    &quot;showInList&quot;: int // Определяет, на какой строке показывать лэйбл в элементе списка. Если 0 – не отображать
-}]
+<pre><code class="language-javascript">    labels: Label[]
+
+    Label {
+        icon: &quot;className&quot; //&quot;fa fa-icon_name&quot; или &quot;material-icons text md-16 icon_name&quot;
+        text: &quot;Handlebars template&quot;, //Data model: { $item: {}, $user: {} }
+        color: &quot;Handlebars template&quot;, //Data model: { $item: {}, $user: {} }
+        hidden: &quot;JavaScript expression&quot;, //Variables: $item, $user
+        hideInForm: bool, // Скрывает лэйбл в форме редактирования объекта
+        showInList: int, // Определяет, на какой строке показывать лэйбл в элементе списка. Если 0 – не отображать
+    }
 </code></pre>
 
 <p>Массив аннотаций к объектам. Используется для добавления summary объектов в списке и на форме редактирования в
@@ -599,33 +601,33 @@
 
 <p>Пример:</p>
 
-<pre><code class="language-javascript">&quot;labels&quot;: [
-    {
-        &quot;icon&quot;: &quot;fa fa-power-off&quot;,
-        &quot;color&quot;: &quot;{{#if $item.disabled}}#ddd{{else}}#43A047{{/if}}&quot;,
-        &quot;hideInForm&quot;: true,
-        &quot;showInList&quot;: 1,
-    },
-]
+<pre><code class="language-javascript">    labels: [
+        {
+            icon: &quot;fa fa-power-off&quot;,
+            color: &quot;{{#if $item.disabled}}#ddd{{else}}#43A047{{/if}}&quot;,
+            hideInForm: true,
+            showInList: 1,
+        },
+    ]
 </code></pre>
 
 <h2 id="navgroup">navGroup</h2>
 
-<pre><code class="language-javascript">&quot;navGroup&quot;: &quot;string&quot;,
+<pre><code class="language-javascript">    navGroup: string,
 </code></pre>
 
 <p>Определяет расположения в навигации веб-приложения. Если группа не задана, ссылка на эти объекты будет выведена в первом уровне навигации</p>
 
 <h2 id="navorder">navOrder</h2>
 
-<pre><code class="language-javascript">&quot;navOrder&quot;: int,
+<pre><code class="language-javascript">    navOrder: int,
 </code></pre>
 
 <p>Порядок размещения в навигации веб-приложения</p>
 
 <h2 id="navlabel">navLabel</h2>
 
-<pre><code class="language-javascript">&quot;navLabel&quot;: &quot;Handlebars template&quot;,
+<pre><code class="language-javascript">    navLabel: &quot;Handlebars template&quot;,
 </code></pre>
 
 <p>Название Store в навигации веб-приложения. Требуется, если нужно оставить опеределенный label в заголовке открытой в приложении
@@ -633,9 +635,9 @@ Store, но в навигации она должна называться по-
 
 <h2 id="objectlifecycle">objectLifeCycle</h2>
 
-<pre><code class="language-javascript">&quot;objectLifeCycle&quot;: {
-    &quot;eventName&quot;: function () {}
-},
+<pre><code class="language-javascript">    objectLifeCycle: {
+        eventName: function () {}
+    },
 </code></pre>
 
 <p>Обработчики событий жизненного цикла объектов в Store на JavaScript.</p>
@@ -644,51 +646,51 @@ Store, но в навигации она должна называться по-
 
 <h2 id="orderby">orderBy</h2>
 
-<pre><code class="language-javascript">&quot;orderBy&quot;: &quot;propName&quot;,
+<pre><code class="language-javascript">    orderBy: &quot;propName&quot;,
 </code></pre>
 
 <p>Поле для сортировки данных по-умолчанию при запросах Find.
 Для сортировки в обратном порядке добавьте &lsquo;-&rsquo; перед названием поля:</p>
 
-<pre><code class="language-javascript">&quot;orderBy&quot;: &quot;-propName&quot;,
+<pre><code class="language-javascript">    orderBy: &quot;-propName&quot;,
 </code></pre>
 
 <h2 id="props">props</h2>
 
-<pre><code class="language-javascript">&quot;props&quot;: {
-    &quot;propName&quot;: PropDesc {},
-}
+<pre><code class="language-javascript">    props: {
+        propName: PropDesc {},
+    }
 </code></pre>
 
 <p>Структура данных для Store. Props – наиболее сложная и важная часть описания Store.</p>
 
 <p>Простой пример объекта props:</p>
 
-<pre><code class="language-javascript">&quot;props&quot;: {
-    &quot;name&quot;: {
-        &quot;type&quot;: &quot;string&quot;,
-        &quot;display&quot;: &quot;textInput&quot;,
-        &quot;label&quot;: &quot;ФИО&quot;,
-        &quot;formOrder&quot;: 0,
-        &quot;required&quot;: true,
-    },
-    &quot;phone&quot;: {
-        &quot;type&quot;: &quot;string&quot;,
-        &quot;display&quot;: &quot;masked&quot;,
-        &quot;label&quot;: &quot;Телефон&quot;,
-        &quot;mask&quot;: &quot;+7 (|||) |||-||-||&quot;,
-        &quot;formOrder&quot;: 10,
-        &quot;required&quot;: &quot;$item.name&quot;,
-    },
-}
+<pre><code class="language-javascript">    props: {
+        name: {
+            type: &quot;string&quot;,
+            display: &quot;textInput&quot;,
+            label: &quot;ФИО&quot;,
+            formOrder: 0,
+            required: true,
+        },
+        phone: {
+            type: &quot;string&quot;,
+            display: &quot;masked&quot;,
+            label: &quot;Телефон&quot;,
+            mask: &quot;+7 (|||) |||-||-||&quot;,
+            formOrder: 10,
+            required: &quot;$item.name&quot;,
+        },
+    }
 </code></pre>
 
 <p>Подробнее читайте в разделе <a href="/doc/props_reference/">Props reference</a></p>
 
 <h2 id="states">states</h2>
 
-<pre><code class="language-javascript">    &quot;states&quot;: {
-        &quot;stateName&quot;: StateDesc {&quot;label&quot;: &quot;Handlebars template&quot;, &quot;navOrder&quot;: int}
+<pre><code class="language-javascript">    states: {
+        stateName: StateDesc { label: &quot;Handlebars template&quot;, navOrder: int }
     }
 </code></pre>
 
@@ -699,7 +701,7 @@ Store, но в навигации она должна называться по-
 
 <h2 id="storeactions">storeActions</h2>
 
-<pre><code class="language-javascript">    &quot;storeActions&quot;: Action[]
+<pre><code class="language-javascript">    storeActions: Action[]
 </code></pre>
 
 <p>Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API и REST API.</p>
@@ -708,9 +710,9 @@ Store, но в навигации она должна называться по-
 
 <h2 id="storelifecycle">storeLifeCycle</h2>
 
-<pre><code class="language-javascript">&quot;storeLifeCycle&quot;: {
-    &quot;eventName&quot;: function
-},
+<pre><code class="language-javascript">    storeLifeCycle: {
+        eventName: function () {},
+    },
 </code></pre>
 
 <p>Обработчики событий жизненного цикла объектов в Store на JavaScript.</p>
@@ -719,14 +721,14 @@ Store, но в навигации она должна называться по-
 
 <h2 id="tablecolumns">tableColumns</h2>
 
-<pre><code class="language-javascript">&quot;tableColumns&quot;: [&quot;propName&quot; | ColumnDesc { &quot;prop&quot;: &quot;propName&quot;, &quot;display&quot;: &quot;propDisplayType&quot;}]
+<pre><code class="language-javascript">    tableColumns: [&quot;propName&quot; | ColumnDesc { prop: &quot;propName&quot;, display: &quot;propDisplayType&quot; }]
 </code></pre>
 
 <p>Определяет набор, порядок и тип отображения столбцов таблицы для display:html.</p>
 
 <h2 id="tasks">tasks</h2>
 
-<pre><code class="language-javascript">&quot;tasks&quot;: [Task {&quot;schedule&quot;: &quot;CRON-formatted string&quot;, &quot;script&quot;: function }]
+<pre><code class="language-javascript">    tasks: [Task { schedule: &quot;CRON-formatted string&quot;, script: function () {} }]
 </code></pre>
 
 <p>Задачи, требующие периодического запуска.</p>
@@ -735,7 +737,7 @@ Store, но в навигации она должна называться по-
 
 <h2 id="type">type</h2>
 
-<pre><code class="language-javascript">    &quot;type&quot;: &quot;direcory&quot;, &quot;single&quot;, &quot;map&quot;
+<pre><code class="language-javascript">    type: &quot;directory&quot; | &quot;single&quot; | &quot;map&quot;
 </code></pre>
 
 <h3 id="directory">directory</h3>

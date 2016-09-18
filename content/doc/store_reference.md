@@ -41,7 +41,7 @@ title = "Store reference"
 
 ## access
 ~~~javascript
-"access": AccessRule[]
+    access: AccessRule[]
 ~~~
 Устанавливает права доступа на объекты Store. Доступный набор разрешений: **crud**.
 
@@ -50,15 +50,15 @@ title = "Store reference"
 
 Если параметр не определён, доступ есть у всех пользователей, как если бы было указано:
 ~~~javascript
-    "access": ["role": "all", "permissions": "crud"]
+    access: [{ role: "all", permissions: "crud" }]
 ~~~
 Если параметр указан, доступ есть только у тех групп пользователей, которым выданы разрешения.
 
 Пример:
 ~~~javascript
-    "access": [
-            { "role": "devops", "permissions": "cru" },
-            { "role": "supervisor", "permissions": "r" },
+    access" [
+            { role: "devops", permissions: "cru" },
+            { role: "supervisor", permissions: "r" },
         ]
 ~~~
 
@@ -66,29 +66,29 @@ title = "Store reference"
 
 ## actions
 ~~~javascript
-"actions": Action[]
+    actions: Action[]
 ~~~
 Описывает возможные действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API.
 
 Пример action для лайка фотографии:
 ~~~javascript
-"actions": [
-    {
-        "_id": "like",
-        "icon": "fa fa-heart",
-        "disabled": "($item.likes || []).indexOf($user._id) >= 0",
-        "script": function ($db, $item, $user) {
-            let likes = $item.likes || [];
-            likes.push($user._id);
-            return $db.set({ "_id": $item._id, "likes": likes }, "photos");
+    actions: [
+        {
+            _id: "like",
+            icon: "fa fa-heart",
+            disabled: "($item.likes || []).indexOf($user._id) >= 0",
+            script: function ($db, $item, $user) {
+                let likes = $item.likes || [];
+                likes.push($user._id);
+                return $db.set({ _id: $item._id, likes: likes }, "photos");
+            },
         },
-    },
-],
+    ],
 ~~~
 
 ## baseStore
 ~~~javascript
-"baseStore": "storeName"
+    baseStore: "storeName"
 ~~~
 Базовый Store. Если указан этот параметр, текущий Store будет работать с конфигурацией и объектами данных базового.
 Это требуется, если нужно отобразить одни и те же данные для одного пользователя в разных видах и разделах навигации
@@ -99,7 +99,7 @@ title = "Store reference"
 
 ## config
 ~~~javascript
-"config": WorkspaceStoreDesc {}
+    config: WorkspaceStoreDesc {}
 ~~~
 Переопредление конфигурации приложения для Store с типом workspace.
 
@@ -108,7 +108,7 @@ title = "Store reference"
 
 ## display
 ~~~javascript
-"display": "list", "single", "table", "cards", "dashboard"
+    display: "list" | "single" | "table" | "cards" | "dashboard"
 ~~~
 Тип отображения Store в интерфейсе веб-приложения. По-умолчанию равен `list`.
 
@@ -122,65 +122,65 @@ title = "Store reference"
 
 ## entries [type:map]
 ~~~javascript
-    "entries": {}
+    entries: {}
 ~~~
 Данные для Store с типом **map**.
 
 Пример использования:
 ~~~javascript
-"_commonSettings": {
-    "type": "map",
-    "entries": {
-        "title": "My App",
-        "locales": ["ru"],
-        "defaultLocale": "ru",
-        "signInLogo": "/logo.svg",
-        ...
-    },
+    _commonSettings: {
+        type: "map",
+        entries: {
+            title: "My App",
+            locales: ["ru"],
+            defaultLocale: "ru",
+            signInLogo: "/logo.svg",
+            ...
+        },
 }
 ~~~
 
 ## filters
 ~~~javascript
-    "filters": Filter[]
+    filters: Filter[]
 ~~~
 Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
 Подробнее читайте в разделе [Filters](/doc/filters/)
 
 ## formGroups
 ~~~javascript
-    "formGroups": ["formGroupName"]
+    formGroups: ["formGroupName"]
 ~~~
 Массив, указывающий порядок расположения групп на форме редактирования объекта. Названия групп должны совпадать с указанными
 группами в настройках props, например:
 ~~~javascript
-    "formGroups": ["{{$i18n.group2Label}}", "Group 1"],
-    "props": {
-        "prop1" {
+    formGroups: ["{{$i18n.group2Label}}", "Group 1"],
+    props: {
+        prop1" {
             ...
-            "formGroup": "Group 1",
+            formGroup: "Group 1",
             ...
         },
-        "prop2" {
+        prop2" {
             ...
-            "formGroup": "{{$i18n.group2Label}}",
+            formGroup: "{{$i18n.group2Label}}",
             ...
         },
     },
-    "i18n": {
-        "group2Label": "Group 2",
+    i18n: {
+        group2Label: "Group 2",
     }
 ~~~
 
 ## formTabs
 ~~~javascript
-    "formTabs": ["tabId" | {"_id": "string", "label": "Handlebars template", "hidden": "JavaScript expression"}]
+    formTabs: ["tabId" | { _id: "string", label: "Handlebars template", hidden: "JavaScript expression" }]
 ~~~
 Определяет порядок и отображение табов в карточках объектов в веб-приложении.
 
 ## headerProperty
 ~~~javascript
-"headerProperty": "propName"
+    headerProperty: "propName"
 ~~~
 Определяет свойство для использования в заголовке карточек объектов Store в веб-приложении.
 
@@ -188,12 +188,12 @@ title = "Store reference"
 
 Пример:
 ~~~javascript
-"headerProperty": "orderNumber",
+    headerProperty: "orderNumber",
 ~~~
 
 ## headerTemplate
 ~~~javascript
-"headerTemplate": "Handlebars template"
+    headerTemplate: "Handlebars template"
 ~~~
 Определяет текст заголовка карточек объектов Store в веб-приложении.
 
@@ -201,50 +201,50 @@ title = "Store reference"
 
 Пример:
 ~~~javascript
-"headerTemplate": "{{$item.lastName}} {{$item.name}}"
+    headerTemplate: "{{$item.lastName}} {{$item.name}}"
 ~~~
 
 ## html {#html}
 ~~~javascript
-"html": "Handlebars-enabled template"
+    html: "Handlebars-enabled template"
 ~~~
 Шаблон на [Handlebars](http://handlebarsjs.com/) для `type:html` со следующей моделью данных:
 ~~~javascript
-{
-    "$items": [] // Массив объектов Store
-    "$user": {} // Объект пользователя, просматривающего Store
-}
+    {
+        $items: [] // Массив объектов Store
+        $user: {} // Объект пользователя, просматривающего Store
+    }
 ~~~
 
 ## httpApi
 ~~~javascript
-"httpApi": bool
+    httpApi: bool
 ~~~
 Флаг формирования HTTP REST API для сторы.
 Значение по-умолчанию: false.
 
 ## httpHooks
 ~~~javascript
-"httpHooks": HTTPHook[]
+    httpHooks: HTTPHook[]
 ~~~
 Массив описаний методов Store, доступных через HTTP API.
 Подробнее читайте в разделе [HTTPHooks](/doc/httphooks/)
 
 ## i18n {#i18n}
 ~~~javascript
-"i18n": {}
+    i18n: {}
 ~~~
 Объект, содержащий специфичные для данной Store локализации.
 
 Если локализации записаны прямо в корень объекта i18n, они будут относится к локали, установленное по-умолчанию
 для приложения. Для записи в другие локали, необходимо создать вложенные объекты, ключами для которых будут названия локалей:
 ~~~javascript
-"i18n": {
-    "storeLabel": "Название Store",
-    "en": {
-        "storeLabel": "Store name",
+    i18n: {
+        storeLabel": "Название Store",
+        en": {
+            storeLabel: "Store name",
+        }
     }
-}
 ~~~
 
 В значениях допускается указание плейсхолдеров `%s`, которые будут заменены переданными аргументами
@@ -256,51 +256,51 @@ title = "Store reference"
 ### Работа с i18n из шаблонов
 При доступе к i18n из шаблонов текущей Store, все локализации будут доступны напрямую:
 ~~~javascript
-"label": "{{$i18n.storeLabel}}"
+    label: "{{$i18n.storeLabel}}"
 ~~~
 Для доступа к локализациям из других Store используется объект $stores:
 ~~~javascript
-"label": "{{$i18n.$stores.otherStoreName.storeLabel}}"
+    label: "{{$i18n.$stores.otherStoreName.storeLabel}}"
 ~~~
 Для доступа к общим локализациям из **_commonSettings** используется объект $settings:
 ~~~javascript
-"label": "{{$i18n.$settings.phraseName}}"
+    label: "{{$i18n.$settings.phraseName}}"
 ~~~
 Все обращения будут работать с текущей установленной локалью пользователя или локалью по-умолчанию.
 
 ## indexes
 ~~~JSON
-"indexes": []
+    indexes: []
 ~~~
 Описание индексов хранилища.
 Содержит массив аргументов для команды `createIndex` в MongoDB. Каждый элемент может быть либо строковым названием индексируемого поля:
 ~~~JSON
-"indexes": [
-    "lastName"
-]
+    indexes: [
+        "lastName"
+    ]
 ~~~
 
 либо описание индекса в виде объекта:
 ~~~JSON
-"indexes": [
-    {"name": 1}
-]
+    indexes: [
+        { "name": 1 }
+    ]
 ~~~
 
 либо массивом из двух объектов, где первый объект&nbsp;&mdash; это описание индекса, а второй&nbsp;&mdash; дополнительные параметры:
 ~~~JSON
-"indexes": [
-    [{"login": 1}, {"unique": true}]
-]
+    indexes: [
+        [{ login: 1 }, { unique: true }]
+    ]
 ~~~
 
 Конечно, можно сочетать все варианты описания индекса:
 ~~~JSON
-"indexes": [
-    "lastName",
-    {"name": 1},
-    [{"login": 1}, {"unique": true}]
-]
+    indexes: [
+        "lastName",
+        { name: 1 },
+        [{ login: 1 }, { unique: true }]
+    ]
 ~~~
 
 При старте приложения, каждый элемент будет передан в команду `createIndex`.
@@ -309,65 +309,67 @@ title = "Store reference"
 
 ## label
 ~~~javascript
-"label": "Handlebars template"
+    label: "Handlebars template"
 ~~~
 Название Store, которое будет использоваться в навигации сгенерированного веб-приложения.
 
 Пример:
 ~~~javascript
-"label": "{{$i18n.storeLabel}}"
+    label: "{{$i18n.storeLabel}}"
 ~~~
 
 ## labels
 ~~~javascript
-"labels": [Label {
-    "icon": "className" //"fa fa-icon_name" или "material-icons text md-16 icon_name"
-    "text": "Handlebars template", //Data model: { $item: {}, $user: {} }
-    "color": "Handlebars template", //Data model: { $item: {}, $user: {} }
-    "hidden": "JavaScript expression", //Variables: $item, $user
-    "hideInForm": bool // Скрывает лэйбл в форме редактирования объекта
-    "showInList": int // Определяет, на какой строке показывать лэйбл в элементе списка. Если 0 – не отображать
-}]
+    labels: Label[]
+
+    Label {
+        icon: "className" //"fa fa-icon_name" или "material-icons text md-16 icon_name"
+        text: "Handlebars template", //Data model: { $item: {}, $user: {} }
+        color: "Handlebars template", //Data model: { $item: {}, $user: {} }
+        hidden: "JavaScript expression", //Variables: $item, $user
+        hideInForm: bool, // Скрывает лэйбл в форме редактирования объекта
+        showInList: int, // Определяет, на какой строке показывать лэйбл в элементе списка. Если 0 – не отображать
+    }
 ~~~
 Массив аннотаций к объектам. Используется для добавления summary объектов в списке и на форме редактирования в
 сгенерированном веб-приложении.
 
 Пример:
 ```javascript
-"labels": [
-    {
-        "icon": "fa fa-power-off",
-        "color": "{{#if $item.disabled}}#ddd{{else}}#43A047{{/if}}",
-        "hideInForm": true,
-        "showInList": 1,
-    },
-]
+    labels: [
+        {
+            icon: "fa fa-power-off",
+            color: "{{#if $item.disabled}}#ddd{{else}}#43A047{{/if}}",
+            hideInForm: true,
+            showInList: 1,
+        },
+    ]
 ```
 
 ## navGroup
 ~~~javascript
-"navGroup": "string",
+    navGroup: string,
 ~~~
 Определяет расположения в навигации веб-приложения. Если группа не задана, ссылка на эти объекты будет выведена в первом уровне навигации
 
 ## navOrder
 ~~~javascript
-"navOrder": int,
+    navOrder: int,
 ~~~
 Порядок размещения в навигации веб-приложения
 
 ## navLabel
 ~~~javascript
-"navLabel": "Handlebars template",
+    navLabel: "Handlebars template",
 ~~~
 Название Store в навигации веб-приложения. Требуется, если нужно оставить опеределенный label в заголовке открытой в приложении
 Store, но в навигации она должна называться по-другому.
 
 ## objectLifeCycle
 ~~~javascript
-"objectLifeCycle": {
-    "eventName": function () {}
-},
+    objectLifeCycle: {
+        eventName: function () {}
+    },
 ~~~
 Обработчики событий жизненного цикла объектов в Store на JavaScript.
 
@@ -375,49 +377,49 @@ Store, но в навигации она должна называться по-
 
 ## orderBy
 ~~~javascript
-"orderBy": "propName",
+    orderBy: "propName",
 ~~~
 Поле для сортировки данных по-умолчанию при запросах Find.
 Для сортировки в обратном порядке добавьте '-' перед названием поля:
 ~~~javascript
-"orderBy": "-propName",
+    orderBy: "-propName",
 ~~~
 
 ## props
 ~~~javascript
-"props": {
-    "propName": PropDesc {},
-}
+    props: {
+        propName: PropDesc {},
+    }
 ~~~
 Структура данных для Store. Props – наиболее сложная и важная часть описания Store.
 
 Простой пример объекта props:
 ~~~javascript
-"props": {
-    "name": {
-        "type": "string",
-        "display": "textInput",
-        "label": "ФИО",
-        "formOrder": 0,
-        "required": true,
-    },
-    "phone": {
-        "type": "string",
-        "display": "masked",
-        "label": "Телефон",
-        "mask": "+7 (|||) |||-||-||",
-        "formOrder": 10,
-        "required": "$item.name",
-    },
-}
+    props: {
+        name: {
+            type: "string",
+            display: "textInput",
+            label: "ФИО",
+            formOrder: 0,
+            required: true,
+        },
+        phone: {
+            type: "string",
+            display: "masked",
+            label: "Телефон",
+            mask: "+7 (|||) |||-||-||",
+            formOrder: 10,
+            required: "$item.name",
+        },
+    }
 ~~~
 
 Подробнее читайте в разделе [Props reference](/doc/props_reference/)
 
 ## states
 ~~~javascript
-    "states": {
-        "stateName": StateDesc {"label": "Handlebars template", "navOrder": int}
+    states: {
+        stateName: StateDesc { label: "Handlebars template", navOrder: int }
     }
 ~~~
 Параметр для тех Store, объекты которых могут находится в детерминированном наборе состояний, переходя от одного
@@ -427,7 +429,7 @@ Store, но в навигации она должна называться по-
 
 ## storeActions
 ~~~javascript
-    "storeActions": Action[]
+    storeActions: Action[]
 ~~~
 Действия, которые относятся ко всему Store, а не к его отдельным объектам. Также, как и Actions, доступны через Websocket API и REST API.
 
@@ -435,9 +437,9 @@ Store, но в навигации она должна называться по-
 
 ## storeLifeCycle
 ~~~javascript
-"storeLifeCycle": {
-    "eventName": function
-},
+    storeLifeCycle: {
+        eventName: function () {},
+    },
 ~~~
 Обработчики событий жизненного цикла объектов в Store на JavaScript.
 
@@ -445,13 +447,13 @@ Store, но в навигации она должна называться по-
 
 ## tableColumns
 ~~~javascript
-"tableColumns": ["propName" | ColumnDesc { "prop": "propName", "display": "propDisplayType"}]
+    tableColumns: ["propName" | ColumnDesc { prop: "propName", display: "propDisplayType" }]
 ~~~
 Определяет набор, порядок и тип отображения столбцов таблицы для display:html.
 
 ## tasks
 ~~~javascript
-"tasks": [Task {"schedule": "CRON-formatted string", "script": function }]
+    tasks: [Task { schedule: "CRON-formatted string", script: function () {} }]
 ~~~
 Задачи, требующие периодического запуска.
 
@@ -459,7 +461,7 @@ Store, но в навигации она должна называться по-
 
 ## type
 ~~~javascript
-    "type": "direcory", "single", "map"
+    type: "directory" | "single" | "map"
 ~~~
 
 ### directory

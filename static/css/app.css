@@ -676,6 +676,10 @@ textarea {
   margin: 0 auto;
   padding: 48px 20px;
 }
+#docs code {
+  font-family: "Lucida Console";
+  font-size: 14px;
+}
 #docs .docs-contents {
   float: left;
   width: 210px;

@@ -320,29 +320,34 @@
 <p>Формат запроса:</p>
 
 <pre><code class="language-Javascript">    {
-        &quot;query&quot;: {},
-        &quot;skip&quot;: 0,
-        &quot;take&quot;: 100,
-        &quot;orderBy&quot;: &quot;createdAt&quot;,
-        &quot;currentId&quot;: &quot;56370687-a1c8-4e04-9eb1-a755ca0de570&quot;,
-        &quot;currentIndex&quot;: &quot;&quot;,
-        &quot;props&quot;: [&quot;_id&quot;, &quot;name&quot;]
+        query: {},
+        skip: 0,
+        take: 100,
+        orderBy: &quot;createdAt&quot;,
+        currentId: &quot;56370687-a1c8-4e04-9eb1-a755ca0de570&quot;,
+        currentIndex: &quot;&quot;,
+        props: [&quot;_id&quot;, &quot;name&quot;]
     }
 </code></pre>
 
 <p>Где</p>
 
 <ul>
-<li><code>query</code>&nbsp;&mdash; объект со значениями фильтра</li>
-<li><code>skip</code>&nbsp;&mdash; смещение (int)</li>
-<li><code>take</code>&nbsp;&mdash; запрашиваемое количество объектов в выборке (int)</li>
-<li><code>orderBy</code>&nbsp;&mdash; поле, по которому требуется провести сортировку (строка, опционально).
+<li><p><code>query</code>&nbsp;&mdash; объект со значениями фильтра;</p></li>
+
+<li><p><code>skip</code>&nbsp;&mdash; смещение (int);</p></li>
+
+<li><p><code>take</code>&nbsp;&mdash; запрашиваемое количество объектов в выборке (int);</p></li>
+
+<li><p><code>orderBy</code>&nbsp;&mdash; поле, по которому требуется провести сортировку (строка, опционально).
 Если первый символом стоит <code>-</code>, то будет произведена обратная сортировка.
-Если параметр опущен, будет произведена сортировка по полю <code>name</code></li>
-<li><code>currentId</code>&nbsp;&mdash; идентификатор текущего элемента (строка, опционально).
-Если указан, то будет возвращён индекс текущего элемента в выборке (int), либо, если под условия поиска он не попадает, <code>-1</code></li>
-<li><code>props</code>&nbsp;&mdash; массив с идентификаторами полей, которые необходимо получить в выборке.
-Если параметр отсутствует, будут возвращены все поля.</li>
+Если параметр опущен, будет произведена сортировка по полю <code>name</code>;</p></li>
+
+<li><p><code>currentId</code>&nbsp;&mdash; идентификатор текущего элемента (строка, опционально).
+Если указан, то будет возвращён индекс текущего элемента в выборке (int), либо, если под условия поиска он не попадает, <code>-1</code>;</p></li>
+
+<li><p><code>props</code>&nbsp;&mdash; массив с идентификаторами полей, которые необходимо получить в выборке.
+Если параметр отсутствует, будут возвращены все поля.</p></li>
 </ul>
 
 <p><strong>store</strong></p>
@@ -363,12 +368,12 @@
 В случае успешного выполнения метода, результат будет следующим:</p>
 
 <pre><code class="language-Javascript">    {
-        &quot;items&quot;: [],
-        &quot;fullCount&quot;: 100,
-        &quot;currentItem&quot;: {},
-        &quot;stateCounts&quot;: {
-            &quot;new&quot;: 10,
-            &quot;progress&quot;: 20
+        items: [],
+        fullCount: 100,
+        currentItem: {},
+        stateCounts: {
+            new: 10,
+            progress: 20
         }
     }
 </code></pre>
@@ -376,11 +381,15 @@
 <p>Где</p>
 
 <ul>
-<li><code>items</code>&nbsp;&mdash; массив объектов</li>
-<li><code>fullCount</code>&nbsp;&mdash; общее количество объектов, попадающих под запрос</li>
-<li><code>currentIndex</code>&nbsp;&mdash; индекс текущего элемента в выборке, или  <code>-1</code>, если текущий элемент не попадает под условия выборки</li>
-<li><code>currentItem</code>&nbsp;&mdash; текущий элемент, если попадает под условия выборки</li>
-<li><code>stateCounts</code>&nbsp;&mdash; объектов со счетчиками состояний объектов в выборке</li>
+<li><p><code>items</code>&nbsp;&mdash; массив объектов;</p></li>
+
+<li><p><code>fullCount</code>&nbsp;&mdash; общее количество объектов, попадающих под запрос;</p></li>
+
+<li><p><code>currentIndex</code>&nbsp;&mdash; индекс текущего элемента в выборке, или  <code>-1</code>, если текущий элемент не попадает под условия выборки;</p></li>
+
+<li><p><code>currentItem</code>&nbsp;&mdash; текущий элемент, если попадает под условия выборки;</p></li>
+
+<li><p><code>stateCounts</code>&nbsp;&mdash; объектов со счетчиками состояний объектов в выборке.</p></li>
 </ul>
 
 <h3 id="db-foreach">$db.forEach()</h3>
@@ -389,8 +398,8 @@
 
 <h4 id="синтаксис-2">Синтаксис</h4>
 
-<pre><code>$db.forEach(store, query, store, options, itemCallback[, callback])
-$db.forEach(store, query, store, itemCallback[, callback])
+<pre><code>$db.forEach(store, query, options, itemCallback[, callback])
+$db.forEach(store, query, itemCallback[, callback])
 </code></pre>
 
 <h4 id="параметры-3">Параметры</h4>
@@ -574,7 +583,7 @@ $db.get(store, query[, options[, callback]])
 
 <h3 id="db-nextsequencestring">$db.nextSequenceString()</h3>
 
-<p>Метод <code>$db.nextSequenceString()</code> возвращает следующее автоинкрементное значение для хранилища.</p>
+<p>Метод <code>$db.nextSequenceString()</code> возвращает следующее автоинкрементное значение для хранилища в виде строки с числом определённой разрядности.</p>
 
 <h4 id="синтаксис-9">Синтаксис</h4>
 
@@ -626,8 +635,8 @@ $db.get(store, query[, options[, callback]])
 <pre><code>{
 	message: &quot;Заголовок сообщения&quot;,
 	details: &quot;Текст сообщения&quot;,
-    level: &quot;info&quot;, // info | error // currently only info supports (default)
-    type: &quot;notification&quot;, // currently only notification supports (default)
+	level: &quot;info&quot;, // info | error // currently only info supports (default)
+	type: &quot;notification&quot;, // currently only notification supports (default)
 	relatedObjects: [
 		{
 			name: &quot;Gray Wolf&quot;,
