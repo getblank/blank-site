@@ -274,7 +274,7 @@
 
 <h4 id="синтаксис">Синтаксис</h4>
 
-<pre><code>$db.delete(_id, store[, options[, callback]])
+<pre><code>$db.delete(store, _id[, options[, callback]])
 </code></pre>
 
 <h4 id="параметры-1">Параметры</h4>
@@ -307,7 +307,7 @@
 
 <h4 id="синтаксис-1">Синтаксис</h4>
 
-<pre><code>$db.find(query, store[, options[, callback]])
+<pre><code>$db.find(store, query[, options[, callback]])
 </code></pre>
 
 <h4 id="параметры-2">Параметры</h4>
@@ -389,10 +389,8 @@
 
 <h4 id="синтаксис-2">Синтаксис</h4>
 
-<pre><code>$db.forEach(query, store, options, itemCallback[, callback])
-$db.forEach(query, store, itemCallback[, callback])
-$db.forEach(store, options, itemCallback[, callback])
-$db.forEach(store, itemCallback[, callback])
+<pre><code>$db.forEach(store, query, store, options, itemCallback[, callback])
+$db.forEach(store, query, store, itemCallback[, callback])
 </code></pre>
 
 <h4 id="параметры-3">Параметры</h4>
@@ -427,8 +425,8 @@ $db.forEach(store, itemCallback[, callback])
 
 <h4 id="синтаксис-3">Синтаксис</h4>
 
-<pre><code>$db.get(_id, store[, options[, callback]])
-$db.get(query, store[, options[, callback]])
+<pre><code>$db.get(store, _id[, options[, callback]])
+$db.get(store, query[, options[, callback]])
 </code></pre>
 
 <h4 id="параметры-4">Параметры</h4>
@@ -488,7 +486,7 @@ $db.get(query, store[, options[, callback]])
 
 <h4 id="синтаксис-5">Синтаксис</h4>
 
-<pre><code>$db.insert(item, store[, options[, callback]])
+<pre><code>$db.insert(store, item[, options[, callback]])
 </code></pre>
 
 <h4 id="параметры-6">Параметры</h4>
@@ -520,7 +518,7 @@ $db.get(query, store[, options[, callback]])
 
 <h4 id="синтаксис-6">Синтаксис</h4>
 
-<pre><code>$db.loadVirtualProps(item, store)
+<pre><code>$db.loadVirtualProps(store, item)
 </code></pre>
 
 <h4 id="параметры-7">Параметры</h4>
@@ -608,14 +606,14 @@ $db.get(query, store[, options[, callback]])
 
 <h4 id="синтаксис-10">Синтаксис</h4>
 
-<pre><code>$db.notify(receivers, store, message[, callback])
+<pre><code>$db.notify(store, receivers, message[, callback])
 </code></pre>
 
 <h4 id="параметры-10">Параметры</h4>
 
 <p><strong>receivers</strong></p>
 
-<p>Идентификаторы получателей (массив строк).</p>
+<p>Идентификаторы получателей (строка, если получатель один или массив строк, если получателей несколько).</p>
 
 <p><strong>store</strong></p>
 
@@ -658,7 +656,7 @@ $db.get(query, store[, options[, callback]])
 
 <h4 id="синтаксис-11">Синтаксис</h4>
 
-<pre><code>$db.populateAll(item, store[, callback])
+<pre><code>$db.populateAll(store, item[, callback])
 </code></pre>
 
 <h4 id="параметры-11">Параметры</h4>
@@ -686,7 +684,7 @@ $db.get(query, store[, options[, callback]])
 
 <h4 id="синтаксис-12">Синтаксис</h4>
 
-<pre><code>$db.set(item, store[, options[, callback]])
+<pre><code>$db.set(store, item[, options[, callback]])
 </code></pre>
 
 <h4 id="параметры-12">Параметры</h4>

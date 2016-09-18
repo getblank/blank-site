@@ -34,7 +34,7 @@ url = "/doc/db/"
 
 #### Синтаксис
 ```
-$db.delete(_id, store[, options[, callback]])
+$db.delete(store, _id[, options[, callback]])
 ```
 
 #### Параметры
@@ -64,7 +64,7 @@ $db.delete(_id, store[, options[, callback]])
 #### Синтаксис
 
 ```
-$db.find(query, store[, options[, callback]])
+$db.find(store, query[, options[, callback]])
 ```
 
 #### Параметры
@@ -143,10 +143,8 @@ $db.find(query, store[, options[, callback]])
 #### Синтаксис
 
 ```
-$db.forEach(query, store, options, itemCallback[, callback])
-$db.forEach(query, store, itemCallback[, callback])
-$db.forEach(store, options, itemCallback[, callback])
-$db.forEach(store, itemCallback[, callback])
+$db.forEach(store, query, options, itemCallback[, callback])
+$db.forEach(store, query, itemCallback[, callback])
 ```
 
 #### Параметры
@@ -179,8 +177,8 @@ $db.forEach(store, itemCallback[, callback])
 
 #### Синтаксис
 ```
-$db.get(_id, store[, options[, callback]])
-$db.get(query, store[, options[, callback]])
+$db.get(store, _id[, options[, callback]])
+$db.get(store, query[, options[, callback]])
 ```
 
 #### Параметры
@@ -235,7 +233,7 @@ $db.getUser(_id[, callback])
 
 #### Синтаксис
 ```
-$db.insert(item, store[, options[, callback]])
+$db.insert(store, item[, options[, callback]])
 ```
 
 #### Параметры
@@ -266,7 +264,7 @@ $db.insert(item, store[, options[, callback]])
 
 #### Синтаксис
 ```
-$db.loadVirtualProps(item, store)
+$db.loadVirtualProps(store, item)
 ```
 
 #### Параметры
@@ -318,7 +316,7 @@ $db.nextSequence(store[, callback])
 
 
 ### $db.nextSequenceString()
-Метод `$db.nextSequenceString()` возвращает следующее автоинкрементное значение для хранилища.
+Метод `$db.nextSequenceString()` возвращает следующее автоинкрементное значение для хранилища в виде строки с числом определённой разрядности.
 
 #### Синтаксис
 
@@ -350,14 +348,14 @@ $db.nextSequenceString(store[, digits[, callback]])
 #### Синтаксис
 
 ```
-$db.notify(receivers, store, message[, callback])
+$db.notify(store, receivers, message[, callback])
 ```
 
 #### Параметры
 
 **receivers**
 
-Идентификаторы получателей (массив строк).
+Идентификаторы получателей (строка, если получатель один или массив строк, если получателей несколько).
 
 **store**
 
@@ -371,8 +369,8 @@ $db.notify(receivers, store, message[, callback])
 {
 	message: "Заголовок сообщения",
 	details: "Текст сообщения",
-    level: "info", // info | error // currently only info supports (default)
-    type: "notification", // currently only notification supports (default)
+	level: "info", // info | error // currently only info supports (default)
+	type: "notification", // currently only notification supports (default)
 	relatedObjects: [
 		{
 			name: "Gray Wolf",
@@ -399,7 +397,7 @@ $db.notify(receivers, store, message[, callback])
 
 #### Синтаксис
 ```
-$db.populateAll(item, store[, callback])
+$db.populateAll(store, item[, callback])
 ```
 
 #### Параметры
@@ -425,7 +423,7 @@ $db.populateAll(item, store[, callback])
 
 #### Синтаксис
 ```
-$db.set(item, store[, options[, callback]])
+$db.set(store, item[, options[, callback]])
 ```
 
 #### Параметры
