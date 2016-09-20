@@ -43,6 +43,7 @@ title = "Props reference"
 *   [placeholder](/doc/props-displaying/#placeholder);
 *   [populateIn](/doc/props-modeling/#populatein);
 *   [props](/doc/props-modeling/#props);
+*   [query](/doc/props-displaying/#query);
 *   [required](/doc/props-modeling/#required);
 *   [searchBy](/doc/props-displaying/#searchby);
 *   [selectedTemplate](/doc/props-displaying/#selectedtemplate);
