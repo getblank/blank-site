@@ -406,8 +406,23 @@ props: {
 
 <h4 id="populatein">populateIn</h4>
 
-<p>Поле, в которое будет загружен соответствующий объект из Store
-определённом в свойстве <a href="/doc/props-modeling/#store">store</a>.</p>
+<p>Поле, в которое будет загружен соответствующий объект из Store определённом в свойстве <a href="/doc/props-modeling/#store">store</a>.</p>
+
+<pre><code class="language-javascript">populateIn: &quot;user&quot;,
+</code></pre>
+
+<p>Так же может производиться обработка полученного объекта перед помещением в соответствующее поле.
+Для этого стоит определить данное свойство в виде объекта.</p>
+
+<pre><code class="language-javascript">populateIn: {
+    prop: &quot;userName&quot;, // поле, в которое загрузить результат.
+    map: function($item) { // функция-обработчик, принимающая на вход загружаемый объект
+        return $item.name;
+    },
+},
+</code></pre>
+
+<p>Для типа <code>refList</code> в функцию-обработчик будет передана переменная <code>$items</code>, содержащая массив загружаемых объектов.</p>
 
 <h4 id="ref-store">store</h4>
 

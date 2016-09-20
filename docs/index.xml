@@ -669,8 +669,23 @@ props: {
 
 &lt;h4 id=&#34;populatein&#34;&gt;populateIn&lt;/h4&gt;
 
-&lt;p&gt;Поле, в которое будет загружен соответствующий объект из Store
-определённом в свойстве &lt;a href=&#34;https://getblank.net/doc/props-modeling/#store&#34;&gt;store&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Поле, в которое будет загружен соответствующий объект из Store определённом в свойстве &lt;a href=&#34;https://getblank.net/doc/props-modeling/#store&#34;&gt;store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;populateIn: &amp;quot;user&amp;quot;,
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Так же может производиться обработка полученного объекта перед помещением в соответствующее поле.
+Для этого стоит определить данное свойство в виде объекта.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;populateIn: {
+    prop: &amp;quot;userName&amp;quot;, // поле, в которое загрузить результат.
+    map: function($item) { // функция-обработчик, принимающая на вход загружаемый объект
+        return $item.name;
+    },
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Для типа &lt;code&gt;refList&lt;/code&gt; в функцию-обработчик будет передана переменная &lt;code&gt;$items&lt;/code&gt;, содержащая массив загружаемых объектов.&lt;/p&gt;
 
 &lt;h4 id=&#34;ref-store&#34;&gt;store&lt;/h4&gt;
 
