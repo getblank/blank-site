@@ -674,7 +674,7 @@ props: {
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;populateIn: &amp;quot;user&amp;quot;,
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Так же может производиться обработка полученного объекта перед помещением в соответствующее поле.
+&lt;p&gt;Так же может производиться модификация полученного объекта перед загрузкой в соответствующее поле.
 Для этого стоит определить данное свойство в виде объекта.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;populateIn: {
