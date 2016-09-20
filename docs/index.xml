@@ -478,8 +478,11 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;virtualreflist&#34;&gt;virtualRefList&lt;/h2&gt;
 
-&lt;p&gt;Автоматически устанавливаемый тип отображения для полей типа &lt;code&gt;virtualRefList&lt;/code&gt;.
+&lt;p&gt;Автоматически устанавливаемый тип отображения для полей типа &lt;code&gt;virtualRefList&lt;/code&gt;. Отображается в виде таблицы связанных объектов.
 Не требует указания.&lt;/p&gt;
+
+&lt;p&gt;В зависимости от характера связи, следует указать либо &lt;a href=&#34;https://getblank.net/doc/props-displaying/#foreignkey&#34;&gt;foreignKey&lt;/a&gt; при непосредственном
+хранении ссылки на объект в связанных объектах, либо &lt;a href=&#34;https://getblank.net/doc/props-displaying/#query&#34;&gt;query&lt;/a&gt;, если связь более сложная.&lt;/p&gt;
 
 &lt;h3 id=&#34;свойства-15&#34;&gt;Свойства&lt;/h3&gt;
 
@@ -487,6 +490,15 @@ HTML тэга &lt;code&gt;input&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Определяет поле с &lt;code&gt;type:ref&lt;/code&gt; в Store из свойства &lt;a href=&#34;https://getblank.net/doc/props-modeling/#store&#34;&gt;store&lt;/a&gt;, содержащее ссылку на текущее Store
 по которому будет делаться выборка данных для отображения.&lt;/p&gt;
+
+&lt;h4 id=&#34;tablecolumns&#34;&gt;tableColumns&lt;/h4&gt;
+
+&lt;p&gt;Описание столбцов отображаемой таблицы. Настраивается аналогично &lt;a href=&#34;https://getblank.net/doc/store_reference/#tablecolumns&#34;&gt;tableColumns&lt;/a&gt; в Store.&lt;/p&gt;
+
+&lt;h4 id=&#34;query&#34;&gt;query&lt;/h4&gt;
+
+&lt;p&gt;Запрос в формате &lt;a href=&#34;https://docs.mongodb.com/manual/tutorial/query-documents/&#34;&gt;MongoDB Query&lt;/a&gt;, который будет
+использован для поиска объектов в Store, определённом в свойстве &lt;a href=&#34;https://getblank.net/doc/props-modeling/#ref-store&#34;&gt;store&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

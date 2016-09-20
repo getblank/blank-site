@@ -721,10 +721,20 @@ Store, но в навигации она должна называться по-
 
 <h2 id="tablecolumns">tableColumns</h2>
 
-<pre><code class="language-javascript">    tableColumns: [&quot;propName&quot; | ColumnDesc { prop: &quot;propName&quot;, display: &quot;propDisplayType&quot; }]
+<pre><code class="language-javascript">    tableColumns: [&quot;propName&quot; | ColumnDesc]
+
+    ColumnDesc {
+        prop: &quot;propName&quot;,
+        display: &quot;propDisplayType&quot;,
+        label: &quot;columnHeader&quot;,
+        tableLink: true,
+    }
 </code></pre>
 
-<p>Определяет набор, порядок и тип отображения столбцов таблицы для display:html.</p>
+<p>Определяет набор, порядок и тип отображения столбцов таблицы для <code>display:html</code>.
+В случае указания в виде объекта типа <code>ColumnDesc</code>, имеется возможность переопределить некоторые свойства поля для отображения в таблице.
+Так же объект может содержать дополнительное булевое свойство <code>tableLink</code>, которое обозначает необходимость отобразить значение поля в виде
+ссылки на объект в интерфейсе (только для полей с типом <code>ref</code>).</p>
 
 <h2 id="tasks">tasks</h2>
 

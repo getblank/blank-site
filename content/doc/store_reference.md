@@ -447,9 +447,19 @@ Store, но в навигации она должна называться по-
 
 ## tableColumns
 ~~~javascript
-    tableColumns: ["propName" | ColumnDesc { prop: "propName", display: "propDisplayType" }]
+    tableColumns: ["propName" | ColumnDesc]
+
+    ColumnDesc {
+        prop: "propName",
+        display: "propDisplayType",
+        label: "columnHeader",
+        tableLink: true,
+    }
 ~~~
-Определяет набор, порядок и тип отображения столбцов таблицы для display:html.
+Определяет набор, порядок и тип отображения столбцов таблицы для `display:html`.
+В случае указания в виде объекта типа `ColumnDesc`, имеется возможность переопределить некоторые свойства поля для отображения в таблице.
+Так же объект может содержать дополнительное булевое свойство `tableLink`, которое обозначает необходимость отобразить значение поля в виде
+ссылки на объект в интерфейсе (только для полей с типом `ref`).
 
 ## tasks
 ~~~javascript

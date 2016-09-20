@@ -643,8 +643,11 @@ HTML тэга <code>input</code>.</p>
 
 <h2 id="virtualreflist">virtualRefList</h2>
 
-<p>Автоматически устанавливаемый тип отображения для полей типа <code>virtualRefList</code>.
+<p>Автоматически устанавливаемый тип отображения для полей типа <code>virtualRefList</code>. Отображается в виде таблицы связанных объектов.
 Не требует указания.</p>
+
+<p>В зависимости от характера связи, следует указать либо <a href="/doc/props-displaying/#foreignkey">foreignKey</a> при непосредственном
+хранении ссылки на объект в связанных объектах, либо <a href="/doc/props-displaying/#query">query</a>, если связь более сложная.</p>
 
 <h3 id="свойства-15">Свойства</h3>
 
@@ -652,6 +655,15 @@ HTML тэга <code>input</code>.</p>
 
 <p>Определяет поле с <code>type:ref</code> в Store из свойства <a href="/doc/props-modeling/#store">store</a>, содержащее ссылку на текущее Store
 по которому будет делаться выборка данных для отображения.</p>
+
+<h4 id="tablecolumns">tableColumns</h4>
+
+<p>Описание столбцов отображаемой таблицы. Настраивается аналогично <a href="/doc/store_reference/#tablecolumns">tableColumns</a> в Store.</p>
+
+<h4 id="query">query</h4>
+
+<p>Запрос в формате <a href="https://docs.mongodb.com/manual/tutorial/query-documents/">MongoDB Query</a>, который будет
+использован для поиска объектов в Store, определённом в свойстве <a href="/doc/props-modeling/#ref-store">store</a>.</p>
 
       </div>
     </div>
