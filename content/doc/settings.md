@@ -22,26 +22,32 @@ title = "Конфигурация"
 _serverSettings: {
         type: "map",
         entries: {
-            registerTokenExpiration: "0:60",
-            passwordResetTokenExpiration: "0:10",
             facebookClientSecret: undefined,
+            passwordResetTokenExpiration: "0:10",
+            registerTokenExpiration: "0:60",
+            ssoOrigins: undefined,
         },
 },
 ```
 
-**registerTokenExpiration**
+**facebookClientSecret**
 
-Время, отведённое на активацию зарегистрированных пользователей. Задается в формате `HH:MM`, где `HH`&nbsp;&mdash; часы,
-а `MM`&nbsp;&mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.
+Секретный ключ для [интеграции с Facebook](/doc/facebook/).
 
 **passwordResetTokenExpiration**
 
 Время жизни токена для сброса пароля. Задается в формате `HH:MM`, где `HH`&nbsp;&mdash; часы,
 а `MM`&nbsp;&mdash; минуты. По истечении указанного времени, токен обнуляется.
 
-**facebookClientSecret**
+**registerTokenExpiration**
 
-Секретный ключ для [интеграции с Facebook](/doc/facebook/).
+Время, отведённое на активацию зарегистрированных пользователей. Задается в формате `HH:MM`, где `HH`&nbsp;&mdash; часы,
+а `MM`&nbsp;&mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.
+
+**ssoOrigins**
+
+Адреса веб-сайтов, которые смогут получить доступ к токену авторизации при использовании механизма single sine on
+для мультидоменной структуры приложения. (массив строк). По-умолчанию, значение не установлено.
 
 ## _commonSettings {#common}
 
