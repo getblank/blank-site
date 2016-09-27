@@ -31,8 +31,7 @@
 </head>
 
 <body lang="ru">
-
-
+ <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34002915 = new Ya.Metrika({ id:34002915, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34002915" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
 
 <div id="navbar"  class="no-expand blog"  >
     <div class="container">
@@ -264,26 +263,32 @@
 <pre><code class="language-JavaScript">_serverSettings: {
         type: &quot;map&quot;,
         entries: {
-            registerTokenExpiration: &quot;0:60&quot;,
-            passwordResetTokenExpiration: &quot;0:10&quot;,
             facebookClientSecret: undefined,
+            passwordResetTokenExpiration: &quot;0:10&quot;,
+            registerTokenExpiration: &quot;0:60&quot;,
+            ssoOrigins: undefined,
         },
 },
 </code></pre>
 
-<p><strong>registerTokenExpiration</strong></p>
+<p><strong>facebookClientSecret</strong></p>
 
-<p>Время, отведённое на активацию зарегистрированных пользователей. Задается в формате <code>HH:MM</code>, где <code>HH</code>&nbsp;&mdash; часы,
-а <code>MM</code>&nbsp;&mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.</p>
+<p>Секретный ключ для <a href="/doc/facebook/">интеграции с Facebook</a>.</p>
 
 <p><strong>passwordResetTokenExpiration</strong></p>
 
 <p>Время жизни токена для сброса пароля. Задается в формате <code>HH:MM</code>, где <code>HH</code>&nbsp;&mdash; часы,
 а <code>MM</code>&nbsp;&mdash; минуты. По истечении указанного времени, токен обнуляется.</p>
 
-<p><strong>facebookClientSecret</strong></p>
+<p><strong>registerTokenExpiration</strong></p>
 
-<p>Секретный ключ для <a href="/doc/facebook/">интеграции с Facebook</a>.</p>
+<p>Время, отведённое на активацию зарегистрированных пользователей. Задается в формате <code>HH:MM</code>, где <code>HH</code>&nbsp;&mdash; часы,
+а <code>MM</code>&nbsp;&mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.</p>
+
+<p><strong>ssoOrigins</strong></p>
+
+<p>Адреса веб-сайтов, которые смогут получить доступ к токену авторизации при использовании механизма single sine on
+для мультидоменной структуры приложения. (массив строк). По-умолчанию, значение не установлено.</p>
 
 <h2 id="common">_commonSettings</h2>
 

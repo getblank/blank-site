@@ -825,26 +825,32 @@ throw new UserError(&amp;quot;some error with text&amp;quot;); // текст о�
 &lt;pre&gt;&lt;code class=&#34;language-JavaScript&#34;&gt;_serverSettings: {
         type: &amp;quot;map&amp;quot;,
         entries: {
-            registerTokenExpiration: &amp;quot;0:60&amp;quot;,
-            passwordResetTokenExpiration: &amp;quot;0:10&amp;quot;,
             facebookClientSecret: undefined,
+            passwordResetTokenExpiration: &amp;quot;0:10&amp;quot;,
+            registerTokenExpiration: &amp;quot;0:60&amp;quot;,
+            ssoOrigins: undefined,
         },
 },
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;registerTokenExpiration&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;facebookClientSecret&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Время, отведённое на активацию зарегистрированных пользователей. Задается в формате &lt;code&gt;HH:MM&lt;/code&gt;, где &lt;code&gt;HH&lt;/code&gt;&amp;nbsp;&amp;mdash; часы,
-а &lt;code&gt;MM&lt;/code&gt;&amp;nbsp;&amp;mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.&lt;/p&gt;
+&lt;p&gt;Секретный ключ для &lt;a href=&#34;https://getblank.net/doc/facebook/&#34;&gt;интеграции с Facebook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;passwordResetTokenExpiration&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Время жизни токена для сброса пароля. Задается в формате &lt;code&gt;HH:MM&lt;/code&gt;, где &lt;code&gt;HH&lt;/code&gt;&amp;nbsp;&amp;mdash; часы,
 а &lt;code&gt;MM&lt;/code&gt;&amp;nbsp;&amp;mdash; минуты. По истечении указанного времени, токен обнуляется.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;facebookClientSecret&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;registerTokenExpiration&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Секретный ключ для &lt;a href=&#34;https://getblank.net/doc/facebook/&#34;&gt;интеграции с Facebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Время, отведённое на активацию зарегистрированных пользователей. Задается в формате &lt;code&gt;HH:MM&lt;/code&gt;, где &lt;code&gt;HH&lt;/code&gt;&amp;nbsp;&amp;mdash; часы,
+а &lt;code&gt;MM&lt;/code&gt;&amp;nbsp;&amp;mdash; минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ssoOrigins&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Адреса веб-сайтов, которые смогут получить доступ к токену авторизации при использовании механизма single sine on
+для мультидоменной структуры приложения. (массив строк). По-умолчанию, значение не установлено.&lt;/p&gt;
 
 &lt;h2 id=&#34;common&#34;&gt;_commonSettings&lt;/h2&gt;
 
