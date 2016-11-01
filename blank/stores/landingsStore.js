@@ -46,7 +46,7 @@ module.exports = {
                     console.log($request.form);
                     let email = (($request.form.email || [])[0] || "").trim();
                     if (!email) { return { type: "JSON", code: 400, header: { "Access-Control-Allow-Origin": "*" } } }
-                    return $db.insert({ email: email }, "landings")
+                    return $db.insert("landings", { email: email })
                         .then((item) => {
                             return { type: "JSON", code: 200, rawData: item._id, header: { "Access-Control-Allow-Origin": "*" } };
                         });
@@ -65,7 +65,7 @@ module.exports = {
                     };
                     console.log("________________________________", o);
                     if (!o._id) { return { type: "JSON", code: 400, header: { "Access-Control-Allow-Origin": "*" } } }
-                    return $db.set(o, "landings")
+                    return $db.set("landings",o)
                         .then((item) => {
                             return { type: "JSON", code: 200, rawData: item._id, header: { "Access-Control-Allow-Origin": "*" } };
                         });
