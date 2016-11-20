@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on BLANK cloud platform</title>
-    <link>https://getblank.net/doc/</link>
+    <link>https://getblank.net/doc/index.xml</link>
     <description>Recent content in Docs on BLANK cloud platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -1655,10 +1655,11 @@ let list = new List(&amp;quot;listName&amp;quot;);
     password // пароль
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;При успешной авторизации, будет возвращен ответ со статусом &lt;code&gt;200&lt;/code&gt;, в теле которого содержится JSON документ с двума полями: &lt;code&gt;key&lt;/code&gt;, содержащее apiKey для последующих запросов и &lt;code&gt;user&lt;/code&gt;, содержащий описание авторизованного пользователя:&lt;/p&gt;
+&lt;p&gt;При успешной авторизации, будет возвращен ответ со статусом &lt;code&gt;200&lt;/code&gt;, в теле которого содержится JSON документ с двума полями: &lt;code&gt;access_token&lt;/code&gt;,
+содержащее JWT token для последующих запросов и &lt;code&gt;user&lt;/code&gt;, содержащий описание авторизованного пользователя:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-JSON&#34;&gt;    {
-        &amp;quot;key&amp;quot;: &amp;quot;05547313-0ceb-41ad-965c-dee3c8992c71&amp;quot;,
+        &amp;quot;access_token&amp;quot;: &amp;quot;05547313-0ceb-41ad-965c-dee3c8992c71&amp;quot;,
         &amp;quot;user&amp;quot;: {...}
     }
 &lt;/code&gt;&lt;/pre&gt;
