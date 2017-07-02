@@ -1,76 +1,78 @@
 {{ partial "header.html" . }}
 
-    <div id="notifications"></div>
+<div id="notifications"></div>
 
-    <div id="top">
-        <div class="top-content">
+<div id="top">
+    <div class="top-content">
         <!--<h1><span style="color: #009688; display: none;">_</span><span>Blank</span></h1>-->
         <h1>Создайте back-end. Быстро. Легко.</h1>
         <h3>
             Мощный инструмент прототипирования и публикации для разработчиков
         </h3>
+    </div>
+</div>
+
+<section id="main">
+    <div class="main-feature-list">
+        <div class="item">
+            <div class="title">
+                <h3>Декларативный подход</h3>
+            </div>
+            <div class="extra">
+                <p>Мы разработали <a href="doc/schema">Blank Schema</a>&nbsp;&mdash; спецификацию для декларативного описания
+                    приложений, обрабатывающих данные.
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>Автогенерация Web-UI</h3>
+            </div>
+            <div class="extra">
+                <p>Для управления данными автоматически создаётся веб-интерфейс&nbsp;&mdash; SPA на <a href="https://nodejs.org/">React.js</a>.
+                    Используйте его как бэк-офис вашего приложения, создав аккаунты для администраторов и менеджеров.
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>Интеграция с npm</h3>
+            </div>
+            <div class="extra">
+                <p>Любые <a href="https://www.npmjs.com/">npm</a> пакеты, включая пакеты с комбинированными модулями на C++,
+                    подключаются также, как если бы это было обычное приложение на <a href="https://nodejs.org/">Node.js</a>.
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>Локальная разработка и тестирование</h3>
+            </div>
+            <div class="extra">
+                <p>Вся микросервисная инфраструктура запускается на компьютере разработчика одной командой при помощи утилиты
+                    blank-cli.
+                </p>
+            </div>
         </div>
     </div>
+    <div class="container" style="text-align: center; padding-bottom: 36px;">
+        <h3>Скоро – разработка бизнес-логики на <a href="https://golang.org/" target="_blank">Go</a></h3>
+    </div>
+</section>
 
-    <section id="main">
-        <div class="main-feature-list">
-            <div class="item">
-                <div class="title">
-                    <h3>Декларативный подход</h3>
-                </div>
-                <div class="extra">
-                    <p>Мы разработали <a href="doc/schema">Blank Schema</a>&nbsp;&mdash; спецификацию для декларативного описания приложений, обрабатывающих данные.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="title">
-                    <h3>Автогенерация Web-UI</h3>
-                </div>
-                <div class="extra">
-                    <p>Для управления данными автоматически создаётся веб-интерфейс&nbsp;&mdash; SPA на <a href="https://nodejs.org/">React.js</a>.
-                        Используйте его как бэк-офис вашего приложения, создав аккаунты для администраторов и менеджеров.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="title">
-                    <h3>Интеграция с npm</h3>
-                </div>
-                <div class="extra">
-                    <p>Любые <a href="https://www.npmjs.com/">npm</a> пакеты, включая пакеты с комбинированными модулями на C++,
-                        подключаются также, как если бы это было обычное приложение на <a href="https://nodejs.org/">Node.js</a>.
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="title">
-                    <h3>Локальная разработка и тестирование</h3>
-                </div>
-                <div class="extra">
-                    <p>Вся микросервисная инфраструктура запускается на компьютере разработчика одной командой при помощи утилиты blank-cli.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container" style="text-align: center; padding-bottom: 36px;">
-            <h3>Скоро – разработка бизнес-логики на <a href="https://golang.org/" target="_blank">Go</a></h3>
-        </div>
-    </section>
-
-    <!--<section id="main" class="text-left">
+<!--<section id="main" class="text-left">
         <div>
             <h2 class="header">Создан программистами для программистов</h2>
             <p>Мы на собственном опыте знаем, какие проблемы возникают при разработке backend-а, и постарались решить их ещё на этапе проектирования Blank</p>
         </div>
     </section>-->
 
-    <section class="example">
-        <div class="container">
-            <h2>Приложение: TODO-лист</h2>
-            <div class="wrapper">
-                <div class="code">
-                    <pre><code class="language-javascript hljs">
+<section class="example">
+    <div class="container">
+        <h2>Приложение: TODO-лист</h2>
+        <div class="wrapper">
+            <div class="code">
+                <pre><code class="language-javascript hljs">
 {{`module.exports = {
   todoStore: {
     display: "single",
@@ -116,51 +118,51 @@
                 </code></pre>
             </div>
             <div class="image">
-                <img src="img/todo.gif" alt="example-screenshot"/>
+                <img src="img/todo.gif" alt="example-screenshot" />
             </div>
         </div>
-    </section>
+</section>
 
-    <div id="main-end"></div>
+<div id="main-end"></div>
 
-    <div class="bn-pattern kenzo-back">
-        <div class="kenzo">
-        </div>
+<div class="bn-pattern kenzo-back">
+    <div class="kenzo">
     </div>
+</div>
 
-    <section class="technologies">
-        <div class="container">
-            <h2 id="technology">Технологии</h2>
-            <img src="/img/technologies.svg" alt="technologies">
-            <div class="summary">
-                <p>
-                    <span>Blank</span> разработан на современных и широко известных языках программирования&nbsp;&mdash; <span>Go</span> и
-                    <span>JavaScript</span>. Автогенерируемое веб-приложение&nbsp;&mdash; <b>SPA</b> на платформе <span>
-                        <a href="https://facebook.github.io/react/" target="_blank">React JS</a></span>.
-                    Данные в приложении обновляются в режиме реального времени благодаря двунаправленному каналу связи с сервером по протоколу
-                    <span>WebSocket</span>.
-                    </br>
-                    При разработке на Blank не нужно изучать Go&nbsp;&mdash; все делается на JavaScript, для этого обработчики задач
-                    реализованы на <span><a href="https://www.nodejs.org/" target="_blank">Node&nbsp;JS</a></span>. Подробнее об API для разработчиков читайте в <a href="/doc/">документации</a>.
-                    Для хранения данных мы используем <span><a href="https://www.mongodb.com/" target="_blank">MongoDB</a></span> и <span>
+<section class="technologies">
+    <div class="container">
+        <h2 id="technology">Технологии</h2>
+        <img src="/img/technologies.svg" alt="technologies">
+        <div class="summary">
+            <p>
+                <span>Blank</span> разработан на современных и широко известных языках программирования&nbsp;&mdash; <span>Go</span>                и
+                <span>JavaScript</span>. Автогенерируемое веб-приложение&nbsp;&mdash; <b>SPA</b> на платформе <span>
+                        <a href="https://facebook.github.io/react/" target="_blank">React JS</a></span>. Данные в приложении
+                обновляются в режиме реального времени благодаря двунаправленному каналу связи с сервером по протоколу
+                <span>WebSocket</span>.
+                </br>
+                При разработке на Blank не нужно изучать Go&nbsp;&mdash; все делается на JavaScript, для этого обработчики задач реализованы
+                на <span><a href="https://www.nodejs.org/" target="_blank">Node&nbsp;JS</a></span>. Подробнее
+                об API для разработчиков читайте в <a href="/doc/">документации</a>. Для хранения данных мы используем <span><a href="https://www.mongodb.com/" target="_blank">MongoDB</a></span>                и <span>
                         <a href="https://clickhouse.yandex/" target="_blank">Clickhouse</a></span>.
-                </p>
-            </div>
-            <!--<p>Go был разработан компанией
+            </p>
+        </div>
+        <!--<p>Go был разработан компанией
                     Google и официально представлен в 2009 году. Google и другие компании активно используют программы на Go в своей работе.
                     JavaScript &mdash; самый распротраненный язык для написания сценариев, он используется почти каждым сайтом в сети Интернет</p>-->
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section class="subscribe-form">
+<!--<section class="subscribe-form">
         <div class="container">
             <h2>Запуск 23.02.2017</h2>
             <p>Подпишитесь на новости и попробуйте Blank одним из первых</p>
             <div id="subscribe-form"></div>
         </div>
-    </section>
+    </section>-->
 
-    <!--<section id="blog">
+<!--<section id="blog">
         <div class="post-list">
             <h2 class="header">Новое в блоге</h2>
             {{ range first 3 .Data.Pages }}
