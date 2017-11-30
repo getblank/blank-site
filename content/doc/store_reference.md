@@ -108,7 +108,7 @@ title = "Store reference"
 
 ## display
 ~~~javascript
-    display: "list" | "single" | "table" | "cards" | "dashboard"
+    display: "list" | "single" | "table" | "grid" | "dashboard"
 ~~~
 Тип отображения Store в интерфейсе веб-приложения. По-умолчанию равен `list`.
 

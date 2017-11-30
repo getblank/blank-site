@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://getblank.net/</loc>
-    <lastmod>2016-09-10T14:47:00+05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://getblank.net/doc/store-displaying/</loc>
     <lastmod>2016-09-10T14:47:00+05:00</lastmod>
   </url>
@@ -159,6 +154,53 @@
   <url>
     <loc>https://getblank.net/post/first/</loc>
     <lastmod>2016-08-03T23:58:25+05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/</loc>
+    <lastmod>2016-09-10T14:47:00+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/doc/</loc>
+    <lastmod>2016-09-10T14:47:00+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/tags/e-commerce/</loc>
+    <lastmod>2016-08-03T23:58:25+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/post/</loc>
+    <lastmod>2016-08-03T23:58:25+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/tags/tutorial/</loc>
+    <lastmod>2016-08-03T23:58:25+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/tags/%D0%B1%D1%83%D1%85%D0%B0%D0%BD%D0%BA%D0%B0-%D1%82%D1%80%D0%BE%D0%BB%D0%BB%D0%B5%D0%B9%D0%B1%D1%83%D1%81/</loc>
+    <lastmod>2016-08-03T23:58:25+05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getblank.net/tags/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD/</loc>
+    <lastmod>2016-08-03T23:58:25+05:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

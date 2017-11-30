@@ -22,14 +22,14 @@
 &lt;h2 id=&#34;типы-отображения-store&#34;&gt;Типы отображения Store&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store-displaying/#cards&#34;&gt;cards&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store-displaying/#grid&#34;&gt;grid&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store-displaying/#html&#34;&gt;html&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store-displaying/#list&#34;&gt;list&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store-displaying/#single&#34;&gt;single&lt;/a&gt;;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://getblank.net/doc/store-displaying/#table&#34;&gt;table&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;cards&#34;&gt;cards&lt;/h2&gt;
+&lt;h2 id=&#34;grid&#34;&gt;grid&lt;/h2&gt;
 
 &lt;p&gt;Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.&lt;/p&gt;
 

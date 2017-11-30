@@ -9,13 +9,13 @@ title = "Store displaying"
 Данный раздел описывает конфигурацию работы встроенного веб приложения Blank в части настройки отображения Store.
 
 ## Типы отображения Store
-*   [cards](/doc/store-displaying/#cards);
+*   [grid](/doc/store-displaying/#grid);
 *   [html](/doc/store-displaying/#html);
 *   [list](/doc/store-displaying/#list);
 *   [single](/doc/store-displaying/#single);
 *   [table](/doc/store-displaying/#table).
 
-## cards
+## grid
 Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.
 
 ## html
