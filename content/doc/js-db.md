@@ -1,11 +1,11 @@
 +++
 date = "2016-08-06T17:57:48+05:00"
 title = "$db"
-url = "/doc/db/"
+url = "/site/doc/db/"
 [menu.doc]
     parent = "serverjs"
     weight = 20
-    url = "/doc/db/"
+    url = "/site/doc/db/"
 +++
 
 Модуль `$db` предназначен для манипуляции данными в хранилищах. Доступен везде, кроме загрузчиков виртуальных полей.
@@ -48,7 +48,7 @@ $db.delete(store, _id[, options[, callback]])
 
 **options**
 
-[Дополнительные параметры](/doc/db/#params) (Javascript Object, опционально).
+[Дополнительные параметры](/site/doc/db/#params) (Javascript Object, опционально).
 
 **callback**
 
@@ -111,7 +111,7 @@ $db.find(store, query[, options[, callback]])
 
 **options**
 
-[Дополнительные параметры](/doc/db/#params) (Javascript Object, опционально).
+[Дополнительные параметры](/site/doc/db/#params) (Javascript Object, опционально).
 
 **callback**
 
@@ -159,7 +159,7 @@ $db.forEach(store, query, itemCallback[, callback])
 #### Параметры
 
 **query**
-[Запрос к хранилищу](/doc/db/#query), аналогично методу [$db.find()](/doc/db/#find)
+[Запрос к хранилищу](/site/doc/db/#query), аналогично методу [$db.find()](/site/doc/db/#find)
 
 **store**
 
@@ -167,7 +167,7 @@ $db.forEach(store, query, itemCallback[, callback])
 
 **options**
 
-[Дополнительные параметры](/doc/db/#params) (Javascript Object, опционально).
+[Дополнительные параметры](/site/doc/db/#params) (Javascript Object, опционально).
 
 **itemCallback**
 
@@ -205,7 +205,7 @@ $db.get(store, query[, options[, callback]])
 
 **options**
 
-[Дополнительные параметры](/doc/db/#params) (Javascript Object, опционально).
+[Дополнительные параметры](/site/doc/db/#params) (Javascript Object, опционально).
 
 **callback**
 
@@ -256,7 +256,7 @@ $db.insert(store, item[, options[, callback]])
 
 **options**
 
-[Дополнительные параметры](/doc/db/#params) (Javascript Object, опционально).
+[Дополнительные параметры](/site/doc/db/#params) (Javascript Object, опционально).
 
 **callback**
 
@@ -447,7 +447,7 @@ $db.set(store, item[, options[, callback]])
 
 **options**
 
-[Дополнительные параметры](/doc/db/#params) (Javascript Object, опционально).
+[Дополнительные параметры](/site/doc/db/#params) (Javascript Object, опционально).
 
 **callback**
 

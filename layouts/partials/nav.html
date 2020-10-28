@@ -1,14 +1,14 @@
 <div id="navbar" {{ if eq $.IsHome false }} class="no-expand blog" {{ end }} >
     <div class="container">
         <a href="#" data-menu="sidenav" class="nav-toggle menu">
-            <img src="/img/menu.svg" alt="menu"/>
+            <img src="/site/img/menu.svg" alt="menu"/>
         </a>
         <div class="logo">
-            <a href="index.html" class="nav-link"><!--<img src="img/favicon.svg" alt="logo"/>-->BLANK</a>
+            <a href="index.html" class="nav-link">BLANK</a>
         </div>
         <ul class="nav collapse" id="nav">
             <li>
-                <a href="/doc/introduction/" class="nav-link index-link {{if $.IsPage}}{{if eq $.Section "doc"}}active{{ end }}{{ end }}">
+                <a href="/site/doc/introduction/" class="nav-link index-link {{if $.IsPage}}{{if eq $.Section "doc"}}active{{ end }}{{ end }}">
                     Документация
                 </a>
             </li>
@@ -24,9 +24,5 @@
                 </a>
             </li>
         </ul>
-        <!--<a href="#" data-menu="search" data-focus="quick-search-input" class="nav-toggle search">
-            <img src="/img/search.svg" alt="search"/>
-        </a>
-        <div id="user-bar"></div>-->
     </div>
 </div>

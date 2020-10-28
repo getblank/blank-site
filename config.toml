@@ -1,4 +1,4 @@
-baseurl = "https://getblank.net/"
+baseurl = "https://getblank.github.io/site/"
 languageCode = "en-us"
 title = "BLANK cloud platform"
 publishdir = "docs"

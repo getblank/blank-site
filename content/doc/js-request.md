@@ -1,14 +1,14 @@
 +++
 date = "2016-09-08T13:13:20+05:00"
 title = "$request"
-url = "/doc/request/"
+url = "/site/doc/request/"
 [menu.doc]
     parent = "serverjs"
     weight = 110
-    url = "/doc/request/"
+    url = "/site/doc/request/"
 +++
 
-Объект `$request` передается обработчикам `HTTP Hooks`, `Actions` и `StoreActions` с типом `http`, либо доступным через [REST API](/doc/httprest/).
+Объект `$request` передается обработчикам `HTTP Hooks`, `Actions` и `StoreActions` с типом `http`, либо доступным через [REST API](/site/doc/httprest/).
 
 ### Параметры
 

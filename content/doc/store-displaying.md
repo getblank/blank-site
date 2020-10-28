@@ -9,11 +9,11 @@ title = "Store displaying"
 Данный раздел описывает конфигурацию работы встроенного веб приложения Blank в части настройки отображения Store.
 
 ## Типы отображения Store
-*   [grid](/doc/store-displaying/#grid);
-*   [html](/doc/store-displaying/#html);
-*   [list](/doc/store-displaying/#list);
-*   [single](/doc/store-displaying/#single);
-*   [table](/doc/store-displaying/#table).
+*   [grid](/site/doc/store-displaying/#grid);
+*   [html](/site/doc/store-displaying/#html);
+*   [list](/site/doc/store-displaying/#list);
+*   [single](/site/doc/store-displaying/#single);
+*   [table](/site/doc/store-displaying/#table).
 
 ## grid
 Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.
@@ -21,7 +21,7 @@ title = "Store displaying"
 ## html
 Если отображение не предполагает интерактивных элементов и требуется просто отобразить данные или статическую
 страницу, можно включить тип отображения html. При использовании не забудьте описать шаблон
-[html](/doc/store_reference/#html) для отрисовки страницы.
+[html](/site/doc/store_reference/#html) для отрисовки страницы.
 
 ## list
 Отображение по-умолчанию. Список с панелью просмотра выбранного элемента, так называемый master-detail view. Подходит в большинстве случаев.
@@ -50,4 +50,4 @@ title = "Store displaying"
 
 ## table
 Табличный тип отображения. Подходит для отображения Store с историей каких-либо событий.
-При использовании не забудьте настроить [TableColumns](/doc/store_reference/#tablecolumns)
+При использовании не забудьте настроить [TableColumns](/site/doc/store_reference/#tablecolumns)

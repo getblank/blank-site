@@ -8,35 +8,35 @@ title = "Store reference"
 
 В зависимости от типа, Store может обладать определённым набором свойств из списка:
 
-*   [access](/doc/store_reference/#access);
-*   [actions](/doc/store_reference/#actions);
-*   [baseStore](/doc/store_reference/#basestore);
-*   [config](/doc/store_reference/#config);
-*   [disableAutoSelect](/doc/store_reference/#disableautoselect);
-*   [display](/doc/store_reference/#display);
-*   [filters](/doc/store_reference/#filters);
-*   [formGroups](/doc/store_reference/#formgroups);
-*   [formTabs](/doc/store_reference/#formtabs);
-*   [headerProperty](/doc/store_reference/#headerproperty);
-*   [headerTemplate](/doc/store_reference/#headertemplate);
-*   [html](/doc/store_reference/#html);
-*   [httpApi](/doc/store_reference/#httpapi);
-*   [httpHooks](/doc/store_reference/#httphooks);
-*   [i18n](/doc/store_reference/#i18n);
-*   [indexes](/doc/store_reference/#indexes);
-*   [label](/doc/store_reference/#label);
-*   [labels](/doc/store_reference/#labels);
-*   [navGroup](/doc/store_reference/#navgroup);
-*   [navLabel](/doc/store_reference/#navlabel);
-*   [objectLifeCycle](/doc/store_reference/#objectlifecycle);
-*   [orderBy](/doc/store_reference/#orderby);
-*   [props](/doc/store_reference/#props);
-*   [states](/doc/store_reference/#states);
-*   [storeActions](/doc/store_reference/#storeactions);
-*   [storeLifeCycle](/doc/store_reference/#storelifecycle);
-*   [tableColumns](/doc/store_reference/#tablecolumns);
-*   [tasks](/doc/store_reference/#tasks);
-*   [type](/doc/store_reference/#type).
+*   [access](/site/doc/store_reference/#access);
+*   [actions](/site/doc/store_reference/#actions);
+*   [baseStore](/site/doc/store_reference/#basestore);
+*   [config](/site/doc/store_reference/#config);
+*   [disableAutoSelect](/site/doc/store_reference/#disableautoselect);
+*   [display](/site/doc/store_reference/#display);
+*   [filters](/site/doc/store_reference/#filters);
+*   [formGroups](/site/doc/store_reference/#formgroups);
+*   [formTabs](/site/doc/store_reference/#formtabs);
+*   [headerProperty](/site/doc/store_reference/#headerproperty);
+*   [headerTemplate](/site/doc/store_reference/#headertemplate);
+*   [html](/site/doc/store_reference/#html);
+*   [httpApi](/site/doc/store_reference/#httpapi);
+*   [httpHooks](/site/doc/store_reference/#httphooks);
+*   [i18n](/site/doc/store_reference/#i18n);
+*   [indexes](/site/doc/store_reference/#indexes);
+*   [label](/site/doc/store_reference/#label);
+*   [labels](/site/doc/store_reference/#labels);
+*   [navGroup](/site/doc/store_reference/#navgroup);
+*   [navLabel](/site/doc/store_reference/#navlabel);
+*   [objectLifeCycle](/site/doc/store_reference/#objectlifecycle);
+*   [orderBy](/site/doc/store_reference/#orderby);
+*   [props](/site/doc/store_reference/#props);
+*   [states](/site/doc/store_reference/#states);
+*   [storeActions](/site/doc/store_reference/#storeactions);
+*   [storeLifeCycle](/site/doc/store_reference/#storelifecycle);
+*   [tableColumns](/site/doc/store_reference/#tablecolumns);
+*   [tasks](/site/doc/store_reference/#tasks);
+*   [type](/site/doc/store_reference/#type).
 
 
 ## access
@@ -62,7 +62,7 @@ title = "Store reference"
         ]
 ~~~
 
-Подробнее о настройках доступа в Blank в разделе [Access control](/doc/access/)
+Подробнее о настройках доступа в Blank в разделе [Access control](/site/doc/access/)
 
 ## actions
 ~~~javascript
@@ -145,7 +145,7 @@ title = "Store reference"
     filters: Filter[]
 ~~~
 Массив заранее определенных запросов к БД, которые будут доступны в веб-приложении и при выполнении метода Find через API.
-Подробнее читайте в разделе [Filters](/doc/filters/)
+Подробнее читайте в разделе [Filters](/site/doc/filters/)
 
 ## formGroups
 ~~~javascript
@@ -228,7 +228,7 @@ title = "Store reference"
     httpHooks: HTTPHook[]
 ~~~
 Массив описаний методов Store, доступных через HTTP API.
-Подробнее читайте в разделе [HTTPHooks](/doc/httphooks/)
+Подробнее читайте в разделе [HTTPHooks](/site/doc/httphooks/)
 
 ## i18n {#i18n}
 ~~~javascript
@@ -248,7 +248,7 @@ title = "Store reference"
 ~~~
 
 В значениях допускается указание плейсхолдеров `%s`, которые будут заменены переданными аргументами
-при вызове метода [i18n.get()](/doc/i18n/#get);
+при вызове метода [i18n.get()](/site/doc/i18n/#get);
 
 Обратиться к записям в i18n можно через объект **$i18n** в шаблонах, или через модуль **i18n**
 в скриптах на JavaScript.
@@ -373,7 +373,7 @@ Store, но в навигации она должна называться по-
 ~~~
 Обработчики событий жизненного цикла объектов в Store на JavaScript.
 
-Подробнее читайте в разделе [ObjectLifeCycle](/doc/lifecycle_events/#objectlifecycle)
+Подробнее читайте в разделе [ObjectLifeCycle](/site/doc/lifecycle_events/#objectlifecycle)
 
 ## orderBy
 ~~~javascript
@@ -414,7 +414,7 @@ Store, но в навигации она должна называться по-
     }
 ~~~
 
-Подробнее читайте в разделе [Props reference](/doc/props_reference/)
+Подробнее читайте в разделе [Props reference](/site/doc/props_reference/)
 
 ## states
 ~~~javascript
@@ -443,7 +443,7 @@ Store, но в навигации она должна называться по-
 ~~~
 Обработчики событий жизненного цикла объектов в Store на JavaScript.
 
-Подробнее читайте в разделе [StoreLifeCycle](/doc/lifecycle_events/#storelifecycle)
+Подробнее читайте в разделе [StoreLifeCycle](/site/doc/lifecycle_events/#storelifecycle)
 
 ## tableColumns
 ~~~javascript
@@ -467,7 +467,7 @@ Store, но в навигации она должна называться по-
 ~~~
 Задачи, требующие периодического запуска.
 
-Подробнее читайте в разделе [Tasks](/doc/tasks/)
+Подробнее читайте в разделе [Tasks](/site/doc/tasks/)
 
 ## type
 ~~~javascript

@@ -1294,7 +1294,7 @@ section .container .summary p span {
   height: 400px;
   margin-top: -50px;
   padding: 0;
-  background: url("/img/top2.jpg");
+  background: url("/site/img/top2.jpg");
   background-size: cover;
   background-position: 50% 0%;
   text-align: center;

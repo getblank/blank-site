@@ -1,11 +1,11 @@
 +++
 date = "2016-09-08T13:07:50+05:00"
 title = "I18n"
-url = "/doc/i18n/"
+url = "/site/doc/i18n/"
 [menu.doc]
     parent = "serverjs"
     weight = 200
-    url = "/doc/i18n/"
+    url = "/site/doc/i18n/"
 +++
 
 Модуль `i18n` применяется при создании мультиязычных приложений.
@@ -34,7 +34,7 @@ i18n.get(path[, locale[, params...]]);
 
 **locale**
 
-Необходимая локаль (string, опционально). Если параметр опущен, будет использована [системная локаль по-умолчанию](/doc/settings/#defaultLocale).
+Необходимая локаль (string, опционально). Если параметр опущен, будет использована [системная локаль по-умолчанию](/site/doc/settings/#defaultLocale).
 
 **params**
 

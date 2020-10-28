@@ -10,27 +10,27 @@ title = "Props modeling"
 применимый к каждому типу полей.
 
 ## Типы полей
-*   [action](/doc/props-modeling/#action);
-*   [any](/doc/props-modeling/#any);
-*   [bool](/doc/props-modeling/#bool);
-*   [date](/doc/props-modeling/#date);
-*   [file](/doc/props-modeling/#file);
-*   [float](/doc/props-modeling/#float);
-*   [int](/doc/props-modeling/#int);
-*   [object](/doc/props-modeling/#object);
-*   [objectList](/doc/props-modeling/#objectlist);
-*   [ref](/doc/props-modeling/#ref);
-*   [refList](/doc/props-modeling/#reflist);
-*   [string](/doc/props-modeling/#string);
-*   [virtual](/doc/props-modeling/#virtual);
-*   [virtualRefList](/doc/props-modeling/#virtualreflist).
+*   [action](/site/doc/props-modeling/#action);
+*   [any](/site/doc/props-modeling/#any);
+*   [bool](/site/doc/props-modeling/#bool);
+*   [date](/site/doc/props-modeling/#date);
+*   [file](/site/doc/props-modeling/#file);
+*   [float](/site/doc/props-modeling/#float);
+*   [int](/site/doc/props-modeling/#int);
+*   [object](/site/doc/props-modeling/#object);
+*   [objectList](/site/doc/props-modeling/#objectlist);
+*   [ref](/site/doc/props-modeling/#ref);
+*   [refList](/site/doc/props-modeling/#reflist);
+*   [string](/site/doc/props-modeling/#string);
+*   [virtual](/site/doc/props-modeling/#virtual);
+*   [virtualRefList](/site/doc/props-modeling/#virtualreflist).
 
 Ниже перечислены общие свойства, а так же собственные свойства для каждого типа.
 
 ## Общие свойства
 
 ### access
-Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству [access](/doc/store_reference/#access) Store.
+Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству [access](/site/doc/store_reference/#access) Store.
 
 ### configurable
 Внутреннее свойство для Store по-умолчанию (bool). Определяет возможность переопределения свойств поля в пользовательской конфигурации.
@@ -45,7 +45,7 @@ title = "Props modeling"
 
 ## action
 Поле данного типа не сохраняется в БД, используется только пользовательском интерфейсе. Подробнее в разделе
-[Props displaying](/doc/props-displaying/#action).
+[Props displaying](/site/doc/props-displaying/#action).
 
 ## any
 Поле может принимать любой тип данных.
@@ -90,7 +90,7 @@ title = "Props modeling"
 
 ## int
 Целочисленный тип.
-Набор собственных свойств аналогичен [type:float](/doc/props-modeling/#float).
+Набор собственных свойств аналогичен [type:float](/site/doc/props-modeling/#float).
 
 ## object
 Вложенная структура данных. Поддерживается только один уровень вложенности объектов.
@@ -133,20 +133,20 @@ props: {
 
 ## ref
 Ссылка на другой объект. Подходит для связей 1-1, N-1. Значением является строка с идентификатором объекта.
-Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе [References sync](/doc/ref_sync/).
+Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе [References sync](/site/doc/ref_sync/).
 
 ### Свойства
 
 #### disableRefSync
 Флаг, указывающий, что не требуется проводить обновление связи данного поля (bool).
-Подробнее о механизме каскадного обновления связей читайте в разделе [References sync](/doc/ref_sync/)
+Подробнее о механизме каскадного обновления связей читайте в разделе [References sync](/site/doc/ref_sync/)
 
 #### oppositeProp
-Название поля в Store, определённой свойством [store](/doc/props-modeling/#store) (строка).
+Название поля в Store, определённой свойством [store](/site/doc/props-modeling/#store) (строка).
 Требуется для работы механизма каскадного обновления связей.
 
 #### populateIn
-Поле, в которое будет загружен соответствующий объект из Store определённом в свойстве [store](/doc/props-modeling/#store).
+Поле, в которое будет загружен соответствующий объект из Store определённом в свойстве [store](/site/doc/props-modeling/#store).
 ```javascript
 populateIn: "user",
 ```
@@ -169,9 +169,9 @@ populateIn: {
 ## refList
 Массив ссылок на другие объекты, используется для создания связей 1-N, M-N. Значение записывается в виде
 массива строковых идентификаторов.
-Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе [References sync](/doc/ref_sync/).
+Работает каскадное обновление связей, подробнее об этом механизме читайте в разделе [References sync](/site/doc/ref_sync/).
 
-Набор собственных свойств аналогичен [type:ref](/doc/props-modeling/#ref).
+Набор собственных свойств аналогичен [type:ref](/site/doc/props-modeling/#ref).
 
 ## string
 Строковый тип.
@@ -211,4 +211,4 @@ load: function ($item, $user) {
 
 ## virtualRefList
 Используется только в пользовательском интерфейсе. Значения данных полей не сохраняются в БД.
-Подробнее в [Props displaying](/doc/props-displaying/#virtualreflist).
+Подробнее в [Props displaying](/site/doc/props-displaying/#virtualreflist).

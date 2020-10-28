@@ -14,29 +14,29 @@ title = "Props displaying"
 т.е. свойства  `display`.
 
 ## Типы отображения полей
-*   [action](/doc/props-displaying/#action);
-*   [autocomplete](/doc/props-displaying/#autocomplete);
-*   [checkbox](/doc/props-displaying/#checkbox);
-*   [checkList](/doc/props-displaying/#checklist);
-*   [code](/doc/props-displaying/#code);
-*   [codeEditor](/doc/props-displaying/#codeeditor);
-*   [colorPicker](/doc/props-displaying/#colorpicker);
-*   [datePicker](/doc/props-displaying/#datepicker);
-*   [dateRange](/doc/props-displaying/#daterange);
-*   [filePicker](/doc/props-displaying/#filepicker);
-*   [html](/doc/props-displaying/#html);
-*   [masked](/doc/props-displaying/#masked);
-*   [none](/doc/props-displaying/#none);
-*   [numberInput](/doc/props-displaying/#numberinput);
-*   [objectList](/doc/props-displaying/#objectlist);
-*   [password](/doc/props-displaying/#password);
-*   [react](/doc/props-displaying/#react);
-*   [searchBox](/doc/props-displaying/#searchbox);
-*   [select](/doc/props-displaying/#select);
-*   [text](/doc/props-displaying/#text);
-*   [textArea](/doc/props-displaying/#textarea);
-*   [textInput](/doc/props-displaying/#textinput);
-*   [virtualRefList](/doc/props-displaying/#virtualreflist).
+*   [action](/site/doc/props-displaying/#action);
+*   [autocomplete](/site/doc/props-displaying/#autocomplete);
+*   [checkbox](/site/doc/props-displaying/#checkbox);
+*   [checkList](/site/doc/props-displaying/#checklist);
+*   [code](/site/doc/props-displaying/#code);
+*   [codeEditor](/site/doc/props-displaying/#codeeditor);
+*   [colorPicker](/site/doc/props-displaying/#colorpicker);
+*   [datePicker](/site/doc/props-displaying/#datepicker);
+*   [dateRange](/site/doc/props-displaying/#daterange);
+*   [filePicker](/site/doc/props-displaying/#filepicker);
+*   [html](/site/doc/props-displaying/#html);
+*   [masked](/site/doc/props-displaying/#masked);
+*   [none](/site/doc/props-displaying/#none);
+*   [numberInput](/site/doc/props-displaying/#numberinput);
+*   [objectList](/site/doc/props-displaying/#objectlist);
+*   [password](/site/doc/props-displaying/#password);
+*   [react](/site/doc/props-displaying/#react);
+*   [searchBox](/site/doc/props-displaying/#searchbox);
+*   [select](/site/doc/props-displaying/#select);
+*   [text](/site/doc/props-displaying/#text);
+*   [textArea](/site/doc/props-displaying/#textarea);
+*   [textInput](/site/doc/props-displaying/#textinput);
+*   [virtualRefList](/site/doc/props-displaying/#virtualreflist).
 
 
 ## Общие свойства
@@ -52,7 +52,7 @@ title = "Props displaying"
 
 ### formGroup
 Идентификатор группы для отображения поля (строка).
-Группы определяются в Store свойстве [formGroups](/doc/store_reference/#formgroup).
+Группы определяются в Store свойстве [formGroups](/site/doc/store_reference/#formgroup).
 
 ### formOrder
 Число, определяющее место отображения поля на форме (int). Может быть отрицательным.
@@ -60,7 +60,7 @@ title = "Props displaying"
 
 ### formTab
 Идентификатор табы для отображения поля (строка).
-Табы определяются в Store свойстве [formTabs](/doc/store_reference/#formtabs).
+Табы определяются в Store свойстве [formTabs](/site/doc/store_reference/#formtabs).
 
 ### hidden
 Условие, при выполнении которого поле будет скрыто с формы (строка).
@@ -116,7 +116,7 @@ actions: [
 
 ### Свойства
 #### disableCustomInput
-Запрет ввода значений не определённых свойством [options](/doc/props-displaying/#autocomplete-options) (bool).
+Запрет ввода значений не определённых свойством [options](/site/doc/props-displaying/#autocomplete-options) (bool).
 Если установлено в `true`, то можно будет вводить только определённые значения.
 
 #### options {#autocomplete-options}
@@ -167,7 +167,7 @@ actions: [
 
 ### Свойства
 #### disableCustomInput
-Запрет ввода значений не определённых свойством [options](/doc/props-displaying/#colorpicker-options) (bool).
+Запрет ввода значений не определённых свойством [options](/site/doc/props-displaying/#colorpicker-options) (bool).
 Если установлено в `true`, то можно будет только выбрать из определённых значений цвета.
 
 #### options {#colorpicker-options}
@@ -208,7 +208,7 @@ HTML тэга `input`.
 
 
 ##  html
-Отображение значения поля по определённому в свойстве [html](/doc/props-displaying/#html-html) шаблону.
+Отображение значения поля по определённому в свойстве [html](/site/doc/props-displaying/#html-html) шаблону.
 Шаблон обрабатывается через handlebars.
 
 ### Свойства
@@ -222,7 +222,7 @@ HTML тэга `input`.
 
 
 ##  masked
-Текстовое поле ввода данных по маске, определённой в свойстве [mask](/doc/props-displaying/#masked-mask).
+Текстовое поле ввода данных по маске, определённой в свойстве [mask](/site/doc/props-displaying/#masked-mask).
 
 ![masked](/img/display/masked.gif)
 
@@ -267,7 +267,7 @@ HTML тэга `input`.
 Поле ввода текста, при этом вводимые символы скрыты за звездочками.
 
 ##  react
-Отображение поля с помощью кастомного компонента ReactJS, определённого в свойстве [loadComponent](/doc/props-displaying/#react-loadComponent).
+Отображение поля с помощью кастомного компонента ReactJS, определённого в свойстве [loadComponent](/site/doc/props-displaying/#react-loadComponent).
 
 ### Свойства
 #### loadComponent
@@ -275,12 +275,12 @@ HTML тэга `input`.
 
 ##  searchBox
 Поле поиска и ввода объектов из Store,
-определённой в свойстве [store](/doc/props-modeling/#ref-store);
+определённой в свойстве [store](/site/doc/props-modeling/#ref-store);
 
 ### Свойства
 #### extraQuery
 Дополнительный запрос в формате [MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/), который будет
-добавлен через логическое *И* при поиске объектов в Store, определённом в свойстве [store](/doc/props-modeling/#ref-store).
+добавлен через логическое *И* при поиске объектов в Store, определённом в свойстве [store](/site/doc/props-modeling/#ref-store).
 
 #### searchBy
 Поле или поля по которым следует производить поиск объектов (строка или массив строк).
@@ -289,7 +289,7 @@ HTML тэга `input`.
 Handlebars шаблон для отображения выбранных элементов.
 
 ##  select
-Поле выбора одного из нескольких вариантов, определённых в свойстве [options](/doc/props-displaying/#select-options).
+Поле выбора одного из нескольких вариантов, определённых в свойстве [options](/site/doc/props-displaying/#select-options).
 
 ### Свойства
 #### options {#select-options}
@@ -337,17 +337,17 @@ Handlebars шаблон для отображения выбранных эле�
 Автоматически устанавливаемый тип отображения для полей типа `virtualRefList`. Отображается в виде таблицы связанных объектов.
 Не требует указания.
 
-В зависимости от характера связи, следует указать либо [foreignKey](/doc/props-displaying/#foreignkey) при непосредственном
-хранении ссылки на объект в связанных объектах, либо [query](/doc/props-displaying/#query), если связь более сложная.
+В зависимости от характера связи, следует указать либо [foreignKey](/site/doc/props-displaying/#foreignkey) при непосредственном
+хранении ссылки на объект в связанных объектах, либо [query](/site/doc/props-displaying/#query), если связь более сложная.
 
 ### Свойства
 #### foreignKey
-Определяет поле с `type:ref` в Store из свойства [store](/doc/props-modeling/#store), содержащее ссылку на текущее Store
+Определяет поле с `type:ref` в Store из свойства [store](/site/doc/props-modeling/#store), содержащее ссылку на текущее Store
 по которому будет делаться выборка данных для отображения.
 
 #### tableColumns
-Описание столбцов отображаемой таблицы. Настраивается аналогично [tableColumns](/doc/store_reference/#tablecolumns) в Store.
+Описание столбцов отображаемой таблицы. Настраивается аналогично [tableColumns](/site/doc/store_reference/#tablecolumns) в Store.
 
 #### query
 Запрос в формате [MongoDB Query](https://docs.mongodb.com/manual/tutorial/query-documents/), который будет
-использован для поиска объектов в Store, определённом в свойстве [store](/doc/props-modeling/#ref-store).
+использован для поиска объектов в Store, определённом в свойстве [store](/site/doc/props-modeling/#ref-store).

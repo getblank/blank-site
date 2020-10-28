@@ -1,24 +1,24 @@
 +++
 date = "2016-09-08T17:16:00+05:00"
 title = "Actions"
-url = "/doc/actions/"
+url = "/site/doc/actions/"
 [menu.doc]
     parent = "serverjs"
     weight = 5
-    url = "/doc/actions/"
+    url = "/site/doc/actions/"
 +++
 
 Actions&nbsp;&mdash; скрипты на JavaScript, производящие некоторые действия над объектами, хранящимися в Store.
-Действия доступны через Websocket API и REST API. Формат описания Actions подробно рассмотрен в [Store Reference](/doc/store_reference/#actions).
+Действия доступны через Websocket API и REST API. Формат описания Actions подробно рассмотрен в [Store Reference](/site/doc/store_reference/#actions).
 Выполнять Actions могут только авторизованные пользователи.
 
-Скрипты имееют возможность выполнять запросы к базе данных с помощью модуля [$db](/doc/db/).
+Скрипты имееют возможность выполнять запросы к базе данных с помощью модуля [$db](/site/doc/db/).
 
 ### Доступные объекты
 
 #### $item
 
-Объект над которым выполняется Action. Для [StoreActions](/doc/store_reference/#storeactions) `$item` не передаётся.
+Объект над которым выполняется Action. Для [StoreActions](/site/doc/store_reference/#storeactions) `$item` не передаётся.
 
 #### $user
 
@@ -30,12 +30,12 @@ Actions&nbsp;&mdash; скрипты на JavaScript, производящие н
 
 #### $filter
 
-Только для [StoreActions](/doc/store_reference/#storeactions). При вызове из веб-приложения содержит текущие значения фильтров.
+Только для [StoreActions](/site/doc/store_reference/#storeactions). При вызове из веб-приложения содержит текущие значения фильтров.
 
 #### $request
 
-Данные HTTP запроса, в случае, если Action.type установлен в `http`, либо если Action вызывается через [REST API](/doc/httprest/).
-Подробнее об объекте `$request` читайте в разделе [Serverside JS API: $request](/doc/request/)
+Данные HTTP запроса, в случае, если Action.type установлен в `http`, либо если Action вызывается через [REST API](/site/doc/httprest/).
+Подробнее об объекте `$request` читайте в разделе [Serverside JS API: $request](/site/doc/request/)
 
 ### Возврат результата
 
@@ -50,4 +50,4 @@ throw new UserError("some error with text"); // текст ошибки буде
 
 Если скрипт выполняет асинхронные инструкции, следует вернуть `Promise`.
 
-Для HTTP Actions возвращаемый объект должен соответствовать структуре `Response` описанной в  [HTTP Hooks](/doc/httphooks/#structure).
+Для HTTP Actions возвращаемый объект должен соответствовать структуре `Response` описанной в  [HTTP Hooks](/site/doc/httphooks/#structure).

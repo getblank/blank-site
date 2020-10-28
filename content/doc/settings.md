@@ -6,11 +6,11 @@ title = "Конфигурация"
     weight = 30
 +++
 
-Настройка Blank производится в нескольких Store типа `map`, описанных в формате [Blank Schema](/doc/schema/).
+Настройка Blank производится в нескольких Store типа `map`, описанных в формате [Blank Schema](/site/doc/schema/).
 
-*   [_serverSettings](/doc/settings/#server)&nbsp;&mdash; параметры сервера;
-*   [_commonSettings](/doc/settings/#common)&nbsp;&mdash; параметры, которые являются общими как для сервера, так и для клиентского приложения;
-*   [_nav](/doc/settings/#_nav)&nbsp;&mdash; описание навигации клиентского приложения;
+*   [_serverSettings](/site/doc/settings/#server)&nbsp;&mdash; параметры сервера;
+*   [_commonSettings](/site/doc/settings/#common)&nbsp;&mdash; параметры, которые являются общими как для сервера, так и для клиентского приложения;
+*   [_nav](/site/doc/settings/#_nav)&nbsp;&mdash; описание навигации клиентского приложения;
 
 ## _serverSettings {#server}
 
@@ -32,7 +32,7 @@ _serverSettings: {
 
 **facebookClientSecret**
 
-Секретный ключ для [интеграции с Facebook](/doc/facebook/).
+Секретный ключ для [интеграции с Facebook](/site/doc/facebook/).
 
 **jwtTtl**
 
@@ -151,7 +151,7 @@ _commonSettings: {
 
 **facebookClientId**
 
-Идентификатор приложения для [интеграции с Facebook](/doc/facebook/).
+Идентификатор приложения для [интеграции с Facebook](/site/doc/facebook/).
 
 **lessVars**
 

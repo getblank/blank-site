@@ -4,7 +4,6 @@
 
 <div id="top">
     <div class="top-content">
-        <!--<h1><span style="color: #009688; display: none;">_</span><span>Blank</span></h1>-->
         <h1>Создайте back-end. Быстро. Легко.</h1>
         <h3>
             Мощный инструмент прототипирования и публикации для разработчиков
@@ -133,7 +132,7 @@
 <section class="technologies">
     <div class="container">
         <h2 id="technology">Технологии</h2>
-        <img src="/img/technologies.svg" alt="technologies">
+        <img src="img/technologies.svg" alt="technologies">
         <div class="summary">
             <p>
                 <span>Blank</span> разработан на современных и широко известных языках программирования&nbsp;&mdash; <span>Go</span>                и
@@ -144,44 +143,11 @@
                 </br>
                 При разработке на Blank не нужно изучать Go&nbsp;&mdash; все делается на JavaScript, для этого обработчики задач реализованы
                 на <span><a href="https://www.nodejs.org/" target="_blank">Node&nbsp;JS</a></span>. Подробнее
-                об API для разработчиков читайте в <a href="/doc/">документации</a>. Для хранения данных мы используем <span><a href="https://www.mongodb.com/" target="_blank">MongoDB</a></span>                и <span>
+                об API для разработчиков читайте в <a href="doc/">документации</a>. Для хранения данных мы используем <span><a href="https://www.mongodb.com/" target="_blank">MongoDB</a></span>                и <span>
                         <a href="https://clickhouse.yandex/" target="_blank">Clickhouse</a></span>.
             </p>
         </div>
-        <!--<p>Go был разработан компанией
-                    Google и официально представлен в 2009 году. Google и другие компании активно используют программы на Go в своей работе.
-                    JavaScript &mdash; самый распротраненный язык для написания сценариев, он используется почти каждым сайтом в сети Интернет</p>-->
     </div>
 </section>
 
-<!--<section class="subscribe-form">
-        <div class="container">
-            <h2>Запуск 23.02.2017</h2>
-            <p>Подпишитесь на новости и попробуйте Blank одним из первых</p>
-            <div id="subscribe-form"></div>
-        </div>
-    </section>-->
-
-<!--<section id="blog">
-        <div class="post-list">
-            <h2 class="header">Новое в блоге</h2>
-            {{ range first 3 .Data.Pages }}
-                {{ if eq .Type "post"}}
-                    <article class="post post-preview">
-                        <div class="summary">
-                            <span class="post-date">{{ partial "post_date.html" . }}</span>
-                            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                            {{ partial "tags.html" . }}
-                            <div class="content">
-                            {{ .Summary }}
-                            </div>
-                        </div>
-                        {{ if .Truncated }}
-                            <a class="read-more-link" href="{{ .RelPermalink }}">Читать дальше →</a>
-                        {{ end }}
-                    </article>
-                {{ end }}
-            {{ end }}
-        </div>
-    </section>-->
 {{ partial "footer.html" . }}
