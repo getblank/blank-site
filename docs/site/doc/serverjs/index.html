@@ -20,10 +20,10 @@
     <base href="https://getblank.github.io/site/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>Serverside JS API &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.github.io/site/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.github.io/site/site/doc/serverjs/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="/site/css/app.css" media="all" rel="stylesheet"/>
@@ -166,7 +166,7 @@
       
         <ul>
           
-            <li >
+            <li  class="active">
               <a href="/site/doc/serverjs/">Описание</a>
             </li>
           
@@ -216,7 +216,7 @@
               <a href="/site/doc/httprest/">REST</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/site/doc/httpauth/">Auth</a>
             </li>
           
@@ -242,33 +242,36 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>Serverside JS API</h1>
       <div class="content">
-        <p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
-<h3 id="авторизация">Авторизация</h3>
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
-</code></pre><p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>access_token</code>,
-содержащее JWT token для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    {
-        <span style="color:#f92672">&#34;access_token&#34;</span>: <span style="color:#e6db74">&#34;05547313-0ceb-41ad-965c-dee3c8992c71&#34;</span>,
-        <span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>}
-    }
-</code></pre></div><p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-<h3 id="регистрация">Регистрация</h3>
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre><p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+        <p>Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:</p>
+<ul>
+<li><a href="/site/doc/lifecycle_events/">Обработчики событий</a>, происходящих с объектами в Store;</li>
+<li>Загрузчики <a href="/site/doc/props_reference/#virtual">виртуальных полей</a>;</li>
+<li><a href="/site/doc/store_reference/#actions">Действия над объектами</a>, хранящимися в Store;</li>
+<li><a href="/site/doc/store_reference/#storeactions">Действия</a>, которые относятся ко всему Store;</li>
+<li><a href="/site/doc/lifecycle_events/#storelifecycle">Обработчики события</a>, жизненного цикла Store;</li>
+<li><a href="/site/doc/httphooks/">Обработчики HTTP запросов</a>;</li>
+<li><a href="/site/doc/tasks/">Задачи, требующие периодического запуска</a>.</li>
+</ul>
+<p>Во всех обработчиках доступна функция <code>require()</code>, позволяющая запускать встроенные в node.js и платформу JavaScript модули.
+Так же допускается запуск собственных <strong>CommonJS</strong> модулей, расположенных в директории <code>/lib</code> проекта.</p>
+<h3 id="встроенные-модули">Встроенные модули:</h3>
+<ul>
+<li><a href="/site/doc/db/">$db</a> — работа с базой данных;</li>
+<li><a href="/site/doc/email/">email</a> — работа с электронной почтой;</li>
+<li><a href="https://github.com/bitinn/node-fetch">fetch</a> <a href="/site/doc/serverjs/#embeddedmodules">*</a> — работа с http запросами;</li>
+<li><a href="/site/doc/files/">files</a> — работа со встроенным файловым хранилищем;</li>
+<li><a href="/site/doc/fs/">fs</a> — работа с файловой системой;</li>
+<li><a href="http://handlebarsjs.com/">handlebars</a> <a href="/site/doc/serverjs/#embeddedmodules">*</a> — шаблонизатор;</li>
+<li><a href="/site/doc/i18n/">i18n</a> — интернационализация;</li>
+<li><a href="http://momentjs.com/">moment</a> <a href="/site/doc/serverjs/#embeddedmodules">*</a> — работа с датами;</li>
+<li><a href="/site/doc/queue/">queue</a> — работа с очередями и списками;</li>
+<li><a href="https://github.com/crcn/sift.js">sift</a> <a href="/site/doc/serverjs/#embeddedmodules">*</a> —
+запросы к данным в формате <a href="https://docs.mongodb.com/manual/tutorial/query-documents/">MongoDB Query</a>;</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->
+Модули, помеченные знаком <code>*</code>, разработаны сторонними разработчиками, но входят в поставку Blank.</p>
 
       </div>
     </div>

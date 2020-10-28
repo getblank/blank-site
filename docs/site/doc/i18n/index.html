@@ -20,10 +20,10 @@
     <base href="https://getblank.github.io/site/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>I18n &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.github.io/site/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.github.io/site/site/doc/i18n/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="/site/css/app.css" media="all" rel="stylesheet"/>
@@ -194,7 +194,7 @@
               <a href="/site/doc/fs/">FS</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/site/doc/i18n/">I18n</a>
             </li>
           
@@ -216,7 +216,7 @@
               <a href="/site/doc/httprest/">REST</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/site/doc/httpauth/">Auth</a>
             </li>
           
@@ -242,33 +242,25 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>I18n</h1>
       <div class="content">
-        <p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
-<h3 id="авторизация">Авторизация</h3>
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
-</code></pre><p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>access_token</code>,
-содержащее JWT token для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    {
-        <span style="color:#f92672">&#34;access_token&#34;</span>: <span style="color:#e6db74">&#34;05547313-0ceb-41ad-965c-dee3c8992c71&#34;</span>,
-        <span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>}
-    }
-</code></pre></div><p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-<h3 id="регистрация">Регистрация</h3>
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre><p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+        <p>Модуль <code>i18n</code> применяется при создании мультиязычных приложений.</p>
+<h3 id="use">Подключение</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i18n</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;i18n&#34;</span>);
+</code></pre></div><h3 id="get">get()</h3>
+<p>Метод <code>i18n.get()</code> возвращает фразу для необходимой локали.</p>
+<h4 id="синтаксис">Синтаксис</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">i18n</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">path</span>[, <span style="color:#a6e22e">locale</span>[, <span style="color:#a6e22e">params</span>...]]);
+</code></pre></div><h4 id="параметры">Параметры</h4>
+<p><strong>path</strong></p>
+<p>Адрес фразы (string) в формате <code>storeName.param</code>. Фразы в Store определяются в параметре <a href="doc/store_reference/#i18n">i18n</a>.</p>
+<p><strong>locale</strong></p>
+<p>Необходимая локаль (string, опционально). Если параметр опущен, будет использована <a href="/site/doc/settings/#defaultLocale">системная локаль по-умолчанию</a>.</p>
+<p><strong>params</strong></p>
+<p>Параметры, которыми необходимо заменить плейсхолдеры <code>%s</code> в искомой строке. Если параметры отсутствуют,
+замена плейсхолдеров производиться не будет.</p>
+<h4 id="возвращаемые-значения">Возвращаемые значения</h4>
+<p>Искомая строка с заменёнными плейсхолдерами, либо пустая строка, если по переданному адресу ничего не найдено.</p>
 
       </div>
     </div>

@@ -20,10 +20,10 @@
     <base href="https://getblank.github.io/site/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>$request &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.github.io/site/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.github.io/site/site/doc/request/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="/site/css/app.css" media="all" rel="stylesheet"/>
@@ -178,7 +178,7 @@
               <a href="/site/doc/db/">$db</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/site/doc/request/">$request</a>
             </li>
           
@@ -216,7 +216,7 @@
               <a href="/site/doc/httprest/">REST</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/site/doc/httpauth/">Auth</a>
             </li>
           
@@ -242,33 +242,34 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>$request</h1>
       <div class="content">
-        <p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
-<h3 id="авторизация">Авторизация</h3>
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
-</code></pre><p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>access_token</code>,
-содержащее JWT token для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    {
-        <span style="color:#f92672">&#34;access_token&#34;</span>: <span style="color:#e6db74">&#34;05547313-0ceb-41ad-965c-dee3c8992c71&#34;</span>,
-        <span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>}
-    }
-</code></pre></div><p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-<h3 id="регистрация">Регистрация</h3>
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre><p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+        <p>Объект <code>$request</code> передается обработчикам <code>HTTP Hooks</code>, <code>Actions</code> и <code>StoreActions</code> с типом <code>http</code>, либо доступным через <a href="/site/doc/httprest/">REST API</a>.</p>
+<h3 id="параметры">Параметры</h3>
+<h4 id="body">body</h4>
+<p>Содержимое HTTP запроса.</p>
+<h4 id="form">form</h4>
+<p>Содержимое отправленной формы в виде JavaScript Object.</p>
+<h4 id="header">header</h4>
+<p>Содержимое HTTP заголовка в виде JavaScript Object.</p>
+<h4 id="ip">ip</h4>
+<p>IP адрес инициатора HTTP запроса.</p>
+<h4 id="params">params</h4>
+<p>Содержит данные параметров, определённых в свойстве <code>uri</code> <code>HTTP Hooks</code>. Пример записи <code>uri</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">{
+    <span style="color:#a6e22e">uri</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;user/:id&#34;</span>
+}
+</code></pre></div><p>Таким образом, идентификатор пользователя (параметр <code>:id</code>) будет доступен через:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">$request</span>.<span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#34;id&#34;</span>];
+</code></pre></div><h4 id="query">query</h4>
+<p>Содержит параметры запроса из URL в виде JavaScript Object.</p>
+<p>Например, для запроса <code>http://some.domain/?foo=bar&amp;bar=baz</code>, <code>query</code> будет содержать следующий объект:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">{
+    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;bar&#34;</span>],
+    <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;baz&#34;</span>]
+}
+</code></pre></div><h4 id="referer">referer</h4>
+<p>Содержит значение HTTP заголовка <code>Referer</code></p>
 
       </div>
     </div>

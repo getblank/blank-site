@@ -20,10 +20,10 @@
     <base href="https://getblank.github.io/site/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>Actions &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.github.io/site/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.github.io/site/site/doc/actions/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="/site/css/app.css" media="all" rel="stylesheet"/>
@@ -170,7 +170,7 @@
               <a href="/site/doc/serverjs/">Описание</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/site/doc/actions/">Actions</a>
             </li>
           
@@ -216,7 +216,7 @@
               <a href="/site/doc/httprest/">REST</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/site/doc/httpauth/">Auth</a>
             </li>
           
@@ -242,33 +242,32 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>Actions</h1>
       <div class="content">
-        <p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
-<h3 id="авторизация">Авторизация</h3>
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
-</code></pre><p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>access_token</code>,
-содержащее JWT token для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    {
-        <span style="color:#f92672">&#34;access_token&#34;</span>: <span style="color:#e6db74">&#34;05547313-0ceb-41ad-965c-dee3c8992c71&#34;</span>,
-        <span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>}
-    }
-</code></pre></div><p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-<h3 id="регистрация">Регистрация</h3>
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre><p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+        <p>Actions — скрипты на JavaScript, производящие некоторые действия над объектами, хранящимися в Store.
+Действия доступны через Websocket API и REST API. Формат описания Actions подробно рассмотрен в <a href="/site/doc/store_reference/#actions">Store Reference</a>.
+Выполнять Actions могут только авторизованные пользователи.</p>
+<p>Скрипты имееют возможность выполнять запросы к базе данных с помощью модуля <a href="/site/doc/db/">$db</a>.</p>
+<h3 id="доступные-объекты">Доступные объекты</h3>
+<h4 id="item">$item</h4>
+<p>Объект над которым выполняется Action. Для <a href="/site/doc/store_reference/#storeactions">StoreActions</a> <code>$item</code> не передаётся.</p>
+<h4 id="user">$user</h4>
+<p>Пользователь, выполняющий Action.</p>
+<h4 id="data">$data</h4>
+<p>Данные формы, заполненной пользователем, в случае, если определены <code>props</code> для Action.</p>
+<h4 id="filter">$filter</h4>
+<p>Только для <a href="/site/doc/store_reference/#storeactions">StoreActions</a>. При вызове из веб-приложения содержит текущие значения фильтров.</p>
+<h4 id="request">$request</h4>
+<p>Данные HTTP запроса, в случае, если Action.type установлен в <code>http</code>, либо если Action вызывается через <a href="/site/doc/httprest/">REST API</a>.
+Подробнее об объекте <code>$request</code> читайте в разделе <a href="/site/doc/request/">Serverside JS API: $request</a></p>
+<h3 id="возврат-результата">Возврат результата</h3>
+<p>В случае, если скрипт возвращает какие-либо данные, они будут переданы инициатору вызова Action.
+Если скрипт выполнился неудачно, следует «бросить ошибку». Для передачи текста ошибки,
+используется объект <code>UserError</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;some error&#34;</span>); <span style="color:#75715e">// текст ошибки будет выведен в логе, но не передан инициатору.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UserError</span>(<span style="color:#e6db74">&#34;some error with text&#34;</span>); <span style="color:#75715e">// текст ошибки будет выведен в логе, и передан инициатору.
+</span></code></pre></div><p>Если скрипт выполняет асинхронные инструкции, следует вернуть <code>Promise</code>.</p>
+<p>Для HTTP Actions возвращаемый объект должен соответствовать структуре <code>Response</code> описанной в  <a href="/site/doc/httphooks/#structure">HTTP Hooks</a>.</p>
 
       </div>
     </div>

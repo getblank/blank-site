@@ -20,10 +20,10 @@
     <base href="https://getblank.github.io/site/">
 
     
-    <title>Auth &middot; BLANK cloud platform</title>
+    <title>Email &middot; BLANK cloud platform</title>
     
 
-    <link rel="canonical" href="https://getblank.github.io/site/doc/httpauth/">
+    <link rel="canonical" href="https://getblank.github.io/site/site/doc/email/">
     <link rel="shortcut icon" href="/img/favicon.ico" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 <link href="/site/css/app.css" media="all" rel="stylesheet"/>
@@ -182,7 +182,7 @@
               <a href="/site/doc/request/">$request</a>
             </li>
           
-            <li >
+            <li  class="active">
               <a href="/site/doc/email/">Email</a>
             </li>
           
@@ -216,7 +216,7 @@
               <a href="/site/doc/httprest/">REST</a>
             </li>
           
-            <li  class="active">
+            <li >
               <a href="/site/doc/httpauth/">Auth</a>
             </li>
           
@@ -242,33 +242,31 @@
   </div>
   <div class="doc-wrapper">
     <div class="doc">
-      <h1>Auth</h1>
+      <h1>Email</h1>
       <div class="content">
-        <p>Помимо полнофункционального WAMP API, <strong>Blank</strong> имеет в своем арсенале несколько вспомогательных HTTP методов,
-в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.</p>
-<h3 id="авторизация">Авторизация</h3>
-<p>Авторизация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/login</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    login // логин пользователя (login) или адрес электронной почты (email)
-    password // пароль
-</code></pre><p>При успешной авторизации, будет возвращен ответ со статусом <code>200</code>, в теле которого содержится JSON документ с двума полями: <code>access_token</code>,
-содержащее JWT token для последующих запросов и <code>user</code>, содержащий описание авторизованного пользователя:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">    {
-        <span style="color:#f92672">&#34;access_token&#34;</span>: <span style="color:#e6db74">&#34;05547313-0ceb-41ad-965c-dee3c8992c71&#34;</span>,
-        <span style="color:#f92672">&#34;user&#34;</span>: {<span style="color:#960050;background-color:#1e0010">...</span>}
-    }
-</code></pre></div><p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
-<h3 id="регистрация">Регистрация</h3>
-<p>Регистрация пользователя выполняется путём отправки <strong>POST</strong> запроса на адрес <code>{_commonSettings.baseUrl}/register</code>.
-Запрос должен содержать <code>form-data</code> со следующими полями:</p>
-<pre><code>    email // адрес электронной почты
-    password // пароль
-</code></pre><p>При успешной регистрации, будет возвращен пустой ответ со статусом <code>200</code>.</p>
-<p>Если любое из полей не указано, вернётся результат со статусом <code>400</code> и телом <code>invalid arguments</code>.</p>
-<p>В случае, возникновения прочих ошибок, результат может быть возвращен со статусом <code>303</code> и подробным описанием возникшей ошибки в теле ответа,
-либо со статусом <code>500</code> и телом <code>unknown error</code>.</p>
+        <p>Модуль <code>email</code> предназначен для работы с электронной почтой.</p>
+<h3 id="подключение">Подключение</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;email&#34;</span>);
+</code></pre></div><h3 id="send">send()</h3>
+<p>Метод <code>email.send()</code> отправляет электронные письма. Под капотом используется <a href="https://nodemailer.com/">Nodemailer</a>.
+Параметры подключения к SMTP серверу берутся из Store <code>emailSettings</code>.</p>
+<h4 id="синтаксис">Синтаксис</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">email</span>.<span style="color:#a6e22e">send</span>(<span style="color:#a6e22e">message</span>[, <span style="color:#a6e22e">callback</span>])
+</code></pre></div><h4 id="параметры">Параметры</h4>
+<p><strong>message</strong></p>
+<p>Отправляемое сообщение (JavaScript Object).</p>
+<p>Формат сообщения:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">{
+    <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;\&#34;Fred Foo �\&#34; &lt;foo@blurdybloop.com&gt;&#34;</span>, <span style="color:#75715e">// адрес отправителя. В случае, если аргумент отсутствует, будет использоваться адрес из Store &#34;emailSettings&#34;
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">to</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bar@blurdybloop.com, baz@blurdybloop.com&#34;</span>, <span style="color:#75715e">// адреса получателей
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">subject</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hello ✔&#34;</span> <span style="color:#75715e">// Тема письма
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#75715e">// Текст письма
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">attachments</span><span style="color:#f92672">:</span> [] <span style="color:#75715e">// Формат вложений описан здесь – https://github.com/nodemailer/nodemailer#attachments
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p><strong>callback</strong></p>
+<p>Функция, которая будет выполнена по завершению отправки (опционально).</p>
+<h4 id="возвращаемые-значения">Возвращаемые значения</h4>
+<p><code>null</code> в случае переданной функции <code>callback</code> или <code>Promise</code>, если функция не передавалась.</p>
 
       </div>
     </div>
