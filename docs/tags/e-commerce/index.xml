@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>e-commerce on BLANK cloud platform</title>
+    <link>https://getblank.github.io/site/tags/e-commerce/</link>
+    <description>Recent content in e-commerce on BLANK cloud platform</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Aug 2016 23:58:25 +0500</lastBuildDate><atom:link href="https://getblank.github.io/site/tags/e-commerce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Интернет-магазин на Blank и Hugo</title>
+      <link>https://getblank.github.io/site/post/first/</link>
+      <pubDate>Wed, 03 Aug 2016 23:58:25 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/post/first/</guid>
+      <description>&lt;p&gt;Зачем строить интернет-магазин на генераторе статических сайтов и платформе для разработки backend-а, когда есть
+множество готовых решений?&lt;/p&gt;
+&lt;p&gt;Главное – потому, что мы можем) Кроме этого, мы будем использовать самый современный стэк технологий для создания кастомного
+e-commerce решения в кратчайшие сроки. Не будет ничего лишнего, только то, что нужно для решения конкретной задачи.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

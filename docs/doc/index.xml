@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on BLANK cloud platform</title>
+    <link>https://getblank.github.io/site/doc/</link>
+    <description>Recent content in Docs on BLANK cloud platform</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Sep 2016 14:47:00 +0500</lastBuildDate><atom:link href="https://getblank.github.io/site/doc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Store displaying</title>
+      <link>https://getblank.github.io/site/doc/store-displaying/</link>
+      <pubDate>Sat, 10 Sep 2016 14:47:00 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/store-displaying/</guid>
+      <description>Данный раздел описывает конфигурацию работы встроенного веб приложения Blank в части настройки отображения Store.
+Типы отображения Store  grid; html; list; single; table.  grid Большие карточки объектов. Используйте для Store с предполагаемым количеством объектов не более 10.
+html Если отображение не предполагает интерактивных элементов и требуется просто отобразить данные или статическую страницу, можно включить тип отображения html. При использовании не забудьте описать шаблон html для отрисовки страницы.
+list Отображение по-умолчанию.</description>
+    </item>
+    
+    <item>
+      <title>Props displaying</title>
+      <link>https://getblank.github.io/site/doc/props-displaying/</link>
+      <pubDate>Fri, 09 Sep 2016 13:07:00 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/props-displaying/</guid>
+      <description>Данный раздел описывает конфигурацию работы встроенного веб приложения Blank.
+В зависимости от типа отображения поля, его вид может характеризовать определённый набор свойств. Кроме того, существует набор свойств, применимый к каждому типу отображения. Далее приведены общие свойства, а так же свойства, характерные для каждого типа отображения, т.е. свойства display.
+Типы отображения полей  action; autocomplete; checkbox; checkList; code; codeEditor; colorPicker; datePicker; dateRange; filePicker; html; masked; none; numberInput; objectList; password; react; searchBox; select; text; textArea; textInput; virtualRefList.</description>
+    </item>
+    
+    <item>
+      <title>Props modeling</title>
+      <link>https://getblank.github.io/site/doc/props-modeling/</link>
+      <pubDate>Fri, 09 Sep 2016 12:52:00 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/props-modeling/</guid>
+      <description>В зависимости от типа поля, его может характеризовать определённый набор свойств. Кроме того, существует набор свойств, применимый к каждому типу полей.
+Типы полей  action; any; bool; date; file; float; int; object; objectList; ref; refList; string; virtual; virtualRefList.  Ниже перечислены общие свойства, а так же собственные свойства для каждого типа.
+Общие свойства access Массив правил, определяющих доступ к полю. Синтаксис аналогичен свойству access Store.
+configurable Внутреннее свойство для Store по-умолчанию (bool).</description>
+    </item>
+    
+    <item>
+      <title>Actions</title>
+      <link>https://getblank.github.io/site/doc/actions/</link>
+      <pubDate>Thu, 08 Sep 2016 17:16:00 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/actions/</guid>
+      <description>Actions — скрипты на JavaScript, производящие некоторые действия над объектами, хранящимися в Store. Действия доступны через Websocket API и REST API. Формат описания Actions подробно рассмотрен в Store Reference. Выполнять Actions могут только авторизованные пользователи.
+Скрипты имееют возможность выполнять запросы к базе данных с помощью модуля $db.
+Доступные объекты $item Объект над которым выполняется Action. Для StoreActions $item не передаётся.
+$user Пользователь, выполняющий Action.
+$data Данные формы, заполненной пользователем, в случае, если определены props для Action.</description>
+    </item>
+    
+    <item>
+      <title>Конфигурация</title>
+      <link>https://getblank.github.io/site/doc/settings/</link>
+      <pubDate>Thu, 08 Sep 2016 15:11:25 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/settings/</guid>
+      <description>Настройка Blank производится в нескольких Store типа map, описанных в формате Blank Schema.
+ _serverSettings — параметры сервера; _commonSettings — параметры, которые являются общими как для сервера, так и для клиентского приложения; _nav — описание навигации клиентского приложения;  _serverSettings Используется для переопределения параметров работы серверных приложений.
+Конфигурация по-умолчанию _serverSettings: { type: &amp;#34;map&amp;#34;, entries: { facebookClientSecret: undefined, passwordResetTokenExpiration: &amp;#34;0:10&amp;#34;, registerTokenExpiration: &amp;#34;0:60&amp;#34;, ssoOrigins: undefined, }, }, facebookClientSecret
+Секретный ключ для интеграции с Facebook.</description>
+    </item>
+    
+    <item>
+      <title>$request</title>
+      <link>https://getblank.github.io/site/doc/request/</link>
+      <pubDate>Thu, 08 Sep 2016 13:13:20 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/request/</guid>
+      <description>Объект $request передается обработчикам HTTP Hooks, Actions и StoreActions с типом http, либо доступным через REST API.
+Параметры body Содержимое HTTP запроса.
+form Содержимое отправленной формы в виде JavaScript Object.
+header Содержимое HTTP заголовка в виде JavaScript Object.
+ip IP адрес инициатора HTTP запроса.
+params Содержит данные параметров, определённых в свойстве uri HTTP Hooks. Пример записи uri:
+{ uri: &amp;#34;user/:id&amp;#34; } Таким образом, идентификатор пользователя (параметр :id) будет доступен через:</description>
+    </item>
+    
+    <item>
+      <title>Queue</title>
+      <link>https://getblank.github.io/site/doc/queue/</link>
+      <pubDate>Thu, 08 Sep 2016 13:08:20 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/queue/</guid>
+      <description>Модуль queue предназначен для работы с сервером очередей Blank, представляющим сервис, двусвязных списков и очередей. В данный момент доступен только сервис двусвязных списков.
+Подключение let List = require(&amp;#34;queue&amp;#34;).List; let list = new List(&amp;#34;listName&amp;#34;); back() Переводит курсор в конец списка.
+Синтаксис queue.back(callback) Параметры callback
+Функция, которая будет выполнена по завершению (опционально).
+Возвращаемые значения null в случае переданной функции callback или Promise, если функция не передавалась. При успешном выполнении, результатом будет элемент списка.</description>
+    </item>
+    
+    <item>
+      <title>I18n</title>
+      <link>https://getblank.github.io/site/doc/i18n/</link>
+      <pubDate>Thu, 08 Sep 2016 13:07:50 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/i18n/</guid>
+      <description>Модуль i18n применяется при создании мультиязычных приложений.
+Подключение let i18n = require(&amp;#34;i18n&amp;#34;); get() Метод i18n.get() возвращает фразу для необходимой локали.
+Синтаксис i18n.get(path[, locale[, params...]]); Параметры path
+Адрес фразы (string) в формате storeName.param. Фразы в Store определяются в параметре i18n.
+locale
+Необходимая локаль (string, опционально). Если параметр опущен, будет использована системная локаль по-умолчанию.
+params
+Параметры, которыми необходимо заменить плейсхолдеры %s в искомой строке. Если параметры отсутствуют, замена плейсхолдеров производиться не будет.</description>
+    </item>
+    
+    <item>
+      <title>FS</title>
+      <link>https://getblank.github.io/site/doc/fs/</link>
+      <pubDate>Thu, 08 Sep 2016 13:07:30 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/fs/</guid>
+      <description>Модуль fs &amp;amp;mdash модуль Node FS с одним дополнительным методом.
+Подключение let fs = require(&amp;#34;fs&amp;#34;); Дополнительные методы readLib() Метод fs.readLib() предназначен для чтения дополнительных пользовательских файлов, расположенных в директории /lib/ проекта. Синтаксис и механизм работы аналогичен fs.readFile().</description>
+    </item>
+    
+    <item>
+      <title>Files</title>
+      <link>https://getblank.github.io/site/doc/files/</link>
+      <pubDate>Thu, 08 Sep 2016 13:07:20 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/files/</guid>
+      <description>Модуль files предназначен для работы со встроенным файловым хранилищем.
+Подключение let files = require(&amp;#34;files&amp;#34;); get() Метод files.get() возвращает файл из хранилища.
+Синтаксис files.get(storeName, _id[, callback]); Параметры storeName
+Store в которой хранится файл.
+_id
+Идентификатор файла в Store.
+callback
+Функция, которая будет выполнена по завершению отправки (опционально).
+Возвращаемые значения null в случае переданной функции callback или Promise, если функция не передавалась. Результатом будет содержимое файла в формате Node Buffer</description>
+    </item>
+    
+    <item>
+      <title>Email</title>
+      <link>https://getblank.github.io/site/doc/email/</link>
+      <pubDate>Thu, 08 Sep 2016 13:06:55 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/email/</guid>
+      <description>Модуль email предназначен для работы с электронной почтой.
+Подключение let email = require(&amp;#34;email&amp;#34;); send() Метод email.send() отправляет электронные письма. Под капотом используется Nodemailer. Параметры подключения к SMTP серверу берутся из Store emailSettings.
+Синтаксис email.send(message[, callback]) Параметры message
+Отправляемое сообщение (JavaScript Object).
+Формат сообщения:
+{ from: &amp;#34;\&amp;#34;Fred Foo �\&amp;#34; &amp;lt;foo@blurdybloop.com&amp;gt;&amp;#34;, // адрес отправителя. В случае, если аргумент отсутствует, будет использоваться адрес из Store &amp;#34;emailSettings&amp;#34;  to: &amp;#34;bar@blurdybloop.com, baz@blurdybloop.com&amp;#34;, // адреса получателей  subject: &amp;#34;Hello ✔&amp;#34; // Тема письма  body: &amp;#34;&amp;#34;, // Текст письма  attachments: [] // Формат вложений описан здесь – https://github.</description>
+    </item>
+    
+    <item>
+      <title>Serverside JS API</title>
+      <link>https://getblank.github.io/site/doc/serverjs/</link>
+      <pubDate>Wed, 07 Sep 2016 13:10:48 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/serverjs/</guid>
+      <description>Серверная часть платформы имеет несколько точек для выполнения собственного произвольного кода:
+ Обработчики событий, происходящих с объектами в Store; Загрузчики виртуальных полей; Действия над объектами, хранящимися в Store; Действия, которые относятся ко всему Store; Обработчики события, жизненного цикла Store; Обработчики HTTP запросов; Задачи, требующие периодического запуска.  Во всех обработчиках доступна функция require(), позволяющая запускать встроенные в node.js и платформу JavaScript модули. Так же допускается запуск собственных CommonJS модулей, расположенных в директории /lib проекта.</description>
+    </item>
+    
+    <item>
+      <title>Facebook</title>
+      <link>https://getblank.github.io/site/doc/facebook/</link>
+      <pubDate>Fri, 19 Aug 2016 21:19:48 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/facebook/</guid>
+      <description>Аутентификация пользователей Blank может выполняться через популярные социальные сети. В данном разделе описан порядок действий, необходимых для обеспечения интеграции Blank и Facebook.
+Создание приложения в Facebook Первым делом, следует создать на странице приложение, которое будет получать данные пользователя. Выбираем Website: Указываем название нового приложения. Именно его увидят пользователи при попытке войти в Blank через Facebook. Указываем контактный email и выбираем категорию, например, business. Самый важный шаг — указываем точный адрес работающего приложения на Blank.</description>
+    </item>
+    
+    <item>
+      <title>Auth</title>
+      <link>https://getblank.github.io/site/doc/httpauth/</link>
+      <pubDate>Wed, 17 Aug 2016 14:54:48 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/httpauth/</guid>
+      <description>Помимо полнофункционального WAMP API, Blank имеет в своем арсенале несколько вспомогательных HTTP методов, в частности, методы, выполняющие функции авторизации и регистрации нового пользователя. Все методы возвращают ответ в формате JSON.
+Авторизация Авторизация пользователя выполняется путём отправки POST запроса на адрес {_commonSettings.baseUrl}/login. Запрос должен содержать form-data со следующими полями:
+ login // логин пользователя (login) или адрес электронной почты (email) password // пароль При успешной авторизации, будет возвращен ответ со статусом 200, в теле которого содержится JSON документ с двума полями: access_token, содержащее JWT token для последующих запросов и user, содержащий описание авторизованного пользователя:</description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>https://getblank.github.io/site/doc/httprest/</link>
+      <pubDate>Wed, 17 Aug 2016 14:54:48 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/httprest/</guid>
+      <description>Blank может автоматически активировать HTTP REST API для хранилищ, у которых параметр httpApi установлен в true.
+При этом, так же автоматически будет сформирована документация, доступная по адресу:
+ {_commonSettings.baseUrl}/api/v1/ </description>
+    </item>
+    
+    <item>
+      <title>Сборка конфигурации</title>
+      <link>https://getblank.github.io/site/doc/build/</link>
+      <pubDate>Tue, 09 Aug 2016 00:15:38 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/build/</guid>
+      <description>Раздел находится в разработке.</description>
+    </item>
+    
+    <item>
+      <title>CLI reference</title>
+      <link>https://getblank.github.io/site/doc/cli/</link>
+      <pubDate>Tue, 09 Aug 2016 00:15:34 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/cli/</guid>
+      <description>Раздел находится в разработке.</description>
+    </item>
+    
+    <item>
+      <title>Props reference</title>
+      <link>https://getblank.github.io/site/doc/props_reference/</link>
+      <pubDate>Sat, 06 Aug 2016 22:41:33 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/props_reference/</guid>
+      <description>В зависимости от типа, поле может обладать определённым набором свойств из списка:
+ accept; access; actions; addLabel; configurable; default; disableCustomInput; disabled; disableOrder; disableRefSync; display; extraQuery; foreignKey; format; formGroup; formOrder; formTab; hidden; html; label; labelClassName; load; loadComponent; mask; max; maxLength; min; minLength; noSanitize; oppositeProp; options; pattern; placeholder; populateIn; props; query; required; searchBy; selectedTemplate; sortable; sortBy; store; style; tableColumns; tableLink; tooltip; type; utc; widgetId; widgets; сlassName.  </description>
+    </item>
+    
+    <item>
+      <title>Lifecycle events</title>
+      <link>https://getblank.github.io/site/doc/lifecycle_events/</link>
+      <pubDate>Sat, 06 Aug 2016 20:57:54 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/lifecycle_events/</guid>
+      <description>ObjectLifeCycle &amp;#34;objectLifeCycle&amp;#34;: { &amp;#34;eventName&amp;#34;: function () {} }, Обработчики событий, происходящих с объектами в Store.
+willCreate &amp;#34;willCreate&amp;#34;: function ($item, $user):Promise {} Выполняется непосредственно перед созданием нового объекта, но до проведения валидации. Используйте этот обработчик как возможность модифицировать объект перед созданием или провести дополнительную валидацию и прервать эту операцию.
+$item является ссылкой на сохраняемый объект. Все изменения, сделанные в $item, будут сохранены в БД.
+Если обработчик возвращает Promise, платформа будет ожидать его resolve/reject.</description>
+    </item>
+    
+    <item>
+      <title>HTTP hooks</title>
+      <link>https://getblank.github.io/site/doc/httphooks/</link>
+      <pubDate>Sat, 06 Aug 2016 20:10:23 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/httphooks/</guid>
+      <description>HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации, они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно или использовать Actions с типом http.
+Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: httpApi
+Структура httpHooks: HTTPHook[] HTTPHook { &amp;#34;uri&amp;#34;: &amp;#34;string&amp;#34; &amp;#34;method&amp;#34;: &amp;#34;GET&amp;#34; | &amp;#34;PUT&amp;#34; | &amp;#34;POST&amp;#34; | &amp;#34;PATCH&amp;#34; | &amp;#34;DELETE&amp;#34; | &amp;#34;HEAD&amp;#34; | &amp;#34;OPTIONS&amp;#34;, &amp;#34;script&amp;#34;: function ($request):Response } Response { &amp;#34;type&amp;#34;: &amp;#34;JSON&amp;#34; | &amp;#34;HTML&amp;#34; | &amp;#34;XML&amp;#34; | &amp;#34;file&amp;#34; | &amp;#34;redirect&amp;#34;, &amp;#34;data&amp;#34;: &amp;#34;string&amp;#34;, // Строка, которая будет передана в Body ответа, либо адрес для редиректа для type:redirect  &amp;#34;rawData&amp;#34;: any, &amp;#34;code&amp;#34;: int, // HTTP status code.</description>
+    </item>
+    
+    <item>
+      <title>Filters</title>
+      <link>https://getblank.github.io/site/doc/filters/</link>
+      <pubDate>Sat, 06 Aug 2016 19:38:05 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/filters/</guid>
+      <description>Фильтры в Blank предназначены для определения заранее заданных критериев поиска объектов в Store. В основном фильтры используются в веб-приложении, поэтому кроме запроса к БД в фильтрах настраивается его внешний вид. Однако, при запросах Find через API также можно использовать названия фильтров и передавать их значения.
+Пример для создания фильтра по владельцу объектов:
+&amp;#34;ownerFilter&amp;#34;: { //Вид фильтра в интерфейсе веб-приложения  &amp;#34;label&amp;#34;: &amp;#34;Владелец&amp;#34;, &amp;#34;display&amp;#34;: &amp;#34;searchBox&amp;#34;, &amp;#34;store&amp;#34;: &amp;#34;users&amp;#34;, &amp;#34;searchBy&amp;#34;: [&amp;#34;name&amp;#34;], &amp;#34;multi&amp;#34;: true, &amp;#34;filterBy&amp;#34;: &amp;#34;_id&amp;#34;, //Запрос к БД  &amp;#34;query&amp;#34;: { &amp;#34;_ownerId&amp;#34;: { &amp;#34;$in&amp;#34;: &amp;#34;$value&amp;#34; } }, } Если используются несколько фильтров, их запросы объединяются через оператор $and:</description>
+    </item>
+    
+    <item>
+      <title>$db</title>
+      <link>https://getblank.github.io/site/doc/db/</link>
+      <pubDate>Sat, 06 Aug 2016 17:57:48 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/db/</guid>
+      <description>Модуль $db предназначен для манипуляции данными в хранилищах. Доступен везде, кроме загрузчиков виртуальных полей.
+Параметры Большинство методов принимают дополнительные параметры аргументом options, изменяющие стандартное поведение метода
+{ user: Object – пользователь, от имени которого выполняется метод. Будет произведена проверка прав на выполняемый метод userId: string – если не передан пользователь в параметре user, то будет произведён поиск пользователя в базе данных noCheckPermissions: bool – флаг отключения проверки прав на выполняемый метод noRunHooks: bool – флаг отключения запуска обработчиков жизненного цикла объекта noValidate: bool – флаг отключения валидации сохраняемых данных noEmitUpdate: bool – флаг отключения отправки уведомлений о производимых изменениях noPopulate: bool – флаг отключения популяции ref полей в возвращаемых данных noLoadVirtualProps: bool – флаг отключения загрузки виртуальных полей в возвращаемых данных drop: bool – только для метода delete, производит полное удаление объекта из хранилища } $db.</description>
+    </item>
+    
+    <item>
+      <title>Access control</title>
+      <link>https://getblank.github.io/site/doc/access/</link>
+      <pubDate>Sat, 06 Aug 2016 16:49:03 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/access/</guid>
+      <description>Управление доступом в Blank построено на основе ролей с применением системы условий. Права можно назначить на Store, на отдельные свойства (prop) и действия (action) в Store.
+При установке прав доступа задается массив правил типа AccessRule:
+access: AccessRule[] AccessRule { role: &amp;#34;roleName&amp;#34;, permissions: &amp;#34;Permissions string&amp;#34;, condition: MongoQuery {} } Значение по-умолчанию Если права не указаны, по-умолчанию у всех будет полный доступ, как если бы было задано такое правило:
+access: [{ role: &amp;#34;all&amp;#34;, permissions: &amp;#34;crud&amp;#34; }] Если параметр задан, доступ получат только те роли, которые указаны в параметре, в соответствии с их разрешениями.</description>
+    </item>
+    
+    <item>
+      <title>Store reference</title>
+      <link>https://getblank.github.io/site/doc/store_reference/</link>
+      <pubDate>Sat, 06 Aug 2016 14:27:42 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/store_reference/</guid>
+      <description>В зависимости от типа, Store может обладать определённым набором свойств из списка:
+ access; actions; baseStore; config; disableAutoSelect; display; filters; formGroups; formTabs; headerProperty; headerTemplate; html; httpApi; httpHooks; i18n; indexes; label; labels; navGroup; navLabel; objectLifeCycle; orderBy; props; states; storeActions; storeLifeCycle; tableColumns; tasks; type.  access access: AccessRule[] Устанавливает права доступа на объекты Store. Доступный набор разрешений: crud.
+Для того, чтобы пользователь получил доступ к описанию Store и она отобразилась в интерфейсе сгенерированного веб-приложения, необходимо разрешение на чтение – r.</description>
+    </item>
+    
+    <item>
+      <title>Вступление</title>
+      <link>https://getblank.github.io/site/doc/introduction/</link>
+      <pubDate>Thu, 04 Aug 2016 23:58:25 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/introduction/</guid>
+      <description>Что такое Blank? Blank – открытая платформа для разработки приложений с готовой облачной инфраструктурой для публикации. Blank подходит как для создания только бэкенда, так и в качестве инструмента для разработки полноценных приложений. Это возможно благодаря автоматической генерации пользовательского интерфейса веб-приложения для управления данными.
+Создавая Blank, мы старались упростить процесс разработки и внедрения приложений, сохраняя при этом гибкость. Наша платформа легко подстраивается под любые требования, предлагая нестандартные и современные пути для решения традиционных задач.</description>
+    </item>
+    
+    <item>
+      <title>Описание</title>
+      <link>https://getblank.github.io/site/doc/schema/</link>
+      <pubDate>Thu, 04 Aug 2016 23:03:35 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/schema/</guid>
+      <description>Создание программы, как правило, начинается с идеи. Или с описания задачи – зависит от того, есть у разработчика заказ или он создаёт программу для себя. После того, как задача поставлена, каждый программист будет решать её по-разному. Кто-то начнёт с проработки функциональных схем, кто-то с выбора технологий разработки, а некоторые сразу станут писать код в любимой IDE. Мы предлагаем забыть на этом этапе о конкретных технологиях и сфокусироваться на структуре данных программы, взаимодействии этих данных между собой и с внешним миром.</description>
+    </item>
+    
+    <item>
+      <title>Stores</title>
+      <link>https://getblank.github.io/site/doc/stores/</link>
+      <pubDate>Thu, 04 Aug 2016 22:25:53 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/stores/</guid>
+      <description>Вся функциональность разрабатываемого с Blank Schema приложения строится вокруг одного понятия — «хранилище» или «Store». В большинстве случаев, при проектировании приложений, достаточно создать отдельный Store для каждой сущности модели данных. Например, для простейшего приложения учёта клиентов и их заказов можно создать два Store – Clients и Orders. Store можно воспринимать как таблицы в MySQL или коллекции в MongoDB. В Store можно добавить обработчики жизненного цикла объектов – аналог триггеров в SQL.</description>
+    </item>
+    
+    <item>
+      <title>Быстрый старт</title>
+      <link>https://getblank.github.io/site/doc/quickstart/</link>
+      <pubDate>Wed, 03 Aug 2016 23:58:25 +0500</pubDate>
+      
+      <guid>https://getblank.github.io/site/doc/quickstart/</guid>
+      <description>Blank подразумевает локальную разработку, в отличие от подобных сервисов, где всё управление производится через web интерфейс. В данной статье рассказывается как создать собственное приложение.
+Начальные условия В первую очередь следует установить необходимый инструментарий для разработки.
+Основным инструментом Blank является npm пакет blank-cli. Так же вся бизнес-логика, на данный момент, описывается на JavaScript, поэтому первым делом следует установить на машину разработчика Node.js. Инструкции по установке можно найти здесь.
+В качестве основной СУБД используется MongoDB.</description>
+    </item>
+    
+  </channel>
+</rss>

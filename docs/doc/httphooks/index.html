@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"> 
+    <meta name="generator" content="Hugo 0.79.0" />
+
+    
+        <meta name="description" content="Облачная платформа для создания бэкенда с открытым исходным кодом">
+    
+
+    
+        <meta name="keywords" content="BaaS, backend, cloud, iot, platform, бэкенд, облачный сервис, интернет вещей">
+    
+
+    <meta name="author" content="BLANK">
+
+
+    <base href="https://getblank.github.io/site/">
+
+    
+    <title>HTTP hooks &middot; BLANK cloud platform</title>
+    
+
+    <link rel="canonical" href="https://getblank.github.io/site/doc/httphooks/">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+<link href="/site/css/app.css" media="all" rel="stylesheet"/>
+<link href="/site/css/hl-github.css" rel="stylesheet">
+</head>
+
+<body lang="ru">
+ <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34002915 = new Ya.Metrika2({ id:34002915, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34002915" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+
+<div id="navbar"  class="no-expand blog"  >
+    <div class="container">
+        <a href="#" data-menu="sidenav" class="nav-toggle menu">
+            <img src="/site/img/menu.svg" alt="menu"/>
+        </a>
+        <div class="logo">
+            <a href="index.html" class="nav-link">BLANK</a>
+        </div>
+        <ul class="nav collapse" id="nav">
+            <li>
+                <a href="/site/doc/introduction/" class="nav-link index-link active">
+                    Документация
+                </a>
+            </li>
+            <li>
+                <a href="#contacts" class="nav-link index-link" data-active-until="contacts-end" data-active-after="contacts-start">
+                    Контакты
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/getblank/" class="nav-link">
+                    <img src="img/GitHub-Mark-Light-32px.png" style="width: 14px; height: 14px; position: relative; top: 1px" border="0">
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="docs">
+  <div class="docs-contents">
+    
+    
+    
+      <h3>Начало работы</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/introduction/">Вступление</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/quickstart/">Быстрый старт</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/settings/">Конфигурация</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank CLI</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/cli/">CLI reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/build/">Сборка конфигурации</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank Schema</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/schema/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/stores/">Stores</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/store_reference/">Store reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/access/">Access control</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/filters/">Filters</a>
+            </li>
+          
+            <li  class="active">
+              <a href="/site/doc/httphooks/">HTTP hooks</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/lifecycle_events/">Lifecycle events</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Serverside JS API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="doc/serverjs/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="doc/actions/">Actions</a>
+            </li>
+          
+            <li >
+              <a href="doc/db">$db</a>
+            </li>
+          
+            <li >
+              <a href="doc/request/">$request</a>
+            </li>
+          
+            <li >
+              <a href="doc/email/">Email</a>
+            </li>
+          
+            <li >
+              <a href="doc/files/">Files</a>
+            </li>
+          
+            <li >
+              <a href="doc/fs/">FS</a>
+            </li>
+          
+            <li >
+              <a href="doc/i18n/">I18n</a>
+            </li>
+          
+            <li >
+              <a href="doc/queue/">Queue</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>HTTP API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/httprest/">REST</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/httpauth/">Auth</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Интеграция</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/facebook/">Facebook</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+
+  </div>
+  <div class="doc-wrapper">
+    <div class="doc">
+      <h1>HTTP hooks</h1>
+      <div class="content">
+        <p>HTTPHooks используются для формирования произвольного HTTP API. В hooks нет встроенной авторизации,
+они доступны публично. Если требуется настроить HTTP API с авторизацией, можно реализовать её самостоятельно
+или использовать Actions с типом http.</p>
+<p>Базовое REST HTTP API для CRUD генерируется автоматически и включается другим параметром: <a href="/site/doc/store_reference/#http-api">httpApi</a></p>
+<h2 id="structure">Структура</h2>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">httpHooks<span style="color:#000;font-weight:bold">:</span> HTTPHook[]
+
+HTTPHook {
+    <span style="color:#d14">&#34;uri&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>
+    <span style="color:#d14">&#34;method&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;GET&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;PUT&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;POST&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;PATCH&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;DELETE&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;HEAD&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;OPTIONS&#34;</span>,
+    <span style="color:#d14">&#34;script&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">function</span> ($request)<span style="color:#000;font-weight:bold">:</span>Response
+}
+
+Response {
+    <span style="color:#d14">&#34;type&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;JSON&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;HTML&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;XML&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;file&#34;</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#d14">&#34;redirect&#34;</span>,
+    <span style="color:#d14">&#34;data&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>, <span style="color:#998;font-style:italic">// Строка, которая будет передана в Body ответа, либо адрес для редиректа для type:redirect
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#d14">&#34;rawData&#34;</span><span style="color:#000;font-weight:bold">:</span> any,
+    <span style="color:#d14">&#34;code&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">int</span>, <span style="color:#998;font-style:italic">// HTTP status code. По-умолчанию, 200
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#d14">&#34;header&#34;</span><span style="color:#000;font-weight:bold">:</span> {},
+    <span style="color:#d14">&#34;fileName&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>, <span style="color:#998;font-style:italic">// Только для type:file
+</span><span style="color:#998;font-style:italic"></span>}
+</code></pre></div><h2 id="свойства">Свойства</h2>
+<h3 id="method">method</h3>
+<p>HTTP методу, с которым будет доступен hook (строка). Допустимые варианты:</p>
+<ul>
+<li><code>GET</code>;</li>
+<li><code>PUT</code>;</li>
+<li><code>POST</code>;</li>
+<li><code>PATCH</code>;</li>
+<li><code>DELETE</code>;</li>
+<li><code>HEAD</code>;</li>
+<li><code>OPTIONS</code>.</li>
+</ul>
+<h3 id="script">script</h3>
+<p>Непосредственно JavaScript код. На вход получает переменную <a href="/site/doc/request/">$request</a>.
+Должен вернуть объект типа <a href="/site/doc/httphooks/#response">Response</a>.</p>
+<h3 id="uri">uri</h3>
+<p>Полный путь будет сформирован таким образом:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">http[s]<span style="color:#000;font-weight:bold">:</span><span style="color:#998;font-style:italic">//server-address/hooks/storeName/uri
+</span></code></pre></div><p>В <code>uri</code> можно использовать параметры, они начинаются с символа <code>:</code>, например:</p>
+<pre><code>&quot;uri&quot;: &quot;/like/:photoId&quot;
+</code></pre><p>Значения параметров будут доступны через свойство <code>params</code> объекта <code>$request</code>, переданного аргументом
+в скрипт hook-а.</p>
+<p>Подробнее об объекте <code>$request</code> читайте в разделе <a href="/site/doc/request/">Serverside JS API: $request</a>.</p>
+<h2 id="response">Response</h2>
+<p>Объект описывающий формат возврата данных из хука.</p>
+<h2 id="свойства-1">Свойства</h2>
+<h3 id="code">code</h3>
+<p>HTTP status code (int). По-умолчанию, 200.</p>
+<h3 id="data">data</h3>
+<p>Тело ответа (строка). Будет передана в Body HTTP ответа сервера. В случае необходимости произвести перенаправление к другому ресурсу,
+в <code>data</code> следует положить URL ресурса.</p>
+<h3 id="filename">fileName</h3>
+<p>Имя возвращаемого файла (строка). Указывается при <code>type:file</code>.</p>
+<h3 id="header">header</h3>
+<p>HTTP заголовки ответа (JavaScript object).</p>
+<h3 id="_id">_id</h3>
+<p>Идентификатор файла (строка). Используется при <a href="/site/doc/httphooks/#type">type:file</a>.</p>
+<h3 id="rawdata">rawData</h3>
+<p>«Сырые» (не сериализованные данные) виде (например, объект или массив).</p>
+<h3 id="store">store</h3>
+<p>Хранилище файла (строка). Используется при <a href="/site/doc/httphooks/#type">type:file</a>.</p>
+<h3 id="type">type</h3>
+<p>Тип HTTP ответа (строка). Допустимые варианты:</p>
+<ul>
+<li>
+<p><code>JSON</code> — возврат данных в виде JSON. Устанавливается соответствующий HTTP заголовок <code>Content-Type: application/json</code>.
+Данные следует передавать либо в сериализованном виде в свойстве <a href="/site/doc/httphooks/#data">data</a> (рекомендованный способ),
+либо в «сыром» виде (например, объект или массив) в свойстве <a href="/site/doc/httphooks/#rawdata">rawData</a>.
+В последнем случае, данные будут сериализованы автоматически.</p>
+</li>
+<li>
+<p><code>HTML</code> — возврат данных в виде HTML. Устанавливается соответствующий HTTP заголовок <code>Content-Type: text/html</code>.
+Данные следует передавать в свойстве <a href="/site/doc/httphooks/#data">data</a>.</p>
+</li>
+<li>
+<p><code>XML</code> — возврат данных в виде HTML. Устанавливается соответствующий HTTP заголовок <code>Content-Type: text/xml</code>.
+Данные следует передавать в сериализованном виде в свойстве <a href="/site/doc/httphooks/#data">data</a>.</p>
+</li>
+<li>
+<p><code>file</code> — возврат файлов. HTTP заголовок <code>Content-Type</code> устанавливается автоматически в зависимости от типа файла, определяемого по имени.
+Данные следует передавать закодированным в base64 буфером (<a href="https://nodejs.org/api/buffer.html">Node Buffer</a>) в свойстве <a href="/site/doc/httphooks/#data">data</a>.
+При необходимости возврата файла из файлового хранилища, следует передать название Store в свойстве <a href="/site/doc/httphooks/#store">store</a>
+и идентификатор файла в свойстве <a href="/site/doc/httphooks/#id">_id</a>.</p>
+</li>
+<li>
+<p><code>redirect</code> — перенаправление на другой ресурс. URL ресурса следует передавать в свойстве <a href="/site/doc/httphooks/#data">data</a>.</p>
+</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<footer id="contacts">
+  <div id="contacts-start"></div>
+  <div>
+    <p>2020 &copy; Blank</p>
+    <p>Телефон: +7 (922) 477-26-60</p>
+    <p>E-mail: info+blank@sclif.pro</p>
+    <p style="font-size: .8rem">Россия &middot; Тюмень</p>
+    <p class="hugo">Site powered by <a href="http://gohugo.io">Hugo</a></p>
+  </div>
+  <div id="contacts-end"></div>
+</footer>
+<div id="lightbox" class="hidden">
+  <div class="back"></div>
+  <div class="close"></div>
+  <div class="image">
+    <img src="" alt="" />
+  </div>
+</div>
+<script type="text/javascript" src="app.bundle.js"></script>
+<script src="/site/js/highlight.pack.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+
+</html>

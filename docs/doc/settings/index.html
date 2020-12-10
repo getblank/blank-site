@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"> 
+    <meta name="generator" content="Hugo 0.79.0" />
+
+    
+        <meta name="description" content="Облачная платформа для создания бэкенда с открытым исходным кодом">
+    
+
+    
+        <meta name="keywords" content="BaaS, backend, cloud, iot, platform, бэкенд, облачный сервис, интернет вещей">
+    
+
+    <meta name="author" content="BLANK">
+
+
+    <base href="https://getblank.github.io/site/">
+
+    
+    <title>Конфигурация &middot; BLANK cloud platform</title>
+    
+
+    <link rel="canonical" href="https://getblank.github.io/site/doc/settings/">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+<link href="/site/css/app.css" media="all" rel="stylesheet"/>
+<link href="/site/css/hl-github.css" rel="stylesheet">
+</head>
+
+<body lang="ru">
+ <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34002915 = new Ya.Metrika2({ id:34002915, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34002915" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+
+<div id="navbar"  class="no-expand blog"  >
+    <div class="container">
+        <a href="#" data-menu="sidenav" class="nav-toggle menu">
+            <img src="/site/img/menu.svg" alt="menu"/>
+        </a>
+        <div class="logo">
+            <a href="index.html" class="nav-link">BLANK</a>
+        </div>
+        <ul class="nav collapse" id="nav">
+            <li>
+                <a href="/site/doc/introduction/" class="nav-link index-link active">
+                    Документация
+                </a>
+            </li>
+            <li>
+                <a href="#contacts" class="nav-link index-link" data-active-until="contacts-end" data-active-after="contacts-start">
+                    Контакты
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/getblank/" class="nav-link">
+                    <img src="img/GitHub-Mark-Light-32px.png" style="width: 14px; height: 14px; position: relative; top: 1px" border="0">
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="docs">
+  <div class="docs-contents">
+    
+    
+    
+      <h3>Начало работы</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/introduction/">Вступление</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/quickstart/">Быстрый старт</a>
+            </li>
+          
+            <li  class="active">
+              <a href="/site/doc/settings/">Конфигурация</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank CLI</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/cli/">CLI reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/build/">Сборка конфигурации</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank Schema</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/schema/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/stores/">Stores</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/store_reference/">Store reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/access/">Access control</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/filters/">Filters</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/httphooks/">HTTP hooks</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/lifecycle_events/">Lifecycle events</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Serverside JS API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="doc/serverjs/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="doc/actions/">Actions</a>
+            </li>
+          
+            <li >
+              <a href="doc/db">$db</a>
+            </li>
+          
+            <li >
+              <a href="doc/request/">$request</a>
+            </li>
+          
+            <li >
+              <a href="doc/email/">Email</a>
+            </li>
+          
+            <li >
+              <a href="doc/files/">Files</a>
+            </li>
+          
+            <li >
+              <a href="doc/fs/">FS</a>
+            </li>
+          
+            <li >
+              <a href="doc/i18n/">I18n</a>
+            </li>
+          
+            <li >
+              <a href="doc/queue/">Queue</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>HTTP API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/httprest/">REST</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/httpauth/">Auth</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Интеграция</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/facebook/">Facebook</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+
+  </div>
+  <div class="doc-wrapper">
+    <div class="doc">
+      <h1>Конфигурация</h1>
+      <div class="content">
+        <p>Настройка Blank производится в нескольких Store типа <code>map</code>, описанных в формате <a href="/site/doc/schema/">Blank Schema</a>.</p>
+<ul>
+<li><a href="/site/doc/settings/#server">_serverSettings</a> — параметры сервера;</li>
+<li><a href="/site/doc/settings/#common">_commonSettings</a> — параметры, которые являются общими как для сервера, так и для клиентского приложения;</li>
+<li><a href="/site/doc/settings/#_nav">_nav</a> — описание навигации клиентского приложения;</li>
+</ul>
+<h2 id="server">_serverSettings</h2>
+<p>Используется для переопределения параметров работы серверных приложений.</p>
+<h3 id="конфигурация-по-умолчанию">Конфигурация по-умолчанию</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">_serverSettings<span style="color:#000;font-weight:bold">:</span> {
+        type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;map&#34;</span>,
+        entries<span style="color:#000;font-weight:bold">:</span> {
+            facebookClientSecret<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">undefined</span>,
+            passwordResetTokenExpiration<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;0:10&#34;</span>,
+            registerTokenExpiration<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;0:60&#34;</span>,
+            ssoOrigins<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">undefined</span>,
+        },
+},
+</code></pre></div><p><strong>facebookClientSecret</strong></p>
+<p>Секретный ключ для <a href="/site/doc/facebook/">интеграции с Facebook</a>.</p>
+<p><strong>jwtTtl</strong></p>
+<p>Время жизни JWT токена (строка). Задается в формате <code>HH:MM</code>, где <code>HH</code> — часы,
+а <code>MM</code> — минуты.</p>
+<p><strong>passwordResetTokenExpiration</strong></p>
+<p>Время жизни токена для сброса пароля (строка). Задается в формате <code>HH:MM</code>, где <code>HH</code> — часы,
+а <code>MM</code> — минуты. По истечении указанного времени, токен обнуляется.</p>
+<p><strong>registerTokenExpiration</strong></p>
+<p>Время, отведённое на активацию зарегистрированных пользователей (строка). Задается в формате <code>HH:MM</code>, где <code>HH</code> — часы,
+а <code>MM</code> — минуты. В случае неактивации, по истечении указанного времени, пользовательский аккаунт будет удалён из системы.</p>
+<p><strong>ssoOrigins</strong></p>
+<p>Адреса веб-сайтов, которые смогут получить доступ к токену авторизации при использовании механизма Single Sign On
+для мультидоменной структуры приложения (массив строк). По-умолчанию, значение не установлено.</p>
+<h2 id="common">_commonSettings</h2>
+<p>Используется для переопределения параметров, которые являются общими как для сервера, так и для клиентского приложения.</p>
+<h3 id="конфигурация-по-умолчанию-1">Конфигурация по-умолчанию</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">_commonSettings<span style="color:#000;font-weight:bold">:</span> {
+        type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;map&#34;</span>,
+        entries<span style="color:#000;font-weight:bold">:</span> {
+            title<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;Default title&#34;</span>,
+            titleHref<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">undefined</span>,
+            titleIcon<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">undefined</span>,
+            locales<span style="color:#000;font-weight:bold">:</span> [<span style="color:#d14">&#34;en&#34;</span>, <span style="color:#d14">&#34;ru&#34;</span>],
+            defaultLocale<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;en&#34;</span>,
+            meta<span style="color:#000;font-weight:bold">:</span> [
+                { name<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;description&#34;</span>, content<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;Application description&#34;</span> },
+                { name<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;author&#34;</span>, content<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;Application author&#34;</span> },
+            ],
+            links<span style="color:#000;font-weight:bold">:</span> [
+                { rel<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;canonical&#34;</span>, href<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;http://mysite.com/example&#34;</span> },
+            ],
+            scripts<span style="color:#000;font-weight:bold">:</span> [],
+            lessVars<span style="color:#000;font-weight:bold">:</span> {},
+            facebookClientId<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">undefined</span>,
+            signInProps<span style="color:#000;font-weight:bold">:</span> {
+                login<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;textInput&#34;</span>,
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.common.email}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    formOrder<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">1</span>,
+                },
+                password<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;password&#34;</span>,
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.common.password}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    formOrder<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">2</span>,
+                },
+            },
+            userActivation<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span>,
+            resetPasswordDisabled<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span>,
+            signUpDisabled<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">false</span>,
+            resetPasswordProps<span style="color:#000;font-weight:bold">:</span> {
+                password<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;password&#34;</span>,
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.resetPassword.newPassword}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    formOrder<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">2</span>,
+                },
+            },
+            resetPasswordRequestProps<span style="color:#000;font-weight:bold">:</span> {
+                email<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;textInput&#34;</span>,
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.common.email}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    pattern<span style="color:#000;font-weight:bold">:</span> { expression<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;^\\S+@\\S+\\.\\S+$&#34;</span>, message<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.signUp.invalidEmail}}&#34;</span> },
+                },
+            },
+            signUpProps<span style="color:#000;font-weight:bold">:</span> {
+                email<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;newUsernameInput&#34;</span>,
+                    pattern<span style="color:#000;font-weight:bold">:</span> { expression<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;^\\S+@\\S+\\.\\S+$&#34;</span>, message<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.signUp.invalidEmail}}&#34;</span> },
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.common.email}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    formOrder<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">1</span>,
+                },
+                password<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;string&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;password&#34;</span>,
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{$i18n.$settings.common.password}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    formOrder<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">2</span>,
+                },
+                eula<span style="color:#000;font-weight:bold">:</span> {
+                    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;bool&#34;</span>,
+                    display<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;checkbox&#34;</span>,
+                    label<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;{{{$i18n.$settings.signUp.eulaCheck}}}&#34;</span>,
+                    required<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">true</span>,
+                    formOrder<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">4</span>,
+                },
+            },
+        },
+},
+</code></pre></div><!-- raw HTML omitted -->
+<p>Локаль по-умолчанию (string).</p>
+<p><strong>facebookClientId</strong></p>
+<p>Идентификатор приложения для <a href="/site/doc/facebook/">интеграции с Facebook</a>.</p>
+<p><strong>lessVars</strong></p>
+<p>Переопредяет CSS параметры клиентского приложения.</p>
+<p><strong>links</strong></p>
+<p>Определения дополнительные <code>link</code> тэги в разделе <code>&lt;head&gt;</code> клиентского приложения.
+Например, можно туда поместить дополнительные css файлы, необходимые для работы приложения.</p>
+<p><strong>locales</strong></p>
+<p>Переопределеяет набор локалей приложения (array of string).</p>
+<p><strong>meta</strong></p>
+<p>Определяет дополнительные <code>meta</code> тэги в разделе <code>&lt;head&gt;</code> клиентского приложения.</p>
+<p><strong>resetPasswordDisabled</strong></p>
+<p>Запрет сброса пароля (bool). Если установлен в <code>true</code>, то в клиентском приложении не будет показан диалог сброса пароля.</p>
+<p><strong>resetPasswordProps</strong></p>
+<p>Переопределяет набор и характеристики диалога сброса пароля.</p>
+<p><strong>resetPasswordRequestProps</strong></p>
+<p>Переопределяет набор и характеристики диалога запроса сброса пароля.</p>
+<p><strong>scripts</strong></p>
+<p>Определяет дополнительные <code>script</code> тэги в разделе <code>&lt;head&gt;</code> клиентского приложения.
+Например, можно использовать для загрузки дополнительных JavaScript файлов, необходимых для работы приложения.</p>
+<p><strong>signInProps</strong></p>
+<p>Переопределяет набор и характеристики диалога входа в систему.</p>
+<p><strong>signUpDisabled</strong></p>
+<p>Запрет самостоятельной регистрации пользователей (bool). Если установлен в <code>true</code>, то в клиентском приложении не будет показан диалог регистрации.</p>
+<p><strong>signUpProps</strong></p>
+<p>Переопределяет набор и характеристики диалога самостоятельной регистрации пользователей.
+Дополнительные поля будут переданы в создаваемый профиль пользователя.</p>
+<p><strong>title</strong></p>
+<p>Переопределяет содержимое тэга <code>title</code> и заголовок клиентского приложения.</p>
+<p><strong>titleHref</strong></p>
+<p>Переопределяет ссылку в заголовке клиентского приложения.</p>
+<p><strong>titleIcon</strong></p>
+<p>Определяет изображение в заголовке клиентского приложения (ссылка на файл, может быть относительной, например &ldquo;favicon.png&rdquo;).</p>
+<p><strong>userActivation</strong></p>
+<p>Включает необходимость активации учетных записей пользователей. Если установлен в <code>true</code>, только что зарегистрированному пользователю
+на адрес электронной почты будет отправлено письмо со ссылкой на страницу активации учетной записи.</p>
+<h2 id="_nav">_nav</h2>
+<p>Используется для определения структуры навигации клиентского приложения.</p>
+<h3 id="конфигурация-по-умолчанию-2">Конфигурация по-умолчанию</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">_nav<span style="color:#000;font-weight:bold">:</span> {
+    type<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;map&#34;</span>,
+    entries<span style="color:#000;font-weight:bold">:</span> {
+        config<span style="color:#d14">&#34;: {
+</span><span style="color:#d14">            label: &#34;</span>Administration<span style="color:#a61717;background-color:#e3d2d2">&#34;</span>,
+        },
+    },
+},
+</code></pre></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<footer id="contacts">
+  <div id="contacts-start"></div>
+  <div>
+    <p>2020 &copy; Blank</p>
+    <p>Телефон: +7 (922) 477-26-60</p>
+    <p>E-mail: info+blank@sclif.pro</p>
+    <p style="font-size: .8rem">Россия &middot; Тюмень</p>
+    <p class="hugo">Site powered by <a href="http://gohugo.io">Hugo</a></p>
+  </div>
+  <div id="contacts-end"></div>
+</footer>
+<div id="lightbox" class="hidden">
+  <div class="back"></div>
+  <div class="close"></div>
+  <div class="image">
+    <img src="" alt="" />
+  </div>
+</div>
+<script type="text/javascript" src="app.bundle.js"></script>
+<script src="/site/js/highlight.pack.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+
+</html>

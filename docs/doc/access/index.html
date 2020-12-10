@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru-RU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"> 
+    <meta name="generator" content="Hugo 0.79.0" />
+
+    
+        <meta name="description" content="Облачная платформа для создания бэкенда с открытым исходным кодом">
+    
+
+    
+        <meta name="keywords" content="BaaS, backend, cloud, iot, platform, бэкенд, облачный сервис, интернет вещей">
+    
+
+    <meta name="author" content="BLANK">
+
+
+    <base href="https://getblank.github.io/site/">
+
+    
+    <title>Access control &middot; BLANK cloud platform</title>
+    
+
+    <link rel="canonical" href="https://getblank.github.io/site/doc/access/">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
+<link href="/site/css/app.css" media="all" rel="stylesheet"/>
+<link href="/site/css/hl-github.css" rel="stylesheet">
+</head>
+
+<body lang="ru">
+ <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34002915 = new Ya.Metrika2({ id:34002915, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/34002915" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
+
+<div id="navbar"  class="no-expand blog"  >
+    <div class="container">
+        <a href="#" data-menu="sidenav" class="nav-toggle menu">
+            <img src="/site/img/menu.svg" alt="menu"/>
+        </a>
+        <div class="logo">
+            <a href="index.html" class="nav-link">BLANK</a>
+        </div>
+        <ul class="nav collapse" id="nav">
+            <li>
+                <a href="/site/doc/introduction/" class="nav-link index-link active">
+                    Документация
+                </a>
+            </li>
+            <li>
+                <a href="#contacts" class="nav-link index-link" data-active-until="contacts-end" data-active-after="contacts-start">
+                    Контакты
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/getblank/" class="nav-link">
+                    <img src="img/GitHub-Mark-Light-32px.png" style="width: 14px; height: 14px; position: relative; top: 1px" border="0">
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="docs">
+  <div class="docs-contents">
+    
+    
+    
+      <h3>Начало работы</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/introduction/">Вступление</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/quickstart/">Быстрый старт</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/settings/">Конфигурация</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank CLI</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/cli/">CLI reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/build/">Сборка конфигурации</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Blank Schema</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/schema/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/stores/">Stores</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/store_reference/">Store reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/store-displaying/">Store displaying</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props_reference/">Props reference</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props-modeling/">Props modeling</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/props-displaying/">Props displaying</a>
+            </li>
+          
+            <li  class="active">
+              <a href="/site/doc/access/">Access control</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/filters/">Filters</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/httphooks/">HTTP hooks</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/lifecycle_events/">Lifecycle events</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Serverside JS API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="doc/serverjs/">Описание</a>
+            </li>
+          
+            <li >
+              <a href="doc/actions/">Actions</a>
+            </li>
+          
+            <li >
+              <a href="doc/db">$db</a>
+            </li>
+          
+            <li >
+              <a href="doc/request/">$request</a>
+            </li>
+          
+            <li >
+              <a href="doc/email/">Email</a>
+            </li>
+          
+            <li >
+              <a href="doc/files/">Files</a>
+            </li>
+          
+            <li >
+              <a href="doc/fs/">FS</a>
+            </li>
+          
+            <li >
+              <a href="doc/i18n/">I18n</a>
+            </li>
+          
+            <li >
+              <a href="doc/queue/">Queue</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>HTTP API</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/httprest/">REST</a>
+            </li>
+          
+            <li >
+              <a href="/site/doc/httpauth/">Auth</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+    
+      <h3>Интеграция</h3>
+    
+      
+        <ul>
+          
+            <li >
+              <a href="/site/doc/facebook/">Facebook</a>
+            </li>
+          
+        </ul>
+        <hr/>
+      
+    
+
+  </div>
+  <div class="doc-wrapper">
+    <div class="doc">
+      <h1>Access control</h1>
+      <div class="content">
+        <p>Управление доступом в Blank построено на основе ролей с применением системы условий. Права
+можно назначить на Store, на отдельные свойства (prop) и действия (action) в Store.</p>
+<p>При установке прав доступа задается массив правил типа AccessRule:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">access<span style="color:#000;font-weight:bold">:</span> AccessRule[]
+
+AccessRule {
+    role<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;roleName&#34;</span>,
+    permissions<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;Permissions string&#34;</span>,
+    condition<span style="color:#000;font-weight:bold">:</span> MongoQuery {}
+}
+</code></pre></div><h2 id="значение-по-умолчанию">Значение по-умолчанию</h2>
+<p>Если права не указаны, по-умолчанию у всех будет полный доступ, как если бы было задано такое правило:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    access<span style="color:#000;font-weight:bold">:</span> [{ role<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;all&#34;</span>, permissions<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;crud&#34;</span> }]
+</code></pre></div><p>Если параметр задан, доступ получат только те роли, которые указаны в параметре, в соответствии с их разрешениями.</p>
+<h2 id="permissions">Permissions</h2>
+<p>Набор разрешений, зависит от объекта прав доступа:</p>
+<ul>
+<li>Store:  <code>vcrudx</code></li>
+<li>Prop:   <code>ru</code></li>
+<li>Action: <code>x</code></li>
+</ul>
+<p>где:</p>
+<ul>
+<li><code>v</code> — отображение Store в пользовательском интерфейсе;</li>
+<li><code>c</code> — создание объектов в Store;</li>
+<li><code>r</code> — чтение объектов из Store;</li>
+<li><code>u</code> — изменение объектов в Store;</li>
+<li><code>d</code> — удаление объектов из Store;</li>
+<li><code>x</code> — запуск Actions в Store;</li>
+</ul>
+<p>Если требуется указать запрет на какое-либо действие, перед символом разрешения добавляется знак <code>-</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    access<span style="color:#000;font-weight:bold">:</span> [{ role<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;manager&#34;</span>, permissions<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;cr -d&#34;</span> }]
+</code></pre></div><p>Запреты имеют приоритет над разрешениями. В данном примере установлен запрет на удаление объектов из Store.</p>
+<h2 id="conditions">Conditions</h2>
+<p>Используется только при установке прав доступа на Store. Требуется, если разрешения зависят от самого объекта или
+свойств пользователя, отличных от роли.</p>
+<p>Condition задаётся в формате <a href="https://docs.mongodb.com/manual/tutorial/query-documents/">MongoDB Query</a>
+с дополнительным оператором <code>$expression</code>, который будет обработан до передачи запроса в БД, например:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">condition<span style="color:#000;font-weight:bold">:</span> {
+    _ownerId<span style="color:#000;font-weight:bold">:</span> {
+        $expression<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;$user._id&#34;</span>,
+    },
+},
+</code></pre></div><p>Такой condition сделает разрешения валидными только для объектов, владельцем которых является пользователь.
+Допустим, пользователь с <strong>_id: &ldquo;1&rdquo;</strong> делает запрос Find. Он получит доступ только к тем объектам, которые удовлетворяют
+условию:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{ _ownerId<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;1&#34;</span> }
+</code></pre></div><p><strong>$expression</strong> —  выражение на JavaScript, в котором доступна переменная <code>$user</code>.</p>
+<h2 id="роль-root">Роль root</h2>
+<p>Роль root зарезервирована и в неё входит только один пользователь – сам root.</p>
+<p>В отличие от других ролей, если разрешения для root не указаны явно, у root будет полный доступ.</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<footer id="contacts">
+  <div id="contacts-start"></div>
+  <div>
+    <p>2020 &copy; Blank</p>
+    <p>Телефон: +7 (922) 477-26-60</p>
+    <p>E-mail: info+blank@sclif.pro</p>
+    <p style="font-size: .8rem">Россия &middot; Тюмень</p>
+    <p class="hugo">Site powered by <a href="http://gohugo.io">Hugo</a></p>
+  </div>
+  <div id="contacts-end"></div>
+</footer>
+<div id="lightbox" class="hidden">
+  <div class="back"></div>
+  <div class="close"></div>
+  <div class="image">
+    <img src="" alt="" />
+  </div>
+</div>
+<script type="text/javascript" src="app.bundle.js"></script>
+<script src="/site/js/highlight.pack.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+</body>
+
+</html>
