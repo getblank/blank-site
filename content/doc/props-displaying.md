@@ -132,12 +132,12 @@ actions: [
 ##  checkbox
 Поле с флажком в виде галочки. Не имеет собственных свойств.
 
-![checkbox](/img/display/checkbox.gif)
+![checkbox](/site/img/display/checkbox.gif)
 
 ##  checkList
 Поле в виде списка флажков с возможностью выбора нескольких значений.
 
-![checklist](/img/display/checklist.gif)
+![checklist](/site/img/display/checklist.gif)
 
 ### Свойства
 #### options {#checklist-options}
@@ -158,12 +158,12 @@ actions: [
 ##  codeEditor
 Отображение редактора кода. Не имеет собственных свойств.
 
-![codeEditor](/img/display/codeEditor.gif)
+![codeEditor](/site/img/display/codeEditor.gif)
 
 ##  colorPicker
 Поле для выбора цвета из определённого набора.
 
-![colorPicker](/img/display/colorPicker.gif)
+![colorPicker](/site/img/display/colorPicker.gif)
 
 ### Свойства
 #### disableCustomInput
@@ -183,7 +183,7 @@ actions: [
 ##  datePicker
 Поле для выбора даты. Отображается в виде текстового поле с маской даты и с выпадающим календарём.
 
-![datePicker](/img/display/datePicker.gif)
+![datePicker](/site/img/display/datePicker.gif)
 
 ### Свойства
 #### format {#date-format}
@@ -192,7 +192,7 @@ actions: [
 ##  dateRange
 Поле для выбора диапазона дат. Отображается в виде текстового поле с маской даты и с выпадающим большим календарём.
 
-![dateRange](/img/display/dateRange.gif)
+![dateRange](/site/img/display/dateRange.gif)
 
 ### Свойства
 #### format
@@ -224,7 +224,7 @@ HTML тэга `input`.
 ##  masked
 Текстовое поле ввода данных по маске, определённой в свойстве [mask](/site/doc/props-displaying/#masked-mask).
 
-![masked](/img/display/masked.gif)
+![masked](/site/img/display/masked.gif)
 
 ### Свойства
 #### mask {#masked-mask}
@@ -251,7 +251,7 @@ HTML тэга `input`.
 Поле ввода числовых значений. В зависимости от значения свойства `type` поля, допускается ввод только целочисленных `int`,
 либо значений с плавающей запятой `float`.
 
-![numberInput](/img/display/numberInput.gif)
+![numberInput](/site/img/display/numberInput.gif)
 
 ## objectList
 Автоматически устанавливаемый тип отображения для полей типа `objectList`.

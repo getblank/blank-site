@@ -1,11 +1,11 @@
 +++
 date = "2016-09-08T13:07:30+05:00"
 title = "FS"
-url = "/site/doc/fs/"
+url = "doc/fs/"
 [menu.doc]
     parent = "serverjs"
     weight = 170
-    url = "/site/doc/fs/"
+    url = "doc/fs/"
 +++
 
 Модуль `fs`&nbsp;&mdash модуль [Node FS](https://nodejs.org/api/fs.html) с одним дополнительным методом.

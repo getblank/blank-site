@@ -42,3 +42,17 @@ tag = "tags"
     pre = "<i class='fa fa-road'></i>"
     weight = -70
     identifier = "social"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "github"
+    tabWidth = 4

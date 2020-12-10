@@ -1,11 +1,11 @@
 +++
 date = "2016-09-08T17:16:00+05:00"
 title = "Actions"
-url = "/site/doc/actions/"
+url = "doc/actions/"
 [menu.doc]
     parent = "serverjs"
     weight = 5
-    url = "/site/doc/actions/"
+    url = "doc/actions/"
 +++
 
 Actions&nbsp;&mdash; скрипты на JavaScript, производящие некоторые действия над объектами, хранящимися в Store.

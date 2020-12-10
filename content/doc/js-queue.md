@@ -1,11 +1,11 @@
 +++
 date = "2016-09-08T13:08:20+05:00"
 title = "Queue"
-url = "/site/doc/queue/"
+url = "doc/queue/"
 [menu.doc]
     parent = "serverjs"
     weight = 220
-    url = "/site/doc/queue/"
+    url = "doc/queue/"
 +++
 
 Модуль `queue` предназначен для работы с сервером очередей Blank, представляющим сервис,

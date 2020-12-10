@@ -13,20 +13,20 @@ title = "Facebook"
 
 Первым делом, следует создать на [странице](https://developers.facebook.com/apps) приложение, которое будет получать данные пользователя.
 Выбираем **Website**:
-![step1](/img/facebook/step1.png)
+![step1](/site/img/facebook/step1.png)
 
 Указываем название нового приложения. Именно его увидят пользователи при попытке войти в **Blank** через Facebook.
-![step2](/img/facebook/step2.png)
+![step2](/site/img/facebook/step2.png)
 
 Указываем контактный email и выбираем категорию, например, business.
-![step3](/img/facebook/step3.png)
+![step3](/site/img/facebook/step3.png)
 
 Самый важный шаг&nbsp;&mdash; указываем точный адрес работающего приложения на **Blank**.
-![step4](/img/facebook/step4.png)
+![step4](/site/img/facebook/step4.png)
 
 Попав на дашборд созданного приложения, копируем **App ID** и вставляем его параметром `facebookClientId` в хранилище `_commonSettings`,
 **App Secret** указываем в хранилище `_serverSettings` параметром `facebookClientSecret`
-![step5](/img/facebook/step5.png)
+![step5](/site/img/facebook/step5.png)
 
 ```JSON
 "_serverSettings": {
@@ -49,4 +49,4 @@ title = "Facebook"
 ```
 
 После проведения всех настроек, остаётся только сделать доступным приложение всем пользователям
-![step6](/img/facebook/step6.png)
+![step6](/site/img/facebook/step6.png)
